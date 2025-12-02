@@ -36,7 +36,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="fixed inset-0 z-50 bg-gradient-to-br from-primary via-secondary to-primary flex flex-col items-center justify-center"
+          className="fixed inset-0 z-50 bg-secondary flex flex-col items-center justify-center text-accent"
         >
           {/* Logo with rotation animation */}
           <motion.div
@@ -70,7 +70,7 @@ export default function LoadingScreen({ onLoadingComplete }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-3xl md:text-5xl font-bold text-white mb-4"
+                className="text-3xl md:text-5xl font-semibold mb-4"
               >
                 {texts[currentText]}
               </motion.h1>
@@ -87,15 +87,15 @@ export default function LoadingScreen({ onLoadingComplete }) {
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
-                className="w-3 h-3 bg-white rounded-full"
+                className="w-2 h-2 bg-white rounded-full"
                 animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 1, 0.5]
+                  scale: [1, 1.4, 1],
+                  opacity: [0.4, 1, 0.4]
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1.2,
                   repeat: Infinity,
-                  delay: i * 0.2
+                  delay: i * 0.15
                 }}
               />
             ))}
@@ -104,15 +104,15 @@ export default function LoadingScreen({ onLoadingComplete }) {
           {/* Progress bar */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 4, ease: "easeInOut" }}
-            className="absolute bottom-8 left-8 right-8 h-1 bg-white/20 rounded-full overflow-hidden"
+            animate={{ width: '100%' }}
+            transition={{ duration: 4, ease: 'easeInOut' }}
+            className="absolute bottom-8 left-8 right-8 h-px bg-white/20 overflow-hidden"
           >
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 4, ease: "easeInOut" }}
-              className="h-full bg-white rounded-full"
+              animate={{ width: '100%' }}
+              transition={{ duration: 4, ease: 'easeInOut' }}
+              className="h-full bg-white"
             />
           </motion.div>
         </motion.div>

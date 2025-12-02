@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import {
   FaBrain, FaGlobe, FaMobileAlt, FaRobot, FaCogs, FaBoxes, FaShieldAlt, FaMicrosoft, FaDraftingCompass, FaFlask, FaSyncAlt, FaUserTie, FaPalette, FaPenNib, FaBullhorn, FaChartLine
 } from 'react-icons/fa';
+import ArrowIcon from './icons/ArrowIcon';
 
 const serviceCategories = [
   {
@@ -274,9 +275,9 @@ export default function Services() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.3, delay: (idx * 0.1) + (i * 0.05) }}
-                            className="flex items-start gap-3"
+                            className="flex items-start text-gray-700"
                           >
-                            <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                            <ArrowIcon className="h-4 w-4 mr-3 mt-1 text-accent flex-shrink-0" />
                             <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
                           </motion.li>
                         ))}

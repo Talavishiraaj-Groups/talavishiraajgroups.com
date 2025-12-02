@@ -1,261 +1,135 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaTwitter, FaLinkedin, FaFacebook, FaInstagram, FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
-const footerLinks = {
-  company: [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Services', href: '#services' },
-    { name: 'Our Products', href: '#products' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
-    { name: 'Contact', href: '#contact' },
-  ],
-  services: [
-    { name: 'Web Development', href: '#services' },
-    { name: 'Mobile Apps', href: '#services' },
-    { name: 'AI & ML', href: '#services' },
-    { name: 'Consulting', href: '#services' },
-  ],
-  support: [
-    { name: 'Help Center', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Support', href: '#contact' },
-  ]
-};
-
-const socialLinks = [
-  { icon: <FaTwitter />, href: '#', label: 'Twitter' },
-  { icon: <FaLinkedin />, href: '#', label: 'LinkedIn' },
-  { icon: <FaFacebook />, href: '#', label: 'Facebook' },
-  { icon: <FaInstagram />, href: '#', label: 'Instagram' },
+const linkGroups = [
+  {
+    title: 'Company',
+    items: [
+      { label: 'Home', to: '/' },
+      { label: 'Services', to: '/services' },
+      { label: 'About', to: '/about' },
+      { label: 'Partnerships', to: '/partnerships' },
+      { label: 'Contact', to: '/contact' },
+      { label: 'Community', to: '/community' },
+      { label: 'Products', to: '/products' },
+    ],
+  },
+  {
+    title: 'Capabilities',
+    items: [
+      { label: 'Strategy and Operations', to: '/services#strategy' },
+      { label: 'Technology and AI', to: '/services#tech' },
+      { label: 'R & D and Engineering', to: '/services#rd' },
+      { label: 'Creative and Growth Systems', to: '/services#growth' },
+    ],
+  },
+  {
+    title: 'Policies',
+    items: [
+      { label: 'Privacy Policy', to: '/privacy-policy' },
+      { label: 'Terms of Service', to: '/terms' },
+      { label: 'IP Policy', to: '/ip-policy' },
+    ],
+  },
 ];
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="bg-gradient-to-br from-primary via-secondary to-primary text-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <motion.div
-          className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-white rounded-full p-2">
-                <img src={logo} alt="Talavishiraaj Logo" className="h-8 w-8 object-contain" />
-              </div>
-              <span className="font-bold text-xl">Talavishiraaj Groups</span>
+    <footer className="border-t border-border bg-white text-primary">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-10">
+        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 mb-2">
+              <img src={logo} alt="Talavishiraaj Groups" className="h-8 w-auto" />
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Talavishiraaj Groups</p>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Where innovation meets technology. We transform ideas into reality, 
-              driving digital transformation across industries with cutting-edge solutions.
+            <p className="text-sm text-gray-600">
+              Technology consulting, AI and automation, R and D, and growth systems delivered by a single accountable partner.
             </p>
-            
-            {/* Contact Info */}
-            <div className="space-y-3">
-              {/* Contact details removed as per request */}
+            <p className="text-sm text-gray-500">
+              <a href="mailto:info@talavishiraajgroups.com" className="hover:text-primary">
+                info@talavishiraajgroups.com
+              </a>
+            </p>
+          </div>
+          {linkGroups.map((group) => (
+            <div key={group.title}>
+              <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">{group.title}</p>
+              <ul className="space-y-2 text-sm list-none">
+                {group.items.map((item) => (
+                  <li key={item.label}>
+                    <Link to={item.to} className="text-gray-600 hover:text-primary cursor-pointer">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
-
-          {/* Company Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h3 className="text-lg font-semibold mb-6 text-accent">Company</h3>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.2 + index * 0.1 }}
+          ))}
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Social</p>
+            <ul className="space-y-2 text-sm list-none">
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/talavishiraaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-gray-600 hover:text-primary"
                 >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                  <svg
+                    aria-hidden="true"
+                    className="h-4 w-4 mr-2 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-lg font-semibold mb-6 text-accent">Services</h3>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                    <path
+                      d="M6.5 6.5C6.5 7.88071 5.38071 9 4 9C2.61929 9 1.5 7.88071 1.5 6.5C1.5 5.11929 2.61929 4 4 4C5.38071 4 6.5 5.11929 6.5 6.5Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 10.5H6V21H2V10.5Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M9 10.5H13V12.1C13.5803 11.1937 14.7572 10.25 16.6 10.25C20.2 10.25 21 12.6 21 15.7V21H17V16.4C17 15.16 16.8 13.75 15.2 13.75C13.6 13.75 13.3 15 13.3 16.3V21H9V10.5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/talavishiraaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-gray-600 hover:text-primary"
                 >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
+                  <svg
+                    aria-hidden="true"
+                    className="h-4 w-4 mr-2 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
+                    <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="17" cy="7" r="1" fill="currentColor" />
+                  </svg>
+                  <span>Instagram</span>
+                </a>
+              </li>
             </ul>
-          </motion.div>
-
-          {/* Support Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-lg font-semibold mb-6 text-accent">Support</h3>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link, index) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent transition-colors duration-300 hover:translate-x-1 inline-block"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Newsletter and Social */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-white/20 pt-8"
-        >
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-            {/* Newsletter */}
-            <div className="flex-1 max-w-md">
-              <h3 className="text-lg font-semibold mb-4 text-accent">Stay Updated</h3>
-              <p className="text-gray-300 mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-                <motion.button
-                  className="px-6 py-2 bg-accent text-white rounded-lg hover:bg-accent/80 transition-colors duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Subscribe
-                </motion.button>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex flex-col items-center lg:items-end gap-4">
-              <h3 className="text-lg font-semibold text-accent">Follow Us</h3>
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent hover:scale-110 transition-all duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="border-t border-white/20 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <div className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.
-          </div>
-          
-          <motion.button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-gray-300 hover:text-accent transition-colors duration-300"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-sm">Back to Top</span>
-            <FaArrowUp />
-          </motion.button>
-        </motion.div>
+        <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between text-xs text-gray-500 gap-4">
+          <span>© {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.</span>
+          <span>Built for leaders who value execution.</span>
+        </div>
       </div>
     </footer>
   );
-} 
+}
