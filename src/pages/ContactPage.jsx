@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaCheck } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function ContactPage() {
@@ -25,24 +24,44 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        'service_oat3wzh',
-        'template_cdt7pua',
-        {
-          ...form,
-          date: new Date().toLocaleString(),
+      // Send email via Netlify function
+      const response = await fetch('/.netlify/functions/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        '_oA45X1W9D7IZ-Ehg'
-      );
+        body: JSON.stringify(form),
+      });
+
+      // Read response as text first, then parse as JSON
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error('Failed to parse response as JSON:', parseError);
+        console.error('Response text:', text);
+        throw new Error(`Invalid response from server: ${text.substring(0, 100)}`);
+      }
+
+      if (!response.ok) {
+        console.error('Response not OK:', response.status, data);
+        throw new Error(data.error || data.details || 'Failed to send email');
+      }
 
       setIsSubmitting(false);
       setIsSubmitted(true);
       setForm({ name: '', email: '', company: '', phone: '', service: '', message: '' });
       setTimeout(() => setIsSubmitted(false), 3500);
     } catch (error) {
-      console.error('Email failed to send:', error);
+      console.error('Form submission failed:', error);
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
       setIsSubmitting(false);
-      alert('Failed to send message. Please try again later.');
+      alert(`Failed to submit: ${error.message}. Please check the console for details.`);
     }
   };
 
