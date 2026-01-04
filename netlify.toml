@@ -2,7 +2,19 @@
   command = "npm run build"
   publish = "dist"
 
+[dev]
+  command = "npm run dev"
+  publish = "."
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Environment variables for SMTP (Zoho Mail - India region)
+# Set these in your Netlify dashboard under Site settings > Environment variables
+# SMTP_HOST=smtp.zoho.in (India region)
+# SMTP_PORT=587 (TLS) or 465 (SSL)
+# SMTP_SECURE=false (for port 587) or true (for port 465)
+# SMTP_USER=info@talavishiraajgroups.com
+# SMTP_PASSWORD=bbydqdzT7yY1

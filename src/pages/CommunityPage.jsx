@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheck } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function CommunityPage() {
@@ -23,23 +22,29 @@ export default function CommunityPage() {
     setIsSubmitting(true);
 
     try {
-      // Try to send via EmailJS if configured
+      // Send email via Netlify function
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      // Read response as text first, then parse as JSON
+      const text = await response.text();
+      let data;
       try {
-        await emailjs.send(
-          'service_oat3wzh',
-          'template_cdt7pua',
-          {
-            ...form,
-            date: new Date().toLocaleString(),
-          },
-          '_oA45X1W9D7IZ-Ehg'
-        );
-      } catch (emailError) {
-        // Fallback: log to console and save to localStorage as backup
-        console.log('Form submission:', form);
-        const submissions = JSON.parse(localStorage.getItem('communitySubmissions') || '[]');
-        submissions.push({ ...form, date: new Date().toISOString() });
-        localStorage.setItem('communitySubmissions', JSON.stringify(submissions));
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error('Failed to parse response as JSON:', parseError);
+        console.error('Response text:', text);
+        throw new Error(`Invalid response from server: ${text.substring(0, 100)}`);
+      }
+
+      if (!response.ok) {
+        console.error('Response not OK:', response.status, data);
+        throw new Error(data.error || data.details || 'Failed to send email');
       }
 
       setIsSubmitting(false);
@@ -47,8 +52,13 @@ export default function CommunityPage() {
       setForm({ name: '', email: '', number: '', message: '' });
     } catch (error) {
       console.error('Form submission failed:', error);
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
       setIsSubmitting(false);
-      alert('Failed to submit. Please try again later.');
+      alert(`Failed to submit: ${error.message}. Please check the console for details.`);
     }
   };
 
@@ -183,4 +193,3 @@ function Field({ label, children }) {
 
 const inputClasses =
   'w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-gray-200 placeholder:text-gray-400';
-
