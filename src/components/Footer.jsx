@@ -127,7 +127,7 @@ export default function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between text-xs text-gray-500 gap-4">
           <span>© {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.</span>
-          <span>Built for leaders who value execution.</span>
+          <span>Execution is Our Foundation. Innovation is Our Identity.</span>
         </div>
       </div>
     </footer>
