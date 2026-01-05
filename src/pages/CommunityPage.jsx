@@ -107,7 +107,7 @@ export default function CommunityPage() {
                   <p>We will respond via email with next steps.</p>
                   <p>
                     If you do not see our message, please check your spam or junk folder. If our message landed in spam, mark it as Not Spam and add{' '}
-                    <span className="font-medium text-primary">info@talavishiraajgroups.com</span> to your contacts and mark it as important to ensure future communication.
+                    <span className="font-medium text-primary">community@talavishiraajgroups.com</span> to your contacts and mark it as important to ensure future communication.
                   </p>
                 </div>
               </motion.div>
