@@ -24,13 +24,13 @@ exports.handler = async (event, context) => {
     // Create transporter using SMTP (Zoho Mail - India region)
     // Using environment variables for security
     const smtpConfig = {
-      host: process.env.SMTP_HOST || 'smtp.zoho.in',
-      port: parseInt(process.env.SMTP_PORT || '587'),
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT),
       secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
       requireTLS: true, // Zoho requires TLS
       auth: {
-        user: process.env.SMTP_USER || 'info@talavishiraajgroups.com',
-        pass: process.env.SMTP_PASSWORD || 'bbydqdzT7yY1',
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
       },
       tls: {
         ciphers: 'SSLv3', // Zoho compatibility
