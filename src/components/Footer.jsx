@@ -13,6 +13,7 @@ const linkGroups = [
       { label: 'Contact', to: '/contact' },
       { label: 'Community', to: '/community' },
       { label: 'Products', to: '/products' },
+      { label: 'Case Studies', to: '/case-studies' },
     ],
   },
   {
@@ -45,7 +46,7 @@ export default function Footer() {
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Talavishiraaj Groups</p>
             </div>
             <p className="text-sm text-gray-600">
-              Technology consulting, AI and automation, R and D, and growth systems delivered by a single accountable partner.
+              Technology consulting, AI and automation, R & D, and growth systems delivered by a single accountable partner.
             </p>
             <p className="text-sm text-gray-500">
               <a href="mailto:info@talavishiraajgroups.com" className="hover:text-primary">
@@ -72,7 +73,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm list-none">
               <li>
                 <a
-                  href="https://www.linkedin.com/company/talavishiraaj"
+                  href="https://www.linkedin.com/company/talavishiraaj-groups/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-gray-600 hover:text-primary"

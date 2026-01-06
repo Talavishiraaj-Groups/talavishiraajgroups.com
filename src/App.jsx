@@ -16,6 +16,7 @@ import ProductsPage from './pages/ProductsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import IpPolicyPage from './pages/IpPolicyPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
                     <Route path="/ip-policy" element={<IpPolicyPage />} />
+                    <Route path="/case-studies" element={<CaseStudiesPage />} />
                   </Routes>
                 </main>
                 <Footer />

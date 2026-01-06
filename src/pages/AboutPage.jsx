@@ -138,6 +138,66 @@ export default function AboutPageComplete() {
 
         <hr className="border-border my-8" />
 
+      {/* Team Section */}
+<section className="py-16 border-t border-border">
+  <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6">
+    Leadership
+  </h2>
+
+  <p className="text-base text-gray-700 max-w-3xl mb-10">
+    Talavishiraaj Groups is led by a focused leadership team responsible for
+    strategy, engineering direction, and delivery quality. Leadership remains
+    directly involved in solution design and execution.
+  </p>
+
+  <div className="grid md:grid-cols-2 gap-10 max-w-4xl">
+    {/* Founder */}
+    <div className="flex items-start gap-6">
+      <img
+        src="/aifaceswap-output.png"
+        alt="Founder of Talavishiraaj Groups"
+        className="w-28 h-28 rounded-xl object-cover border border-border"
+      />
+
+      <div>
+        <h3 className="text-lg font-semibold text-black">
+          Dhiraj T H
+        </h3>
+        <p className="text-sm text-gray-600 mb-2">
+          Founder
+        </p>
+        <p className="text-sm text-gray-700">
+          Responsible for overall vision, engineering strategy, and solution
+          architecture. Actively involved in research direction and delivery
+          oversight.
+        </p>
+      </div>
+    </div>
+
+    {/* CTO */}
+    <div className="flex items-start gap-6">
+      <img
+        src="/CTO.jpeg"
+        alt="CTO of Talavishiraaj Groups"
+        className="w-28 h-28 rounded-xl object-cover border border-border"
+      />
+
+      <div>
+        <h3 className="text-lg font-semibold text-black">
+          Yatharth Chauhan
+        </h3>
+        <p className="text-sm text-gray-600 mb-2">
+          CTO
+        </p>
+        <p className="text-sm text-gray-700">
+          Leads technology architecture, engineering standards, and system
+          scalability across all platforms and internal products.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
         {/* 5. WHY CHOOSE YOU */}
         <section className="py-8 space-y-4">
           <h2 className="text-3xl md:text-4xl font-semibold text-black">Why choose Talavishiraaj Groups</h2>
