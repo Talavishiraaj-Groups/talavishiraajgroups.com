@@ -28,11 +28,11 @@ const linkGroups = [
   {
     title: 'Research & Insights',
     items: [
-      { label: 'Operational Insights', to: '/insights#operational' },
-      { label: 'Research Articles', to: '/insights#research' },
       { label: 'Workflow Intelligence', to: '/insights#workflow' },
-      { label: 'AI & Systems Articles', to: '/insights#ai' },
-      { label: 'Operational Scaling Content', to: '/insights#scaling' },
+      { label: 'Research Articles', to: '/insights#research' },
+      { label: 'Systems & AI Articles', to: '/insights#ai' },
+      { label: 'Business Infrastructure Insights', to: '/insights#infrastructure' },
+      { label: 'Scalability & Execution Content', to: '/insights#scaling' },
     ],
   },
 ];

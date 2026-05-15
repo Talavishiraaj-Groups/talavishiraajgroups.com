@@ -1,5 +1,5 @@
 import React from 'react';
-import { serviceCategories, servicesMetaDescription } from '../data/servicesData';
+import { serviceCategories } from '../data/servicesData';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function ServicesPage() {
@@ -17,10 +17,10 @@ export default function ServicesPage() {
       <section className="bg-secondary text-accent">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-400">Services</p>
-          <h1 className="text-4xl md:text-5xl font-bold">Deep capability across strategy, technology, and growth</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Implementation capabilities built for structured execution</h1>
           <p className="text-base md:text-lg text-gray-200 max-w-4xl">
-            We consolidate technology consulting, AI and automation, R and D and engineering, and creative growth systems
-            into one accountable partner. Every track below is delivered by cross functional pods with senior operators.
+            We consolidate strategic consulting, AI-assisted systems, technology infrastructure, and growth enablement 
+            into one accountable partner. Every capability track below is delivered with a structured, implementation-capable approach.
           </p>
         </div>
       </section>
@@ -74,4 +74,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-

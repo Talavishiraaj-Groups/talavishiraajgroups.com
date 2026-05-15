@@ -1,37 +1,37 @@
 export const serviceCategories = [
   {
-    label: 'Operational & Strategic Consulting',
+    label: 'Strategic & Systems Consulting',
     id: 'strategy',
     description:
-      'Structured operational analysis, strategic positioning, and execution frameworks designed to reduce complexity and accelerate measurable outcomes.',
+      'Structured strategic analysis, systems positioning, and execution frameworks designed to reduce complexity, improve workflow visibility, and accelerate measurable outcomes.',
     services: [
       {
-        title: 'Operational Workflow Engineering',
+        title: 'Workflow Intelligence & Process Design',
         description:
-          'Designing end-to-end organizational processes and team workflows that reduce handoffs and increase throughput, supported by clear documentation.',
+          'Designing end-to-end organizational workflows that eliminate coordination gaps, reduce execution friction, and increase throughput, supported by structured documentation and visibility.',
         bullets: [
-          'Workflow mapping and bottleneck resolution',
+          'Workflow mapping and bottleneck identification',
           'Standard Operating Procedure (SOP) design',
-          'Operational KPIs and visibility dashboards',
+          'Operational visibility and performance frameworks',
         ],
       },
       {
-        title: 'Strategic Positioning & Scaling',
+        title: 'Strategic Positioning & Scalability',
         description:
-          'Clarifying value propositions, unit economics, and operational readiness for startups and SMEs looking to scale predictably.',
+          'Clarifying positioning, systems alignment, and execution readiness for organizations looking to scale predictably with structured infrastructure.',
         bullets: [
-          'Operational readiness assessments',
-          'Unit economics and sensitivity analysis',
-          'Strategic roadmap and execution sequencing',
+          'Execution readiness assessments',
+          'Strategic alignment and scalability planning',
+          'Systems roadmap and implementation sequencing',
         ],
       },
       {
         title: 'Governance & Risk Management',
         description:
-          'Implementing operational governance, data handling protocols, and risk mitigation frameworks for enterprise-grade compliance.',
+          'Implementing organizational governance, data handling protocols, and risk frameworks for enterprise-grade compliance and structured accountability.',
         bullets: [
-          'Operational risk assessment',
-          'Governance and escalation playbooks',
+          'Organizational risk assessment',
+          'Governance and escalation frameworks',
           'Data confidentiality and handling protocols',
         ],
       },
@@ -42,34 +42,34 @@ export const serviceCategories = [
     label: 'Technology Systems & Infrastructure',
     id: 'tech',
     description:
-      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that turn strategic roadmaps into reliable operational tools.',
+      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that convert strategic requirements into reliable, production-grade operational tools.',
     services: [
       {
-        title: 'AI & Operational Automation Systems',
+        title: 'AI & Intelligent Automation Systems',
         description:
-          'Designing and delivering practical AI systems and intelligent automation to augment organizational capacity and reduce manual overhead.',
+          'Designing and delivering practical AI systems and workflow automation to augment organizational capacity, reduce manual overhead, and improve systems efficiency.',
         bullets: [
-          'AI use-case discovery and systems audits',
-          'Intelligent workflow automation (RPA/AI)',
-          'Operational monitoring and alerting systems',
+          'AI systems discovery and use-case assessment',
+          'Intelligent workflow automation implementation',
+          'Systems monitoring and performance infrastructure',
         ],
       },
       {
         title: 'Structured Technology Solutions',
         description:
-          'Building production-grade web, mobile, and CRM systems with scalable architecture and automated testing to ensure long-term reliability.',
+          'Building production-grade web, mobile, and business management systems with scalable architecture and long-term reliability in mind.',
         bullets: [
-          'Enterprise-ready CRM & ERP implementation',
-          'Scalable web and mobile system architecture',
-          'API-driven system integration and data flow',
+          'Enterprise-ready CRM and business systems implementation',
+          'Scalable web and mobile infrastructure',
+          'API-driven systems integration and data flow',
         ],
       },
       {
         title: 'Data Systems & Infrastructure',
         description:
-          'Creating secure data platforms and infrastructure for operational intelligence, including secure storage and privacy-first design.',
+          'Creating secure data platforms and infrastructure for business visibility and systems intelligence, including secure storage and privacy-first design.',
         bullets: [
-          'Operational data ingestion and ETL pipelines',
+          'Data infrastructure and pipeline architecture',
           'Data governance and infrastructure security',
           'Secure storage and multi-region data management',
         ],
@@ -78,29 +78,29 @@ export const serviceCategories = [
   },
 
   {
-    label: 'Operational Implementation & R&D',
+    label: 'Implementation & Engineering Systems',
     id: 'rd',
     description:
-      'Specialized engineering, hardware-software integration, and product R&D that convert technical research into operational reality.',
+      'Specialized engineering, hardware-software integration, and product implementation that convert technical requirements into operational reality.',
     services: [
       {
-        title: 'Mechanical Systems & R&D',
+        title: 'Mechanical Systems & Product Engineering',
         description:
-          'End-to-end mechanical engineering, prototyping, and CAD simulation to validate physical operational systems and product components.',
+          'End-to-end mechanical engineering, prototyping, and simulation to validate physical operational systems and product components.',
         bullets: [
-          'CAD modeling and simulation for R&D',
-          'Design for Manufacturability (DFM) audits',
+          'CAD modeling and simulation',
+          'Design for manufacturability assessments',
           'Rapid prototyping and hardware validation',
         ],
       },
       {
         title: 'IoT & Systems Integration',
         description:
-          'Designing and integrating embedded systems, sensor networks, and connectivity for real-time operational monitoring.',
+          'Designing and integrating embedded systems, sensor networks, and connectivity for real-time operational monitoring and data visibility.',
         bullets: [
           'Firmware development and hardware testing',
           'IoT sensor integration and data telemetry',
-          'Secure device provisioning and OTA updates',
+          'Secure device provisioning and update systems',
         ],
       },
     ],
@@ -110,25 +110,25 @@ export const serviceCategories = [
     label: 'Growth Systems & Market Enablement',
     id: 'growth',
     description:
-      'Structured market access, growth engineering, and strategic partnership planning that support long-term domain authority and scaling.',
+      'Structured market access, growth infrastructure, and strategic partnership planning that support long-term domain authority and predictable scaling.',
     services: [
       {
         title: 'Growth Engineering & Market Access',
         description:
-          'Building repeatable, instrumented funnels and market entry strategies using structured growth experiments and data analytics.',
+          'Building repeatable, instrumented growth systems and market entry strategies using structured experiments and data-driven enablement.',
         bullets: [
-          'Growth experiment backlog and execution',
-          'Automated market enablement systems',
-          'Strategic GTM sequencing and implementation',
+          'Growth system architecture and execution',
+          'Automated market enablement infrastructure',
+          'Strategic market access and expansion planning',
         ],
       },
       {
         title: 'Strategic Partnership Systems',
         description:
-          'Designing and implementing strategic partnership models and co-build frameworks to accelerate market reach and distribution.',
+          'Designing and implementing strategic partnership models and collaboration frameworks to accelerate market reach and distribution capability.',
         bullets: [
-          'Ecosystem partner identification systems',
-          'Commercial model and co-build frameworks',
+          'Ecosystem partner identification and assessment',
+          'Commercial model and collaboration frameworks',
           'Strategic alliance governance and planning',
         ],
       },
@@ -137,5 +137,4 @@ export const serviceCategories = [
 ];
 
 export const servicesMetaDescription =
-  'Research-led operational systems, technology infrastructure, AI-enabled automation, and growth systems delivered by Talavishiraaj Groups. Explore our structured operational capabilities.';
-
+  'Research-led systems consulting, technology infrastructure, AI-enabled automation, and growth systems delivered by Talavishiraaj Groups. Explore our structured implementation capabilities.';

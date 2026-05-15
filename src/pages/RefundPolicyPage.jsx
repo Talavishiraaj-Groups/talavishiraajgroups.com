@@ -5,7 +5,7 @@ export default function RefundPolicyPage() {
   const refundStages = [
     { stage: 'Before project assembly', eligibility: 'Up to 90% refund' },
     { stage: 'Discovery / onboarding initiated', eligibility: 'Up to 75% refund' },
-    { stage: 'Research & diagnostic phase active', eligibility: 'Up to 60% refund' },
+    { stage: 'Research & assessment phase active', eligibility: 'Up to 60% refund' },
     { stage: 'Strategy / blueprint development active', eligibility: 'Up to 40% refund' },
     { stage: 'Implementation / execution initiated', eligibility: 'Case-by-case review' },
     { stage: 'Project substantially completed', eligibility: 'Non-refundable' },
@@ -24,17 +24,17 @@ export default function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">General Policy Statement</h2>
           <p>
-            At Talavishiraaj Groups, we allocate significant operational resources, consultant scheduling, 
-            and research commitment to every engagement. Our refund policy is designed to reflect the 
-            operational preparation and delivery progression of our services while ensuring professional 
-            fairness to our clients.
+            At Talavishiraaj Groups, we allocate significant resources, consultant scheduling, 
+            research preparation, and planning commitment to every engagement. Our refund policy 
+            is designed to reflect the operational preparation and delivery progression of our 
+            services while ensuring professional fairness to all clients.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">Consultation Engagement Refunds</h2>
           <p>
-            Consultation-based engagements, including one-off sessions and diagnostic readouts, 
+            Consultation-based engagements, including structured sessions and assessment readouts, 
             become non-refundable once scheduled. However, these sessions may be rescheduled 
             with a minimum of 48 hours' prior notice, subject to consultant availability.
           </p>
@@ -43,8 +43,8 @@ export default function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">Service & Implementation Refund Structure</h2>
           <p className="mb-6">
-            Refunds for long-term service and implementation projects are calculated based on 
-            the project stage and completed work scope:
+            Refunds for service and implementation engagements are calculated based on 
+            the project stage and completed work scope at the time of the refund request:
           </p>
           <div className="overflow-x-auto border border-border rounded-xl">
             <table className="w-full text-left text-sm">
@@ -69,23 +69,33 @@ export default function RefundPolicyPage() {
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">Refund Calculation Basis</h2>
           <p>
-            Refund calculations account for:
+            Refund calculations may account for:
           </p>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Consultant allocation and research time</li>
-            <li>Operational preparation and internal planning</li>
-            <li>Intermediary costs and payment processing fees</li>
+            <li>Consultant allocation and research preparation time</li>
+            <li>Planning commitment and internal engagement structuring</li>
             <li>Completed work scope and delivery-stage progression</li>
             <li>Administrative overhead and scheduling commitments</li>
+            <li>Transaction processing and international reconciliation costs</li>
           </ul>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">Payment Infrastructure</h2>
           <p>
-            Global payments are processed primarily through <strong>Skydo</strong> for operational simplicity, 
-            international invoicing efficiency, and multi-region transaction management. Refunds will be 
-            processed back to the original payment method, subject to international reconciliation timelines.
+            Global payments are processed through approved international payment infrastructure and 
+            transaction channels. Refunds are processed back to the original payment method, 
+            subject to international reconciliation timelines and applicable processing requirements.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-black mb-4">Disputes & Escalation</h2>
+          <p>
+            Any refund disputes or concerns should be communicated in writing to our engagement team 
+            via the official contact channels. All requests will be reviewed against the engagement 
+            stage, delivery documentation, and applicable policy provisions within a structured 
+            review timeline.
           </p>
         </section>
       </div>

@@ -5,28 +5,35 @@ import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function SystemsPage() {
   const challenges = [
-    'Fragmented operational systems and siloed data',
-    'Founder dependency and lack of delegable processes',
-    'Workflow bottlenecks slowing down delivery',
-    'Scaling inefficiencies and rising operational costs',
-    'Disconnected operational processes and communication gaps'
+    'Fragmented systems and siloed workflow data',
+    'Founder dependency and absence of delegable processes',
+    'Workflow bottlenecks slowing delivery and coordination',
+    'Scaling inefficiencies and rising coordination overhead',
+    'Disconnected processes and execution misalignment',
+    'Lack of systems visibility and infrastructure clarity'
   ];
 
   const inclusions = [
-    { title: 'Stakeholder Interviews', desc: '3–4 focused sessions with key operational stakeholders.' },
-    { title: 'Workflow Analysis', desc: 'Deep dive into current processes and technical stack.' },
-    { title: 'Operational Visibility Mapping', desc: 'Visual mapping of current vs. target operational states.' },
-    { title: 'Systems Assessment', desc: 'Audit of existing tools, AI readiness, and infrastructure.' },
-    { title: 'Strategic Recommendations', desc: 'Actionable steps for optimization and automation.' },
-    { title: 'Roadmap Delivery', desc: 'A structured implementation blueprint for scaling.' }
+    { title: 'Stakeholder Interviews', desc: 'Focused sessions with key organizational stakeholders to surface context, constraints, and workflow realities.' },
+    { title: 'Workflow Analysis', desc: 'In-depth review of current processes, coordination structures, and existing systems infrastructure.' },
+    { title: 'Systems Visibility Mapping', desc: 'Structured visualization of current operational state and clarity gaps across the organization.' },
+    { title: 'Systems Assessment', desc: 'Review of existing tools, infrastructure, and systems readiness for scale.' },
+    { title: 'Strategic Recommendations', desc: 'Structured, actionable guidance for systems improvement and workflow optimization.' },
+    { title: 'Roadmap Delivery', desc: 'A structured implementation blueprint providing clear next-step clarity.' }
   ];
 
   const steps = [
-    { label: '01', title: 'Onboarding & Intake', desc: 'Structured intake form to collect baseline operational data and pain points.' },
-    { label: '02', title: 'Stakeholder Interviews', desc: 'Contextual interviews to identify hidden bottlenecks and system friction.' },
-    { label: '03', title: 'Analysis & Synthesis', desc: 'Research-led diagnostic of workflows, systems, and execution alignment.' },
-    { label: '04', title: 'Diagnostic Readout', desc: 'Recorded consultation session to present findings and strategic roadmap.' },
-    { label: '05', title: 'Final Delivery', desc: 'Packaged delivery of report, recordings, and implementation assets.' }
+    { label: '01', title: 'Onboarding & Intake', desc: 'Structured intake process to establish baseline organizational context and engagement parameters.' },
+    { label: '02', title: 'Stakeholder Engagement', desc: 'Focused sessions to surface workflow realities, systems gaps, and coordination challenges.' },
+    { label: '03', title: 'Analysis & Assessment', desc: 'Structured evaluation of workflows, systems, and organizational alignment.' },
+    { label: '04', title: 'Findings & Clarity Session', desc: 'Structured consultation to present findings, strategic observations, and systems roadmap.' },
+    { label: '05', title: 'Final Delivery', desc: 'Packaged delivery of the full diagnostic report, supporting assets, and implementation materials.' }
+  ];
+
+  const futureSystemsPlaceholders = [
+    { title: 'Workflow Intelligence Platform', status: 'In Development', desc: 'A structured platform for real-time workflow visibility, systems monitoring, and execution coordination.' },
+    { title: 'AI Systems Infrastructure', status: 'In Development', desc: 'Intelligent automation and AI-assisted infrastructure for business process augmentation at scale.' },
+    { title: 'Business Infrastructure Dashboard', status: 'Coming Soon', desc: 'Centralized organizational visibility across systems, execution, and strategic alignment metrics.' },
   ];
 
   return (
@@ -40,13 +47,13 @@ export default function SystemsPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl space-y-6"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-gray-400 font-medium">Productized Operational Intelligence</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-400 font-medium">Workflow Intelligence System</p>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
               Prism <span className="text-gray-400">Diagnostic</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              A structured operational assessment designed to provide clarity, identify bottlenecks, 
-              and build the implementation roadmap required for enterprise-grade scaling.
+              A structured workflow intelligence assessment designed to surface clarity, identify systems gaps, 
+              and build the implementation roadmap required for confident, enterprise-grade scaling.
             </p>
             <div className="flex gap-4 pt-4">
               <Link
@@ -70,11 +77,11 @@ export default function SystemsPage() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-6">
-            <h2 className="text-3xl font-semibold text-black">Structured Operational Intelligence.</h2>
+            <h2 className="text-3xl font-semibold text-black">Structured Workflow & Systems Intelligence.</h2>
             <p className="text-gray-700 leading-relaxed">
-              The Prism Diagnostic is not generic consulting. It is a research-led operational engagement 
-              that provides visibility into the structural health of your organization. We diagnose 
-              before we prescribe, ensuring that every recommendation is anchored in measurable reality.
+              The Prism Diagnostic is not generic consulting. It is a structured workflow intelligence engagement 
+              that provides visibility into the systems health of your organization. We assess before we prescribe — 
+              ensuring that every recommendation is grounded in structured observation and organizational reality.
             </p>
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">Target Regions</p>
@@ -86,7 +93,7 @@ export default function SystemsPage() {
             </div>
           </div>
           <div className="bg-muted/50 rounded-3xl p-8 border border-border">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-6">Operational Challenges We Solve</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-6">Workflow & Systems Challenges We Address</h3>
             <ul className="space-y-4">
               {challenges.map((c, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -105,7 +112,7 @@ export default function SystemsPage() {
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-semibold text-black">What The Diagnostic Includes</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm">
-              A comprehensive assessment covering stakeholders, workflows, systems, and strategic alignment.
+              A comprehensive structured assessment covering stakeholders, workflows, systems, and strategic alignment.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,11 +129,12 @@ export default function SystemsPage() {
       {/* ENGAGEMENT STRUCTURE */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
         <div className="space-y-12">
-          <h2 className="text-3xl font-semibold text-black text-center">Engagement Structure</h2>
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl font-semibold text-black">Engagement Structure</h2>
+            <p className="text-sm text-gray-500 max-w-xl mx-auto">A structured, stage-based engagement designed for clarity and professional delivery.</p>
+          </div>
           <div className="relative">
-            {/* Timeline Line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border hidden md:block"></div>
-            
             <div className="space-y-12">
               {steps.map((step, i) => (
                 <div key={i} className={`flex flex-col md:flex-row gap-8 items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
@@ -161,13 +169,13 @@ export default function SystemsPage() {
             <h2 className="text-3xl font-semibold">Enterprise-Ready Deliverables</h2>
             <p className="text-gray-400">
               The engagement is typically completed within 10–13 business days. Final delivery is 
-              provided via a structured ZIP delivery package.
+              provided as a structured, packaged delivery set.
             </p>
             <ul className="space-y-4">
               {[
                 'Comprehensive PDF Report & Strategy Deck',
-                'Recorded Readout Session (Google Meet)',
-                'Visual Workflow & Operational Maps',
+                'Recorded Clarity Session (secure video delivery)',
+                'Visual Workflow & Systems Maps',
                 'Actionable Implementation Roadmap',
                 'Supporting Documentation & Assets'
               ].map((d, i) => (
@@ -185,30 +193,56 @@ export default function SystemsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold">Diagnostic ICP</h3>
+              <h3 className="text-xl font-semibold">Engagement Profile</h3>
               <p className="text-sm text-gray-400">
-                Optimized for startups and SMEs with <strong>10–50 employees</strong> seeking 
-                operational structure and execution clarity.
+                Designed for organizations with <strong>10–50 employees</strong> seeking 
+                systems clarity, workflow visibility, and structured execution readiness.
               </p>
               <div className="pt-6 border-t border-gray-800 flex justify-between text-xs text-gray-500">
-                <span>Timeline: 10–13 Days</span>
-                <span>Payment: Skydo</span>
+                <span>Timeline: 10–13 Business Days</span>
+                <span>Payment: International Channels</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* FUTURE SYSTEMS */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+        <div className="space-y-10">
+          <div className="text-center space-y-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Systems Architecture</p>
+            <h2 className="text-3xl font-semibold text-black">The Systems Portfolio</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+              Prism Diagnostic is the first structured system in our growing portfolio. 
+              Additional workflow intelligence systems and infrastructure products are in development.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {futureSystemsPlaceholders.map((sys, i) => (
+              <div key={i} className="border border-border rounded-2xl p-6 bg-muted/30 flex flex-col">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-white border border-border px-2 py-1 rounded-full">{sys.status}</span>
+                </div>
+                <h3 className="font-semibold text-black mb-2">{sys.title}</h3>
+                <p className="text-sm text-gray-600">{sys.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* GOVERNANCE REFERENCE */}
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-20 text-center space-y-6">
-        <h2 className="text-2xl font-semibold text-black">Operational Governance</h2>
+        <h2 className="text-2xl font-semibold text-black">Engagement Governance</h2>
         <p className="text-sm text-gray-600">
           All diagnostic engagements are covered by our stage-based refund policy and data handling protocols. 
-          Consultation sessions are non-refundable once scheduled but may be rescheduled with prior notice.
+          Consultation sessions are non-refundable once scheduled but may be rescheduled with sufficient prior notice.
         </p>
         <div className="flex justify-center gap-6 pt-4">
           <Link to="/refund-policy" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Refund Policy</Link>
           <Link to="/delivery-policy" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Delivery Policy</Link>
+          <Link to="/risk-mitigation" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Risk Framework</Link>
         </div>
       </section>
     </div>

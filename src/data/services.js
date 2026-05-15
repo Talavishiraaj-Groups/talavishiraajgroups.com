@@ -1,49 +1,49 @@
 export const serviceTracks = [
   {
     id: 'strategy',
-    label: 'Operational & Strategic Consulting',
+    label: 'Strategic & Systems Consulting',
     description:
-      'Structured operational analysis, strategic positioning, and execution frameworks designed to reduce complexity and accelerate measurable outcomes.',
+      'Structured strategic analysis, systems positioning, and execution frameworks designed to reduce complexity and accelerate measurable outcomes.',
   },
   {
     id: 'tech',
     label: 'Technology Systems & Infrastructure',
     description:
-      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that turn strategic roadmaps into reliable operational tools.',
+      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that convert strategic roadmaps into reliable operational tools.',
   },
   {
     id: 'rd',
-    label: 'Operational Implementation & R&D',
+    label: 'Implementation & Engineering Systems',
     description:
-      'Specialized engineering, hardware-software integration, and product R&D that convert technical research into operational reality.',
+      'Specialized engineering, hardware-software integration, and product implementation that convert technical requirements into operational reality.',
   },
   {
     id: 'growth',
     label: 'Growth Systems & Market Enablement',
     description:
-      'Structured market access, growth engineering, and strategic partnership planning that support long-term domain authority and scaling.',
+      'Structured market access, growth infrastructure, and strategic partnership planning that support long-term domain authority and scalable expansion.',
   },
 ];
 
 export const capabilityHighlights = [
   {
-    title: 'Operational Strategy',
-    copy: 'Structural maturity for scaling organizations. We translate operational complexity into clear execution cadence and measurable outcomes.',
+    title: 'Strategic & Systems Consulting',
+    copy: 'Workflow intelligence and structural maturity for scaling organizations. We translate systems complexity into clear execution alignment and measurable outcomes.',
     link: '/services#strategy',
   },
   {
-    title: 'Technology Systems',
-    copy: 'AI-assisted systems and scalable infrastructure built by operators who prioritize security, reliability, and long-term maintainability.',
+    title: 'Technology Systems & Infrastructure',
+    copy: 'AI-assisted systems and scalable infrastructure built by operators who prioritize security, reliability, and long-term systems sustainability.',
     link: '/services#tech',
   },
   {
-    title: 'Operational R&D',
-    copy: 'Engineering prototypes and hardware-software integration that bridge the gap between technical research and real-world deployment.',
+    title: 'Implementation & Engineering Systems',
+    copy: 'Engineering implementation and hardware-software integration that bridge the gap between technical requirements and real-world operational deployment.',
     link: '/services#rd',
   },
   {
-    title: 'Growth Systems',
-    copy: 'Market enablement and partnership frameworks designed to build predictable revenue pipeline and organizational domain authority.',
+    title: 'Growth Systems & Market Enablement',
+    copy: 'Market enablement and partnership frameworks designed to build predictable growth infrastructure and organizational domain authority.',
     link: '/services#growth',
   },
 ];
@@ -52,41 +52,39 @@ export const clientProfiles = [
   {
     label: 'Startups & Scale-ups',
     description:
-      'Embedded operational support for teams needing senior systems expertise to build delegable processes and technical foundations.',
+      'Embedded systems support for teams needing structured expertise to build delegable processes, workflow visibility, and scalable technical foundations.',
   },
   {
     label: 'SMEs & Family Enterprises',
     description:
-      'Modernizing legacy operations, ERP integration, and implementing growth systems to ensure long-term generational continuity.',
+      'Modernizing legacy systems, business infrastructure integration, and implementing growth systems to ensure long-term scalability and continuity.',
   },
   {
-    label: 'R&D & Engineering Units',
+    label: 'Engineering & R&D Units',
     description:
-      'External execution pods for rapid prototyping, CAD simulation, and hardware validation that integrate with in-house engineering.',
+      'External implementation capability for rapid prototyping, systems validation, and hardware engineering that integrate with in-house teams.',
   },
   {
     label: 'Global Teams & Market Entrants',
     description:
-      'Localized operational compliance, GTM engineering, and delivery hub management for organizations expanding into new regional markets.',
+      'Structured operational compliance, market enablement systems, and delivery coordination for organizations expanding into new regional markets.',
   },
 ];
 
 export const insightThemes = [
   {
-    tag: 'Operational Intelligence',
-    title: 'From fragmented workflows to integrated systems',
-    note: 'Practical frameworks for moving from ad-hoc operations to a structured execution cockpit.',
+    tag: 'Workflow Intelligence',
+    title: 'From fragmented workflows to integrated systems visibility',
+    note: 'Practical thinking on moving from ad-hoc operations to structured execution infrastructure with clear workflow coordination.',
   },
   {
-    tag: 'AI Systems',
-    title: 'Designing intelligent automation for real work',
-    note: 'How to move beyond AI hype and implement systems that actually reduce operational overhead.',
+    tag: 'Systems & AI',
+    title: 'Designing intelligent automation for real organizational work',
+    note: 'How to move beyond AI hype and implement systems that actually reduce friction, improve coordination, and support scalable execution.',
   },
   {
-    tag: 'Growth Engineering',
-    title: 'Repeatable funnels over one-off campaigns',
-    note: 'Building instrumented growth systems that provide visibility into revenue health and market reach.',
+    tag: 'Business Infrastructure',
+    title: 'Building the infrastructure layer that enables sustainable scale',
+    note: 'Thinking on foundational systems, governance structures, and implementation readiness that support long-term organizational growth.',
   },
 ];
-
-
