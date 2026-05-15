@@ -1,239 +1,92 @@
 export const serviceTracks = [
   {
     id: 'strategy',
-    title: 'Strategy & Operations',
+    label: 'Operational & Strategic Consulting',
     description:
-      'We pair technology consulting with rigorous operating discipline to help leadership teams turn strategy into execution. Every engagement ends with measurable outcomes, clear ownership, and an operating cadence you can sustain.',
-    services: [
-      {
-        title: 'Business & Innovation Consulting',
-        description:
-          'Board-ready strategy sprints that align markets, models, and technology investments. We translate ideas into execution roadmaps, investment cases, and measurable OKRs for founders, SMEs, and enterprise units.',
-        outcomes: [
-          'Commercial and product strategy grounded in market realities',
-          'Crisp investment cases, GTM playbooks, and governance rituals',
-          'Cross-functional alignment between business, engineering, and finance',
-        ],
-      },
-      {
-        title: 'Digital Transformation Leadership',
-        description:
-          'End-to-end modernization programs covering process mapping, data models, cloud migration, and change management. We stay hands-on from diagnostic to rollout to make sure adoption sticks.',
-        outcomes: [
-          'Current-state assessment and future-state operating blueprint',
-          'Prioritized transformation backlog tied to business KPIs',
-          'Embedded change management and enablement assets',
-        ],
-      },
-      {
-        title: 'Operating Model & PMO',
-        description:
-          'Execution offices that keep products, engineering, and growth workstreams aligned. We set up governance, instrumentation, and review rhythms so leadership gets signal without the noise.',
-        outcomes: [
-          'Multi-track program management with clear accountability',
-          'Real-time health reports and executive-ready dashboards',
-          'Playbooks for onboarding teams and partners quickly',
-        ],
-      },
-    ],
+      'Structured operational analysis, strategic positioning, and execution frameworks designed to reduce complexity and accelerate measurable outcomes.',
   },
   {
     id: 'tech',
-    title: 'Technology & AI',
+    label: 'Technology Systems & Infrastructure',
     description:
-      'Full-stack engineering capabilities across AI, automation, web, mobile, and enterprise platforms. We are an operator-first team that prototypes quickly, hardens architecture, and ships reliable systems.',
-    services: [
-      {
-        title: 'AI & Machine Learning Systems',
-        description:
-          'Custom NLP, vision, forecasting, and agentic workflows built on modern AI stacks. We design safe data pipelines, model evaluation loops, and human-in-the-loop operations for regulated industries.',
-        outcomes: [
-          'Use-case discovery with ROI modeling and success metrics',
-          'Production-ready ML pipelines, monitoring, and governance',
-          'Enablement for product, ops, and compliance teams',
-        ],
-      },
-      {
-        title: 'Product & SaaS Engineering',
-        description:
-          'Design and build web, mobile, and platform products with modular architecture, CI/CD, and observability baked in. Ideal for SaaS, marketplaces, and internal tools.',
-        outcomes: [
-          'UX, APIs, and data contracts defined up front',
-          'Secure, scalable builds using React, Node, and modern cloud',
-          'Technical documentation and handover kits for in-house teams',
-        ],
-      },
-      {
-        title: 'Automation & Workflow Systems',
-        description:
-          'Hyperautomation using custom code plus platforms like n8n, Zapier, Dynamics 365, and bespoke integration layers to remove manual effort across sales, finance, support, and operations.',
-        outcomes: [
-          'Process discovery with automation heatmaps and ROI tracking',
-          'Bots, integrations, and orchestration logic with audit trails',
-          'Runbooks for maintenance, exception handling, and scaling',
-        ],
-      },
-      {
-        title: 'Enterprise Platforms & ERP',
-        description:
-          'Implementation and optimization of Microsoft Dynamics, Business Central, and adjacent ERP/CRM stacks. We configure modules, extend workflows, and integrate custom services securely.',
-        outcomes: [
-          'Module-by-module rollout strategy tied to business readiness',
-          'Custom connectors, reporting packs, and admin training',
-          'SLA-backed support with proactive optimization',
-        ],
-      },
-    ],
+      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that turn strategic roadmaps into reliable operational tools.',
   },
   {
     id: 'rd',
-    title: 'R&D & Engineering',
+    label: 'Operational Implementation & R&D',
     description:
-      'From lab to launch, we combine mechanical design, prototyping, and software engineering to validate new products. Hardware, embedded, and digital teams operate as one unit with us.',
-    services: [
-      {
-        title: 'R&D and Product Innovation Labs',
-        description:
-          'Cross-disciplinary pods that explore new products, test GTM hypotheses, and run rapid experimentation cycles to de-risk investments.',
-        outcomes: [
-          'Prototyping roadmap with research questions and success metrics',
-          'Hardware-software validation, fabrication, and testing support',
-          'Investor-ready documentation and compliance prep',
-        ],
-      },
-      {
-        title: 'Mechanical Design & Simulation',
-        description:
-          'CAD, FEA, CFD, and rapid prototyping services for manufacturing, mobility, and industrial automation teams needing deep engineering rigor.',
-        outcomes: [
-          'Parametric CAD and digital twins with revision control',
-          'Simulation reports that feed directly into production',
-          'Supplier-ready drawings, BOMs, and quality checklists',
-        ],
-      },
-      {
-        title: 'Prototype-to-Production Support',
-        description:
-          'Bridge the gap between MVP and scalable production with process design, vendor management, and quality systems.',
-        outcomes: [
-          'Pilot builds with instrumentation and telemetry',
-          'Supply-chain alignment and partner onboarding',
-          'SOPs and training material for manufacturing teams',
-        ],
-      },
-    ],
+      'Specialized engineering, hardware-software integration, and product R&D that convert technical research into operational reality.',
   },
   {
     id: 'growth',
-    title: 'Creative & Growth Systems',
+    label: 'Growth Systems & Market Enablement',
     description:
-      'Brand, experience, and revenue systems built to convert, anchored in data, experimentation, and smart automation rather than campaign noise.',
-    services: [
-      {
-        title: 'Brand, Product, & Experience Design',
-        description:
-          'UI/UX, design systems, and brand identity work that keeps products consistent across touchpoints and accelerates design-to-dev handoffs.',
-        outcomes: [
-          'Component libraries and design tokens ready for dev teams',
-          'User research translated into flows and prototypes',
-          'Brand playbooks with usage guidelines and templates',
-        ],
-      },
-      {
-        title: 'Content, SEO, & Thought Leadership',
-        description:
-          'Editorial systems for founders and teams wanting authority in technology consulting, AI, and product engineering niches.',
-        outcomes: [
-          'Topic maps, keyword clusters, and semantic briefs',
-          'On-page + technical SEO improvements with measurement plans',
-          'Content operations playbooks and automation',
-        ],
-      },
-      {
-        title: 'Growth Marketing & Revenue Enablement',
-        description:
-          'Lifecycle marketing, CRM, and funnel optimization powered by experimentation frameworks and clean data.',
-        outcomes: [
-          'Acquisition, activation, and retention journeys with KPIs',
-          'Attribution-ready dashboards and RevOps automations',
-          'Sales collateral, demo flows, and enablement kits',
-        ],
-      },
-    ],
+      'Structured market access, growth engineering, and strategic partnership planning that support long-term domain authority and scaling.',
   },
 ];
 
 export const capabilityHighlights = [
   {
-    title: 'Strategy & Operations',
-    copy: 'Board-level clarity with execution muscle. We translate ambition into operating cadence, KPIs, and accountable workstreams.',
+    title: 'Operational Strategy',
+    copy: 'Structural maturity for scaling organizations. We translate operational complexity into clear execution cadence and measurable outcomes.',
     link: '/services#strategy',
   },
   {
-    title: 'Technology & AI',
-    copy: 'AI, automation, and software engineering delivered by operators who build with security, scale, and maintainability in mind.',
+    title: 'Technology Systems',
+    copy: 'AI-assisted systems and scalable infrastructure built by operators who prioritize security, reliability, and long-term maintainability.',
     link: '/services#tech',
   },
   {
-    title: 'R&D & Engineering',
-    copy: 'Mechanical, digital, and product engineering working together to push prototypes into real manufacturing and deployment.',
+    title: 'Operational R&D',
+    copy: 'Engineering prototypes and hardware-software integration that bridge the gap between technical research and real-world deployment.',
     link: '/services#rd',
   },
   {
-    title: 'Creative & Growth Systems',
-    copy: 'Design, content, and revenue systems that compound. Less campaign noise, more predictable pipeline and customer experience.',
+    title: 'Growth Systems',
+    copy: 'Market enablement and partnership frameworks designed to build predictable revenue pipeline and organizational domain authority.',
     link: '/services#growth',
   },
 ];
 
 export const clientProfiles = [
   {
-    label: 'Founders & Early-Stage Teams',
+    label: 'Startups & Scale-ups',
     description:
-      'Hands-on product, engineering, and GTM support for ambitious teams that need senior operators before they can hire full-time.',
+      'Embedded operational support for teams needing senior systems expertise to build delegable processes and technical foundations.',
   },
   {
     label: 'SMEs & Family Enterprises',
     description:
-      'Digitize operations, modernize ERP, and implement growth systems without disrupting core business momentum.',
+      'Modernizing legacy operations, ERP integration, and implementing growth systems to ensure long-term generational continuity.',
   },
   {
-    label: 'Engineering & R&D Organizations',
+    label: 'R&D & Engineering Units',
     description:
-      'External pod for rapid prototyping, simulations, and production support that plugs directly into in-house teams.',
+      'External execution pods for rapid prototyping, CAD simulation, and hardware validation that integrate with in-house engineering.',
   },
   {
-    label: 'Product & SaaS Teams',
+    label: 'Global Teams & Market Entrants',
     description:
-      'Ship new modules faster with dedicated squads handling UX, AI, automation, and lifecycle marketing.',
-  },
-  {
-    label: 'Institutions & Innovation Programs',
-    description:
-      'Co-create labs, incubators, and venture programs with governance, tooling, and expert operators on tap.',
-  },
-  {
-    label: 'Global Teams Entering India',
-    description:
-      'Local product, compliance, and GTM expertise for companies expanding into India or building India-based delivery hubs.',
+      'Localized operational compliance, GTM engineering, and delivery hub management for organizations expanding into new regional markets.',
   },
 ];
 
 export const insightThemes = [
   {
-    tag: 'AI & Automation',
-    title: 'From manual workflows to operational AI systems',
-    note: 'Practical frameworks to move from proof-of-concept to scaled automation safely.',
+    tag: 'Operational Intelligence',
+    title: 'From fragmented workflows to integrated systems',
+    note: 'Practical frameworks for moving from ad-hoc operations to a structured execution cockpit.',
   },
   {
-    tag: 'Operations',
-    title: 'Designing processes people actually follow',
-    note: 'Instrumented operating models, not slideware. Templates shipping soon.',
+    tag: 'AI Systems',
+    title: 'Designing intelligent automation for real work',
+    note: 'How to move beyond AI hype and implement systems that actually reduce operational overhead.',
   },
   {
-    tag: 'Growth Systems',
-    title: 'Repeatable growth engines over one-off campaigns',
-    note: 'Experiments, tooling stacks, and RevOps automations launching shortly.',
+    tag: 'Growth Engineering',
+    title: 'Repeatable funnels over one-off campaigns',
+    note: 'Building instrumented growth systems that provide visibility into revenue health and market reach.',
   },
 ];
+
 

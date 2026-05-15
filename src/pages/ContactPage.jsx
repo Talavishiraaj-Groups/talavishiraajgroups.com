@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaCheck } from 'react-icons/fa';
-import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function ContactPage() {
   const [form, setForm] = useState({

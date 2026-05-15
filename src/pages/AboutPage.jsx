@@ -38,7 +38,7 @@ export default function AboutPage() {
           Implementation-Forward.
         </h1>
         <Lead>
-          Talavishiraaj Groups is an operational systems organization. we prioritize research depth, 
+          Talavishiraaj Groups is an operational systems organization. We prioritize research depth, 
           operational intelligence, and execution capability to build infrastructure that scales. 
           Our approach combines strategic maturity with technology systems to deliver measurable 
           operational outcomes.
@@ -181,7 +181,7 @@ export default function AboutPage() {
         {/* CALL TO ACTION */}
         <section className="py-24 text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-semibold text-black">Ready to Initiate Engagement?</h2>
-          <Lead className="mx-auto">
+          <Lead>
             To discuss a strategic partnership or technical evaluation, initiate a consultation request. 
             We respond with clear next steps and a structured engagement plan.
           </Lead>

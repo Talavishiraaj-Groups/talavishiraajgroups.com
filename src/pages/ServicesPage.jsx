@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { serviceCategories, servicesMetaDescription } from '../data/servicesData';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
