@@ -144,7 +144,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl">
             <div className="flex items-start gap-8">
               <img
-                src="/aifaceswap-output.png"
+                src="/hero-bg.jpg"
                 alt="Dhiraj T H"
                 className="w-32 h-32 rounded-2xl object-cover border border-border bg-muted grayscale hover:grayscale-0 transition-all duration-500"
               />
