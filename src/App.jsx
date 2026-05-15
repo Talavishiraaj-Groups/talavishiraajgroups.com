@@ -12,7 +12,11 @@ import AboutPage from './pages/AboutPage';
 import PartnershipsPage from './pages/PartnershipsPage';
 import ContactPage from './pages/ContactPage';
 import CommunityPage from './pages/CommunityPage';
-import ProductsPage from './pages/ProductsPage';
+import SystemsPage from './pages/SystemsPage';
+import RefundPolicyPage from './pages/RefundPolicyPage';
+import DeliveryPolicyPage from './pages/DeliveryPolicyPage';
+import RiskMitigationPage from './pages/RiskMitigationPage';
+import DataHandlingPage from './pages/DataHandlingPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import IpPolicyPage from './pages/IpPolicyPage';
@@ -36,16 +40,21 @@ function App() {
                 <main className="pt-20">
                   <Routes>
                     <Route path="/" element={<LandingPage />} />
-                    <Route path="/services" element={<ServicesPage />} />
                     <Route path="/about" element={<AboutPage />} />
-                    <Route path="/technology" element={<TechnologyPage />} />
+                    <Route path="/services" element={<ServicesPage />} />
+                    <Route path="/systems" element={<SystemsPage />} />
                     <Route path="/partnerships" element={<PartnershipsPage />} />
                     <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/community" element={<CommunityPage />} />
-                    <Route path="/products" element={<ProductsPage />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                     <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/refund-policy" element={<RefundPolicyPage />} />
+                    <Route path="/delivery-policy" element={<DeliveryPolicyPage />} />
+                    <Route path="/risk-mitigation" element={<RiskMitigationPage />} />
+                    <Route path="/data-handling" element={<DataHandlingPage />} />
                     <Route path="/ip-policy" element={<IpPolicyPage />} />
+                    {/* Secondary pages */}
+                    <Route path="/technology" element={<TechnologyPage />} />
+                    <Route path="/community" element={<CommunityPage />} />
                     <Route path="/case-studies" element={<CaseStudiesPage />} />
                   </Routes>
                 </main>

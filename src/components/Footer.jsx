@@ -7,30 +7,32 @@ const linkGroups = [
     title: 'Company',
     items: [
       { label: 'Home', to: '/' },
-      { label: 'Services', to: '/services' },
       { label: 'About', to: '/about' },
+      { label: 'Services', to: '/services' },
+      { label: 'Systems', to: '/systems' },
       { label: 'Partnerships', to: '/partnerships' },
       { label: 'Contact', to: '/contact' },
-      { label: 'Community', to: '/community' },
-      { label: 'Products', to: '/products' },
-      { label: 'Case Studies', to: '/case-studies' },
     ],
   },
   {
-    title: 'Capabilities',
-    items: [
-      { label: 'Strategy and Operations', to: '/services#strategy' },
-      { label: 'Technology and AI', to: '/services#tech' },
-      { label: 'R & D and Engineering', to: '/services#rd' },
-      { label: 'Creative and Growth Systems', to: '/services#growth' },
-    ],
-  },
-  {
-    title: 'Policies',
+    title: 'Governance & Legal',
     items: [
       { label: 'Privacy Policy', to: '/privacy-policy' },
-      { label: 'Terms of Service', to: '/terms' },
-      { label: 'IP Policy', to: '/ip-policy' },
+      { label: 'Terms & Conditions', to: '/terms' },
+      { label: 'Refund Policy', to: '/refund-policy' },
+      { label: 'Delivery Policy', to: '/delivery-policy' },
+      { label: 'Risk & Mitigation Framework', to: '/risk-mitigation' },
+      { label: 'Confidentiality & Data Handling', to: '/data-handling' },
+    ],
+  },
+  {
+    title: 'Research & Insights',
+    items: [
+      { label: 'Operational Insights', to: '/insights#operational' },
+      { label: 'Research Articles', to: '/insights#research' },
+      { label: 'Workflow Intelligence', to: '/insights#workflow' },
+      { label: 'AI & Systems Articles', to: '/insights#ai' },
+      { label: 'Operational Scaling Content', to: '/insights#scaling' },
     ],
   },
 ];

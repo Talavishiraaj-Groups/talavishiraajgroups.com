@@ -27,243 +27,176 @@ function Bullet({ children }) {
   );
 }
 
-export default function AboutPageComplete() {
+export default function AboutPage() {
   return (
     <div className="bg-white text-primary">
-      {/* HERO / WHO YOU ARE */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">About</p>
-
-        <h1 className="text-4xl md:text-5xl font-bold text-black">Talavishiraaj Groups</h1>
-
+      {/* HERO / ORGANIZATIONAL IDENTITY */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 space-y-6">
+        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Organizational Identity</p>
+        <h1 className="text-4xl md:text-6xl font-semibold text-black leading-tight">
+          Research-Led. <br />
+          Implementation-Forward.
+        </h1>
         <Lead>
-          Talavishiraaj Groups is an engineering and innovation organisation that designs, prototypes,
-          and hardens internal platforms, automation, and product grade solutions. We prioritise practical
-          outcomes, production readiness, and operational reliability.
+          Talavishiraaj Groups is an operational systems organization. we prioritize research depth, 
+          operational intelligence, and execution capability to build infrastructure that scales. 
+          Our approach combines strategic maturity with technology systems to deliver measurable 
+          operational outcomes.
         </Lead>
 
         <div className="flex gap-3">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center rounded-lg bg-black text-white px-6 py-3 text-sm font-medium hover:bg-gray-900 transition-colors"
+            className="inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3 text-sm font-medium hover:bg-gray-900 transition-colors"
           >
-            Contact
+            Initiate Engagement
           </Link>
-
           <Link
             to="/services"
-            className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-muted transition"
+            className="inline-flex items-center justify-center rounded-full border border-border px-8 py-3 text-sm font-medium hover:bg-muted transition"
           >
-            View services
-          </Link>
-
-          <Link
-            to="/community"
-            className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-muted transition"
-          >
-            Join community
+            Operational Capabilities
           </Link>
         </div>
       </section>
 
       <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <hr className="border-border" />
 
-        <hr className="border-border my-8" />
-
-        {/* 2. WHAT YOU DO */}
-        <section className="py-8 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">What we do</h2>
-
-          <Lead>
-            We convert validated ideas into reliable systems. Our work blends strategy, software and hardware
-            engineering, and focused R and D to build internal platforms that reduce manual effort, improve
-            decision quality, and scale operations.
-          </Lead>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-sm font-semibold text-black mb-2">The problem we solve</h3>
-              <p className="text-sm text-gray-700">
-                We address operational complexity where manual work, fragile processes, or unclear signals
-                create high cost or risk. We build systems that are measurable and maintainable.
-              </p>
+        {/* MISSION & PHILOSOPHY */}
+        <section className="py-16 md:py-24 grid md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Philosophy</p>
+            <h2 className="text-3xl font-semibold text-black">Structure Before Scale.</h2>
+            <Lead>
+              We believe that operational maturity is a prerequisite for sustainable growth. 
+              Our methodology is anchored in three core principles:
+            </Lead>
+          </div>
+          <div className="space-y-8">
+            <div className="flex gap-6">
+              <span className="text-2xl font-light text-gray-300">01</span>
+              <div>
+                <h3 className="font-semibold text-black mb-1">Research Before Execution</h3>
+                <p className="text-sm text-gray-600">We prioritize deep understanding of the operational landscape before initiating implementation.</p>
+              </div>
             </div>
-
-            <div>
-              <h3 className="text-sm font-semibold text-black mb-2">Who we help</h3>
-              <p className="text-sm text-gray-700">
-                Founders, product and engineering teams, and organisations seeking to automate workflows,
-                improve decision intelligence, or prototype hardware software solutions.
-              </p>
+            <div className="flex gap-6">
+              <span className="text-2xl font-light text-gray-300">02</span>
+              <div>
+                <h3 className="font-semibold text-black mb-1">Diagnose Before Prescription</h3>
+                <p className="text-sm text-gray-600">Every solution begins with a rigorous diagnostic phase to identify real bottlenecks.</p>
+              </div>
+            </div>
+            <div className="flex gap-6">
+              <span className="text-2xl font-light text-gray-300">03</span>
+              <div>
+                <h3 className="font-semibold text-black mb-1">Structure Before Scale</h3>
+                <p className="text-sm text-gray-600">We build stable operational foundations that allow for efficient and reliable scalability.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        <hr className="border-border my-8" />
+        <hr className="border-border" />
 
-        {/* 3. YOUR STORY */}
-        <section className="py-8 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">Our story</h2>
-
-          <Lead>
-            We started from a desire to make engineering and research deliver practical value. Early work
-            focused on internal prototypes to test feasibility. Over time we refined processes that moved
-            prototypes toward production readiness while keeping risk low.
-          </Lead>
-
-          <ul className="space-y-3">
-            <Bullet>How we started - a small team focused on solving hard operational problems.</Bullet>
-            <Bullet>Why we started - to bridge the gap between research and reliable operations.</Bullet>
-            <Bullet>Milestones - validated prototypes and repeatable processes that shorten time to production.</Bullet>
-          </ul>
+        {/* OPERATIONAL POSITIONING */}
+        <section className="py-16 md:py-24 space-y-12">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Operational Mindset</p>
+            <h2 className="text-3xl font-semibold text-black">Execution-Driven Intelligence.</h2>
+            <p className="text-base text-gray-700">
+              We operate at the intersection of business strategy, AI-assisted automation, and technology 
+              infrastructure. Our goal is to provide organizational clarity and workflow visibility through 
+              structured systems.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { title: 'Workflow Optimization', desc: 'Eliminating inefficiencies through structured analysis and automation.' },
+              { title: 'Systems Integration', desc: 'Creating cohesive technology environments that support seamless execution.' },
+              { title: 'Operational Visibility', desc: 'Providing clear insights into organizational performance and bottlenecks.' },
+              { title: 'AI-Enabled Systems', desc: 'Leveraging intelligent automation to augment operational capacity.' },
+              { title: 'Scalable Infrastructure', desc: 'Building the foundational systems required for long-term growth.' },
+              { title: 'Execution Alignment', desc: 'Ensuring that technology and operations are aligned with strategic goals.' },
+            ].map((item, i) => (
+              <div key={i} className="border border-border rounded-2xl p-6 bg-muted/30">
+                <h3 className="font-semibold text-black mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <hr className="border-border my-8" />
+        <hr className="border-border" />
 
-        {/* 4. MISSION & VALUES */}
-        <section className="py-8 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">Mission & values</h2>
+        {/* LEADERSHIP & OPERATIONAL TEAM */}
+        <section className="py-16 md:py-24 space-y-12">
+          <div className="max-w-3xl space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Leadership</p>
+            <h2 className="text-3xl font-semibold text-black">Leadership & Operational Team</h2>
+            <p className="text-base text-gray-700">
+              Our multidisciplinary team brings together expertise in operations, technology systems, 
+              and strategic research to support enterprise-grade execution.
+            </p>
+          </div>
 
-          <Lead>
-            Our mission is to remove barriers to innovation by turning validated ideas into dependable systems.
-            We prioritise results, clarity, and lasting value.
-          </Lead>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl">
+            <div className="flex items-start gap-8">
+              <img
+                src="/aifaceswap-output.png"
+                alt="Dhiraj T H"
+                className="w-32 h-32 rounded-2xl object-cover border border-border bg-muted grayscale hover:grayscale-0 transition-all duration-500"
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-black">Dhiraj T H</h3>
+                <p className="text-sm text-gray-500 mb-4 uppercase tracking-widest font-medium">Founder & Strategy</p>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Directs organizational vision, strategic research, and solution architecture. 
+                  Dhiraj ensures every engagement remains aligned with long-term execution goals.
+                </p>
+              </div>
+            </div>
 
-          <ul className="space-y-3">
-            <Bullet>Quality - durable and maintainable engineering outputs.</Bullet>
-            <Bullet>Innovation - practical research that leads to usable products and systems.</Bullet>
-            <Bullet>Trust - privacy and security are built in by design.</Bullet>
-          </ul>
+            <div className="flex items-start gap-8">
+              <img
+                src="/CTO.jpeg"
+                alt="Yatharth Chauhan"
+                className="w-32 h-32 rounded-2xl object-cover border border-border bg-muted grayscale hover:grayscale-0 transition-all duration-500"
+              />
+              <div>
+                <h3 className="text-xl font-semibold text-black">Yatharth Chauhan</h3>
+                <p className="text-sm text-gray-500 mb-4 uppercase tracking-widest font-medium">CTO & Systems Architecture</p>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  Leads technology infrastructure, engineering standards, and system scalability. 
+                  Yatharth oversees the technical delivery of AI and automation systems.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <hr className="border-border my-8" />
+        <hr className="border-border" />
 
-      {/* Team Section */}
-<section className="py-16 border-t border-border">
-  <h2 className="text-2xl md:text-3xl font-semibold text-black mb-6">
-    Leadership
-  </h2>
-
-  <p className="text-base text-gray-700 max-w-3xl mb-10">
-    Talavishiraaj Groups is led by a focused leadership team responsible for
-    strategy, engineering direction, and delivery quality. Leadership remains
-    directly involved in solution design and execution.
-  </p>
-
-  <div className="grid md:grid-cols-2 gap-10 max-w-4xl">
-    {/* Founder */}
-    <div className="flex items-start gap-6">
-      <img
-        src="/aifaceswap-output.png"
-        alt="Founder of Talavishiraaj Groups"
-        className="w-28 h-28 rounded-xl object-cover border border-border"
-      />
-
-      <div>
-        <h3 className="text-lg font-semibold text-black">
-          Dhiraj T H
-        </h3>
-        <p className="text-sm text-gray-600 mb-2">
-          Founder
-        </p>
-        <p className="text-sm text-gray-700">
-          Responsible for overall vision, engineering strategy, and solution
-          architecture. Actively involved in research direction and delivery
-          oversight.
-        </p>
-      </div>
-    </div>
-
-    {/* CTO */}
-    <div className="flex items-start gap-6">
-      <img
-        src="/CTO.jpeg"
-        alt="CTO of Talavishiraaj Groups"
-        className="w-28 h-28 rounded-xl object-cover border border-border"
-      />
-
-      <div>
-        <h3 className="text-lg font-semibold text-black">
-          Yatharth Chauhan
-        </h3>
-        <p className="text-sm text-gray-600 mb-2">
-          CTO
-        </p>
-        <p className="text-sm text-gray-700">
-          Leads technology architecture, engineering standards, and system
-          scalability across all platforms and internal products.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-        {/* 5. WHY CHOOSE YOU */}
-        <section className="py-8 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">Why choose Talavishiraaj Groups</h2>
-
-          <Lead>
-            We combine strategy, research, and engineering into one execution model so organisations can move
-            from idea to production with lower risk and clearer outcomes.
+        {/* CALL TO ACTION */}
+        <section className="py-24 text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-black">Ready to Initiate Engagement?</h2>
+          <Lead className="mx-auto">
+            To discuss a strategic partnership or technical evaluation, initiate a consultation request. 
+            We respond with clear next steps and a structured engagement plan.
           </Lead>
-
-          <ul className="space-y-3">
-            <Bullet>End to end delivery from scoping to production engineering.</Bullet>
-            <Bullet>Outcome oriented we define and measure success up front.</Bullet>
-            <Bullet>Repeatable prototyping that reduces technical and business risk.</Bullet>
-            <Bullet>Practical AI and automation expertise to make systems operate reliably.</Bullet>
-          </ul>
-        </section>
-
-        <hr className="border-border my-8" />
-
-        {/* 6. GOVERNANCE (connects to enterprise concerns) */}
-        <section className="py-8 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black">Governance</h2>
-
-          <Lead>
-            We design projects with privacy and security in mind. Every engagement includes a basic risk
-            assessment and clear data ownership guidance. For enterprise partnerships we support compliance
-            checks and documented controls.
-          </Lead>
-
-          <Small>
-            We recommend early alignment on data ownership, compliance, and maintenance responsibilities to
-            ensure a smooth transition from prototype to production.
-          </Small>
-        </section>
-
-        <hr className="border-border my-8" />
-
-        {/* 7. CALL TO ACTION */}
-        <section className="py-8 mb-20">
-          <h2 className="text-2xl font-semibold text-black mb-4">Next steps</h2>
-
-          <Lead>
-            To discuss a pilot, partnership, or technical evaluation, share a short brief and we will respond
-            with clear next steps and a proposed engagement plan.
-          </Lead>
-
-          <div className="flex gap-3">
+          <div className="flex justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-lg bg-black text-white px-6 py-3 text-sm font-medium hover:bg-gray-900 transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-black text-white px-10 py-4 text-sm font-medium hover:bg-gray-900 transition-colors"
             >
-              Contact us
+              Contact Us
             </Link>
-
             <Link
-              to="/services"
-              className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-muted transition"
+              to="/systems"
+              className="inline-flex items-center justify-center rounded-full border border-border px-10 py-4 text-sm font-medium hover:bg-muted transition"
             >
-              View services
-            </Link>
-
-            <Link
-              to="/community"
-              className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 text-sm font-medium hover:bg-muted transition"
-            >
-              Join community
+              Explore Systems
             </Link>
           </div>
         </section>

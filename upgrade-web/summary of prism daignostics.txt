@@ -1,0 +1,306 @@
+# Prism Diagnostic — Revision & Change Summary (v2 Updates)
+
+Please implement the following updates and refinements across the Prism Diagnostic product definition document.
+
+---
+
+# 1. Regional Sales Coverage Update
+
+Remove the current regional allocation related to:
+
+* Nigeria
+* Ghana
+* East Africa
+* Rwanda cluster
+* Colombia / Spanish LatAm
+
+The primary target regions for launch and active sales focus will now be:
+
+* United States
+* United Kingdom
+* UAE / GCC
+* Europe
+* India
+
+The document should reflect a more focused regional GTM strategy aligned with operational scalability and delivery concentration.
+
+Regional positioning should sound premium, operationally controlled, and execution-focused rather than globally scattered.
+
+---
+
+# 2. Headcount Range Update
+
+Update the ICP and qualification sections where headcount is currently mentioned.
+
+Current:
+
+* 10–40 employees
+
+Revised:
+
+* 10–50 employees
+
+This change should apply consistently across:
+
+* ICP definition
+* Qualification criteria
+* Target customer sections
+
+---
+
+# 3. Payment Infrastructure Update
+
+Replace the fragmented regional payment infrastructure references with a simplified operational structure.
+
+Primary payment infrastructure will now be:
+
+* Skydo
+
+Reason:
+
+* Better global operational management
+* Cleaner international invoicing
+* Easier accounting and reconciliation
+* Simplified multi-region payment handling
+
+Suggested positioning:
+“Global payments are processed primarily through Skydo for operational simplicity, international invoicing efficiency, and multi-region transaction management. Alternative payment methods may be used where regionally required.”
+
+---
+
+# 4. Recorded Delivery Asset Update
+
+Remove the Loom walkthrough mention from the deliverables section.
+
+Instead:
+
+* Consultation/readout meetings will be recorded through Google Meet
+* Final delivery will include:
+
+  * PDF report
+  * recorded session
+  * supporting assets
+  * packaged together inside a structured ZIP delivery package
+
+Suggested replacement wording:
+“Recorded readout session (Google Meet recording) packaged alongside the final report deck and delivery assets in a structured ZIP delivery package.”
+
+This should sound more operationally mature and enterprise-ready.
+
+---
+
+# 5. Delivery Timeline Update
+
+For consultation/diagnostic engagements ONLY:
+
+Update delivery timeline from:
+
+* 10–15 business days
+
+To:
+
+* 10–13 business days maximum
+
+Suggested wording:
+“The engagement is typically completed within 10–13 [ 10-12 ] business days depending on stakeholder responsiveness and scheduling availability.”
+
+This change applies ONLY to consultation/diagnostic delivery timelines and not implementation or follow-on services.
+
+---
+
+# 6. Interview Structure Update
+
+Update stakeholder interview count from:
+
+* 4–6 interviews
+
+To:
+
+* 3–4 interviews
+
+This should be updated consistently across:
+
+* scope section
+* delivery section
+* operational workflow references
+
+---
+
+# 7. Pre-Consultation Intake Form Addition
+
+Add a structured pre-consultation intake stage before the interview process begins.
+
+The pre-consultation form should:
+
+* collect operational baseline information
+* identify current tools and systems
+* identify major pain points
+* gather workflow context
+* improve interview efficiency
+* support better diagnostic preparation
+
+This should be positioned as:
+
+* part of the structured operational assessment methodology.
+
+---
+
+# 8. Consultant Scheduling Clarification
+
+Consultants may attend calls flexibly based on scheduled client timing and regional overlap requirements.
+
+Suggested wording:
+“Consultation sessions may be scheduled flexibly across global time zones depending on client availability and consultant scheduling alignment.”
+
+This protects operational scalability and avoids burnout-oriented wording.
+
+---
+
+# 9. Refund Policy Revision
+
+## Consultation Engagements
+
+Consultation sessions are:
+
+* non-refundable once scheduled
+* but may be rescheduled with prior notice
+
+Suggested wording:
+“Consultation engagements are non-refundable once scheduled, but may be rescheduled subject to scheduling availability and prior notice.”
+
+---
+
+## Service / Implementation Engagements
+
+Refund structure should now follow a stage-based operational model.
+
+### Before Project Assembly / Work Initiation
+
+Clients are eligible for up to a 90% refund before:
+
+* project assembly
+* internal planning
+* consultant allocation
+* or operational preparation begins
+
+The retained amount covers:
+
+* intermediary costs
+* payment processing fees
+* administrative allocation
+* onboarding overhead
+
+---
+
+### After Project Assembly Begins
+
+Refunds should be calculated according to project stage and completed work scope.
+
+Suggested stage-based structure:
+
+| Project Stage                           | Refund Eligibility  |
+| --------------------------------------- | ------------------- |
+| Before project assembly                 | Up to 90% refund    |
+| Discovery / onboarding initiated        | Up to 75% refund    |
+| Research & diagnostic phase active      | Up to 60% refund    |
+| Strategy / blueprint development active | Up to 40% refund    |
+| Implementation / execution initiated    | Case-by-case review |
+| Project substantially completed         | Non-refundable      |
+
+Also add:
+“Refund calculations account for consultant allocation, research time, operational planning, intermediary costs, completed work scope, and delivery-stage progression.”
+
+This should sound operationally structured and legally safer.
+
+---
+
+# 10. Delivery Quality Recovery & Negative Delivery Scorecard
+
+Add a dedicated internal delivery recovery and quality escalation framework.
+
+Purpose:
+
+* improve delivery governance
+* operationalize quality control
+* create corrective systems for weak engagements
+* maintain delivery consistency
+
+The framework should include:
+
+## Trigger Conditions
+
+A delivery review is triggered when:
+
+* client dissatisfaction is expressed
+* delivery quality concerns arise
+* communication breakdown occurs
+* implementation clarity is questioned
+* or delivery scores fall below threshold
+
+---
+
+## Review Categories
+
+### 1. Clarity Quality
+
+* Were findings actionable and specific?
+
+### 2. Diagnostic Accuracy
+
+* Was the real operational bottleneck correctly identified?
+
+### 3. Strategic Relevance
+
+* Did recommendations align with company maturity and operational readiness?
+
+### 4. Delivery Professionalism
+
+Evaluate:
+
+* responsiveness
+* communication
+* timeline adherence
+* presentation quality
+* stakeholder handling
+
+### 5. Actionability
+
+* Could the client realistically execute the recommendations?
+
+---
+
+## Recovery Actions
+
+Possible corrective actions:
+
+* clarification session
+* revised roadmap
+* supplemental consultation
+* delivery revision
+* partial service credit
+* internal delivery retraining
+
+This section should strengthen enterprise-grade operational credibility.
+
+---
+
+# 11. Additional Positioning Clarification
+
+The Prism Diagnostic should continue positioning itself as:
+
+* a structured operational intelligence diagnostic
+* not generic consulting
+* not software reselling
+* not AI hype consulting
+* and not a generic workflow audit
+
+The language throughout the document should reinforce:
+
+* operational intelligence
+* research-first diagnosis
+* execution-oriented recommendations
+* and structured commercial clarity.
+
+---
+
+Unit economics revisions will be shared separately and should not be modified until the updated model is provided.

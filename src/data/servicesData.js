@@ -1,202 +1,141 @@
 export const serviceCategories = [
   {
-    label: 'Strategy & Operations',
+    label: 'Operational & Strategic Consulting',
     id: 'strategy',
     description:
-      'Practical business strategy, operating model design, and execution plans that reduce risk and accelerate measurable outcomes.',
+      'Structured operational analysis, strategic positioning, and execution frameworks designed to reduce complexity and accelerate measurable outcomes.',
     services: [
-      {
-        title: 'Business Model Design & Validation',
-        description:
-          'Clarify value proposition, revenue models, and unit economics. Build realistic financial and operational assumptions for early-stage and scaling businesses.',
-        bullets: [
-          'MVP viability and feature prioritization',
-          'Revenue model testing and sensitivity analysis',
-          'Investor-ready positioning and pitch support',
-        ],
-      },
       {
         title: 'Operational Workflow Engineering',
         description:
-          'Design end-to-end processes and team workflows that reduce handoffs and increase throughput, with clear RACI and process documentation.',
+          'Designing end-to-end organizational processes and team workflows that reduce handoffs and increase throughput, supported by clear documentation.',
         bullets: [
-          'Process mapping and bottleneck resolution',
-          'SOP creation and handover materials',
-          'Operational KPIs and dashboards',
+          'Workflow mapping and bottleneck resolution',
+          'Standard Operating Procedure (SOP) design',
+          'Operational KPIs and visibility dashboards',
         ],
       },
       {
-        title: 'Go-to-Market & Growth Planning',
+        title: 'Strategic Positioning & Scaling',
         description:
-          'Practical GTM strategies focused on repeatable channels, early traction, and cost-efficient user acquisition for startups and SMEs.',
+          'Clarifying value propositions, unit economics, and operational readiness for startups and SMEs looking to scale predictably.',
         bullets: [
-          'Channel selection and pilot campaigns',
-          'Unit economics and CAC analysis',
-          'Growth roadmap and experiments backlog',
+          'Operational readiness assessments',
+          'Unit economics and sensitivity analysis',
+          'Strategic roadmap and execution sequencing',
         ],
       },
       {
-        title: 'Transformation & Change Management',
+        title: 'Governance & Risk Management',
         description:
-          'Organise people, tools, and governance for digital transformation so new systems are adopted and deliver ongoing value.',
+          'Implementing operational governance, data handling protocols, and risk mitigation frameworks for enterprise-grade compliance.',
         bullets: [
-          'Stakeholder alignment workshops',
-          'Change adoption plans and training',
+          'Operational risk assessment',
           'Governance and escalation playbooks',
+          'Data confidentiality and handling protocols',
         ],
       },
     ],
   },
 
   {
-    label: 'Technology & AI',
+    label: 'Technology Systems & Infrastructure',
     id: 'tech',
     description:
-      'End-to-end software engineering, AI, and automation services that turn product ideas into reliable, secure, and maintainable platforms.',
+      'End-to-end technology implementation, AI-assisted systems, and scalable infrastructure that turn strategic roadmaps into reliable operational tools.',
     services: [
       {
-        title: 'AI & Machine Learning Solutions',
+        title: 'AI & Operational Automation Systems',
         description:
-          'Design and deliver practical AI systems from data pipelines and prototype models to production deployments and monitoring.',
+          'Designing and delivering practical AI systems and intelligent automation to augment organizational capacity and reduce manual overhead.',
         bullets: [
-          'Use-case discovery and data readiness audits',
-          'Model training, evaluation, and deployment',
-          'Inference scaling, monitoring, and retraining plans',
+          'AI use-case discovery and systems audits',
+          'Intelligent workflow automation (RPA/AI)',
+          'Operational monitoring and alerting systems',
         ],
       },
       {
-        title: 'Custom Web & Mobile Development & CRMs & Softwares',
+        title: 'Structured Technology Solutions',
         description:
-          'Build product grade web and mobile applications with scalable architecture, CI/CD, and automated testing to reduce long-term technical debt.',
+          'Building production-grade web, mobile, and CRM systems with scalable architecture and automated testing to ensure long-term reliability.',
         bullets: [
-          'MVP to production engineering',
-          'Cross-platform mobile and responsive web',
-          'API-driven architecture and integration',
+          'Enterprise-ready CRM & ERP implementation',
+          'Scalable web and mobile system architecture',
+          'API-driven system integration and data flow',
         ],
       },
       {
-        title: 'Automation & Intelligent Workflows',
+        title: 'Data Systems & Infrastructure',
         description:
-          'Automate manual processes using RPA, serverless functions, and workflow orchestration to reduce operational cost and human error.',
+          'Creating secure data platforms and infrastructure for operational intelligence, including secure storage and privacy-first design.',
         bullets: [
-          'End-to-end workflow automation design',
-          'Integration with existing ERPs and CRMs',
-          'Operational monitoring and alerting',
-        ],
-      },
-      {
-        title: 'Data Engineering & Security',
-        description:
-          'Create secure data platforms for analytics and AI, including ETL pipelines, warehousing, access controls, and privacy-first design.',
-        bullets: [
-          'Data ingestion and transformation pipelines',
-          'Data governance and compliance checks',
-          'Secure storage and access controls',
+          'Operational data ingestion and ETL pipelines',
+          'Data governance and infrastructure security',
+          'Secure storage and multi-region data management',
         ],
       },
     ],
   },
 
   {
-    label: 'R&D & Engineering',
+    label: 'Operational Implementation & R&D',
     id: 'rd',
     description:
-      'Mechanical design, hardware-software integration, and product R&D services that convert prototypes into manufacturable products.',
+      'Specialized engineering, hardware-software integration, and product R&D that convert technical research into operational reality.',
     services: [
       {
-        title: 'Mechanical Design & CAD Simulation',
+        title: 'Mechanical Systems & R&D',
         description:
-          'End-to-end mechanical engineering including CAD design, FEA simulation, and design for manufacturability to reduce iteration cycles.',
+          'End-to-end mechanical engineering, prototyping, and CAD simulation to validate physical operational systems and product components.',
         bullets: [
-          'CAD modelling and version control',
-          'Finite element analysis and load testing',
-          'Design for manufacturing and assembly (DFMA)',
+          'CAD modeling and simulation for R&D',
+          'Design for Manufacturability (DFM) audits',
+          'Rapid prototyping and hardware validation',
         ],
       },
       {
-        title: 'Product R&D & Prototyping',
+        title: 'IoT & Systems Integration',
         description:
-          'Rapid prototyping, iterative hardware testing, and product maturity planning to shorten time-to-prototype and validate real-world performance.',
+          'Designing and integrating embedded systems, sensor networks, and connectivity for real-time operational monitoring.',
         bullets: [
-          '3D printing and low-volume prototyping',
-          'Hardware validation and test rigs',
-          'Pilot production planning',
-        ],
-      },
-      {
-        title: 'Embedded Systems & IoT Integration',
-        description:
-          'Design and integration of embedded firmware, sensors, and connectivity with secure OTA updates and data telemetry for products.',
-        bullets: [
-          'Firmware development and testing',
-          'Sensor integration and calibration',
-          'Secure device provisioning and OTA',
-        ],
-      },
-      {
-        title: 'Industry Grade Testing & Compliance',
-        description:
-          'Testing plans and support for certification paths, environmental testing, and reliability engineering for commercial product launches.',
-        bullets: [
-          'Regulatory and safety test planning',
-          'Environmental and lifecycle testing',
-          'Failure mode analysis and mitigation',
+          'Firmware development and hardware testing',
+          'IoT sensor integration and data telemetry',
+          'Secure device provisioning and OTA updates',
         ],
       },
     ],
   },
 
   {
-    label: 'Creative & Growth Systems',
+    label: 'Growth Systems & Market Enablement',
     id: 'growth',
     description:
-      'Brand, user experience, content systems, and growth engineering that help convert traffic into repeatable customers.',
+      'Structured market access, growth engineering, and strategic partnership planning that support long-term domain authority and scaling.',
     services: [
       {
-        title: 'Brand Strategy & UI/UX Systems',
+        title: 'Growth Engineering & Market Access',
         description:
-          'Design cohesive brand systems and product UX that communicate trust, reduce friction, and increase conversion across platforms.',
+          'Building repeatable, instrumented funnels and market entry strategies using structured growth experiments and data analytics.',
         bullets: [
-          'Design systems and component libraries',
-          'User research and product UX flows',
-          'Brand identity, tone of voice, and assets',
+          'Growth experiment backlog and execution',
+          'Automated market enablement systems',
+          'Strategic GTM sequencing and implementation',
         ],
       },
       {
-        title: 'Content Strategy & SEO',
+        title: 'Strategic Partnership Systems',
         description:
-          'SEO-driven content planning and production that builds organic visibility and supports long-term domain authority.',
+          'Designing and implementing strategic partnership models and co-build frameworks to accelerate market reach and distribution.',
         bullets: [
-          'Keyword mapping and content calendars',
-          'Technical SEO audits and fixes',
-          'Content creation workflows and optimization',
-        ],
-      },
-      {
-        title: 'Digital Funnels & Marketing Automation',
-        description:
-          'Build repeatable, instrumented funnels using automation and analytics to scale acquisition and retention predictably.',
-        bullets: [
-          'Funnel design and conversion experiments',
-          'Email automation and lifecycle campaigns',
-          'Performance measurement and attribution',
-        ],
-      },
-      {
-        title: 'Partnerships & Business Development Support',
-        description:
-          'Strategic partnership planning, outreach playbooks, and co-build models to accelerate market access and distribution.',
-        bullets: [
-          'Partner identification and outreach sequences',
-          'Commercial models and revenue share templates',
-          'Joint go-to-market planning and governance',
+          'Ecosystem partner identification systems',
+          'Commercial model and co-build frameworks',
+          'Strategic alliance governance and planning',
         ],
       },
     ],
   },
 ];
 
-// Meta description for SEO
 export const servicesMetaDescription =
-  'Technology consulting, AI development, R&D services, product engineering, and digital transformation delivered by a single accountable partner. Explore our 16 services across Strategy, Technology, R&D, and Growth.';
+  'Research-led operational systems, technology infrastructure, AI-enabled automation, and growth systems delivered by Talavishiraaj Groups. Explore our structured operational capabilities.';
 

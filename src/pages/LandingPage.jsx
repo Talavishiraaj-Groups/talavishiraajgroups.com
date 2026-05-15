@@ -10,25 +10,25 @@ export default function LandingPage() {
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">Talavishiraaj Groups</p>
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight mb-6">
-            Innovation Engineered. Execution Guaranteed.
+            Operational Intelligence. Workflow Optimization. Structured Execution.
           </h1>
           <p className="text-base md:text-lg text-gray-600 mb-8">
-            Talavishiraaj Groups is a multi domain technology and innovation partner that designs, builds, and scales
-            intelligent systems for startups, SMEs, and global organisations by combining strategy, AI, product
-            engineering, R&amp;D, and growth into one execution layer.
+            Talavishiraaj Groups is a research-led operational systems organization. We design, build, and scale 
+            intelligent systems for enterprise-ready startups and SMEs by combining operational strategy, AI-assisted 
+            systems, and structured implementation into one execution layer.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              to="/services"
+              to="/systems"
               className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-6 py-3 text-sm font-medium hover:bg-graphite transition-colors"
             >
-              Explore what we do
+              Explore our systems
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-medium text-primary hover:bg-muted transition-colors"
             >
-              Talk to our team
+              Initiate engagement
             </Link>
           </div>
         </div>

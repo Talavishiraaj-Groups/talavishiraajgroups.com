@@ -4,12 +4,18 @@ module.exports = {
     extend: {
       colors: {
         primary: '#000000',
-        secondary: '#111111',
+        secondary: '#0a0a0a',
         accent: '#ffffff',
-        muted: '#f5f5f5',
-        border: '#e5e5e5',
-        graphite: '#1f1f1f',
-        slate: '#4a4a4a',
+        muted: '#f9f9f9',
+        border: '#eeeeee',
+        graphite: '#181818',
+        slate: '#404040',
+        charcoal: '#111111',
+        glass: 'rgba(255, 255, 255, 0.7)',
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
       },
     },
   },
