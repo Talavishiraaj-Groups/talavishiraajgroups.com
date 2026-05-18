@@ -15,6 +15,15 @@ const linkGroups = [
     ],
   },
   {
+    title: 'Capabilities',
+    items: [
+      { label: 'Strategic & Systems Consulting', to: '/services#strategy' },
+      { label: 'Technology Systems & Infrastructure', to: '/services#tech' },
+      { label: 'Implementation & Engineering', to: '/services#rd' },
+      { label: 'Growth Systems & Market Enablement', to: '/services#growth' },
+    ],
+  },
+  {
     title: 'Governance & Legal',
     items: [
       { label: 'Privacy Policy', to: '/privacy-policy' },
@@ -25,23 +34,13 @@ const linkGroups = [
       { label: 'Confidentiality & Data Handling', to: '/data-handling' },
     ],
   },
-  {
-    title: 'Research & Insights',
-    items: [
-      { label: 'Workflow Intelligence', to: '/insights#workflow' },
-      { label: 'Research Articles', to: '/insights#research' },
-      { label: 'Systems & AI Articles', to: '/insights#ai' },
-      { label: 'Business Infrastructure Insights', to: '/insights#infrastructure' },
-      { label: 'Scalability & Execution Content', to: '/insights#scaling' },
-    ],
-  },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-white text-primary">
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-10">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr_auto]">
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-2">
               <img src={logo} alt="Talavishiraaj Groups" className="h-8 w-auto" />
@@ -105,7 +104,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/talavishiraaj"
+                  href="https://twitter.com/talavishiraaj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-gray-600 hover:text-primary"
@@ -114,14 +113,12 @@ export default function Footer() {
                     aria-hidden="true"
                     className="h-4 w-4 mr-2 text-gray-600"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="17" cy="7" r="1" fill="currentColor" />
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.969l4.254 5.625L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
                   </svg>
-                  <span>Instagram</span>
+                  <span>Twitter / X</span>
                 </a>
               </li>
             </ul>

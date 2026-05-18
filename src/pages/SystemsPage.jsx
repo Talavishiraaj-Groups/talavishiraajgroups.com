@@ -31,9 +31,10 @@ export default function SystemsPage() {
   ];
 
   const futureSystemsPlaceholders = [
-    { title: 'Workflow Intelligence Platform', status: 'In Development', desc: 'A structured platform for real-time workflow visibility, systems monitoring, and execution coordination.' },
-    { title: 'AI Systems Infrastructure', status: 'In Development', desc: 'Intelligent automation and AI-assisted infrastructure for business process augmentation at scale.' },
-    { title: 'Business Infrastructure Dashboard', status: 'Coming Soon', desc: 'Centralized organizational visibility across systems, execution, and strategic alignment metrics.' },
+    { title: 'Prism Diagnostic' },
+    { title: 'Workflow Intelligence Platform' },
+    { title: 'AI Systems Infrastructure' },
+    { title: 'Business Infrastructure Dashboard' },
   ];
 
   return (
@@ -80,7 +81,7 @@ export default function SystemsPage() {
             <h2 className="text-3xl font-semibold text-black">Structured Workflow & Systems Intelligence.</h2>
             <p className="text-gray-700 leading-relaxed">
               The Prism Diagnostic is not generic consulting. It is a structured workflow intelligence engagement 
-              that provides visibility into the systems health of your organization. We assess before we prescribe — 
+              that provides visibility into the systems health of your organization. We assess before we prescribe,
               ensuring that every recommendation is grounded in structured observation and organizational reality.
             </p>
             <div className="space-y-4">
@@ -195,7 +196,7 @@ export default function SystemsPage() {
               </div>
               <h3 className="text-xl font-semibold">Engagement Profile</h3>
               <p className="text-sm text-gray-400">
-                Designed for organizations with <strong>10–50 employees</strong> seeking 
+                Designed for organizations seeking 
                 systems clarity, workflow visibility, and structured execution readiness.
               </p>
               <div className="pt-6 border-t border-gray-800 flex justify-between text-xs text-gray-500">
@@ -218,14 +219,10 @@ export default function SystemsPage() {
               Additional workflow intelligence systems and infrastructure products are in development.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {futureSystemsPlaceholders.map((sys, i) => (
-              <div key={i} className="border border-border rounded-2xl p-6 bg-muted/30 flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-white border border-border px-2 py-1 rounded-full">{sys.status}</span>
-                </div>
-                <h3 className="font-semibold text-black mb-2">{sys.title}</h3>
-                <p className="text-sm text-gray-600">{sys.desc}</p>
+              <div key={i} className="border border-border rounded-2xl p-5 bg-muted/30 flex items-center">
+                <h3 className="font-semibold text-black text-sm">{sys.title}</h3>
               </div>
             ))}
           </div>

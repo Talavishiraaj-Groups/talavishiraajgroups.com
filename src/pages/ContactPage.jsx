@@ -94,7 +94,7 @@ export default function ContactPage() {
                 <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">02</div>
                 <div>
                   <h3 className="text-sm font-semibold text-black mb-1">Strategic Alignment</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Identification of the appropriate engagement model—Prism Diagnostic or Strategic Implementation.</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Identification of the appropriate engagement model: Prism Diagnostic or Strategic Implementation.</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">

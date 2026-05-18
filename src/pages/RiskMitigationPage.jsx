@@ -73,7 +73,7 @@ export default function RiskMitigationPage() {
         <section>
           <h2 className="text-xl font-semibold text-black mb-4">Governance Commitment</h2>
           <p>
-            At Talavishiraaj Groups, governance is a foundational element of every engagement — not an 
+            At Talavishiraaj Groups, governance is a foundational element of every engagement, not an 
             afterthought. Our Risk & Mitigation Framework ensures that every engagement is protected by 
             proactive risk identification, structured quality standards, and clear recovery protocols. 
             This framework operates alongside our Refund Policy and Delivery Policy as part of a 

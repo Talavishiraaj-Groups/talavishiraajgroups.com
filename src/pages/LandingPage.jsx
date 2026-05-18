@@ -37,7 +37,7 @@ export default function LandingPage() {
           <ul className="space-y-4 text-sm text-gray-700 list-none">
             <li className="flex items-start text-gray-700">
               <ArrowIcon className="h-4 w-4 mr-3 mt-1 text-primary flex-shrink-0" />
-              <span>Research before execution — we understand the operational landscape before initiating any implementation.</span>
+              <span>Research before execution: we understand the operational landscape before initiating any implementation.</span>
             </li>
             <li className="flex items-start text-gray-700">
               <ArrowIcon className="h-4 w-4 mr-3 mt-1 text-primary flex-shrink-0" />

@@ -36,7 +36,7 @@ const partnershipModels = [
 ];
 
 const engagementPrinciples = [
-  'Selective engagement — we limit simultaneous partnerships to maintain depth and accountability.',
+  'Selective engagement: we limit simultaneous partnerships to maintain depth and accountability.',
   'Single structured leadership interface with transparent communication throughout.',
   'Outcome-aligned engagements with clear metrics, milestones, and delivery accountability.',
   'Security, data privacy, and governance embedded into every engagement by design.',
@@ -51,7 +51,7 @@ export default function PartnershipsPage() {
         <h1 className="text-3xl md:text-5xl font-semibold">Strategic partnerships built for depth and sustained value</h1>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl">
           Talavishiraaj Groups engages selectively with organizations seeking structured, enterprise-oriented collaboration. 
-          We bring strategic clarity, systems thinking, and implementation capability to every partnership — 
+          We bring strategic clarity, systems thinking, and implementation capability to every partnership,
           with full accountability from initiation through delivery.
         </p>
       </section>
@@ -67,7 +67,7 @@ export default function PartnershipsPage() {
           </p>
           <p className="text-gray-500 text-sm max-w-3xl">
             Technology partnerships, strategic alliances, implementation collaborations, research partnerships, 
-            and expansion collaborations are all within scope — subject to strategic fit and governance alignment.
+            and expansion collaborations are all within scope, subject to strategic fit and governance alignment.
           </p>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function PartnershipsPage() {
           <h2 className="text-2xl font-semibold mb-4">How We Partner</h2>
           <p className="text-gray-200 mb-6">
             Every partnership is structured around clarity, governance, and compounding organizational value. 
-            We engage with depth and accountability — not breadth and volume.
+            We engage with depth and accountability, not breadth and volume.
           </p>
           <ul className="space-y-3 text-sm text-gray-200 list-none">
             {engagementPrinciples.map((principle) => (

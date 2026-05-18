@@ -95,7 +95,7 @@ export default function AboutPage() {
             <p className="text-base text-gray-700">
               We operate at the intersection of strategic consulting, AI-assisted systems, and technology 
               infrastructure. Our goal is to provide organizational clarity and workflow visibility through 
-              structured, intelligent systems — enabling confident execution at every stage.
+              structured, intelligent systems, enabling confident execution at every stage.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -173,7 +173,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-semibold text-black">Research, Systems & Delivery</h2>
             <p className="text-base text-gray-700">
               Our multidisciplinary capability spans systems thinking, execution support, 
-              technology expertise, and strategic research — structured to support enterprise-grade outcomes.
+              technology expertise, and strategic research, structured to support enterprise-grade outcomes.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
