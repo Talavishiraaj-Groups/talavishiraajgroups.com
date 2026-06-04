@@ -1,0 +1,82 @@
+4. Delivery Policy (footer page)
+Delivery Policy
+Last Updated: April 2026
+
+Service Delivery Framework
+Talavishiraaj Groups is committed to professional, timely, and structured delivery of all workflow intelligence and implementation services. Our delivery framework is designed to ensure transparency, quality, and measurable outcomes at every engagement stage.
+
+This Delivery Policy provides general guidance and works together with the specific terms, Statement(s) of Work, and Master Services Agreement for each engagement. If there is any conflict, the signed agreement will take precedence for that engagement.
+
+Delivery Timelines
+Delivery timelines vary by engagement type and are subject to the following general parameters:
+
+Diagnostic Engagements (including Prism Diagnostic): Typically completed within 10–13 business days from confirmed intake and completion of the required client information forms.
+
+Implementation Engagements: Project‑specific timelines are defined in the initial Strategic Roadmap and communicated clearly at engagement initiation.
+
+Consultation Sessions: Scheduled within agreed availability windows; timing is subject to mutual scheduling confirmation.
+
+Stakeholder Dependencies: All timelines are subject to stakeholder responsiveness and the timely sharing of required organisational information, access, and approvals.
+
+Timelines communicated at the start of an engagement are planning estimates and may be adjusted by mutual agreement based on updated scope, dependencies, and priorities.
+
+Client Responsibilities
+Successful, timely delivery is a collaborative effort. Clients are expected to support the engagement through:
+
+Timely sharing of required organisational information and relevant data.
+
+Stakeholder availability for structured sessions and feedback rounds.
+
+Prompt communication, clarifications, and approval turnarounds.
+
+Coordination support during active implementation phases.
+
+Designation of a primary point of contact for engagement coordination.
+
+Delays arising from insufficient client responsiveness, unavailability of required information, or third‑party constraints may extend the delivery timeline accordingly. Such delays and dependency‑driven shifts do not constitute a delivery failure or breach of commitment by Talavishiraaj Groups.
+
+Scope Clarification
+Delivery scope is defined at engagement initiation and governed by the agreed engagement parameters. The following clarifications apply to all engagements:
+
+Diagnostic vs. Implementation Scope: Diagnostic engagements, including Prism Diagnostic and other Systems diagnostics, produce visibility, recommendations, and a structured roadmap. They do not include direct implementation unless a separate implementation engagement is initiated.
+
+Excluded Items: Items not explicitly included in the engagement scope, proposal, or Statement of Work are excluded from delivery. Scope extensions or changes require a separate agreement and may impact timelines and fees.
+
+Dependency Limitations: Deliverables dependent on third‑party systems, client data, or external approvals are subject to those dependencies and may affect the delivery timeline and approach.
+
+Engagement Assumptions: All engagements operate on the assumption that provided information is accurate and complete. Material inaccuracies or omissions may require scope reassessment and timeline revision.
+
+Communication Structure
+Professional, structured communication is central to our delivery process:
+
+Scheduling: All sessions are scheduled through agreed communication channels with sufficient notice provided to both parties.
+
+Timezone Flexibility: We accommodate cross‑timezone engagements and agree on scheduling windows at the outset of each engagement.
+
+Communication Channels: Primary communication is conducted through agreed digital channels. All material decisions, approvals, and confirmations are documented in writing.
+
+Progress Updates: For longer engagements, structured progress updates are provided at agreed intervals to maintain alignment and clarity.
+
+Standard Deliverables
+For diagnostic engagements, delivery typically includes a structured package containing:
+
+Comprehensive report and strategy documentation (digital format, such as PDF).
+
+Recorded clarity or review session (secure video delivery where applicable).
+
+Visual workflow and systems maps.
+
+Actionable implementation roadmap.
+
+Supporting documentation and reference assets as relevant.
+
+Implementation engagement deliverables are project‑specific and defined within the engagement roadmap, proposal, and/or Statement of Work.
+
+Data Protection and Confidentiality
+Any client information and data processed as part of diagnostic or implementation engagements is handled in accordance with our Privacy Policy, applicable Data Processing Agreements (DPAs) or NDAs, and relevant data protection laws, including the DPDP Act where applicable.
+
+Outcome Disclaimer
+While we strive to deliver high‑quality diagnostics, strategies, and implementations, all engagements are provided on a professional best‑effort basis. Delivery of services, recommendations, or roadmaps does not by itself guarantee specific business outcomes such as revenue growth, lead volume, or other performance metrics, unless expressly agreed in a separate signed contract.
+
+For information on fees, cancellations, and partial refunds, please refer to our Refund Policy.
+

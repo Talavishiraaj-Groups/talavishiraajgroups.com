@@ -1,0 +1,122 @@
+3. Refund Policy (footer page)
+Refund Policy
+Last Updated: April 2026
+
+This Refund Policy describes how Talavishiraaj Groups handles refunds for consulting, systems‑oriented services, and productised offerings such as Prism Diagnostic. It applies to engagements unless a separate signed agreement (such as a Statement of Work or Master Services Agreement) specifies a different refund structure, in which case the signed agreement will prevail.
+
+We invest significant time in consultant allocation, research preparation, systems configuration, and delivery planning for every engagement. Our refund approach is designed to balance fairness to clients with the operational realities of high‑involvement services.
+
+1. Consultation Engagements
+Consultation‑based engagements include structured advisory sessions, assessment readouts, and strategy consultations.
+
+Once a consultation session is scheduled and confirmed, the fee is non‑refundable.
+
+Sessions may be rescheduled once with at least 48 hours’ prior written notice, subject to consultant availability.
+
+Reschedule requests made with less than 48 hours’ notice may be treated as completed sessions and may not be eligible for rescheduling or refund.
+
+2. Service and Implementation Engagements
+For multi‑phase service and implementation projects, including systems design, research, architecture, and execution, refunds (where considered) are based on the project stage and work completed at the time of the request.
+
+Project Stage	Refund Eligibility (up to)
+Before project assembly / kickoff	90% of fees paid
+Discovery / onboarding initiated	75% of fees paid
+Research & assessment phase active	60% of fees paid
+Strategy / blueprint development active	40% of fees paid
+Implementation / execution initiated	Case‑by‑case review
+Project substantially completed	Non‑refundable
+Refund calculations may account for:
+
+Consultant allocation and research preparation time.
+
+Discovery and planning work already performed.
+
+Documented deliverables and work products completed to date.
+
+Administrative overhead and scheduling commitments.
+
+Payment gateway, banking, and international reconciliation costs.
+
+Where a signed SOW or contract defines different percentages or milestones, those terms will apply.
+
+3. Systems and Prism Diagnostic (Upfront Payments)
+Systems and Prism Diagnostic are structured, systems‑driven offerings that typically require upfront payment before any analysis or configuration begins.
+
+Unless stated otherwise in the applicable Order Form or SOW:
+
+a) Before any work or data collection begins
+If you request a refund before we collect any client information for the engagement and before configuration or onboarding work has started, a refund of up to 80% of fees paid may be considered on written request. This reflects initial scheduling, planning, and administrative effort already committed.
+
+b) After work has started and information has been collected
+Once onboarding, diagnostic data collection, research, assessment, or configuration work has started, any refund request will be evaluated based on the project stage and completed work, using the same stage‑based structure defined in Section 2 (“Service and Implementation Engagements”).
+
+In such cases, we may consider a partial refund aligned to the documented stage (for example, Discovery/Onboarding, Research & Assessment, Strategy/Blueprint, or Implementation), taking into account the work already delivered, internal resources allocated, and costs incurred.
+
+c) After diagnostic outputs or reports are delivered
+After Prism Diagnostic or Systems outputs/reports have been delivered, fees are non‑refundable, as the core value of these offerings lies in the expertise, analysis, and deliverables already provided.
+
+Any specific refund rules or exceptions for Systems or Prism Diagnostic agreed in your signed contract will override this general policy.
+
+4. How to Request a Refund
+To request a refund or raise a concern:
+
+Send a written request to info@talavishiraajgroups.com with:
+
+Engagement name and reference.
+
+Invoice number(s).
+
+Reason for the request.
+
+Any supporting documentation.
+
+We will review your request against:
+
+The project stage and work completed.
+
+The signed contract / SOW and this Refund Policy.
+
+Any supporting documentation and communication history.
+
+We generally aim to respond with an initial decision or clarification request within a reasonable business timeframe and to process any approved refund within a reasonable period after confirmation, subject to bank and payment‑gateway timelines.
+
+5. Payment Channels and Processing
+Global payments are processed through approved international payment processors and banking partners. Refunds, where approved, are:
+
+Issued only to the original payment method used for the transaction, and
+
+Processed in the original billing currency, subject to exchange rates, bank charges, and international reconciliation timelines.
+
+Due to currency conversion and fluctuating foreign exchange rates, the amount you receive back in your local currency may differ from the amount originally paid. Talavishiraaj Groups is not responsible for any foreign exchange losses, currency conversion differences, bank spreads, or international transaction/processing fees charged by your bank, card issuer, or payment provider in connection with the original payment or any refund.
+
+We are not responsible for delays caused by banks, intermediaries, or payment‑gateway providers once the refund has been initiated from our side.
+
+6. Disputes and Escalation
+If you disagree with a refund decision or have concerns about how your request was handled, you may escalate in writing via our official contact channel:
+
+info@talavishiraajgroups.com
+
+We will provide a structured review based on:
+
+The engagement documentation (proposal, SOW, MSA).
+
+Delivery‑stage evidence and internal logs.
+
+This Refund Policy and any applicable consumer or contract law.
+
+Nothing in this Refund Policy is intended to limit any non‑waivable statutory rights you may have under applicable consumer protection laws.
+
+7. Data Protection and Refunds
+Refunds relate only to commercial fees and do not affect our obligations to protect any personal data or confidential information processed during an engagement. Once client information has been collected for Systems, Prism Diagnostic, or any other service, we will continue to handle that data in accordance with:
+
+our Privacy Policy,
+
+any applicable Data Processing Agreement (DPA) or confidentiality agreement with you, and
+
+the requirements of the DPDP Act and other applicable data protection laws.
+
+Depending on the circumstances, we may be required to retain certain records for legal, audit, or compliance purposes even after a refund is processed or an engagement ends. Where retention is no longer necessary, we will delete or anonymise personal data in line with our internal data‑retention policies.
+
+8. Policy Updates
+We may revise this Refund Policy from time to time to reflect changes in our services, payment infrastructure, or legal requirements. The updated version will be posted on this page with a new “Last Updated” date. Continued use of our services after changes take effect means you accept the updated terms.
+

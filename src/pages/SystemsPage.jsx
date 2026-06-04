@@ -1,9 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function SystemsPage() {
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (index) => {
+    setOpenSection(openSection === index ? null : index);
+  };
+
   const challenges = [
     'Fragmented systems and siloed workflow data',
     'Founder dependency and absence of delegable processes',
@@ -230,16 +236,202 @@ export default function SystemsPage() {
       </section>
 
       {/* GOVERNANCE REFERENCE */}
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-20 text-center space-y-6">
-        <h2 className="text-2xl font-semibold text-black">Engagement Governance</h2>
-        <p className="text-sm text-gray-600">
-          All diagnostic engagements are covered by our stage-based refund policy and data handling protocols. 
-          Consultation sessions are non-refundable once scheduled but may be rescheduled with sufficient prior notice.
-        </p>
-        <div className="flex justify-center gap-6 pt-4">
-          <Link to="/refund-policy" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Refund Policy</Link>
-          <Link to="/delivery-policy" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Delivery Policy</Link>
-          <Link to="/risk-mitigation" className="text-xs font-semibold text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-all">Risk Framework</Link>
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-20 space-y-8">
+        <div className="text-center space-y-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Policies & Assurance</p>
+          <h2 className="text-3xl font-semibold text-black">Engagement Governance</h2>
+          <p className="text-sm text-gray-600 max-w-xl mx-auto">
+            Prism Diagnostic operates under a defined governance framework to ensure quality, security, and professional alignment.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {/* Card 1: Refund Policy */}
+          <div className="border border-border rounded-2xl overflow-hidden bg-muted/30 transition-all hover:bg-muted/50">
+            <button
+              onClick={() => toggleSection(0)}
+              className="w-full flex items-center justify-between p-6 text-left font-semibold text-black focus:outline-none"
+            >
+              <span>Refund Policy (Prism Diagnostic)</span>
+              <motion.svg
+                animate={{ rotate: openSection === 0 ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-5 h-5 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence initial={false}>
+              {openSection === 0 && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                >
+                  <div className="p-6 pt-0 border-t border-border/55 text-sm text-gray-600 space-y-4 leading-relaxed">
+                    <p>
+                      Prism Diagnostic is a structured diagnostic engagement that involves upfront allocation of specialist time, research effort, and systems analysis.
+                    </p>
+                    <div>
+                      <p className="font-semibold text-black mb-1">Before any work or data collection begins:</p>
+                      <p>
+                        If you request a refund before we collect any client information for the diagnostic and before onboarding or configuration has started, we may consider a refund of up to 80% of fees paid, reflecting initial scheduling and planning effort.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-black mb-1">After diagnostic work has started:</p>
+                      <p>
+                        Once onboarding, data collection, research, or assessment has started, any refund request is evaluated based on the engagement stage and work completed, using the same stage‑based structure set out in our main Refund Policy.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-black mb-1">After delivery of Prism outputs:</p>
+                      <p>
+                        After Prism Diagnostic outputs or reports have been delivered, fees are non‑refundable, as the value lies in the expertise, analysis, and deliverables already provided.
+                      </p>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-2">
+                      For full details, please refer to our <Link to="/refund-policy" className="underline hover:text-black">Refund Policy</Link> in the site footer.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Card 2: Delivery Policy */}
+          <div className="border border-border rounded-2xl overflow-hidden bg-muted/30 transition-all hover:bg-muted/50">
+            <button
+              onClick={() => toggleSection(1)}
+              className="w-full flex items-center justify-between p-6 text-left font-semibold text-black focus:outline-none"
+            >
+              <span>Delivery & Timeline (Prism Diagnostic)</span>
+              <motion.svg
+                animate={{ rotate: openSection === 1 ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-5 h-5 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence initial={false}>
+              {openSection === 1 && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                >
+                  <div className="p-6 pt-0 border-t border-border/55 text-sm text-gray-600 space-y-4 leading-relaxed">
+                    <p>
+                      Prism Diagnostic engagements are designed for structured, time‑bound delivery:
+                    </p>
+                    <ul className="space-y-3 list-none pl-0">
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Typical timeline: </strong>Prism Diagnostic is typically completed within 10–13 business days from confirmed intake and completion of the required client information forms.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Client responsibilities: </strong>Timely sharing of relevant organisational information, stakeholder availability for sessions, and prompt feedback/approvals are essential to maintain the delivery timeline.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Dependencies: </strong>Timelines may adjust based on client responsiveness, third‑party systems, and data dependencies. Such dependency‑driven shifts do not constitute delivery failure.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Scope: </strong>Prism Diagnostic provides visibility, structured findings, and a roadmap; implementation of recommendations is handled under separate implementation engagements.
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-xs text-gray-400 mt-2">
+                      For a full description of our delivery standards across all engagements, see our <Link to="/delivery-policy" className="underline hover:text-black">Delivery Policy</Link> in the site footer.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Card 3: Governance & Data */}
+          <div className="border border-border rounded-2xl overflow-hidden bg-muted/30 transition-all hover:bg-muted/50">
+            <button
+              onClick={() => toggleSection(2)}
+              className="w-full flex items-center justify-between p-6 text-left font-semibold text-black focus:outline-none"
+            >
+              <span>Governance, Confidentiality & Data Protection</span>
+              <motion.svg
+                animate={{ rotate: openSection === 2 ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-5 h-5 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            </button>
+            <AnimatePresence initial={false}>
+              {openSection === 2 && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                >
+                  <div className="p-6 pt-0 border-t border-border/55 text-sm text-gray-600 space-y-4 leading-relaxed">
+                    <p>
+                      Prism Diagnostic operates within Talavishiraaj Groups’ governance and data‑handling framework:
+                    </p>
+                    <ul className="space-y-3 list-none pl-0">
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Contract & NDA: </strong>Prism Diagnostic engagements are covered by our standard contractual terms and confidentiality obligations, and may be supported by a separate NDA and/or Data Processing Agreement where required.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Governance: </strong>Delivery quality, risk, and recovery actions are guided by our internal Risk & Mitigation Framework, which includes structured escalation and quality review procedures.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Confidentiality: </strong>Client information and diagnostic outputs are treated as confidential and handled in line with our Confidentiality & Data Handling commitments.
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0 mt-2"></span>
+                        <div>
+                          <strong className="text-black">Data protection: </strong>Any personal data processed as part of Prism Diagnostic is handled according to our Privacy Policy, relevant DPAs, and applicable data protection laws, including the DPDP Act.
+                        </div>
+                      </li>
+                    </ul>
+                    <p className="text-xs text-gray-400 mt-2">
+                      For complete details, please refer to our <Link to="/privacy-policy" className="underline hover:text-black">Privacy Policy</Link>, <Link to="/risk-mitigation" className="underline hover:text-black">Governance</Link>, <Link to="/refund-policy" className="underline hover:text-black">Refund Policy</Link>, <Link to="/delivery-policy" className="underline hover:text-black">Delivery Policy</Link>, and <Link to="/data-handling" className="underline hover:text-black">Confidentiality & Data Handling</Link> pages in the site footer.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </section>
     </div>

@@ -1,0 +1,98 @@
+5. Governance – Risk & Mitigation Framework (footer page)
+Governance – Risk & Mitigation Framework
+Last Updated: April 2026
+
+A structured, enterprise‑grade governance framework governing risk identification, delivery quality assurance, and recovery protocols across all engagements. This framework operates alongside the specific contractual terms (including any Master Services Agreement, Statement of Work, NDA, and Data Processing Agreement) governing each client engagement.
+
+Governance Commitment
+At Talavishiraaj Groups, governance is a foundational element of every engagement, not an afterthought. Our Risk & Mitigation Framework ensures that every engagement is protected by proactive risk identification, structured quality standards, and clear recovery protocols.
+
+This framework operates together with our Refund Policy, Delivery Policy, Privacy Policy, and Confidentiality & Data Handling commitments as part of a comprehensive governance architecture and is designed to support compliance with applicable data protection and professional standards.
+
+Risk Framework Categories
+Delivery & Execution Risks
+Identifying and addressing workflow bottlenecks, coordination gaps, and execution misalignments before they impact delivery quality or timeline.
+
+Workflow Visibility Assessment
+
+Execution Alignment Review
+
+Coordination Framework Design
+
+Technology & Systems Risks
+Ensuring systems integrity, data security, and infrastructure scalability for AI, automation, and technology implementation.
+
+Systems Integrity Review
+
+Scalability Assessment
+
+Data Governance Framework
+
+Strategic & Organisational Risks
+Aligning systems implementation with long‑term organisational goals, execution readiness, and strategic maturity.
+
+Strategic Alignment Review
+
+Execution Readiness Assessment
+
+Organisational Maturity Mapping
+
+Delivery Recovery & Quality Escalation Framework
+An internal delivery quality review may be initiated under the following conditions:
+
+Expression of delivery dissatisfaction by the client.
+
+Communication breakdown or responsiveness concerns.
+
+Unclear or insufficiently structured recommendations.
+
+Missed delivery timelines attributable to internal factors.
+
+Systems misalignment or implementation confusion.
+
+Delivery quality concerns raised formally in writing.
+
+Internal Review Categories
+Clarity Quality
+Were recommendations structured, actionable, and clearly understandable for the intended audience and organisational context?
+
+Systems Accuracy
+Were the core workflow bottlenecks, systems gaps, and coordination friction points correctly identified and substantiated?
+
+Strategic Relevance
+Did recommendations align with execution readiness, scalability stage, and organisational maturity at the time of engagement?
+
+Delivery Professionalism
+Were communication standards, timeline commitments, presentation quality, and stakeholder engagement maintained throughout?
+
+Actionability
+Could the recommendations realistically be implemented with the organisational resources and capability available?
+
+Recovery Actions
+Depending on the outcome of an internal delivery review, recovery actions may include:
+
+Structured clarification sessions.
+
+Roadmap refinement and supplemental documentation.
+
+Supplemental consultation session.
+
+Delivery adjustments and scope reassessment.
+
+Structured internal quality review.
+
+Partial service credit where appropriate and applicable.
+
+All recovery actions are evaluated on a case‑by‑case basis against the delivery documentation, engagement parameters, and applicable contract and policy provisions. Recovery actions are discretionary and do not constitute an automatic or unconditional entitlement to additional services, changes in scope, or financial remedies. Any financial remedies will be aligned with the terms of the applicable contract and our Refund Policy.
+
+Related Governance Documents
+This framework operates alongside the following governance and legal documents:
+
+Refund Policy
+
+Delivery Policy
+
+Privacy Policy
+
+Confidentiality & Data Handling (including NDAs and Data Processing Agreements where applicable)
+
