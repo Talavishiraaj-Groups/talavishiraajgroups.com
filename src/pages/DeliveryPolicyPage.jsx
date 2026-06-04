@@ -11,7 +11,7 @@ export default function DeliveryPolicyPage() {
       className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24"
     >
       <h1 className="text-3xl md:text-5xl font-semibold mb-2 text-black">Delivery Policy</h1>
-      <p className="text-sm text-gray-500 mb-8">Last Updated: April 2026</p>
+      <p className="text-sm text-gray-500 mb-8">Last Updated: June 2026</p>
       
       <div className="prose prose-slate max-w-none space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-4">

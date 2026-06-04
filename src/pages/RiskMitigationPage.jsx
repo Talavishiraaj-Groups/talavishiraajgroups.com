@@ -64,7 +64,7 @@ export default function RiskMitigationPage() {
       <div className="space-y-2 mb-12">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Governance</p>
         <h1 className="text-3xl md:text-5xl font-semibold text-black">Governance – Risk & Mitigation Framework</h1>
-        <p className="text-sm text-gray-500">Last Updated: April 2026</p>
+        <p className="text-sm text-gray-500">Last Updated: June 2026</p>
         <p className="text-base text-gray-600 max-w-3xl mt-4 leading-relaxed">
           A structured, enterprise‑grade governance framework governing risk identification, delivery quality assurance, and recovery protocols across all engagements. This framework operates alongside the specific contractual terms (including any Master Services Agreement, Statement of Work, NDA, and Data Processing Agreement) governing each client engagement.
         </p>

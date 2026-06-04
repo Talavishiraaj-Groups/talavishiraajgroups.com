@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Privacy Policy</h1>
-        <p className="text-sm text-gray-500">Last Updated: April 2026</p>
+        <p className="text-sm text-gray-500">Last Updated: June 2026</p>
         <p className="text-base md:text-lg text-gray-600">
           Talavishiraaj Groups (“we”, “us”, “our”) is committed to protecting your personal information and your right to privacy. This Privacy Policy explains what data we collect, how we use it, how we protect it, and what rights you have under applicable laws, including the Digital Personal Data Protection Act, 2023 (“DPDP Act”).
         </p>

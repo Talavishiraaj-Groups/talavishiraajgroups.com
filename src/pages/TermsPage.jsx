@@ -11,7 +11,7 @@ export default function TermsPage() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Terms of Service</h1>
-        <p className="text-sm text-gray-500">Last Updated: April 2026</p>
+        <p className="text-sm text-gray-500">Last Updated: June 2026</p>
         <p className="text-base md:text-lg text-gray-600">
           These Terms of Service (“Terms”) govern your access to and use of the websites operated by Talavishiraaj Groups (including tjgroups.com and talavishiraajgroups.com) (collectively, the “Site”). By accessing or using the Site, you agree to be bound by these Terms.
         </p>
