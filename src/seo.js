@@ -61,6 +61,7 @@ export const organizationSchema = () => ({
   '@type': 'Organization',
   '@id': ORG_ID,
   name: BRAND,
+  alternateName: 'TJ Groups',
   url: absoluteUrl('/'),
   logo: { '@type': 'ImageObject', url: absoluteUrl('/logo.png') },
   image: absoluteUrl(DEFAULT_OG_IMAGE),
@@ -68,6 +69,17 @@ export const organizationSchema = () => ({
     'Talavishiraaj Groups brings research, engineering, artificial intelligence and technology together to solve complex problems and build practical systems. The organization works across software and data engineering, AI and automation, product engineering, research and development, business systems, growth and implementation.',
   email: CONTACT_EMAIL,
   sameAs: SOCIAL_PROFILES,
+  founder: [
+    { '@type': 'Person', name: 'Dhiraj TH' },
+    { '@type': 'Person', name: 'Yatharth Chauhan' },
+  ],
+  knowsAbout: [
+    'Software Engineering',
+    'Artificial Intelligence',
+    'Product Engineering',
+    'Business Systems',
+    'Automation',
+  ],
   areaServed: [
     { '@type': 'Place', name: 'Worldwide' },
     ...PRIMARY_MARKETS.map((name) => ({ '@type': 'Place', name })),

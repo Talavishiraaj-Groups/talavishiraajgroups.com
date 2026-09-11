@@ -221,3 +221,11 @@ Core Web Vitals measured from actual visitors.
 - **Improved CTAs:** Calls to action were made more inviting and human (e.g., changing "Initiate engagement" to "Talk to our team" or "Start a conversation").
 - **Contact Flow:** The `ContactPage` introductory text and process explanations were simplified to reduce friction and encourage users to reach out.
 - **Read-Only Preservation:** `Products.jsx` and the policy pages were intentionally left untouched, preserving their established state as per the strict directive rules.
+
+---
+
+## Round 5 — AEO, GEO, and Advanced SEO Implementation
+
+- **Entity Optimization:** Enriched the `Organization` schema in `src/seo.js` to include founder details (`Dhiraj TH` and `Yatharth Chauhan`), a comprehensive `knowsAbout` array, and `alternateName` to strengthen the brand entity for AI engines (ChatGPT, Perplexity, etc.).
+- **Answer Engine Optimization (AEO):** Added highly conversational FAQ blocks to `src/data/servicesData.js` (e.g., distinguishing between prototype and production AI, identifying automatable processes). These naturally feed the site's `FAQPage` JSON-LD structured data and provide the exact, direct answers that LLMs look for when users ask complex industry questions.
+- **Semantic HTML & Direct Answers:** Confirmed the structural hierarchy (`H1`, `H2`, `H3`) and concise list formats on core pages to ensure that AI crawlers can effortlessly parse and summarize the content. The site is now optimized for both traditional Search Engines (Google) and Answer/Generative Engines.
