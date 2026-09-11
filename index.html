@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <link rel="icon" href="/logo.png" type="image/png" sizes="171x176" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Fonts are self-hosted, so the page makes no third-party requests.
+         The two faces used above the fold are preloaded; the rest load on
+         demand through their unicode-range declarations in fonts.css. -->
+    <link rel="preload" href="/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/outfit-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Everything between these markers is replaced per route by
+         scripts/prerender.mjs with that page's title, description, canonical,
+         social metadata and structured data. What is left below is the fallback
+         head served for any URL that was not prerendered, which is only ever an
+         unknown path, so it is marked noindex. -->
+    <!--app-head-start-->
     <title>Talavishiraaj Groups</title>
-    <link rel="icon" href="/logo.png" />
+    <meta name="robots" content="noindex, follow" />
+    <!--app-head-end-->
   </head>
-  <body class="bg-secondary">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-</html> 
+</html>

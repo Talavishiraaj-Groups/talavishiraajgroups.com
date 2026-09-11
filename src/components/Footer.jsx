@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { CONTACT_EMAIL, LINKEDIN_URL, TAGLINE, TWITTER_URL } from '../seo';
+import { capabilityPath, serviceCategories } from '../data/servicesData';
+import { track, trackOutbound } from './analytics';
 
 const linkGroups = [
   {
@@ -10,18 +13,17 @@ const linkGroups = [
       { label: 'About', to: '/about' },
       { label: 'Services', to: '/services' },
       { label: 'Systems', to: '/systems' },
+      { label: 'Case Studies', to: '/case-studies' },
       { label: 'Partnerships', to: '/partnerships' },
       { label: 'Contact', to: '/contact' },
     ],
   },
   {
     title: 'Capabilities',
-    items: [
-      { label: 'Strategic & Systems Consulting', to: '/services#strategy' },
-      { label: 'Technology Systems & Infrastructure', to: '/services#tech' },
-      { label: 'Implementation & Engineering', to: '/services#rd' },
-      { label: 'Growth Systems & Market Enablement', to: '/services#growth' },
-    ],
+    items: serviceCategories.map((category) => ({
+      label: category.label,
+      to: capabilityPath(category),
+    })),
   },
   {
     title: 'Governance & Legal',
@@ -32,102 +34,93 @@ const linkGroups = [
       { label: 'Delivery Policy', to: '/delivery-policy' },
       { label: 'Risk & Mitigation Framework', to: '/risk-mitigation' },
       { label: 'Confidentiality & Data Handling', to: '/data-handling' },
+      { label: 'Intellectual Property Policy', to: '/ip-policy' },
     ],
+  },
+];
+
+const socialLinks = [
+  {
+    label: 'Talavishiraaj Groups on LinkedIn',
+    network: 'linkedin',
+    href: LINKEDIN_URL,
+    path: 'M6.5 6.5A2.5 2.5 0 1 1 4 4a2.5 2.5 0 0 1 2.5 2.5ZM2 10.5h4V21H2V10.5Zm7 0h4v1.6c.58-.906 1.757-1.85 3.6-1.85 3.6 0 4.4 2.35 4.4 5.45V21h-4v-4.6c0-1.24-.2-2.65-1.8-2.65s-1.9 1.25-1.9 2.55V21H9V10.5Z',
+  },
+  {
+    label: 'Talavishiraaj Groups on X, formerly Twitter',
+    network: 'x',
+    href: TWITTER_URL,
+    path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.969l4.254 5.625L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z',
   },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-white text-primary">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-10">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr_1fr_auto]">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 space-y-12">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div className="space-y-4">
-            <div className="flex items-center gap-3 mb-2">
-              <img src={logo} alt="Talavishiraaj Groups" className="h-8 w-auto" />
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="" width="32" height="33" className="h-8 w-auto" />
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Talavishiraaj Groups</p>
             </div>
-            <p className="text-sm text-gray-600">
-              Technology consulting, AI and automation, R & D, and growth systems delivered by a single accountable partner.
+            <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
+              A multidisciplinary organization combining research, software and systems engineering,
+              artificial intelligence, product development and implementation capability under a single
+              accountable partner.
             </p>
-            <p className="text-sm text-gray-500">
-              <a href="mailto:info@talavishiraajgroups.com" className="hover:text-primary">
-                info@talavishiraajgroups.com
+            <p className="text-sm">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                onClick={() => track('email_click', { location: 'footer' })}
+                className="text-gray-700 underline decoration-gray-300 underline-offset-4 hover:decoration-black"
+              >
+                {CONTACT_EMAIL}
               </a>
             </p>
+            {/* Icon-only links, with the platform name carried by the
+                accessible name rather than visible text. */}
+            <ul className="flex items-center gap-3 list-none pt-1">
+              {socialLinks.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackOutbound(social.href, { network: social.network, location: 'footer' })
+                    }
+                    className="inline-flex items-center justify-center h-9 w-9 rounded-full border border-border text-gray-600 transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                  >
+                    <span className="sr-only">{social.label}</span>
+                    <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d={social.path} />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
+
           {linkGroups.map((group) => (
-            <div key={group.title}>
-              <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">{group.title}</p>
-              <ul className="space-y-2 text-sm list-none">
+            <nav key={group.title} aria-label={group.title}>
+              <h2 className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">{group.title}</h2>
+              <ul className="space-y-2.5 text-sm list-none">
                 {group.items.map((item) => (
                   <li key={item.label}>
-                    <Link to={item.to} className="text-gray-600 hover:text-primary cursor-pointer">
+                    <Link to={item.to} className="text-gray-600 hover:text-primary transition-colors">
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Social</p>
-            <ul className="space-y-2 text-sm list-none">
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/talavishiraaj-groups/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-600 hover:text-primary"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="h-4 w-4 mr-2 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.5 6.5C6.5 7.88071 5.38071 9 4 9C2.61929 9 1.5 7.88071 1.5 6.5C1.5 5.11929 2.61929 4 4 4C5.38071 4 6.5 5.11929 6.5 6.5Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M2 10.5H6V21H2V10.5Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M9 10.5H13V12.1C13.5803 11.1937 14.7572 10.25 16.6 10.25C20.2 10.25 21 12.6 21 15.7V21H17V16.4C17 15.16 16.8 13.75 15.2 13.75C13.6 13.75 13.3 15 13.3 16.3V21H9V10.5Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/talavishiraaj"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-gray-600 hover:text-primary"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="h-4 w-4 mr-2 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25h6.969l4.254 5.625L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-                  </svg>
-                  <span>Twitter / X</span>
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between text-xs text-gray-500 gap-4">
+        <div className="border-t border-border pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-gray-500">
           <span>© {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.</span>
-          <span>Execution is Our Foundation. Innovation is Our Identity.</span>
+          <span>{TAGLINE}</span>
         </div>
       </div>
     </footer>

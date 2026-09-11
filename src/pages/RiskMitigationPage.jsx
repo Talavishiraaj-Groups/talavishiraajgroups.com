@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import { Link } from 'react-router-dom';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
@@ -55,12 +55,19 @@ export default function RiskMitigationPage() {
   ];
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24"
-    >
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <Seo
+        title="Risk and Mitigation Framework | Talavishiraaj Groups"
+        description="The governance framework covering delivery quality, risk identification, escalation paths, quality review and the recovery actions available if an engagement falls below standard."
+        path="/risk-mitigation"
+        jsonLd={[
+          webPageSchema({ path: '/risk-mitigation', title: 'Risk and Mitigation Framework', description: 'The governance framework covering delivery quality, risk identification, escalation paths, quality review and the recovery actions available if an engagement falls below standard.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Risk and Mitigation Framework', path: '/risk-mitigation' },
+          ]),
+        ]}
+      />
       <div className="space-y-2 mb-12">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Governance</p>
         <h1 className="text-3xl md:text-5xl font-semibold text-black">Governance – Risk & Mitigation Framework</h1>
@@ -167,6 +174,6 @@ export default function RiskMitigationPage() {
           </div>
         </section>
       </div>
-    </motion.div>
+    </div>
   );
 }

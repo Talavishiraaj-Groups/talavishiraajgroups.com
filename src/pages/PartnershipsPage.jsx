@@ -1,131 +1,210 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
+import { track } from '../components/analytics';
 
-const partnershipModels = [
+const TITLE = 'Partnerships and Collaboration | Talavishiraaj Groups';
+const DESCRIPTION =
+  'How Talavishiraaj Groups works with other organizations: technology partnerships, delivery and implementation collaboration, joint product development, research programmes and market expansion.';
+
+const models = [
   {
-    title: 'Strategic Co-Development',
-    description:
-      'We engage as a structured co-development partner for organizations building new systems, products, or operational capabilities. Collaboration is governed by agreed frameworks, defined scope, and shared accountability.',
+    title: 'Technology partnerships',
+    body: 'We work alongside platform, infrastructure and software organizations where their product and our engineering capability solve more together than either does alone. That usually means integration work, reference implementations, or engineering capacity attached to a partner deployment.',
     details: [
-      'Structured project governance and milestone accountability',
-      'Systems, technology, and delivery capability allocation',
-      'IP, data, and confidentiality frameworks agreed at engagement initiation',
+      'Integration and reference implementation engineering',
+      'Technical enablement for partner led deployments',
+      'Joint architecture and feasibility assessment',
     ],
   },
   {
-    title: 'Embedded Strategic Partnerships',
-    description:
-      'Sustained, senior-level strategic partnership blended with the execution capability required to implement. Designed for organizations requiring structured leadership support and delivery capacity over an extended engagement.',
+    title: 'Delivery and implementation collaboration',
+    body: 'Firms with strong client relationships often need engineering, AI or product capability they do not hold internally. We work behind or beside those firms with clear scope, defined ownership and a single point of technical accountability.',
     details: [
-      'Structured planning, alignment, and stakeholder coordination',
-      'Dedicated capability for AI, automation, systems, or growth initiatives',
-      'Clear transition frameworks for building internal capability over time',
+      'Engineering, AI and automation capacity attached to a partner engagement',
+      'Defined scope, milestones and technical ownership agreed at the outset',
+      'Confidentiality, data handling and intellectual property terms set before work begins',
     ],
   },
   {
-    title: 'Research & Innovation Collaborations',
-    description:
-      'We partner selectively with institutions, enterprises, and research-oriented organizations to develop innovation programs, validate systems concepts, and support structured research commercialization.',
+    title: 'Joint product development',
+    body: 'Where an organization has domain depth and we have the engineering and research capability to build against it, we take on co-development with shared governance rather than a vendor relationship.',
     details: [
-      'Program design, governance structure, and delivery management',
-      'Technical assessment, systems prototyping, and validation support',
-      'Structured pathways from research to implementation and deployment',
+      'Product engineering, hardware and software integration, and prototyping',
+      'Milestone governance with shared accountability',
+      'Commercial and intellectual property structure agreed before development starts',
+    ],
+  },
+  {
+    title: 'Research collaboration',
+    body: 'We work selectively with institutions, enterprises and research groups on applied technical research: validating a concept, running a structured programme, or taking research output towards something that can be built.',
+    details: [
+      'Programme design and technical governance',
+      'Technical assessment, prototyping and validation',
+      'Structured routes from research output to working implementation',
+    ],
+  },
+  {
+    title: 'Market expansion and ecosystem work',
+    body: 'For organizations entering a new market or building out a partner ecosystem, we contribute the operating, technical and commercial groundwork that expansion depends on.',
+    details: [
+      'Operating and delivery structure for a new market',
+      'Partner and channel model design',
+      'Technical and compliance readiness assessment',
     ],
   },
 ];
 
-const engagementPrinciples = [
-  'Selective engagement: we limit simultaneous partnerships to maintain depth and accountability.',
-  'Single structured leadership interface with transparent communication throughout.',
-  'Outcome-aligned engagements with clear metrics, milestones, and delivery accountability.',
-  'Security, data privacy, and governance embedded into every engagement by design.',
-  'Flexible, professionally structured commercial models aligned to engagement scope and stage.',
+const principles = [
+  'We engage selectively. Depth and accountability do not survive taking on everything that is offered.',
+  'One senior point of contact, with direct access to the people doing the work.',
+  'Scope, ownership and success measures are written down before anything starts.',
+  'Confidentiality, data handling and intellectual property terms are agreed at the outset, not retrofitted.',
+  'Commercial structure follows the shape of the collaboration rather than a fixed template.',
 ];
 
 export default function PartnershipsPage() {
   return (
-    <div className="bg-white text-primary">
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
-        <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Partnerships</p>
-        <h1 className="text-3xl md:text-5xl font-semibold">Strategic partnerships built for depth and sustained value</h1>
-        <p className="text-base md:text-lg text-gray-600 max-w-4xl">
-          Talavishiraaj Groups engages selectively with organizations seeking structured, enterprise-oriented collaboration. 
-          We bring strategic clarity, systems thinking, and implementation capability to every partnership,
-          with full accountability from initiation through delivery.
+    <>
+      <Seo
+        title={TITLE}
+        description={DESCRIPTION}
+        path="/partnerships"
+        jsonLd={[
+          webPageSchema({ path: '/partnerships', title: 'Partnerships', description: DESCRIPTION }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Partnerships', path: '/partnerships' },
+          ]),
+        ]}
+      />
+
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">Partnerships</p>
+        <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] mb-6 max-w-4xl">
+          We work well with organizations that build things
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed">
+          Some of our strongest work happens alongside other organizations rather than directly for a
+          client. Where our research, engineering and technical capability complements what a partner
+          already does well, we structure the collaboration properly and commit to it.
         </p>
       </section>
 
-      {/* ECOSYSTEM POSITIONING */}
-      <section className="bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Ecosystem Positioning</p>
-          <p className="text-lg md:text-xl text-gray-700 max-w-4xl">
-            Our partnership ecosystem is intentionally curated. We engage with organizations where there is 
-            genuine systems alignment, mutual capability, and a shared commitment to structured, 
-            professionally managed collaboration.
-          </p>
-          <p className="text-gray-500 text-sm max-w-3xl">
-            Technology partnerships, strategic alliances, implementation collaborations, research partnerships, 
-            and expansion collaborations are all within scope, subject to strategic fit and governance alignment.
+      <section className="border-y border-border bg-muted">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+          <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
+            We do not run a partner programme with tiers and badges. Each collaboration is assessed on
+            whether there is genuine technical fit, whether both sides bring something the other needs,
+            and whether the working relationship can be governed properly. Where that is not the case,
+            we say so early.
           </p>
         </div>
       </section>
 
-      {/* PARTNERSHIP MODELS */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 grid gap-6 md:grid-cols-3">
-          {partnershipModels.map((model) => (
-            <article key={model.title} className="border border-border rounded-2xl p-6 bg-muted/20 flex flex-col">
-              <h2 className="text-xl font-semibold mb-3">{model.title}</h2>
-              <p className="text-sm text-gray-600 mb-4 flex-1">{model.description}</p>
-              <ul className="space-y-2 text-sm text-gray-700 list-none">
-                {model.details.map((detail) => (
-                  <li key={detail} className="flex items-start text-gray-700">
-                    <ArrowIcon className="h-4 w-4 mr-3 mt-1 text-primary flex-shrink-0" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+        <div className="max-w-3xl mb-12">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">How we collaborate</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            Five shapes a collaboration usually takes
+          </h2>
+        </div>
+
+        <div className="space-y-12">
+          {models.map((model, index) => (
+            <article
+              key={model.title}
+              className={`grid gap-8 lg:grid-cols-[0.9fr_1.1fr] ${index > 0 ? 'border-t border-border pt-12' : ''}`}
+            >
+              <div>
+                <span className="block text-xs font-mono text-gray-400 mb-3">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="text-2xl font-semibold tracking-tight mb-3 leading-snug">
+                  {model.title}
+                </h3>
+              </div>
+              <div>
+                <p className="text-gray-700 leading-relaxed mb-6">{model.body}</p>
+                <ul className="space-y-3 list-none">
+                  {model.details.map((detail) => (
+                    <li key={detail} className="flex items-start gap-3 text-gray-700">
+                      <ArrowIcon className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
+                      <span className="text-sm leading-relaxed">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* HOW WE PARTNER */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16">
-        <div className="border border-border rounded-3xl p-8 md:p-12 bg-secondary text-accent">
-          <h2 className="text-2xl font-semibold mb-4">How We Partner</h2>
-          <p className="text-gray-200 mb-6">
-            Every partnership is structured around clarity, governance, and compounding organizational value. 
-            We engage with depth and accountability, not breadth and volume.
-          </p>
-          <ul className="space-y-3 text-sm text-gray-200 list-none">
-            {engagementPrinciples.map((principle) => (
-              <li key={principle} className="flex items-start text-gray-200">
-                <ArrowIcon className="h-4 w-4 mr-3 mt-1 text-accent flex-shrink-0" />
-                <span>{principle}</span>
+      <section className="bg-secondary text-accent">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">How we work</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              What you can expect from us
+            </h2>
+          </div>
+          <ul className="space-y-4 list-none">
+            {principles.map((principle) => (
+              <li key={principle} className="flex items-start gap-3 text-gray-200">
+                <ArrowIcon className="h-4 w-4 mt-1 text-accent flex-shrink-0" />
+                <span className="leading-relaxed">{principle}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-16 text-center space-y-6">
-        <h2 className="text-2xl font-semibold text-black">Interested in a Partnership Discussion?</h2>
-        <p className="text-gray-600 text-sm max-w-xl mx-auto">
-          Partnership inquiries are reviewed for strategic fit and organizational alignment before 
-          initiating a structured discussion. Use the contact form to introduce your organization 
-          and describe the nature of the proposed collaboration.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center justify-center rounded-full bg-black text-white px-10 py-4 text-sm font-medium hover:bg-gray-900 transition-colors"
-        >
-          Initiate Partnership Discussion
-        </Link>
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-2 items-start">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">
+              Before you get in touch
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              It helps to know what your organization does, where you see the overlap with our work,
+              and what a first piece of collaboration might look like in practice. A specific proposal
+              is easier to respond to than a general introduction.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Our{' '}
+              <Link
+                to="/services"
+                className="text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black"
+              >
+                capabilities
+              </Link>{' '}
+              set out what we can bring, and our{' '}
+              <Link
+                to="/case-studies"
+                className="text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black"
+              >
+                case studies
+              </Link>{' '}
+              show the kind of work we take on.
+            </p>
+          </div>
+          <div className="border border-border rounded-3xl p-8 bg-muted">
+            <h2 className="text-xl font-semibold mb-3">Propose a collaboration</h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              Introduce your organization and the collaboration you have in mind. We review every
+              proposal for technical and commercial fit before responding.
+            </p>
+            <Link
+              to="/contact?intent=partnership"
+              onClick={() => track('partnership_interest', { location: 'partnerships_cta' })}
+              className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-8 py-3.5 text-sm font-medium hover:bg-graphite transition-colors"
+            >
+              Start a partnership conversation
+            </Link>
+          </div>
+        </div>
       </section>
-    </div>
+    </>
   );
 }

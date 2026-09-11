@@ -1,15 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function DataHandlingPage() {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24"
-    >
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <Seo
+        title="Confidentiality and Data Handling | Talavishiraaj Groups"
+        description="How client information, documents and research data are handled: confidentiality commitments, access controls, third party platforms and retention practices."
+        path="/data-handling"
+        jsonLd={[
+          webPageSchema({ path: '/data-handling', title: 'Confidentiality and Data Handling', description: 'How client information, documents and research data are handled: confidentiality commitments, access controls, third party platforms and retention practices.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Confidentiality and Data Handling', path: '/data-handling' },
+          ]),
+        ]}
+      />
       <h1 className="text-3xl md:text-5xl font-semibold mb-2 text-black">Confidentiality & Data Handling</h1>
       <p className="text-sm text-gray-500 mb-8">Last Updated: June 2026</p>
       
@@ -116,6 +123,6 @@ export default function DataHandlingPage() {
           </p>
         </section>
       </div>
-    </motion.div>
+    </div>
   );
 }

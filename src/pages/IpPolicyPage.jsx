@@ -1,4 +1,5 @@
 import React from 'react';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 const metaTitle = 'Intellectual Property Policy | Talavishiraaj Groups';
@@ -8,6 +9,18 @@ const metaDescription =
 export default function IpPolicyPage() {
   return (
     <div className="bg-white text-primary">
+      <Seo
+        title="Intellectual Property Policy | Talavishiraaj Groups"
+        description="How intellectual property is owned, licensed and protected across engagements, covering client materials, our proprietary methods and deliverables."
+        path="/ip-policy"
+        jsonLd={[
+          webPageSchema({ path: '/ip-policy', title: 'Intellectual Property Policy', description: 'How intellectual property is owned, licensed and protected across engagements, covering client materials, our proprietary methods and deliverables.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Intellectual Property Policy', path: '/ip-policy' },
+          ]),
+        ]}
+      />
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Intellectual Property Policy</h1>

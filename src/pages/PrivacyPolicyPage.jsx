@@ -1,4 +1,5 @@
 import React from 'react';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 const metaTitle = 'Privacy Policy | Talavishiraaj Groups';
@@ -8,6 +9,18 @@ const metaDescription =
 export default function PrivacyPolicyPage() {
   return (
     <div className="bg-white text-primary">
+      <Seo
+        title="Privacy Policy | Talavishiraaj Groups"
+        description="How Talavishiraaj Groups collects, uses, protects and shares personal information, the legal bases we rely on, and the rights you have under applicable data protection law including the DPDP Act."
+        path="/privacy-policy"
+        jsonLd={[
+          webPageSchema({ path: '/privacy-policy', title: 'Privacy Policy', description: 'How Talavishiraaj Groups collects, uses, protects and shares personal information, the legal bases we rely on, and the rights you have under applicable data protection law including the DPDP Act.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Privacy Policy', path: '/privacy-policy' },
+          ]),
+        ]}
+      />
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Privacy Policy</h1>

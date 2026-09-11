@@ -1,15 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function DeliveryPolicyPage() {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24"
-    >
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <Seo
+        title="Delivery Policy | Talavishiraaj Groups"
+        description="Our delivery framework: engagement timelines, client responsibilities, scope boundaries between diagnostic and implementation work, and how communication is structured."
+        path="/delivery-policy"
+        jsonLd={[
+          webPageSchema({ path: '/delivery-policy', title: 'Delivery Policy', description: 'Our delivery framework: engagement timelines, client responsibilities, scope boundaries between diagnostic and implementation work, and how communication is structured.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Delivery Policy', path: '/delivery-policy' },
+          ]),
+        ]}
+      />
       <h1 className="text-3xl md:text-5xl font-semibold mb-2 text-black">Delivery Policy</h1>
       <p className="text-sm text-gray-500 mb-8">Last Updated: June 2026</p>
       
@@ -187,6 +194,6 @@ export default function DeliveryPolicyPage() {
           </p>
         </section>
       </div>
-    </motion.div>
+    </div>
   );
 }

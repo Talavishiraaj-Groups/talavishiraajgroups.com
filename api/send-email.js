@@ -1,5 +1,20 @@
 const nodemailer = require('nodemailer');
 
+// Credentials come from the deployment environment only. They are deliberately
+// not defaulted in source: a committed password protects nothing and ends up in
+// version control forever. If this throws, set the variables documented in
+// SMTP_SETUP.md in the Vercel project settings and redeploy.
+function smtpCredentials() {
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASSWORD;
+  if (!user || !pass) {
+    throw new Error(
+      'Email is not configured: SMTP_USER and SMTP_PASSWORD must be set as environment variables.',
+    );
+  }
+  return { user, pass };
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -17,10 +32,7 @@ module.exports = async (req, res) => {
       port: parseInt(process.env.SMTP_PORT || '587'),
       secure: process.env.SMTP_SECURE === 'true',
       requireTLS: true,
-      auth: {
-        user: process.env.SMTP_USER || 'info@talavishiraajgroups.com',
-        pass: process.env.SMTP_PASSWORD || 'bbydqdzT7yY1',
-      },
+      auth: smtpCredentials(),
       tls: {
         ciphers: 'SSLv3',
         rejectUnauthorized: false
@@ -30,7 +42,7 @@ module.exports = async (req, res) => {
     const transporter = nodemailer.createTransport(smtpConfig);
 
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER || 'info@talavishiraajgroups.com'}>`,
+      from: `"${name}" <${smtpCredentials().user}>`,
       to: 'info@talavishiraajgroups.com',
       replyTo: email,
       subject: `New Community Form Submission from ${name}`,

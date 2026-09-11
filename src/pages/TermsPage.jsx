@@ -1,4 +1,5 @@
 import React from 'react';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 const metaTitle = 'Terms of Service | Talavishiraaj Groups';
@@ -8,6 +9,18 @@ const metaDescription =
 export default function TermsPage() {
   return (
     <div className="bg-white text-primary">
+      <Seo
+        title="Terms of Service | Talavishiraaj Groups"
+        description="The terms governing use of the Talavishiraaj Groups website, how service engagements are contracted separately, and how intellectual property and liability are handled."
+        path="/terms"
+        jsonLd={[
+          webPageSchema({ path: '/terms', title: 'Terms of Service', description: 'The terms governing use of the Talavishiraaj Groups website, how service engagements are contracted separately, and how intellectual property and liability are handled.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Terms of Service', path: '/terms' },
+          ]),
+        ]}
+      />
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Terms of Service</h1>

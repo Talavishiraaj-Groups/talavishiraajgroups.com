@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function RefundPolicyPage() {
@@ -13,12 +13,19 @@ export default function RefundPolicyPage() {
   ];
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24"
-    >
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <Seo
+        title="Refund Policy | Talavishiraaj Groups"
+        description="How refunds are handled across consultation, service and implementation engagements, the stage based eligibility structure, how to raise a request, and how disputes are escalated."
+        path="/refund-policy"
+        jsonLd={[
+          webPageSchema({ path: '/refund-policy', title: 'Refund Policy', description: 'How refunds are handled across consultation, service and implementation engagements, the stage based eligibility structure, how to raise a request, and how disputes are escalated.' }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Refund Policy', path: '/refund-policy' },
+          ]),
+        ]}
+      />
       <h1 className="text-3xl md:text-5xl font-semibold mb-2 text-black">Refund Policy</h1>
       <p className="text-sm text-gray-500 mb-8">Last Updated: June 2026</p>
       
@@ -258,6 +265,6 @@ export default function RefundPolicyPage() {
           </p>
         </section>
       </div>
-    </motion.div>
+    </div>
   );
 }
