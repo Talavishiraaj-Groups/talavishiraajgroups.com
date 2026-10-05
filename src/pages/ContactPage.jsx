@@ -132,9 +132,44 @@ export default function ContactPage() {
             .
           </p>
         </div>
+
+        {/*
+          Both ways in, presented once. Every page on the site closes by
+          sending people here, so this is where the choice gets made and it
+          should be the first thing on the page after the introduction rather
+          than a link buried in a paragraph.
+        */}
+        <div className="grid sm:grid-cols-2 gap-5 mt-10 max-w-3xl">
+          <Link
+            to="/book"
+            onClick={() => track('book_call_click', { location: 'contact_choice' })}
+            className="group border border-border rounded-2xl p-6 bg-white hover:border-gray-400 transition-colors"
+          >
+            <h2 className="text-lg font-semibold text-primary mb-2">Book a call</h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              Pick a time that suits you. Around 30 minutes, no preparation needed.
+            </p>
+            <span className="text-sm font-medium text-primary group-hover:underline underline-offset-4">
+              See available times
+            </span>
+          </Link>
+          <a
+            href="#contact-form"
+            onClick={() => track('cta_click', { location: 'contact_choice', target: 'form' })}
+            className="group border border-border rounded-2xl p-6 bg-white hover:border-gray-400 transition-colors block"
+          >
+            <h2 className="text-lg font-semibold text-primary mb-2">Send a message</h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              Write a few lines instead. We reply by email, usually within one business day.
+            </p>
+            <span className="text-sm font-medium text-primary group-hover:underline underline-offset-4">
+              Use the form below
+            </span>
+          </a>
+        </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 pb-20">
+      <section id="contact-form" className="scroll-mt-24 max-w-6xl mx-auto px-4 md:px-8 pb-20">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] items-start">
           <aside className="border border-border rounded-3xl p-8 bg-muted">
             <h2 className="text-lg font-semibold mb-5">What happens next</h2>
@@ -178,7 +213,7 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <Link
-                    to="/systems"
+                    to="/products"
                     className="text-gray-700 underline decoration-gray-300 underline-offset-4 hover:decoration-black"
                   >
                     Read about Prism

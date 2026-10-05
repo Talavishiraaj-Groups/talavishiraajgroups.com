@@ -51,7 +51,7 @@ export default function DataHandlingPage() {
             <li className="flex items-start">
               <ArrowIcon className="h-4 w-4 mr-3 mt-1.5 text-primary flex-shrink-0" />
               <span>
-                <strong className="text-black">Role‑Based Processing: </strong>For most website and marketing activities we act as a data fiduciary/controller. When processing client data within Systems, Prism Diagnostic, or other services, we act as a data processor under the relevant DPA or contractual terms.
+                <strong className="text-black">Role‑Based Processing: </strong>For most website and marketing activities we act as a data fiduciary/controller. When processing client data within Systems, Prism, or other services, we act as a data processor under the relevant DPA or contractual terms.
               </span>
             </li>
             <li className="flex items-start">

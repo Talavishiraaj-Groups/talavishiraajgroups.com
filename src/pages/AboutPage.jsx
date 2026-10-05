@@ -4,6 +4,7 @@ import Seo, { PRIMARY_MARKETS, breadcrumbSchema, personSchema, webPageSchema } f
 import { COMPANY_ANSWER, valueChain } from '../data/services';
 import { capabilityPath, serviceCategories } from '../data/servicesData';
 import { track } from '../components/analytics';
+import RelatedPath from '../components/RelatedPath';
 
 const TITLE = 'About Talavishiraaj Groups';
 const DESCRIPTION =
@@ -79,10 +80,19 @@ export default function AboutPage() {
           A multidisciplinary organization built around difficult problems
         </h1>
         <p className="text-lg md:text-xl text-gray-700 max-w-3xl leading-relaxed">{COMPANY_ANSWER}</p>
+        <div className="flex flex-wrap gap-3 mt-8">
+          <a
+            href="#why-we-work-this-way"
+            onClick={() => track('cta_click', { location: 'about_hero', target: 'why_we_work_this_way' })}
+            className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors"
+          >
+            Why we are built this way
+          </a>
+        </div>
       </section>
 
       {/* WHY THE ORGANISATION IS SHAPED THIS WAY */}
-      <section className="border-y border-border bg-muted">
+      <section id="why-we-work-this-way" className="scroll-mt-24 border-y border-border bg-muted">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Why we work this way</p>
@@ -323,6 +333,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+        <RelatedPath to="/products" label="Prism, our decision engagement" location="about">
+          The clearest example of how we work is the engagement built entirely around deciding before building:
+        </RelatedPath>
     </>
   );
 }

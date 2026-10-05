@@ -81,7 +81,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-black">4. Services and Separate Agreements</h2>
           <p>
-            Talavishiraaj Groups provides technology consulting, software development, AI solutions, research and development, product engineering, and creative and growth services, including systems‑oriented products such as Prism Diagnostic.
+            Talavishiraaj Groups provides technology consulting, software development, AI solutions, research and development, product engineering, and creative and growth services, including systems‑oriented products such as Prism.
           </p>
           <p>
             All service engagements, including access to or use of our Systems products, are governed by separate written agreements (such as proposals, Statements of Work, Master Services Agreements, or Data Processing Agreements) that define scope, deliverables, timelines, payments, and specific legal terms.
@@ -98,7 +98,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-black">5. Intellectual Property (Site Content)</h2>
           <p>
-            All content on this Site—including text, graphics, logos, icons, images, audio or video clips, and software—is owned by or licensed to Talavishiraaj Groups, unless stated otherwise, and is protected by applicable intellectual property laws.
+            All content on this Site, including text, graphics, logos, icons, images, audio or video clips, and software, is owned by or licensed to Talavishiraaj Groups, unless stated otherwise, and is protected by applicable intellectual property laws.
           </p>
           <p>
             You may view and use the Site for your internal business purposes only. You may not copy, reproduce, modify, distribute, publicly display, or create derivative works from any content on the Site without our prior written permission or the permission of the relevant rights holder.

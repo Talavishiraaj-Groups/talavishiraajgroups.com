@@ -15,8 +15,10 @@ import {
   servicesMetaDescription,
 } from '../data/servicesData';
 import { caseStudies } from './CaseStudiesPage';
+import { insightPath, insightsForCapability } from '../data/insights';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import RelatedPath from '../components/RelatedPath';
 
 const TITLE =
   'Capabilities: Software, AI, Product Engineering and Business Systems | Talavishiraaj Groups';
@@ -190,6 +192,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+        <RelatedPath to="/products" label="Prism settles that first" location="services_hub">
+          All of this assumes you already know which of it you need. If that is still open,
+        </RelatedPath>
     </>
   );
 }
@@ -230,6 +235,7 @@ export function CapabilityPage() {
 
   const path = capabilityPath(category);
   const relatedCases = caseStudies.filter((c) => c.capabilities.includes(category.id));
+  const relatedInsights = insightsForCapability(category.id);
   const others = serviceCategories.filter((c) => c.id !== category.id);
 
   return (
@@ -390,6 +396,41 @@ export function CapabilityPage() {
         </section>
       )}
 
+      {/* RELATED INSIGHTS. Gives the capability page an internal path to the
+          non-branded entry points, and gives those articles a path back. */}
+      {relatedInsights.length > 0 && (
+        <section className="border-y border-border bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
+              Further reading
+            </h2>
+            <ul className="grid gap-4 sm:grid-cols-2 list-none">
+              {relatedInsights.map((article) => (
+                <li key={article.slug}>
+                  <Link
+                    to={insightPath(article)}
+                    onClick={() =>
+                      track('insight_view', { slug: article.slug, location: 'capability' })
+                    }
+                    className="group block border border-border rounded-2xl p-5 hover:border-gray-400 transition-colors h-full"
+                  >
+                    <span className="block text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-2">
+                      {article.readingTime}
+                    </span>
+                    <span className="block font-semibold mb-1.5 leading-snug group-hover:underline underline-offset-4 decoration-gray-400">
+                      {article.h1}
+                    </span>
+                    <span className="block text-sm text-gray-600 leading-relaxed">
+                      {article.summary}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* OTHER CAPABILITIES */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 mb-6">
@@ -419,6 +460,11 @@ export function CapabilityPage() {
       </section>
 
       {/* CTA */}
+      <RelatedPath to="/products" label="Prism is the engagement for that" location="capability">
+        If you already know this is the work you need, the next step is simply to talk to us. If you are not yet
+        sure it is, that is a different question and it is worth answering first:
+      </RelatedPath>
+
       <section className="border-t border-border bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">

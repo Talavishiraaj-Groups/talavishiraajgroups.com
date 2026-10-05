@@ -32,7 +32,7 @@ export default function RefundPolicyPage() {
       <div className="prose prose-slate max-w-none space-y-8 text-gray-700 leading-relaxed">
         <section className="space-y-4">
           <p>
-            This Refund Policy describes how Talavishiraaj Groups handles refunds for consulting, systems‑oriented services, and productised offerings such as Prism Diagnostic. It applies to engagements unless a separate signed agreement (such as a Statement of Work or Master Services Agreement) specifies a different refund structure, in which case the signed agreement will prevail.
+            This Refund Policy describes how Talavishiraaj Groups handles refunds for consulting, systems‑oriented services, and productised offerings such as Prism. It applies to engagements unless a separate signed agreement (such as a Statement of Work or Master Services Agreement) specifies a different refund structure, in which case the signed agreement will prevail.
           </p>
           <p>
             We invest significant time in consultant allocation, research preparation, systems configuration, and delivery planning for every engagement. Our refund approach is designed to balance fairness to clients with the operational realities of high‑involvement services.
@@ -110,9 +110,9 @@ export default function RefundPolicyPage() {
 
         {/* Section 3 */}
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold text-black">3. Systems and Prism Diagnostic (Upfront Payments)</h2>
+          <h2 className="text-xl font-semibold text-black">3. Systems and Prism (Upfront Payments)</h2>
           <p>
-            Systems and Prism Diagnostic are structured, systems‑driven offerings that typically require upfront payment before any analysis or configuration begins.
+            Systems and Prism are structured, systems‑driven offerings that typically require upfront payment before any analysis or configuration begins.
           </p>
           <p className="font-semibold">Unless stated otherwise in the applicable Order Form or SOW:</p>
           
@@ -137,13 +137,13 @@ export default function RefundPolicyPage() {
             <div>
               <h3 className="font-semibold text-black mb-1">c) After diagnostic outputs or reports are delivered</h3>
               <p className="text-sm">
-                After Prism Diagnostic or Systems outputs/reports have been delivered, fees are non‑refundable, as the core value of these offerings lies in the expertise, analysis, and deliverables already provided.
+                After Prism or Systems outputs/reports have been delivered, fees are non‑refundable, as the core value of these offerings lies in the expertise, analysis, and deliverables already provided.
               </p>
             </div>
           </div>
 
           <p className="text-sm text-gray-500 italic">
-            Any specific refund rules or exceptions for Systems or Prism Diagnostic agreed in your signed contract will override this general policy.
+            Any specific refund rules or exceptions for Systems or Prism agreed in your signed contract will override this general policy.
           </p>
         </section>
 
@@ -238,7 +238,7 @@ export default function RefundPolicyPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-black">7. Data Protection and Refunds</h2>
           <p>
-            Refunds relate only to commercial fees and do not affect our obligations to protect any personal data or confidential information processed during an engagement. Once client information has been collected for Systems, Prism Diagnostic, or any other service, we will continue to handle that data in accordance with:
+            Refunds relate only to commercial fees and do not affect our obligations to protect any personal data or confidential information processed during an engagement. Once client information has been collected for Systems, Prism, or any other service, we will continue to handle that data in accordance with:
           </p>
           <ul className="space-y-2 text-sm text-gray-700 list-none pl-0">
             {[

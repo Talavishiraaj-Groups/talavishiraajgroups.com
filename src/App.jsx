@@ -10,7 +10,9 @@ import AboutPage from './pages/AboutPage';
 import PartnershipsPage from './pages/PartnershipsPage';
 import ContactPage from './pages/ContactPage';
 import CommunityPage from './pages/CommunityPage';
-import SystemsPage from './pages/SystemsPage';
+import ProductsPage from './pages/ProductsPage';
+import BuildBuyGuidePage from './pages/BuildBuyGuidePage';
+import BookPage from './pages/BookPage';
 import RefundPolicyPage from './pages/RefundPolicyPage';
 import DeliveryPolicyPage from './pages/DeliveryPolicyPage';
 import RiskMitigationPage from './pages/RiskMitigationPage';
@@ -19,6 +21,8 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import IpPolicyPage from './pages/IpPolicyPage';
 import CaseStudiesPage, { CaseStudyDetailPage } from './pages/CaseStudiesPage';
+import InsightsPage, { InsightArticlePage } from './pages/InsightsPage';
+import ResourcesPage, { ResourceDetailPage } from './pages/ResourcesPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 /**
@@ -45,11 +49,19 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:slug" element={<CapabilityPage />} />
-          <Route path="/systems" element={<SystemsPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/build-vs-buy" element={<BuildBuyGuidePage />} />
+          {/* The product page used to live at /systems. Keep the old path working. */}
+          <Route path="/systems" element={<Navigate to="/products" replace />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/case-studies/:slug" element={<CaseStudyDetailPage />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/insights/:slug" element={<InsightArticlePage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/resources/:slug" element={<ResourceDetailPage />} />
           <Route path="/partnerships" element={<PartnershipsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/book" element={<BookPage />} />
 
           {/* Governance and legal */}
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

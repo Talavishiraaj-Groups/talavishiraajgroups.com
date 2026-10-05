@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import RelatedPath from '../components/RelatedPath';
 
 const TITLE = 'Partnerships and Collaboration | Talavishiraaj Groups';
 const DESCRIPTION =
@@ -90,9 +91,18 @@ export default function PartnershipsPage() {
           client. Where our research, engineering and technical capability complements what a partner
           already does well, we structure the collaboration properly and commit to it.
         </p>
+        <div className="flex flex-wrap gap-3 mt-8">
+          <a
+            href="#how-we-assess"
+            onClick={() => track('cta_click', { location: 'partnerships_hero', target: 'how_we_assess' })}
+            className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors"
+          >
+            How we assess a partnership
+          </a>
+        </div>
       </section>
 
-      <section className="border-y border-border bg-muted">
+      <section id="how-we-assess" className="scroll-mt-24 border-y border-border bg-muted">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
           <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
             We do not run a partner programme with tiers and badges. Each collaboration is assessed on
@@ -205,6 +215,9 @@ export default function PartnershipsPage() {
           </div>
         </div>
       </section>
+        <RelatedPath to="/products" label="Prism" location="partnerships">
+          Partners most often bring us clients facing a decision they cannot settle internally. That work is
+        </RelatedPath>
     </>
   );
 }

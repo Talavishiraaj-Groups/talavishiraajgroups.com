@@ -103,6 +103,17 @@ const PROSE_RULES = [
   },
 ];
 
+/**
+ * Files allowed to carry currency amounts, and why.
+ *
+ * Only one: the market benchmark data. The Prism page argues about what a
+ * build actually costs and that argument needs numbers, but every figure in
+ * there has to name a source. The exemption covers `currency-amount` only.
+ * `known-price` and `price-word` still apply to this file, so our own fees
+ * cannot be smuggled in under the heading of a benchmark.
+ */
+const CURRENCY_EXEMPT = new Set([join('src', 'data', 'benchmarks.js')]);
+
 /** Pricing exposure. Applies to every scanned file, with no exemptions. */
 const PRICING_RULES = [
   {
@@ -126,6 +137,12 @@ const PRICING_RULES = [
 ];
 
 /** Capability slugs, read from the data file so the two cannot drift. */
+const resourceSource = await readFile(join(root, 'src/data/resources.js'), 'utf8');
+const resourceSlugs = new Set([...resourceSource.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]));
+
+const insightSource = await readFile(join(root, 'src/data/insights.js'), 'utf8');
+const insightSlugs = new Set([...insightSource.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]));
+
 const capabilitySource = await readFile(join(root, 'src/data/servicesData.js'), 'utf8');
 const capabilitySlugs = new Set(
   [...capabilitySource.matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]),
@@ -137,10 +154,17 @@ const KNOWN_ROUTES = new Set([
   '/about',
   '/services',
   ...[...capabilitySlugs].map((slug) => `/services/${slug}`),
+  '/insights',
+  ...[...insightSlugs].map((slug) => `/insights/${slug}`),
+  '/resources',
+  ...[...resourceSlugs].map((slug) => `/resources/${slug}`),
+  '/products',
+  '/build-vs-buy',
   '/systems',
   '/case-studies',
   '/partnerships',
   '/contact',
+  '/book',
   '/privacy-policy',
   '/terms',
   '/refund-policy',
@@ -226,6 +250,10 @@ for (const file of files) {
 
   for (const [rules, source] of passes) {
     for (const rule of rules) {
+      // Benchmark data may carry currency amounts because every figure in it
+      // is required to name a source (see the benchmark-source check below).
+      // Nothing else is exempt, and no file is exempt from known-price.
+      if (rule.id === 'currency-amount' && CURRENCY_EXEMPT.has(rel)) continue;
       rule.pattern.lastIndex = 0;
       let match;
       while ((match = rule.pattern.exec(source)) !== null) {
@@ -274,6 +302,48 @@ for (const file of files) {
 }
 
 /* ------------------------------------------------------------------ *
+ * Benchmark sourcing
+ *
+ * benchmarks.js is the one file allowed to carry currency amounts. That
+ * exemption is only defensible if every figure in it names where it came
+ * from, so this enforces it: each entry must have a non-empty claim, source
+ * and url. An unsourced figure is a fabricated figure and fails the build.
+ * ------------------------------------------------------------------ */
+
+const benchmarkFindings = [];
+const benchmarkPath = join(root, 'src', 'data', 'benchmarks.js');
+
+if (existsSync(benchmarkPath)) {
+  const bench = await readFile(benchmarkPath, 'utf8');
+  // Each entry looks like `key: { ... },` at two space indentation.
+  const entries = [...bench.matchAll(/^  (\w+):\s*\{([\s\S]*?)^  \},/gm)];
+  if (entries.length === 0) {
+    benchmarkFindings.push({ key: '(file)', missing: 'no parsable benchmark entries found' });
+  }
+  // Each field is a quoted string. The backreference keeps the closing quote
+  // the same as the opening one, so an apostrophe inside a double quoted value
+  // does not end the match early.
+  const FIELD_PATTERNS = {
+    claim: /claim:\s*(['"`])([\s\S]*?)\1/,
+    source: /source:\s*(['"`])([\s\S]*?)\1/,
+    url: /url:\s*(['"`])([\s\S]*?)\1/,
+  };
+
+  for (const [, key, body] of entries) {
+    for (const [field, pattern] of Object.entries(FIELD_PATTERNS)) {
+      const m = body.match(pattern);
+      if (!m || !m[2].trim()) {
+        benchmarkFindings.push({ key, missing: field });
+      }
+    }
+    const urlMatch = body.match(FIELD_PATTERNS.url);
+    if (urlMatch && urlMatch[2].trim() && !/^https?:\/\//.test(urlMatch[2].trim())) {
+      benchmarkFindings.push({ key, missing: 'url is not an absolute http(s) link' });
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ *
  * Vocabulary weighting
  * ------------------------------------------------------------------ */
 
@@ -288,8 +358,10 @@ for (const file of files) {
 
   for (const term of OVERUSED) {
     const count = (source.match(new RegExp(term, 'g')) || []).length;
-    // The Prism page owns this vocabulary; every other page should be sparing.
-    const limit = rel.includes('SystemsPage') ? 40 : 3;
+    // The Prism product page owns this vocabulary; every other page should be
+    // sparing. The page moved from SystemsPage to ProductsPage when /systems
+    // was retired in favour of /products.
+    const limit = rel.includes('ProductsPage') ? 40 : 3;
     if (count > limit) vocabulary.push({ file: rel, term, count, limit });
   }
 }
@@ -411,6 +483,16 @@ if (linkFindings.length) {
   failed = true;
   console.log(`\nBROKEN-INTERNAL-LINK (${linkFindings.length})`);
   for (const item of linkFindings) console.log(`    ${item.file}:${item.line}  ${item.path}`);
+}
+
+if (benchmarkFindings.length) {
+  failed = true;
+  console.log(`
+UNSOURCED-BENCHMARK (${benchmarkFindings.length})`);
+  console.log('  Every benchmark figure must name its source. If you cannot, delete the figure.');
+  for (const item of benchmarkFindings) {
+    console.log(`    benchmarks.js  ${item.key}: missing ${item.missing}`);
+  }
 }
 
 if (vocabulary.length) {

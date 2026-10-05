@@ -7,6 +7,8 @@ import App from './App.jsx';
 import { HeadCollectorProvider, renderHeadToHtml } from './seo.js';
 import { caseStudies } from './pages/CaseStudiesPage.jsx';
 import { serviceCategories } from './data/servicesData.js';
+import { insights } from './data/insights.js';
+import { resources } from './data/resources.js';
 
 /**
  * Every route that gets its own static HTML file at build time.
@@ -20,11 +22,17 @@ export const routes = [
   '/about',
   '/services',
   ...serviceCategories.map((category) => `/services/${category.slug}`),
-  '/systems',
+  '/products',
+  '/build-vs-buy',
   '/case-studies',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
+  '/insights',
+  ...insights.map((article) => `/insights/${article.slug}`),
+  '/resources',
+  ...resources.map((resource) => `/resources/${resource.slug}`),
   '/partnerships',
   '/contact',
+  '/book',
   '/privacy-policy',
   '/terms',
   '/refund-policy',

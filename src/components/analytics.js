@@ -30,6 +30,8 @@ import { useLocation } from 'react-router-dom';
  *   email_click            a mailto link was used
  *   social_click           an official social profile was opened
  *   external_link_click    any other outbound link
+ *   build_buy_tool_start    the build vs buy worksheet was started
+ *   build_buy_tool_complete the user completed a cost comparison
  */
 export function track(event, properties = {}) {
   if (typeof window === 'undefined') return;

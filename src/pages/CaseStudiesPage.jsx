@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Seo, { breadcrumbSchema, itemListSchema, webPageSchema } from '../seo';
 import { capabilityById, capabilityPath } from '../data/servicesData';
 import { track } from '../components/analytics';
+import RelatedPath from '../components/RelatedPath';
 
 /**
  * Anonymized engagement records.
@@ -275,6 +276,9 @@ export default function CaseStudiesPage() {
           </Link>
         </div>
       </section>
+        <RelatedPath to="/products" label="Prism is where that gets settled" location="case_studies_hub">
+          Each of these began with a decision someone had to make first. If that is where you are,
+        </RelatedPath>
     </>
   );
 }
@@ -393,6 +397,11 @@ export function CaseStudyDetailPage() {
             </ul>
           </section>
         )}
+
+        <RelatedPath to="/products" label="what Prism does before work like this starts" location="case_study_detail">
+        Every engagement here began with someone deciding it was worth doing. If you are at that point rather
+        than this one, that is a different piece of work: see
+        </RelatedPath>
 
         <section className="mt-12 pt-10 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <p className="text-sm text-gray-700 max-w-md">

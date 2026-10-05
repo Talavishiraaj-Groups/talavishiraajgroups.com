@@ -4,17 +4,19 @@ import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 import { clientProfiles, differentiators, problemsWeSolve } from '../data/services';
 import { SECTOR_STATEMENT, capabilityPath, serviceCategories } from '../data/servicesData';
 import { caseStudies } from './CaseStudiesPage';
+import { prism } from '../data/prism';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import HorizontalRail from '../components/HorizontalRail';
 
-const TITLE = 'Talavishiraaj Groups | Research, Engineering, AI and Technology';
+const TITLE = 'Talavishiraaj Groups | Engineering for Problems That Cross Disciplines';
 const DESCRIPTION =
-  'Talavishiraaj Groups brings research, software engineering, AI, and product development together to solve complex technical and business problems.';
+  'When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production.';
 
 const howWeWork = [
-  'Research first. We understand the technical and commercial reality before building.',
-  'Deep engineering across software, data, AI, and systems.',
-  'Full accountability. We stay with you from the first analysis through to delivery.',
+  'You get a view of the technical and commercial reality before anyone commits to a build.',
+  'You get engineering depth across software, data, AI and hardware from the same team.',
+  'You get one accountable partner from the first analysis through to the system running.',
 ];
 
 export default function LandingPage() {
@@ -38,10 +40,13 @@ export default function LandingPage() {
               Talavishiraaj Groups
             </p>
             <h1 className="text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-5">
-              Solving complex problems with research and engineering
+              Some problems need more than one kind of engineer
             </h1>
             <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-8 max-w-xl">
-              We bring together software engineering, AI, and product development to build practical solutions. We tackle cross-disciplinary problems, staying accountable from design to delivery.
+              When the answer spans software, data, AI, hardware and the business around them, work
+              usually stalls in the gaps between suppliers. We combine research, engineering and
+              implementation in one team, and stay accountable from the first analysis through to the
+              system running in production.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
@@ -51,12 +56,31 @@ export default function LandingPage() {
               >
                 Explore our capabilities
               </Link>
+              {/*
+                Two things this is deliberately not.
+
+                Not "book a call". A first time visitor has no reason to want a
+                meeting yet: there is no named client and no published number on
+                this page. Asking for the largest commitment on the site at the
+                point of least trust is the wrong way round. Booking waits for
+                the close and the contact page.
+
+                Not the build vs buy framework either. That belongs to the
+                Prism funnel, which starts from a specific unsettled decision.
+                This headline is about the firm, so offering a framework about
+                one narrow call is a non sequitur here and it mixes two funnels
+                that are meant to stay separate.
+
+                Work is what a stranger actually wants next: evidence that we
+                can do the thing. It costs nothing to look at and it is the
+                layer this site is otherwise thinnest on.
+              */}
               <Link
-                to="/contact"
-                onClick={() => track('cta_click', { location: 'home_hero', target: 'contact' })}
+                to="/case-studies"
+                onClick={() => track('cta_click', { location: 'home_hero', target: 'case_studies' })}
                 className="inline-flex items-center justify-center rounded-full border border-gray-300 px-7 py-3.5 text-sm font-medium text-primary hover:bg-muted transition-colors"
               >
-                Talk to our team
+                See our work
               </Link>
             </div>
           </div>
@@ -77,6 +101,43 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* PRODUCT. Kept deliberately short: the product, the line, one way in. */}
+      <section className="border-y border-border bg-muted">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+          <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 md:items-center">
+            <div className="space-y-4">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
+                Our product
+              </h2>
+              <p className="text-2xl md:text-3xl font-semibold tracking-tight text-primary leading-snug">
+                {prism.name}: {prism.heroLine}
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed max-w-2xl">
+                {prism.situationLine}
+              </p>
+            </div>
+            {/*
+              One action, and it is the product page. Booking already sits in
+              the hero above and again at the close, so a third contact button
+              here would compete with the one job this section has. The build
+              vs buy framework is not promoted here either: it lives on the
+              product page next to the thing it supports, and it has its own
+              indexed page that people reach directly from search, so it does
+              not depend on a link from the home page to be found.
+            */}
+            <div className="flex flex-col gap-3 md:items-end">
+              <Link
+                to="/products"
+                onClick={() => track('cta_click', { location: 'home_product', target: 'products' })}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-accent hover:bg-graphite transition-colors"
+              >
+                See Prism
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHO WE ARE */}
       <section className="bg-secondary text-accent">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-4">
@@ -85,7 +146,9 @@ export default function LandingPage() {
             A research driven organization with deep engineering and implementation capability. We bring software engineering, artificial intelligence, product development, applied research, and commercial systems together under one accountable partner.
           </p>
           <p className="text-gray-300 text-base leading-relaxed max-w-4xl">
-            We are not a generic agency or a consultancy that occasionally writes code. We execute across research and engineering as a single organization. Our teams are distributed across regions and time zones, meaning we bring the right expertise to the problem, rather than relying on who happens to be nearby.
+            We combine research, technology, engineering and implementation when a problem crosses
+            more than one discipline. Our teams are distributed across regions and time zones, so the
+            expertise brought to a problem is chosen for its relevance rather than its proximity.
           </p>
         </div>
       </section>
@@ -102,9 +165,12 @@ export default function LandingPage() {
             Each leads to a defined capability.
           </p>
         </div>
-        <div className="grid gap-px bg-border border border-border rounded-2xl overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+        <HorizontalRail label="Problems organizations bring to us">
           {problemsWeSolve.map((problem) => (
-            <div key={problem.title} className="bg-white p-6 flex flex-col">
+            <div
+              key={problem.title}
+              className="bg-white border border-border rounded-2xl p-6 flex flex-col w-full"
+            >
               <h3 className="text-base font-semibold mb-2 leading-snug">{problem.title}</h3>
               <p className="text-sm text-gray-600 flex-1 leading-relaxed">{problem.body}</p>
               <Link
@@ -115,7 +181,7 @@ export default function LandingPage() {
               </Link>
             </div>
           ))}
-        </div>
+        </HorizontalRail>
       </section>
 
       {/* CAPABILITIES */}
@@ -132,7 +198,7 @@ export default function LandingPage() {
               see one part of it.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <HorizontalRail label="Our capabilities">
             {serviceCategories.map((capability) => (
               <Link
                 key={capability.id}
@@ -140,16 +206,18 @@ export default function LandingPage() {
                 onClick={() =>
                   track('service_interest', { capability: capability.id, location: 'home' })
                 }
-                className="group border border-border rounded-2xl p-6 bg-white hover:border-gray-400 transition-colors"
+                className="group border border-border rounded-2xl p-6 bg-white hover:border-gray-400 transition-colors flex flex-col w-full"
               >
                 <h3 className="text-xl font-semibold mb-3 leading-snug">{capability.label}</h3>
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">{capability.summary}</p>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed flex-1">
+                  {capability.summary}
+                </p>
                 <span className="text-sm font-medium text-primary group-hover:underline underline-offset-4">
                   View capabilities
                 </span>
               </Link>
             ))}
-          </div>
+          </HorizontalRail>
         </div>
       </section>
 
@@ -162,14 +230,17 @@ export default function LandingPage() {
           </h2>
           <p className="text-gray-600 leading-relaxed">{SECTOR_STATEMENT}</p>
         </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <HorizontalRail label="Who we work with">
           {clientProfiles.map((client) => (
-            <div key={client.label} className="border border-border rounded-2xl p-6 bg-white">
+            <div
+              key={client.label}
+              className="border border-border rounded-2xl p-6 bg-white w-full"
+            >
               <h3 className="text-lg font-semibold mb-2 leading-snug">{client.label}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{client.description}</p>
             </div>
           ))}
-        </div>
+        </HorizontalRail>
       </section>
 
       {/* SELECTED WORK */}

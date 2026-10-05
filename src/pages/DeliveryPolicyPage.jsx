@@ -7,10 +7,10 @@ export default function DeliveryPolicyPage() {
     <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
       <Seo
         title="Delivery Policy | Talavishiraaj Groups"
-        description="Our delivery framework: engagement timelines, client responsibilities, scope boundaries between diagnostic and implementation work, and how communication is structured."
+        description="Our delivery framework: engagement timelines, client responsibilities, scope boundaries between decision and implementation work, and how communication is structured."
         path="/delivery-policy"
         jsonLd={[
-          webPageSchema({ path: '/delivery-policy', title: 'Delivery Policy', description: 'Our delivery framework: engagement timelines, client responsibilities, scope boundaries between diagnostic and implementation work, and how communication is structured.' }),
+          webPageSchema({ path: '/delivery-policy', title: 'Delivery Policy', description: 'Our delivery framework: engagement timelines, client responsibilities, scope boundaries between decision and implementation work, and how communication is structured.' }),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: 'Delivery Policy', path: '/delivery-policy' },
@@ -38,7 +38,7 @@ export default function DeliveryPolicyPage() {
             <li className="flex items-start">
               <ArrowIcon className="h-4 w-4 mr-3 mt-1.5 text-primary flex-shrink-0" />
               <span>
-                <strong className="text-black">Diagnostic Engagements (including Prism Diagnostic): </strong>Typically completed within 10–13 business days from confirmed intake and completion of the required client information forms.
+                <strong className="text-black">Decision Engagements (including Prism): </strong>Typically completed within 10–13 business days from confirmed intake and completion of the required client information forms.
               </span>
             </li>
             <li className="flex items-start">
@@ -96,7 +96,7 @@ export default function DeliveryPolicyPage() {
             <li className="flex items-start">
               <ArrowIcon className="h-4 w-4 mr-3 mt-1.5 text-primary flex-shrink-0" />
               <span>
-                <strong className="text-black">Diagnostic vs. Implementation Scope: </strong>Diagnostic engagements, including Prism Diagnostic and other Systems diagnostics, produce visibility, recommendations, and a structured roadmap. They do not include direct implementation unless a separate implementation engagement is initiated.
+                <strong className="text-black">Decision vs. Implementation Scope: </strong>Decision engagements, including Prism and other Systems diagnostics, produce visibility, recommendations, and a structured roadmap. They do not include direct implementation unless a separate implementation engagement is initiated.
               </span>
             </li>
             <li className="flex items-start">
@@ -155,7 +155,7 @@ export default function DeliveryPolicyPage() {
         {/* Section 5 */}
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-black">Standard Deliverables</h2>
-          <p>For diagnostic engagements, delivery typically includes a structured package containing:</p>
+          <p>For decision engagements, delivery typically includes a structured package containing:</p>
           <ul className="space-y-2 list-none pl-0">
             {[
               'Comprehensive report and strategy documentation (digital format, such as PDF).',
@@ -179,7 +179,7 @@ export default function DeliveryPolicyPage() {
         <section className="space-y-4 border-l-2 border-border pl-4">
           <h2 className="text-xl font-semibold text-black">Data Protection and Confidentiality</h2>
           <p>
-            Any client information and data processed as part of diagnostic or implementation engagements is handled in accordance with our Privacy Policy, applicable Data Processing Agreements (DPAs) or NDAs, and relevant data protection laws, including the DPDP Act where applicable.
+            Any client information and data processed as part of decision or implementation engagements is handled in accordance with our Privacy Policy, applicable Data Processing Agreements (DPAs) or NDAs, and relevant data protection laws, including the DPDP Act where applicable.
           </p>
         </section>
 
@@ -187,7 +187,7 @@ export default function DeliveryPolicyPage() {
         <section className="space-y-4 border-l-2 border-border pl-4">
           <h2 className="text-xl font-semibold text-black">Outcome Disclaimer</h2>
           <p>
-            While we strive to deliver high‑quality diagnostics, strategies, and implementations, all engagements are provided on a professional best‑effort basis. Delivery of services, recommendations, or roadmaps does not by itself guarantee specific business outcomes such as revenue growth, lead volume, or other performance metrics, unless expressly agreed in a separate signed contract.
+            While we strive to deliver high‑quality analysis, strategies, and implementations, all engagements are provided on a professional best‑effort basis. Delivery of services, recommendations, or roadmaps does not by itself guarantee specific business outcomes such as revenue growth, lead volume, or other performance metrics, unless expressly agreed in a separate signed contract.
           </p>
           <p className="text-sm text-gray-500">
             For information on fees, cancellations, and partial refunds, please refer to our Refund Policy.

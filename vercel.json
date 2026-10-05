@@ -9,6 +9,11 @@
       "permanent": true
     },
     {
+      "source": "/systems",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "tjgroups.com" }],
       "destination": "https://www.talavishiraajgroups.com/:path*",
