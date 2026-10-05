@@ -21,18 +21,17 @@ Evidence lives in `02` (demand), `03` (competitors), `08` (directories),
 | Canonicals, titles, descriptions, OG tags, JSON-LD per route | Verifying domain ownership in Search Console and Bing |
 | `robots.txt` (open, AI crawlers allowed, `/api/` blocked) | Requesting indexing for priority URLs |
 | `/systems` → `/products` 301 via `vercel.json` | Watching whether the 301 is honoured after deploy |
-| Analytics events fire to whatever provider is present | **Loading a provider.** None is loaded today, so nothing is collected |
+| Analytics events fire, and Vercel Web Analytics is now installed and rendering | Confirming data appears in the Analytics tab after deploy |
 | Booking confirmations and reminders, both sides, via Cal.com | Every directory listing, every profile, every outreach |
 | Internal booking copy through your own Zoho pipeline, via the webhook | The three client references that gate most of Part 3 |
 
-> **Analytics, precisely:** `src/components/analytics.js` needs **no environment
-> variable**. It is a runtime adapter that forwards to whichever provider global
-> exists (`window.va`, `window.plausible`, `window.gtag`, `window.dataLayer`).
-> Verified in the browser this session: with a provider present, a CTA click fired
-> `prism_interest` with its location, and a route change fired `page_view` with the
-> path and title. Until a provider script is loaded, every call is a silent no-op.
-> The required action is **enabling Vercel Web Analytics in the dashboard**, or
-> adding a Plausible or GA script. Not a variable.
+> **Analytics, now resolved.** `@vercel/analytics` is installed and `<Analytics />`
+> renders in `src/App.jsx`. The adapter in `src/components/analytics.js` still needs
+> no environment variable: it forwards to whichever provider global exists. Verified
+> in the browser that the script injects, `window.va` is live, a CTA click produces
+> `cta_click` with its location, and a route change produces no duplicate custom
+> page view, because Vercel counts those natively and `usePageViews` now stands down
+> when `window.va` is present.
 
 ---
 

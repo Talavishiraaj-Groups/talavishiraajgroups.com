@@ -532,3 +532,33 @@ Final gates: build 35 routes / 32 in sitemap. check passed, 45 files. audit 34 o
 
 `LAUNCH.md` written at the repo root: the ordered runbook from push to first inbound.
 Nothing pushed, deployed or submitted.
+
+### Vercel Web Analytics installed
+
+`npm i @vercel/analytics`, `<Analytics />` rendered in `src/App.jsx`. Build is
+unaffected: the component is SSR safe, so the prerender still produces 35 routes.
+
+One decision worth recording. Vercel counts page views natively, including client
+side route changes. The adapter was also sending its own `page_view` custom event,
+which would have double counted every navigation and spent the custom event
+allowance on something already measured for free. `usePageViews` now stands down
+when `window.va` exists, and still fires explicitly for providers that do not track
+automatically.
+
+Verified in the browser rather than assumed:
+- the script injects from `/_vercel/insights/script.js` and `window.va` becomes a
+  function
+- a hero click produced `cta_click` with `location: home_hero, target: case_studies`
+- a client side navigation to /products produced **no** custom events, confirming the
+  page view suppression works
+
+This is now the only third party request the site makes. Everything else, fonts
+included, is first party. The script is cookieless and collects no personal data, so
+it does not create a consent obligation, but the trade is recorded in the code
+comment and in LAUNCH.md because it is a change to the site's privacy posture.
+
+LAUNCH.md step 2 rewritten from "turn analytics on" to "confirm it is reporting",
+with the custom event vocabulary listed. `12-inbound-launch-plan.md` updated to match.
+
+Gates after the change: build 35 routes / 32 in sitemap, check passed 45 files,
+audit 34 of 34.

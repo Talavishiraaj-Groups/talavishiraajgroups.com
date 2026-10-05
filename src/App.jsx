@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToSection from './components/ScrollToSection';
@@ -81,6 +82,21 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      {/*
+        Vercel Web Analytics.
+
+        This is the only third party request the site makes. Everything else,
+        including the fonts, is served from our own domain, so it is worth being
+        deliberate about: the script is cookieless and collects no personal data,
+        which is why it does not create a consent obligation here.
+
+        It counts page views by itself, including client side route changes, so
+        `usePageViews` deliberately stops sending its own `page_view` event once
+        this is present. See the note in components/analytics.js. Everything else
+        the site tracks, the calls to action and the framework completions, flows
+        through the same adapter as a custom event.
+      */}
+      <Analytics />
     </div>
   );
 }

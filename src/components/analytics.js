@@ -74,6 +74,11 @@ export function usePageViews() {
   const { pathname, search } = useLocation();
 
   useEffect(() => {
+    // Vercel Web Analytics counts page views itself, including client side
+    // route changes, so sending our own would double count them and spend the
+    // custom event allowance on something already measured. Providers that do
+    // not do this automatically still get the explicit call.
+    if (typeof window !== 'undefined' && typeof window.va === 'function') return;
     track('page_view', { path: pathname + search, title: document.title });
   }, [pathname, search]);
 }

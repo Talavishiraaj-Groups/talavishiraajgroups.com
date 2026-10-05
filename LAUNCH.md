@@ -54,18 +54,35 @@ Do these in a private window, against the live domain.
 > changes nothing until you redeploy. This is the single most common thing to
 > get wrong.
 
-## Step 2: Turn analytics on (10 minutes)
+## Step 2: Confirm analytics is reporting (5 minutes)
 
-Nothing is being collected right now. The adapter in
-`src/components/analytics.js` **needs no environment variable**: it forwards to
-whichever provider is present and is a silent no-op when none is.
+**This is now wired in code.** `@vercel/analytics` is installed and `<Analytics />`
+renders in `src/App.jsx`, so there is nothing to enable in the dashboard beyond
+turning Web Analytics on for the project if it is not already.
 
-Easiest: **Vercel dashboard, Analytics tab, enable Web Analytics.** Vercel
-injects the script and events start flowing. Plausible or a GA4 tag work the
-same way.
+What was verified in the browser before the push:
 
-Verified already: with a provider present, a CTA click fires `prism_interest`
-with its location, and a route change fires `page_view` with path and title.
+- The script is injected client side from `/_vercel/insights/script.js`.
+- `window.va` becomes available, and the existing adapter routes events to it. A
+  hero click produced `cta_click` with `location: home_hero, target: case_studies`.
+- A client side route change produced **no** custom event, because Vercel counts
+  page views natively. `usePageViews` now stands down when `window.va` exists, so
+  page views are not double counted and the custom event allowance is not spent on
+  something already measured. Other providers still get the explicit call.
+
+After deploying, open the site, click between a few pages, then check the Analytics
+tab. Vercel's own note applies: if nothing appears within about 30 seconds, check for
+a content blocker and navigate between pages again.
+
+Custom events to expect once traffic arrives: `cta_click`, `prism_interest`,
+`service_interest`, `service_inquiry`, `contact_form_start`, `contact_form_submit`,
+`book_call_click`, `build_buy_tool_start`, `build_buy_tool_complete`,
+`case_study_view`, `email_click`, `social_click`, `external_link_click`.
+
+> One trade worth knowing: this is the only third party request the site makes.
+> Everything else, fonts included, is served from the domain. The script is
+> cookieless and collects no personal data, which is why it does not create a
+> consent obligation here.
 
 ## Step 3: Search Console and Bing (20 minutes)
 
