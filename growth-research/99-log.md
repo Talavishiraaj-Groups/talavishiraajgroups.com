@@ -736,3 +736,38 @@ two screenfuls, so this is inside the window that matters, and the trade is not 
 it. Recorded rather than quietly ignored.
 
 Gates: build 37 routes / 34 in sitemap, check passed, audit 36 of 36.
+
+### Queue task 9: caching policy
+
+Audited the live headers before changing anything. Step 4 of the recommendation, long
+immutable caching for static assets, was **already done**: /assets/* and /fonts/* were
+already returning `max-age=31536000, immutable`.
+
+**The tool missed a real gap it did not mention.** Root level images are covered by
+neither rule. `/logo.png` was returning `public, max-age=0, must-revalidate`, so it
+revalidated on every request. Same for og-image.png and the favicon.
+
+Those files are **not fingerprinted**, unlike the Vite assets, so the recommendation's
+"cache everything static for a year" would have been wrong for them: a logo change
+would leave returning visitors on the old file for a year. Set instead to
+`max-age=86400, stale-while-revalidate=604800`. One day fresh, then served stale while
+revalidated in the background for a week.
+
+HTML changed from `max-age=0, must-revalidate` to `max-age=60, must-revalidate` as
+specified. Honest assessment of the value: small. Server response was already 12ms and
+the previous header still produced cheap 304s via ETag. It removes one conditional
+request per returning visitor per minute. Low risk, so taken.
+
+**The risky part, and why CACHING.md now exists.** Vercel applies every matching header
+rule and the last matching rule wins for a duplicate key. Adding Cache-Control to the
+`/(.*)` catch-all meant reordering it to sit **first**, so the specific `/assets/` and
+`/fonts/` rules still override it. If anyone later moves the catch-all below them,
+every hashed asset silently drops from a year to 60 seconds. Nothing breaks, the site
+just gets slower. That ordering constraint is documented with the failure mode spelled
+out.
+
+Header rules only apply on Vercel, so none of this is verifiable locally. Verification
+commands and expected values are in CACHING.md and must be run after the next deploy.
+
+Steps 6 and 8, CDN purge and PageSpeed verification, are post deploy and belong to the
+owner.
