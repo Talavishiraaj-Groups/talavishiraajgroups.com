@@ -9,7 +9,10 @@ import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
 import HorizontalRail from '../components/HorizontalRail';
 
-const TITLE = 'Talavishiraaj Groups | Engineering for Problems That Cross Disciplines';
+// Kept under 60 characters so Google does not truncate it in results. The
+// category leads and the brand follows: nobody is searching for the company by
+// name yet, so the first words have to say what this is rather than who it is.
+const TITLE = 'AI, Software and Systems Engineering | Talavishiraaj Groups';
 const DESCRIPTION =
   'When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production.';
 

@@ -161,6 +161,151 @@ export const insights = [
       },
     ],
   },
+  {
+    slug: 'do-you-need-data-engineering',
+    title: 'Do you need data engineering, or a better report?',
+    h1: 'Do you need data engineering, or do you need one spreadsheet to stop being retyped?',
+    metaTitle: 'Do You Need Data Engineering? | Talavishiraaj Groups',
+    metaDescription:
+      'Reporting assembled by hand is a real cost, but not automatically a data engineering problem. A practical test for whether you need pipelines, a tool, or neither.',
+    published: '2026-10-12',
+    readingTime: '8 min read',
+    capability: 'tech',
+    caseStudy: 'founder-operations-cockpit',
+    summary:
+      'Most teams who ask about data engineering are describing a symptom: the monthly report takes three days and the numbers disagree. Sometimes that is a pipeline problem. More often it is two systems that were never connected, or one report nobody has questioned in two years. The three are not the same purchase, and buying the wrong one is expensive in a way that is hard to unwind.',
+    takeaways: [
+      'The question is almost never whether you need data engineering. It is why one number takes three days and still gets argued about.',
+      'Count the hands a number passes through before anyone trusts it. That, not the row count, tells you whether pipelines are the answer.',
+      'If two systems simply do not talk to each other, that is an integration, not a data platform. The cheaper fix is usually the right one.',
+      'A warehouse you cannot staff in year two is worse than the spreadsheet it replaced, because the spreadsheet degraded visibly.',
+      'Before building anything, delete a report. A surprising amount of reporting load exists because nobody asked whether anyone still reads it.',
+    ],
+    sections: [
+      {
+        heading: 'What problem does data engineering actually solve?',
+        body: [
+          'Data engineering is the work of moving data from where it is created to where it is used, reliably and without a person in the middle. Pipelines that extract and load, somewhere to put the result, and the definitions that decide what a phrase like active customer means. That is the discipline in a sentence.',
+          'What it does not solve is disagreement about what the numbers mean. If sales and finance produce different revenue figures because they count differently, a pipeline will deliver both numbers faster and the argument will continue unchanged. The definition is the problem, and no amount of infrastructure fixes a definition.',
+          'This matters because the two get confused constantly. A team buys a platform to settle a disagreement that was never technical, then concludes the platform failed.',
+        ],
+      },
+      {
+        heading: 'How do I know whether this is a pipeline problem or something smaller?',
+        body: [
+          'Count the hands. Take one number that matters, the one quoted in a board pack or a weekly review, and trace it backwards. How many systems did it come from, how many times was it copied or retyped, and how many people touched it before anyone was willing to say it out loud.',
+          'One system and one export is a reporting problem. Two systems and a person reconciling them is an integration problem. Four or more sources, a recurring manual merge, and definitions that live in one person’s head is where data engineering starts to earn its cost.',
+          'The volume of data is close to irrelevant at this scale. Teams assume they need a warehouse because they have a lot of rows. What justifies infrastructure is the number of joins a human performs by hand every month, not the row count.',
+        ],
+      },
+      {
+        heading: 'What does it cost after it is built?',
+        body: [
+          'Published figures put ongoing maintenance of custom software at roughly 15 to 25 percent of the original build cost per year, and data infrastructure sits at the harder end of that range because it has a permanent relationship with every system feeding it. Source systems change their fields without telling you. APIs are versioned. A vendor is replaced and a pipeline stops quietly.',
+          'The cost that surprises people is not the build. It is the second year, once the people who built it have moved on and nobody remaining can say why a particular transformation exists.',
+          'So the honest question before commissioning any of this is not what it costs to build. It is who maintains it in year two, and whether that person knows yet.',
+        ],
+      },
+      {
+        heading: 'When is buying a tool the better answer?',
+        body: [
+          'When your sources are common ones and your questions are common ones. If the data sits in a handful of mainstream systems and you want standard reporting on top of it, products exist that do this and they will be cheaper and faster than anything built for you. Paying to own a problem somebody else has already solved is the most common error in this category.',
+          'Building becomes defensible when the shape of your data is genuinely unusual, when the logic that turns raw records into a meaningful number is specific to how you operate, or when the thing being measured is itself part of what makes the business work.',
+          'The third option gets left out of most comparisons and is often the right one: buy the platform, and build only the transformation layer that is actually yours.',
+        ],
+      },
+      {
+        heading: 'What should I do before committing to anything?',
+        body: [
+          'Delete a report. Take the recurring reports your team produces and ask who read the last one, and what they did differently because of it. A meaningful share of reporting load exists through inertia, and removing it costs nothing.',
+          'Then write down the definition of the three numbers that matter most and ask two people in different functions to check them. If they disagree, you have found work that no infrastructure will do for you.',
+          'Only then is it worth asking anyone for a number, because a decision made at that point is about a real gap rather than a general sense that the data situation is bad.',
+        ],
+      },
+      {
+        heading: 'Who should read this as a reason not to build?',
+        body: [
+          'Teams under about ten people with one source system. The honest answer there is usually a better spreadsheet and a convention about who owns it.',
+          'Teams whose real problem is that one person leaves and the knowledge goes with them. That is a documentation and ownership problem wearing a technical costume.',
+          'And anyone whose motivation is that building it sounds more satisfying than buying it. That is a real force in these decisions, and worth naming, because it is often the one doing the deciding.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'what-ai-integration-costs',
+    title: 'What AI integration costs, and where it goes wrong',
+    h1: 'What AI integration actually costs, and the part that is missing from every quote',
+    metaTitle: 'What AI Integration Costs | Talavishiraaj Groups',
+    metaDescription:
+      'AI integration quotes price the build. The cost that decides whether it was worth it arrives in year two. What drives it, what breaks, and when not to.',
+    published: '2026-10-12',
+    readingTime: '9 min read',
+    capability: 'ai',
+    caseStudy: 'live-operations-visibility-layer',
+    summary:
+      'Almost every AI integration quote prices the build and stops there. The costs that decide whether the thing was worth doing arrive later: inference that scales with use rather than with headcount, integration work against systems that change without warning, and retraining nobody scheduled. Published figures put the 24 month total at 1.6 to 2.2 times the build cost. The gap is not padding, it is the part of the work that was never quoted.',
+    takeaways: [
+      'AI integration costs scale with usage, not with team size. That is the structural difference from ordinary software and it is why build quotes mislead.',
+      'Published figures put AI deployments at 1.6 to 2.2 times the build cost over 24 months once inference and retraining are counted.',
+      'Integration work commonly runs 35 to 50 percent of initial development cost and is the most frequent source of overrun. The model is rarely the hard part.',
+      'Ask any vendor for the three year number. A quote that covers only the build is not a price, it is a deposit.',
+      'The strongest reason not to integrate is that nobody can name the decision the output will change.',
+    ],
+    sections: [
+      {
+        heading: 'What does AI integration actually mean here?',
+        body: [
+          'Connecting a model to the systems your business already runs on, so that something happens as a result. Not a demo, not a chat window bolted to a website, but a model that reads from real data, produces an output, and that output reaches a person or a process that acts on it.',
+          'That definition matters because the phrase covers two very different purchases. Calling a hosted model from an existing tool is configuration, and it is cheap. Putting a model inside a workflow where its output is trusted is engineering, and the cost sits almost entirely in the parts that are not the model.',
+          'Most disappointment in this category comes from paying for the first and expecting the second.',
+        ],
+      },
+      {
+        heading: 'Why do AI integration quotes come in so low?',
+        body: [
+          'Because the quote prices the build, and the build is the smaller half. Published analysis puts integration work alone at 35 to 50 percent of initial development cost, and names it as the most frequent source of overrun. That is before the model does anything.',
+          'Then the running costs begin, and they behave differently from ordinary software. Inference is charged by use, so the bill grows when the thing succeeds. Retraining and re-evaluation are recurring, not one off. Monitoring has to exist or failures stay invisible. Published figures put the 24 month total at 1.6 to 2.2 times the original build cost once those are included.',
+          'None of that is a vendor being dishonest. It is a scope question that nobody asked. The fix is simple and almost nobody does it: ask for the three year number rather than the build number.',
+        ],
+      },
+      {
+        heading: 'What actually drives the cost up?',
+        body: [
+          'The state of the data it reads from. A model pointed at clean, consistently structured records is a different project from one pointed at four systems that disagree. The second is a data problem wearing an AI label, and it is usually the larger piece of work.',
+          'How wrong the output is allowed to be. A suggestion a human reviews is cheap. An output that acts without review needs evaluation, fallback behaviour and monitoring, and those are engineering line items rather than model tuning.',
+          'How often the surrounding systems change. Every integration has a permanent relationship with the systems feeding it, and those systems are versioned, renamed and replaced without consulting it.',
+          'Volume, because inference scales with use. A pilot with twenty users and a rollout to two thousand are not the same cost shape, and the second is rarely modelled during the first.',
+        ],
+      },
+      {
+        heading: 'What usually breaks after it ships?',
+        body: [
+          'It fails quietly. An automation or a model that stops working does not announce itself the way a crashed server does. It keeps returning answers and the answers get worse. Without monitoring in place from the start, the first person to notice is a customer.',
+          'The evaluation set never existed, so nobody can say whether a change made things better. A system you cannot measure cannot be improved safely, only altered hopefully.',
+          'And the knowledge leaves. The people who understood why a particular prompt, threshold or transformation exists move on, and what remains is a system nobody is willing to touch.',
+        ],
+      },
+      {
+        heading: 'When should a smaller business not integrate AI at all?',
+        body: [
+          'When nobody can name the decision the output will change. If the honest answer to "and then what happens" is that someone looks at it, the value is not there yet. That is the single most useful question to ask before committing anything.',
+          'When the underlying process is not written down. Automating an undocumented process encodes whatever it currently does, including the parts that are wrong, and makes them harder to see.',
+          'When the volume is low. The engineering, the monitoring and the maintenance do not get cheaper because the task is rare, and a rare task rarely earns them back however irritating it is.',
+          'And when the real driver is that competitors have announced something. That is a genuine force in these decisions and it is worth naming out loud, because it is often the one actually deciding.',
+        ],
+      },
+      {
+        heading: 'How do I get a quote I can trust?',
+        body: [
+          'Ask what is excluded. Testing, monitoring, evaluation, the integration work itself and post launch support are where a low number hides its real cost. Get the exclusions in writing.',
+          'Ask for the three year total, broken into build, running and change. If a vendor cannot produce that, they have not scoped the project, they have scoped a demo.',
+          'Ask who maintains it in year two and whether that person has been told. The answer is revealing more often than it should be.',
+          'And notice who is answering. The party explaining whether you should integrate AI is frequently the party paid to build it. That does not make them wrong, but it does mean the question is worth asking somewhere with nothing riding on the answer.',
+        ],
+      },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug) => insights.find((a) => a.slug === slug);

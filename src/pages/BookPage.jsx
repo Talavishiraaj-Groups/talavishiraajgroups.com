@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Seo, { breadcrumbSchema, webPageSchema, CONTACT_EMAIL } from '../seo';
 import { track } from '../components/analytics';
+import EnquiryForm from '../components/EnquiryForm';
 
 /**
  * Booking page.
@@ -124,9 +125,31 @@ export default function BookPage() {
         </ul>
       </section>
 
+      {/*
+        Details first, then the calendar.
+
+        Cal.com's own booking form asks for a name and an email and nothing
+        else. No company, and no sense of what the call is about, so the first
+        ten minutes get spent on questions that could have been answered
+        beforehand. Worse, that information only reaches us if the Cal webhook
+        fires, which is a dependency outside this codebase.
+
+        Collecting it here fixes both. The details post through the same
+        endpoint as the contact form, so the lead lands in the normal inbox
+        whether or not the webhook works, and we arrive at the call having read
+        what they sent. The calendar appears immediately afterwards, so it costs
+        the visitor one short form rather than a round trip.
+      */}
       <section className="max-w-4xl mx-auto px-4 md:px-8 pb-20">
         {CAL_LINK ? (
-          <CalEmbed link={CAL_LINK} />
+          <EnquiryForm
+            heading="What would you like to talk about?"
+            help="A sentence is plenty. It means we come to the call having thought about it rather than asking you to start from the beginning."
+            placeholder="We are trying to work out..."
+            service="Book a call"
+            location="book"
+            messageLabel="Wants to talk about"
+          />
         ) : (
           <div className="bg-muted border border-border rounded-2xl p-8 space-y-4">
             <h2 className="text-xl font-semibold text-primary">Online booking is not live yet</h2>

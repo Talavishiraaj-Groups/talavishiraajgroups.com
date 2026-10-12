@@ -562,3 +562,140 @@ with the custom event vocabulary listed. `12-inbound-launch-plan.md` updated to 
 
 Gates after the change: build 35 routes / 32 in sitemap, check passed 45 files,
 audit 34 of 34.
+
+### The 27-course marketing library, read and extracted
+
+73GB, 1,307 files, 577 videos. Extracted ~1.4M characters from the relevant modules
+into `13-course-library-extraction.md`.
+
+Extraction notes: only 31 of 579 subtitle files are English, the rest are translations.
+The 41 HTML transcripts are the real source. Website Building, Email Marketing, Content
+Marketing Machine, Manual Market Research and THEORY are video only and could not be
+read. Website Building is the one worth watching manually.
+
+Honest verdict recorded in the file: the library is beginner to intermediate and mostly
+repeats the 21-book library at lower rigour. Sales Psychology covers four persuasion
+principles; Weinschenk covers eight with the research behind them. Copywriting teaches
+AIDA; StoryBrand and Maslen are sharper. Content Marketing is a weaker Big 5.
+
+Four things are additive:
+1. **The 3 Boxes.** Move a buyer from "yes or no" to "which one". Prism is a single
+   offer, so every visitor currently faces a binary. Cannot be applied as price tiers
+   (canon fixes one scope and one price, and no price appears on the site), but the
+   framework already outputs three directions, and the result screen could present
+   three real paths rather than one call to action.
+2. **The LinkedIn profile template.** Concrete structure for the primary channel. Its
+   "certifications/patents" slot is already fillable and unused. Its testimonials slot
+   is blocked, which independently confirms the same bottleneck.
+3. **Long-tail keyword principle.** Adds no data but confirms the approach in 02 and 10.
+4. **The GA4 module**, 296k chars, the largest extracted. Directly relevant because
+   Vercel Hobby does not support custom events at all, so every instrumented event is
+   currently discarded. GA4 is free with unlimited custom events and there is a full
+   course on it here. Deferred at the owner's instruction; recorded so it is not lost.
+
+Deliberately not extracted: Google Ads, all Facebook/Instagram/YouTube/Pinterest/Quora/
+Twitter modules, Influencer Marketing, Freelance. Paid and consumer social are ruled
+out in 05 and 12 on evidence.
+
+Nothing here changes the direction in 06 or 12.
+
+### Queue task 3: Search Console baseline recorded
+
+`14-search-console-baseline.md`. First first-party search data in the project.
+Window 5 Aug to 9 Oct 2026: **26 clicks, 224 impressions, 12 queries.**
+
+The headline: **95% of impressions and 100% of clicks are branded. Zero non-branded
+clicks in nine weeks.** `01` and `06` inferred the site had no non-branded surface
+area from the page inventory. Google has now measured it. The strategy does not
+change; its evidence base does.
+
+Largest anomaly, and the first thing to investigate: **"talavishiraaj groups company"
+returned 164 impressions and zero clicks**, while "talavishiraaj groups" converts at
+60% (26 clicks on 43 impressions). Three hypotheses recorded: low average position,
+a LinkedIn or directory profile outranking the site for its own brand, or non-human
+impressions. **Cannot be settled without the average position column**, which the
+export provided did not include.
+
+Four non-branded impressions are worth more than their volume. `ai production
+readiness audit what happens in two weeks?` maps to both the resource page and the
+two week engagement window, and is exactly the shape of query the content strategy
+targets. `founder-led services firms` shows the positioning language landing.
+`dpa vs nda` is accidental coverage from the legal pages. The two boolean queries are
+recruiters using search operators, not demand.
+
+Important framing: this window **predates** the build vs buy framework, the Prism
+repositioning and the data engineering article. It measures the site as brand-only,
+which is what makes it a clean reference point.
+
+Gaps flagged for the owner to export next: average position, the Pages tab, countries
+and devices, plus how many of the 40 crawled pages are actually indexed against the 33
+in the sitemap. The tool's claim of 538 backlinks is UNVERIFIED and not from Search
+Console.
+
+Re-measure 9 Nov and 9 Dec. The only metric that matters is non-branded clicks, which
+is currently zero. No movement should be expected before late November.
+
+### Queue task 4: AI integration explainer published
+
+`/insights/what-ai-integration-costs`. Unlike the data engineering task, this
+recommendation targeted a term with real buyer intent and I said so rather than
+pushing back reflexively.
+
+Intent test: career intent exists (specialist, jobs, salary, certification) but does
+not dominate. Four buyer clusters are live: `ai integration services` + geo
+(enterprises, usa, india, bangalore), `ai integration for` + segment (small business,
+d2c), `how to integrate ai into business` (problem aware, pre vendor), `ai integration
+cost` and `ai integration challenges`. The article targets all four at once.
+
+Angle: what it costs and why quotes come in low. Uses three already sourced figures
+from benchmarks.js rather than new claims: AI 24 month TCO at 1.6 to 2.2 times build
+cost, integration work at 35 to 50 percent of development cost and the most frequent
+overrun source, and annual maintenance at 15 to 25 percent. Expressed as ratios rather
+than currency, so no price appears and the content check stays clean.
+
+Includes a section on when a smaller business should not integrate at all, and closes
+on who is answering the question: the party explaining whether you should integrate AI
+is frequently the party paid to build it.
+
+Verified: title 48 chars, description 149, 1,187 words, 9 h2 sections, Article schema,
+0 currency, 0 em dashes, in sitemap (34 URLs), links onward to /build-vs-buy and
+/contact?intent=ai. check passed, audit 36 of 36.
+
+/insights now holds four articles, up from two when the recommendation was written.
+
+### Queue task 5: "Install web analytics on all 40 URLs" — false positive, verified, no change made
+
+The premise was "HTML analysis reports an empty analytics list and scripts_total 1".
+That observation is accurate and the conclusion drawn from it is wrong.
+
+`@vercel/analytics` injects its script **client side after hydration**. A crawler
+reading the served HTML sees four JSON-LD blocks and one module bundle, and no
+analytics tag, because at that moment there genuinely is none. The analytics code is
+inside the bundle.
+
+Verified on the live site rather than asserted:
+- the script injects at runtime from `/_vercel/insights/script.js`
+- `window.va` resolves to a function
+- a client side navigation to /services fired a real beacon to `/_vercel/insights/view`
+  carrying the correct URL, sdk name `@vercel/analytics/react` and version 2.0.1
+- zero console errors
+
+Decisive independent proof: Vercel Analytics recorded **38 visitors and 91 page views**
+in the last seven days. A system reporting real traffic is installed.
+
+Route coverage is structural. `<Analytics />` sits inside App, which wraps every
+`<Route>`, so it applies to all routes by construction rather than being added page by
+page. There is no per-page work to do and no per-page risk of missing one.
+
+**Declined to add a second analytics script.** It would double count page views, add a
+second third party request to a site that currently makes exactly one, and in the case
+of GA4 create a consent obligation the current cookieless setup does not have. It would
+fix a detection artefact, not a measurement gap.
+
+One genuine limitation recorded while checking: because the script loads after
+hydration, a visitor who leaves before JS executes is never counted. That is true of
+all client side analytics and is not worth a second vendor to solve.
+
+Separately noted: the live bundle is still `index-DaolzuXq.js`, which means the site
+has **not been redeployed** since the booking form, the title fix and both new
+articles. Those are all sitting undeployed.

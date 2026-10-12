@@ -3,7 +3,7 @@ import { track } from './analytics';
 import { CONTACT_EMAIL } from '../seo';
 
 /**
- * The way in to Prism.
+ * The enquiry form that sits in front of the calendar.
  *
  * Kept deliberately short. An earlier version asked for a budget band and how
  * settled the decision was, on the theory that the form should filter out the
@@ -23,7 +23,7 @@ import { CONTACT_EMAIL } from '../seo';
  * the booker and us, attaches the calendar invite, and sends the default
  * reminder before the call, which is the behaviour people expect from
  * Calendly. Set VITE_CAL_LINK to the booking link (for example
- * "talavishiraaj/prism"). If it is not set, the form still submits by email
+ * "talavishiraaj-groups/30min"). If it is not set, the form still submits by email
  * and simply says we will reply, so nothing breaks in the meantime.
  *
  * Note: the Cal embed is the only third party request on the site, and it is
@@ -39,11 +39,14 @@ function CalEmbed({ link }) {
   useEffect(() => {
     if (!link || !ref.current) return undefined;
     const frame = document.createElement('iframe');
-    frame.src = `https://cal.com/${link}?embed=true&theme=light`;
+    // No `embed=true`. That parameter expects Cal.com's own embed script and
+    // renders a blank frame on a bare iframe: it loads, throws nothing, and
+    // shows nothing. The plain booking URL frames correctly.
+    frame.src = `https://cal.com/${link}?theme=light`;
     frame.title = 'Choose a time';
     frame.loading = 'lazy';
     frame.className = 'w-full rounded-2xl border border-border';
-    frame.style.height = '660px';
+    frame.className += ' h-[760px] md:h-[560px]';
     ref.current.appendChild(frame);
     return () => {
       if (ref.current) ref.current.innerHTML = '';
@@ -53,22 +56,30 @@ function CalEmbed({ link }) {
   return <div ref={ref} />;
 }
 
-export default function PrismQualifier() {
+export default function EnquiryForm({
+  heading = 'What would you like to talk about?',
+  help = 'A sentence is plenty.',
+  placeholder = 'We are trying to work out...',
+  service = 'Enquiry',
+  location = 'enquiry',
+  messageLabel = 'About',
+  confirmation = 'Pick a time below. We will read what you have sent before we speak, so you will not need to start from the beginning.',
+} = {}) {
   const [form, setForm] = useState({
     name: '',
     email: '',
     company: '',
+    phone: '',
     decision: '',
   });
   const [status, setStatus] = useState('idle');
-  const [errorMessage, setErrorMessage] = useState('');
   const [started, setStarted] = useState(false);
 
   const change = (event) => {
     const { name, value } = event.target;
     if (!started) {
       setStarted(true);
-      track('prism_qualifier_start');
+      track('qualifier_start', { location });
     }
     setForm((prev) => ({ ...prev, [name]: value }));
   };
@@ -76,9 +87,28 @@ export default function PrismQualifier() {
   const submit = async (event) => {
     event.preventDefault();
     setStatus('submitting');
-    setErrorMessage('');
 
-    const message = `Decision: ${form.decision}`;
+    const message = `${messageLabel}: ${form.decision}`;
+
+    // Move on regardless of what the email endpoint does.
+    //
+    // An earlier version waited for this call and only showed the calendar on
+    // success, which meant a failed send stopped someone booking at all. That
+    // is the wrong way round: the booking is the point and these details are
+    // the convenience. It also made the page untestable on a local preview,
+    // where the serverless function does not run and every submit looked
+    // broken.
+    //
+    // Nothing is lost if the send fails. Cal.com still collects a name and an
+    // email at the booking step, and the webhook delivers its own copy, so the
+    // only thing missing is context we can ask for on the call.
+    //
+    // That is why the visitor is told nothing when it fails. They came to book,
+    // they can still book, and a warning about our mail plumbing is something
+    // they can neither act on nor fix. It only makes a working page look
+    // broken. The failure goes to the console for us instead.
+    track('qualifier_submit', { location });
+    setStatus('sent');
 
     try {
       const response = await fetch('/api/send-contact-email', {
@@ -88,28 +118,20 @@ export default function PrismQualifier() {
           name: form.name,
           email: form.email,
           company: form.company,
-          phone: '',
-          service: 'Prism',
+          phone: form.phone,
+          service,
           message,
         }),
       });
-
-      const text = await response.text();
-      let data;
-      try {
-        data = JSON.parse(text);
-      } catch {
-        throw new Error(`Unexpected response from the server: ${text.slice(0, 120)}`);
-      }
       if (!response.ok) {
-        throw new Error(data.error || data.details || 'The message could not be sent.');
+        // Never surface a raw response body. On a local preview this endpoint
+        // does not exist and the SPA fallback returns a page of HTML, which is
+        // how a block of markup ended up on screen once.
+        throw new Error(`The endpoint returned ${response.status}.`);
       }
-
-      track('prism_qualifier_submit');
-      setStatus('sent');
     } catch (error) {
-      setStatus('error');
-      setErrorMessage(`${error.message} You can also write to us at ${CONTACT_EMAIL}.`);
+      // eslint-disable-next-line no-console
+      console.warn('Booking details were not delivered by email:', error.message);
     }
   };
 
@@ -119,10 +141,7 @@ export default function PrismQualifier() {
         <h3 className="text-2xl font-semibold text-black">Thank you, that is enough to go on.</h3>
         {CAL_LINK ? (
           <>
-            <p className="text-gray-600 leading-relaxed">
-              Pick a time below and we will come to it having read what you sent. If Prism is not
-              the right engagement for this, we will say so on the call and tell you what is.
-            </p>
+            <p className="text-gray-600 leading-relaxed">{confirmation}</p>
             <CalEmbed link={CAL_LINK} />
             <p className="text-xs text-gray-500">
               You will get a confirmation and a calendar invite by email, and a reminder before the
@@ -131,7 +150,7 @@ export default function PrismQualifier() {
           </>
         ) : (
           <p className="text-gray-600 leading-relaxed">
-            We have your decision and will reply within one business day with either a time to talk
+            We have your details and will reply within one business day with either a time to talk
             or an honest note that this is not the right fit. You can also reach us directly at{' '}
             <a href={`mailto:${CONTACT_EMAIL}`} className="underline underline-offset-4">
               {CONTACT_EMAIL}
@@ -150,11 +169,9 @@ export default function PrismQualifier() {
     <form onSubmit={submit} className="bg-white border border-border rounded-2xl p-8 space-y-6">
       <div className="space-y-2">
         <label htmlFor="decision" className="block text-sm font-semibold text-black">
-          What are you deciding?
+          {heading}
         </label>
-        <p className="text-xs text-gray-500">
-          A sentence is plenty. For example: whether to build our own scheduling system or buy one.
-        </p>
+        <p className="text-xs text-gray-500">{help}</p>
         <textarea
           id="decision"
           name="decision"
@@ -163,7 +180,7 @@ export default function PrismQualifier() {
           value={form.decision}
           onChange={change}
           className={field}
-          placeholder="We are weighing whether to..."
+          placeholder={placeholder}
         />
       </div>
 
@@ -197,27 +214,38 @@ export default function PrismQualifier() {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="email" className="block text-sm font-semibold text-black">
-          Email
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={form.email}
-          onChange={change}
-          className={field}
-          autoComplete="email"
-        />
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div className="space-y-2">
+          <label htmlFor="email" className="block text-sm font-semibold text-black">
+            Email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            value={form.email}
+            onChange={change}
+            className={field}
+            autoComplete="email"
+          />
+        </div>
+        <div className="space-y-2">
+          <label htmlFor="phone" className="block text-sm font-semibold text-black">
+            Phone <span className="font-normal text-gray-500">(optional)</span>
+          </label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            value={form.phone}
+            onChange={change}
+            className={field}
+            autoComplete="tel"
+            placeholder="Include the country code"
+          />
+        </div>
       </div>
-
-      {status === 'error' && (
-        <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-xl p-4">
-          {errorMessage}
-        </p>
-      )}
 
       <button
         type="submit"
