@@ -699,3 +699,40 @@ all client side analytics and is not worth a second vendor to solve.
 Separately noted: the live bundle is still `index-DaolzuXq.js`, which means the site
 has **not been redeployed** since the booking form, the title fix and both new
 articles. Those are all sitting undeployed.
+
+### Queue task 6: problem to capability block moved under the hero
+
+Most of this recommendation was already satisfied. The headline it asked for,
+"Some problems need more than one kind of engineer", was already the H1 word for
+word; the supporting line was already the hero sub line; all six capability links
+were already in the body, twice each. The tool's own note admitted it lacked
+evidence for the task.
+
+The one real difference was placement: it wanted the six links directly under the
+hero and above the first scroll on mobile. Implemented, but reframed rather than
+copied, because six bare links in the first screen is a six way sort performed by
+someone who does not yet know what they need. That is the choice load measured on
+this page in `09` (26 sub items, the most of any competitor benchmarked).
+
+What shipped: the existing problems section moved from position five to directly
+under the hero, with the heading changed from "The problems organizations bring to
+us" to **"Does one of these sound like you?"**, and a threshold line added
+underneath: if more than one is true at once, that is usually why the work stalled.
+Recognition rather than a menu. All six capability links kept, so the routes to the
+service pages are unchanged.
+
+Order now: hero, recognition, product, who we are, capabilities. Recognition before
+the offer, which is the right sequence and was not the case before.
+
+**A real defect the task surfaced:** the six capability links were 20px tall on
+mobile, which fails WCAG 2.5.8 (24px minimum) and is poor under Fitts's law. Raised
+to 44px. Verified at 375x812: all six now 44px, no horizontal page scroll, rail
+scrolls correctly, six cards present.
+
+Step 4 as literally written is not met and deliberately so. The block sits 1,211px
+down on a 812px viewport, about 1.5 screenfuls. Getting it above the first scroll
+would mean gutting the hero. NN/g's data puts 74 percent of viewing time in the first
+two screenfuls, so this is inside the window that matters, and the trade is not worth
+it. Recorded rather than quietly ignored.
+
+Gates: build 37 routes / 34 in sitemap, check passed, audit 36 of 36.

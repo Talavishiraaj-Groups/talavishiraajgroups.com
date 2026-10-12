@@ -167,13 +167,13 @@ export const insights = [
     h1: 'Do you need data engineering, or do you need one spreadsheet to stop being retyped?',
     metaTitle: 'Do You Need Data Engineering? | Talavishiraaj Groups',
     metaDescription:
-      'Reporting assembled by hand is a real cost, but not automatically a data engineering problem. A practical test for whether you need pipelines, a tool, or neither.',
+      'Reporting assembled by hand is a real cost, but not automatically a data engineering problem. A test for whether you need pipelines, a tool, or neither.',
     published: '2026-10-12',
     readingTime: '8 min read',
     capability: 'tech',
     caseStudy: 'founder-operations-cockpit',
     summary:
-      'Most teams who ask about data engineering are describing a symptom: the monthly report takes three days and the numbers disagree. Sometimes that is a pipeline problem. More often it is two systems that were never connected, or one report nobody has questioned in two years. The three are not the same purchase, and buying the wrong one is expensive in a way that is hard to unwind.',
+      'Written for the person who has to sign it off rather than the person who would build it. Most teams who ask about data engineering are describing a symptom: the monthly report takes three days and the numbers disagree. Sometimes that is a pipeline problem. More often it is two systems that were never connected, or one report nobody has questioned in two years. The three are not the same purchase, and buying the wrong one is expensive in a way that is hard to unwind.',
     takeaways: [
       'The question is almost never whether you need data engineering. It is why one number takes three days and still gets argued about.',
       'Count the hands a number passes through before anyone trusts it. That, not the row count, tells you whether pipelines are the answer.',

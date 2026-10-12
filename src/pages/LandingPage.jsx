@@ -104,6 +104,64 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/*
+        PROBLEM TO CAPABILITY, directly under the hero.
+
+        This sits here rather than further down because of what the hero leaves
+        unresolved. "Some problems need more than one kind of engineer" is true
+        and abstract; a first time visitor still has to work out whether they
+        are one of those problems. This answers that in the screen where the
+        attention is: NN/g's reading data puts 81, 71 and 63 percent of readers
+        on the first three paragraphs and 32 percent on the fourth.
+
+        It is framed as recognition rather than as a menu. Six bare links in the
+        first screen is a six way sort performed by someone who does not yet
+        know what they need, which is the choice load Hick's law describes and
+        the defect measured on this page in the landing page review. Asking
+        "does one of these sound like you" costs the reader nothing, and the
+        threshold line underneath turns a browse into a self diagnosis. The
+        capability links are still here, one per problem, so the route to each
+        service page is unchanged.
+      */}
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-3xl mb-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">What we work on</p>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+            Does one of these sound like you?
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Some are squarely technical. Others are commercial with a technical answer underneath.
+            Each one leads somewhere specific.
+          </p>
+        </div>
+        <HorizontalRail label="Problems organizations bring to us">
+          {problemsWeSolve.map((problem) => (
+            <div
+              key={problem.title}
+              className="bg-white border border-border rounded-2xl p-6 flex flex-col w-full"
+            >
+              <h3 className="text-base font-semibold mb-2 leading-snug">{problem.title}</h3>
+              <p className="text-sm text-gray-600 flex-1 leading-relaxed">{problem.body}</p>
+              <Link
+                to={problem.link}
+                // min-h-11 gives a 44px tap target. At 20px these failed WCAG
+                // 2.5.8, which asks for 24, and Fitts's law says the smaller
+                // the target the longer it takes to hit, which costs most on a
+                // phone. inline-flex keeps the underline on the text only.
+                className="mt-4 inline-flex items-center min-h-11 text-sm font-medium text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black"
+              >
+                {problem.linkLabel}
+              </Link>
+            </div>
+          ))}
+        </HorizontalRail>
+        <p className="text-sm text-gray-700 mt-6 max-w-3xl">
+          If more than one of those is true at the same time, that is usually the reason the work
+          has stalled. Problems that cross disciplines do not get solved by adding another supplier
+          to the chain.
+        </p>
+      </section>
+
       {/* PRODUCT. Kept deliberately short: the product, the line, one way in. */}
       <section className="border-y border-border bg-muted">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
@@ -154,37 +212,6 @@ export default function LandingPage() {
             expertise brought to a problem is chosen for its relevance rather than its proximity.
           </p>
         </div>
-      </section>
-
-      {/* WHAT WE WORK ON */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
-        <div className="max-w-3xl mb-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">What we work on</p>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
-            The problems organizations bring to us
-          </h2>
-          <p className="text-gray-600 leading-relaxed">
-            Some are squarely technical. Others are commercial with a technical answer underneath.
-            Each leads to a defined capability.
-          </p>
-        </div>
-        <HorizontalRail label="Problems organizations bring to us">
-          {problemsWeSolve.map((problem) => (
-            <div
-              key={problem.title}
-              className="bg-white border border-border rounded-2xl p-6 flex flex-col w-full"
-            >
-              <h3 className="text-base font-semibold mb-2 leading-snug">{problem.title}</h3>
-              <p className="text-sm text-gray-600 flex-1 leading-relaxed">{problem.body}</p>
-              <Link
-                to={problem.link}
-                className="mt-4 text-sm font-medium text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black"
-              >
-                {problem.linkLabel}
-              </Link>
-            </div>
-          ))}
-        </HorizontalRail>
       </section>
 
       {/* CAPABILITIES */}
