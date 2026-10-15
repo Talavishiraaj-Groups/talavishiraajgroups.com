@@ -4,6 +4,7 @@ import Seo, { breadcrumbSchema, itemListSchema, webPageSchema } from '../seo';
 import { capabilityById, capabilityPath } from '../data/servicesData';
 import { track } from '../components/analytics';
 import RelatedPath from '../components/RelatedPath';
+import Differentiator from '../components/Differentiator';
 
 /**
  * Anonymized engagement records.
@@ -15,9 +16,34 @@ import RelatedPath from '../components/RelatedPath';
 export const CASE_STUDY_DISCLOSURE =
   'These engagements are published in anonymized form. Client names, identifying details and commercially sensitive figures are withheld at our clients’ request.';
 
+/**
+ * Why this set reads differently from the usual case study page.
+ *
+ * Each point is checkable against the six entries below rather than asserted,
+ * which matters because there are no logos or named references here to lean on.
+ * Point one is the disclosure above. Point two is the whyItMattered field.
+ * Point three is the implementation field, which most published case studies
+ * omit entirely.
+ */
+export const CASE_STUDY_DIFFERENTIATORS = [
+  {
+    title: 'No logos, and no numbers we cannot stand behind',
+    body: 'Clients in this category rarely permit attribution, so these are anonymized and the commercially sensitive figures are withheld. Where a result appears it was part of the record the client already approved. Nothing has been rounded up to make a page look better.',
+  },
+  {
+    title: 'Each one names the constraint, not just the output',
+    body: 'A list of what was delivered tells you nothing about whether it would work for you. Every entry closes by setting out why the approach mattered, which is usually that the real problem was somewhere other than where it appeared to be.',
+  },
+  {
+    title: 'The implementation choice is published',
+    body: 'The decision that made each engagement work is written down: building against the CRM already in use rather than replacing it, designing the fallback behaviour before the happy path, validating event capture against known incidents before adding detection. That is the part normally left out.',
+  },
+];
+
 export const caseStudies = [
   {
     slug: 'ai-led-outbound-growth-engine',
+    metaTitle: 'AI-Led Outbound Growth Engine | Talavishiraaj Groups',
     title: 'Rewiring outbound with an AI-led growth engine',
     industry: 'B2B services',
     theme: 'Sales & Growth',
@@ -40,6 +66,7 @@ export const caseStudies = [
   },
   {
     slug: 'founder-operations-cockpit',
+    metaTitle: 'One Operations View for a Founder | Talavishiraaj Groups',
     title: 'Giving a founder a single view of operations',
     industry: 'Early-stage startup',
     theme: 'Founder Operations',
@@ -62,6 +89,7 @@ export const caseStudies = [
   },
   {
     slug: 'ai-workflow-notebook-to-production',
+    metaTitle: 'AI Workflow: Notebook to Production | Talavishiraaj Groups',
     title: 'Taking an AI workflow from notebook to production',
     industry: 'Technology',
     theme: 'R&D to Production',
@@ -84,6 +112,7 @@ export const caseStudies = [
   },
   {
     slug: 'decision-heavy-workflow-automation',
+    metaTitle: 'Automating Decision-Heavy Workflows | Talavishiraaj Groups',
     title: 'Automating decision-heavy internal workflows',
     industry: 'Operations',
     theme: 'AI & Automation',
@@ -106,6 +135,7 @@ export const caseStudies = [
   },
   {
     slug: 'live-operations-visibility-layer',
+    metaTitle: 'AI-Assisted Live Operations Layer | Talavishiraaj Groups',
     title: 'Building an AI-assisted live operations layer',
     industry: 'Distributed operations',
     theme: 'AI & Automation',
@@ -128,6 +158,7 @@ export const caseStudies = [
   },
   {
     slug: 'structured-sales-hiring-engine',
+    metaTitle: 'Structured Sales Hiring Engine | Talavishiraaj Groups',
     title: 'Designing a structured sales hiring engine',
     industry: 'Sales organization',
     theme: 'People & Talent',
@@ -154,7 +185,11 @@ export const caseStudyBySlug = (slug) => caseStudies.find((c) => c.slug === slug
 
 const THEMES = ['All', ...Array.from(new Set(caseStudies.map((c) => c.theme)))];
 
-const INDEX_TITLE = 'Case Studies: Anonymized Client Engagements | Talavishiraaj Groups';
+/* Kept under 60 characters. The previous title ran to 66 and lost "Groups" to
+   truncation, which on a brand nobody searches for yet is the worst word to
+   drop. "Anonymized Client Engagements" was descriptive but nobody searches it,
+   so the slot now carries the two things people do search. */
+const INDEX_TITLE = 'AI and Operations Case Studies | Talavishiraaj Groups';
 const INDEX_DESCRIPTION =
   'Anonymized accounts of real engagements: what the problem was, what we built, how it was implemented and what changed. Covering operations, AI and automation, growth systems and moving R&D into production.';
 
@@ -258,7 +293,24 @@ export default function CaseStudiesPage() {
           ))}
         </div>
 
-        <div className="mt-14 border-t border-border pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        {/* Closing the grid here so the differentiator can be a full width band
+            between the evidence and the call to action. */}
+      </section>
+
+      {/* DIFFERENTIATOR. After the entries rather than before them. The
+          disclosure line in the hero already sets the expectation that these
+          are anonymized, so the reader is not surprised by the absence of
+          logos; what they are holding by this point is "so why you", which is
+          the question these three points answer. Putting the block above the
+          grid was tried and pushed every link on the page below the fold. */}
+      <Differentiator
+        eyebrow="How to read these"
+        heading="Most case study pages are a logo wall. These are written to be checked"
+        points={CASE_STUDY_DIFFERENTIATORS}
+      />
+
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-xl">
             <h2 className="text-xl font-semibold mb-2">Working through something similar?</h2>
             <p className="text-sm text-gray-700 leading-relaxed">
@@ -312,7 +364,12 @@ export function CaseStudyDetailPage() {
   }
 
   const path = `/case-studies/${study.slug}`;
-  const title = `${study.title} | Talavishiraaj Groups Case Study`;
+  /* The <title> is a separate, shorter field from the on-page h1, not the h1
+     with a brand suffix bolted on. Composing it that way put every one of
+     these pages between 76 and 83 characters, so Google truncated the brand
+     off all six. study.metaTitle is written to land under 60 with the brand
+     intact; study.title stays long because an h1 has no pixel budget. */
+  const title = study.metaTitle;
   const description = `${study.teaser} ${study.impactSummary}`;
 
   const sections = [

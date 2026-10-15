@@ -15,7 +15,7 @@ export const insights = [
     slug: 'why-ai-prototypes-stall-before-production',
     title: 'Why AI prototypes stall before production',
     h1: 'Why AI prototypes stall before production, and what production actually requires',
-    metaTitle: 'Why AI Prototypes Stall Before Production | Talavishiraaj Groups',
+    metaTitle: 'Why AI Prototypes Stall | Talavishiraaj Groups',
     metaDescription:
       'A working AI prototype and a production system are different artifacts. What actually has to be built between them: interface contracts, failure behavior, observability, evaluation you can rerun, and staged rollout.',
     published: '2026-09-27',
@@ -92,7 +92,7 @@ export const insights = [
     slug: 'when-workflow-automation-is-worth-engineering',
     title: 'When workflow automation is worth engineering',
     h1: 'When workflow automation is worth engineering, and when it is not',
-    metaTitle: 'When Workflow Automation Is Worth Engineering | Talavishiraaj Groups',
+    metaTitle: 'When Workflow Automation Pays Off | Talavishiraaj Groups',
     metaDescription:
       'Not every manual process should be automated. A practical test based on volume, repeatability and error cost, plus how to separate decisions that are genuine judgement from decisions that were simply never written down.',
     published: '2026-09-27',

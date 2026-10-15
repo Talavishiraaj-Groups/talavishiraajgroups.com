@@ -28,7 +28,7 @@ export default function ProductsPage() {
   return (
     <>
       <Seo
-        title="Prism: an independent build vs buy and AI decision | Talavishiraaj Groups"
+        title="Prism: Build vs Buy vs AI Decision | Talavishiraaj Groups"
         description="Before you build it, buy it, or bet on AI, know what matters most. Prism is an independent two week go or no go on the technology decision you are about to make. Not your dev shop, not a gut check call."
         path="/products"
         jsonLd={[

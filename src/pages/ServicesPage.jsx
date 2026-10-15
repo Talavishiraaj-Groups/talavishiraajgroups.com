@@ -9,6 +9,7 @@ import Seo, {
 } from '../seo';
 import {
   SECTOR_STATEMENT,
+  SERVICES_DIFFERENTIATORS,
   capabilityBySlug,
   capabilityPath,
   serviceCategories,
@@ -19,9 +20,12 @@ import { insightPath, insightsForCapability } from '../data/insights';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
 import RelatedPath from '../components/RelatedPath';
+import Differentiator from '../components/Differentiator';
 
-const TITLE =
-  'Capabilities: Software, AI, Product Engineering and Business Systems | Talavishiraaj Groups';
+/* Kept under 60 characters so it survives to the SERP intact. The previous
+   title listed all four capability groups and ran to 91, which Google
+   truncated mid-phrase and often rewrote. */
+const TITLE = 'AI, Software and Systems Services | Talavishiraaj Groups';
 
 /* ------------------------------------------------------------------ *
  * Hub page
@@ -149,8 +153,17 @@ export default function ServicesPage() {
         })}
       </div>
 
-      {/* CROSS SECTOR */}
-      <section className="border-y border-border bg-muted">
+      {/* DIFFERENTIATOR. Placed after the capability list rather than before
+          it, because the question it answers only becomes live once a reader
+          has seen that the list looks like everybody else's. */}
+      <Differentiator
+        heading="Six firms will quote you this list. Three things separate how we take it on"
+        points={SERVICES_DIFFERENTIATORS}
+      />
+
+      {/* CROSS SECTOR. White, because the differentiator band directly above it
+          is muted and two adjacent muted bands read as one grey slab. */}
+      <section className="border-b border-border bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Across sectors</p>

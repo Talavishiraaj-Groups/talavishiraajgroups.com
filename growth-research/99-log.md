@@ -771,3 +771,90 @@ commands and expected values are in CACHING.md and must be run after the next de
 
 Steps 6 and 8, CDN purge and PageSpeed verification, are post deploy and belong to the
 owner.
+
+---
+
+## 2026-10-15 — REVALIN queue: "Shorten the titles on case studies", plus differentiation
+
+### What the recommendation got right, and what it undercounted
+
+[FACT] REVALIN reported "9 case study pages with 'title_too_long' issues". A measurement
+of the 37 built pages found **17 titles over 60 characters**, of which 7 were case study
+pages (the index plus all 6 entries). So the problem was real and about twice the
+reported size. The other 10 were service, product, insight and utility pages.
+
+[FACT] The worst was `/services` at **91 characters**:
+`Capabilities: Software, AI, Product Engineering and Business Systems | Talavishiraaj Groups`.
+Case study detail pages ran 76 to 83.
+
+### The structural cause, which the recommendation did not name
+
+[FACT] Case study detail titles were composed as `${study.title} | Talavishiraaj Groups
+Case Study`. The suffix alone is 34 characters, so **no entry could ever fit** regardless
+of how its title was written. The h1 was doing double duty as the `<title>`.
+
+[INFER] This is the part worth recording, because "edit each title to be under 60" would
+not have fixed it. The fix is that the SERP title and the on page h1 are different fields
+with different constraints: an h1 has no pixel budget, a title has about 580px. Each
+case study now carries an explicit `metaTitle`, and `study.title` stays long.
+
+### What was changed
+
+All 17 titles rewritten. **Every one keeps the full brand token** `| Talavishiraaj Groups`
+rather than dropping it to buy characters. Reasoning: at zero non branded clicks in 9
+weeks (see `14-search-console-baseline.md`), brand recall is the thing least affordable
+to truncate. Google was cutting "Groups" off six case study pages.
+
+[FACT] Result: **37 pages, 0 over 60**. Range 41 to 59. `check-content.mjs` and
+`audit-pages.mjs` both pass, the latter 36/36.
+
+One correction made during the work: the first draft retitled the AI prototype article
+`Why AI Prototypes Fail in Production`. The article is about prototypes stalling
+*before* production. Changed to `Why AI Prototypes Stall`, which loses the "production"
+keyword from the title but keeps it in the h1, description and slug. Accuracy over the
+keyword.
+
+### Differentiation, which was not in the REVALIN item
+
+[OBS] Neither `/services` nor `/case-studies` answered why this firm rather than another.
+`/services` listed six capabilities that any competent firm in the category also lists,
+then went straight to a call to action. A capability list is not a differentiator.
+
+New `src/components/Differentiator.jsx`, two instances sitewide. Deliberately not on
+every child page: 13 copies of the same three points would be boilerplate, which readers
+skip and crawlers discount.
+
+Constraint applied, per Dunford: differentiation only means something against a **named**
+alternative. Each point states what the usual alternative does, then what we do instead.
+
+Second constraint, and the harder one: with no client references, logos or testimonials
+available yet, nothing could be asserted. **Every point maps to something already on the
+site that a reader can go and verify.**
+
+`/services`: (1) we will tell you not to build it, mapping to the "Establish whether it
+is worth building" and "Report what the evidence supports" approach entries; (2) we build
+what we recommend, mapping to the strategy FAQ; (3) the engagement is designed to end,
+mapping to "Hand it over properly" and "Plan the exit at the start".
+
+`/case-studies`: (1) no logos and no numbers we cannot stand behind, mapping to the
+existing disclosure; (2) each entry names the constraint not the output, mapping to the
+`whyItMattered` field; (3) the implementation choice is published, mapping to the
+`implementation` field, which most published case studies omit entirely.
+
+### A regression caught by the audit
+
+Placing the case studies differentiator **above** the card grid, which was the first
+instinct since it explains the absence of logos before a reader meets it, pushed every
+link on the page below the fold. `audit-pages.mjs` failed it on "no call to action above
+the fold". Moved below the grid. The hero disclosure line already sets the anonymization
+expectation, so by the time a reader reaches the block the live question is "so why you",
+which is what the three points answer. Same position as on the services hub.
+
+[FACT] No new routes. Sitemap unchanged at 34 indexable of 37 prerendered, so nothing new
+to submit.
+
+### Still open from this item
+
+Nine page descriptions are flagged as "may truncate" by the audit, worst 227 characters
+on `/services/technology-and-engineering`. Notes rather than failures, and a separate
+piece of work from titles. Not touched here.

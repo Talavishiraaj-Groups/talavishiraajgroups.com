@@ -53,7 +53,7 @@ export default function AboutPage() {
   return (
     <>
       <Seo
-        title={`${TITLE} | Research, Technology and Engineering`}
+        title={`${TITLE} | Technology and Engineering`}
         description={DESCRIPTION}
         path="/about"
         jsonLd={[

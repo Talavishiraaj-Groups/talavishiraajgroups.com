@@ -76,7 +76,7 @@ export const serviceCategories = [
     label: 'Artificial Intelligence & Automation',
     h1: 'Artificial intelligence and automation, applied to real work',
     serviceType: 'Applied artificial intelligence and process automation',
-    metaTitle: 'AI Development and Automation Services | Talavishiraaj Groups',
+    metaTitle: 'AI and Automation Services | Talavishiraaj Groups',
     metaDescription:
       'We design and deploy AI systems that hold up in production: machine learning, language and document systems, decision support and workflow automation, with monitoring, fallbacks and human review where judgement matters.',
     summary:
@@ -144,7 +144,7 @@ export const serviceCategories = [
     label: 'Product Engineering & R&D',
     h1: 'Product engineering, prototyping and applied research',
     serviceType: 'Product engineering and research and development',
-    metaTitle: 'Product Engineering and R&D Services | Talavishiraaj Groups',
+    metaTitle: 'Product Engineering and R&D | Talavishiraaj Groups',
     metaDescription:
       'Engineering, prototyping and validation for hardware and software products: mechanical design and simulation, embedded firmware, sensor integration, technical feasibility studies and structured research programmes.',
     summary:
@@ -206,7 +206,7 @@ export const serviceCategories = [
     label: 'Business & Operating Systems',
     h1: 'Business systems and operating design',
     serviceType: 'Business systems and operations design',
-    metaTitle: 'Business Systems and Operating Design | Talavishiraaj Groups',
+    metaTitle: 'Business and Operating Systems | Talavishiraaj Groups',
     metaDescription:
       'We work out what is limiting an organization, then design the operating model, workflows, decision structures and governance that resolve it, with the systems engineering to make the design real.',
     summary:
@@ -317,7 +317,7 @@ export const serviceCategories = [
     label: 'Implementation & Delivery',
     h1: 'Implementation and delivery',
     serviceType: 'Implementation and delivery management',
-    metaTitle: 'Technology Implementation and Delivery | Talavishiraaj Groups',
+    metaTitle: 'Implementation and Delivery | Talavishiraaj Groups',
     metaDescription:
       'We take responsibility for execution: running an agreed roadmap, embedding delivery capacity alongside your team, coordinating vendors under one point of accountability, and transitioning ownership back internally.',
     summary:
@@ -379,5 +379,30 @@ export const servicesMetaDescription =
  * Cross sector positioning. Expressed through the nature of the work rather
  * than as a claim to serve every industry, which is broad but says nothing.
  */
+/**
+ * Why us rather than the alternative.
+ *
+ * Every point here is checkable against the capability entries above, which is
+ * the only kind of differentiation available to a firm with no published client
+ * references. Point one maps to the "Establish whether it is worth building"
+ * and "Report what the evidence supports" approach entries. Point two maps to
+ * the strategy FAQ and the "Build what the design requires" entry. Point three
+ * maps to "Hand it over properly" and "Plan the exit at the start".
+ */
+export const SERVICES_DIFFERENTIATORS = [
+  {
+    title: 'We will tell you not to build it',
+    body: 'The usual problem with asking a build firm whether to build something is that they are paid either way to say yes. We assess volume, repeatability and error cost first, and where the work does not justify itself we say so before a proposal exists.',
+  },
+  {
+    title: 'We build what we recommend',
+    body: 'Advice and delivery sit in the same place. A consultancy hands over a specification and leaves, which is where most of these initiatives stall. If an operating change needs a reporting layer or an integration built to work, that is part of the engagement rather than the next supplier’s problem.',
+  },
+  {
+    title: 'The engagement is designed to end',
+    body: 'Documentation, runbooks and training are scoped at the start, not offered at the end. A partner who becomes structurally necessary has failed at the job. The measure of the work is that your team can change what was built after we leave.',
+  },
+];
+
 export const SECTOR_STATEMENT =
   'We work across industries where complex problems require deep technical and commercial expertise. Our approach is shaped by the problem, not by a rigid industry template. Whether you operate in manufacturing, software, finance, or research, the fundamental questions remain the same. What changes are your specific constraints: regulation, downtime tolerance, available data, and how you make decisions.';

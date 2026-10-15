@@ -204,7 +204,7 @@ export default function BuildBuyGuidePage() {
   return (
     <>
       <Seo
-        title="Build vs Buy vs Partner: A Decision Framework | Talavishiraaj Groups"
+        title="Build vs Buy vs Partner Framework | Talavishiraaj Groups"
         description="Seven questions that decide whether to build it, buy it, or do both. Covers differentiation, fit, who maintains it, and who is advising you. Free, nothing to fill in, nothing leaves your browser."
         path="/build-vs-buy"
         jsonLd={[

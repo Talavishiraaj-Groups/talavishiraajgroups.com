@@ -130,6 +130,6 @@ export const resourcePath = (resource) => `/resources/${resource.slug}`;
 export const resourcesForCapability = (capabilityId) =>
   resources.filter((r) => r.capability === capabilityId);
 
-export const RESOURCES_TITLE = 'Reference Resources for Engineering Teams | Talavishiraaj Groups';
+export const RESOURCES_TITLE = 'Engineering Reference Resources | Talavishiraaj Groups';
 export const RESOURCES_DESCRIPTION =
   'Checklists and reference material our teams use on real engagements, published in full and free to adapt. Written to be useful whether or not you ever work with us.';
