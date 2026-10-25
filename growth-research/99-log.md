@@ -858,3 +858,60 @@ to submit.
 Nine page descriptions are flagged as "may truncate" by the audit, worst 227 characters
 on `/services/technology-and-engineering`. Notes rather than failures, and a separate
 piece of work from titles. Not touched here.
+
+---
+
+## 2026-10-25 — Optise audit (score 42), acted on
+
+Full analysis in `15-optise-audit.md`. Summary of what was done and what was
+deliberately not done.
+
+**Acted on.** The conversions funnel finding was the real one and it measured
+worse than reported: 56 button actions across 36 pages carrying four different
+labels for one destination, 8 of them generic. One case was genuinely competing
+rather than just inconsistent, on all six case study detail pages, where a
+generic "View our capabilities" sat beside the conversion button and pointed at
+the services hub while the capability pills one scroll above already linked to
+the two specific capabilities. Removed rather than relabelled.
+
+`src/components/cta.js` now holds the single conversion label so the drift
+cannot recur. Generic labels 8 to 0. Zero adjacent filled buttons sitewide.
+
+Images resized: page loaded payload roughly 75KB to 25KB.
+
+**Checked and deliberately not changed.** Four pages carry two filled buttons,
+and on inspection all four are a hero anchor plus a closing conversion in
+separate sections that are never co-visible. That is correct funnel sequencing.
+Downgrading those heroes to satisfy a count would have made the pages weaker
+for the sake of a metric.
+
+**Found but not fixed, with reasoning.** The real mobile weight is a 467KB raw
+/ 129KB gzip single JS chunk carrying the prose of all 37 pages, so every
+visitor downloads every page's content twice: once as prerendered HTML, once as
+hydration JavaScript. Optise named images, which are six times smaller. Fixing
+it means route splitting, which means diverging the server and client trees
+because `entry-server.jsx` renders the same `App.jsx` through `renderToString`
+and that cannot handle `React.lazy`. On a live site taking inbound, a silent
+hydration mismatch is worse than the weight. The safe approach is recorded in
+`15-optise-audit.md` section 1b for a later, deliberate pass.
+
+**The valuable part was not the score.** Optise named six competitors; all six
+were fetched and all six are real, unlike 3 of the 13 in the earlier list.
+Five of six lead with named client logos including Siemens, Medtronic, BAE
+Systems, Dyson and Meta, and four carry ISO or silicon partner credentials.
+
+Two findings follow from that, both recorded in `15-optise-audit.md` section 3.
+First, Optise classified this company into embedded and hardware product
+engineering rather than software consultancy, which is a fair read of the
+`/services/product-engineering-and-rd` page, and it is a category this site
+cannot currently win on proof. Second, and more useful: not one of the six sells
+an opinion on whether to build at all. They are all paid to build. That is the
+gap Prism occupies, and it is independent corroboration of the `/services`
+differentiator written on 15 October rather than an assertion about it.
+
+**Unchanged and still owner blocked.** Named operator with a provable track
+record, three client references. That is what the trust signals finding
+actually asks for and no part of it can be written in code.
+
+Visibility 3 and Discovery 21 are not code problems and nothing here moves
+them. They agree with `14-search-console-baseline.md`.

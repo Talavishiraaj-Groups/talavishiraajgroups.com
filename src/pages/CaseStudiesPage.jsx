@@ -5,6 +5,7 @@ import { capabilityById, capabilityPath } from '../data/servicesData';
 import { track } from '../components/analytics';
 import RelatedPath from '../components/RelatedPath';
 import Differentiator from '../components/Differentiator';
+import { CONVERSION_LABEL } from '../components/cta';
 
 /**
  * Anonymized engagement records.
@@ -324,7 +325,7 @@ export default function CaseStudiesPage() {
             onClick={() => track('cta_click', { location: 'case_studies_index', target: 'contact' })}
             className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors whitespace-nowrap"
           >
-            Describe your situation
+            {CONVERSION_LABEL}
           </Link>
         </div>
       </section>
@@ -460,27 +461,26 @@ export function CaseStudyDetailPage() {
         than this one, that is a different piece of work: see
         </RelatedPath>
 
+        {/* One action, not two.
+            This closed with "Discuss a similar problem" and "View our
+            capabilities" side by side. The second was generic, and it pointed
+            at the capabilities hub while the "Capabilities involved" pills
+            directly above already linked to the two specific capabilities this
+            engagement used. So it offered a worse version of a route the
+            reader had just been given, positioned to compete with the only
+            action on the page that matters. Removed rather than relabelled. */}
         <section className="mt-12 pt-10 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
           <p className="text-sm text-gray-700 max-w-md">
             If this resembles the situation you are in, we can set out how we would approach it and
-            what the work would involve.
+            what the work would involve. Book a call or send a few lines, whichever you prefer.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              onClick={() => track('cta_click', { location: 'case_study_detail', target: 'contact' })}
-              className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-6 py-3 text-sm font-medium hover:bg-graphite transition-colors"
-            >
-              Discuss a similar problem
-            </Link>
-            <Link
-              to="/services"
-              onClick={() => track('cta_click', { location: 'case_study_detail', target: 'services' })}
-              className="inline-flex items-center justify-center rounded-full border border-gray-300 px-6 py-3 text-sm font-medium hover:bg-muted transition-colors"
-            >
-              View our capabilities
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            onClick={() => track('cta_click', { location: 'case_study_detail', target: 'contact' })}
+            className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-6 py-3 text-sm font-medium hover:bg-graphite transition-colors whitespace-nowrap"
+          >
+            {CONVERSION_LABEL}
+          </Link>
         </section>
       </article>
     </>

@@ -19,6 +19,7 @@ import { caseStudies } from './CaseStudiesPage';
 import { insightPath, insightsForCapability } from '../data/insights';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import { CONVERSION_LABEL } from '../components/cta';
 import RelatedPath from '../components/RelatedPath';
 import Differentiator from '../components/Differentiator';
 
@@ -193,7 +194,7 @@ export default function ServicesPage() {
               onClick={() => track('cta_click', { location: 'services_hub_cta', target: 'contact' })}
               className="inline-flex items-center justify-center rounded-full bg-accent text-primary px-7 py-3.5 text-sm font-medium hover:bg-muted transition-colors"
             >
-              Talk to our team
+              {CONVERSION_LABEL}
             </Link>
             <Link
               to="/case-studies"
@@ -492,7 +493,7 @@ export function CapabilityPage() {
             onClick={() => track('service_inquiry', { capability: category.id, location: 'capability_cta' })}
             className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-9 py-4 text-sm font-medium hover:bg-graphite transition-colors"
           >
-            Start a conversation
+            {CONVERSION_LABEL}
           </Link>
         </div>
       </section>

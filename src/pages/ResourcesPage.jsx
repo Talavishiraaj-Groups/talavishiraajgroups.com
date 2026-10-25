@@ -13,6 +13,7 @@ import { insightBySlug, insightPath } from '../data/insights';
 import { capabilityById, capabilityPath } from '../data/servicesData';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import { CONVERSION_LABEL } from '../components/cta';
 import RelatedPath from '../components/RelatedPath';
 
 /* ------------------------------------------------------------------ *
@@ -301,7 +302,7 @@ export function ResourceDetailPage() {
             }
             className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors whitespace-nowrap"
           >
-            Start a conversation
+            {CONVERSION_LABEL}
           </Link>
         </section>
       </article>

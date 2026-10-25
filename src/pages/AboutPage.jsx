@@ -4,6 +4,7 @@ import Seo, { PRIMARY_MARKETS, breadcrumbSchema, personSchema, webPageSchema } f
 import { COMPANY_ANSWER, valueChain } from '../data/services';
 import { capabilityPath, serviceCategories } from '../data/servicesData';
 import { track } from '../components/analytics';
+import { CONVERSION_LABEL } from '../components/cta';
 import RelatedPath from '../components/RelatedPath';
 
 const TITLE = 'About Talavishiraaj Groups';
@@ -322,13 +323,13 @@ export default function AboutPage() {
               onClick={() => track('cta_click', { location: 'about_cta', target: 'contact' })}
               className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-8 py-4 text-sm font-medium hover:bg-graphite transition-colors"
             >
-              Start a conversation
+              {CONVERSION_LABEL}
             </Link>
             <Link
               to="/case-studies"
               className="inline-flex items-center justify-center rounded-full border border-gray-300 px-8 py-4 text-sm font-medium hover:bg-muted transition-colors"
             >
-              Read our case studies
+              See our work
             </Link>
           </div>
         </div>

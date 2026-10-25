@@ -13,6 +13,7 @@ import { capabilityById, capabilityPath } from '../data/servicesData';
 import { caseStudyBySlug } from './CaseStudiesPage';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import { CONVERSION_LABEL } from '../components/cta';
 import RelatedPath from '../components/RelatedPath';
 
 const formatDate = (iso) =>
@@ -321,7 +322,7 @@ export function InsightArticlePage() {
             onClick={() => track('service_inquiry', { capability: article.capability, location: 'insight_cta' })}
             className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors whitespace-nowrap"
           >
-            Start a conversation
+            {CONVERSION_LABEL}
           </Link>
         </section>
       </article>

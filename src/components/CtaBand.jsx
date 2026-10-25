@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { track } from './analytics';
+import { CONVERSION_LABEL, conversionHref } from './cta';
 
 /**
  * The closing call to action for every page.
@@ -11,7 +12,8 @@ import { track } from './analytics';
  * to prefer one. Everything now points at /contact, where both options sit
  * together and the choice is made once, in the place built to handle it.
  *
- * The label still names both so nobody has to guess what is behind the button.
+ * The label comes from cta.js and is the same on every page. The body text is
+ * where booking gets mentioned, as one of two options rather than as the ask.
  *
  * `variant` only changes the colours so the band can sit on either a light or
  * a dark section without fighting the page around it.
@@ -24,7 +26,7 @@ export default function CtaBand({
   variant = 'light',
 }) {
   const dark = variant === 'dark';
-  const contactHref = intent ? `/contact?intent=${intent}` : '/contact';
+  const contactHref = conversionHref(intent);
 
   return (
     <section
@@ -59,7 +61,7 @@ export default function CtaBand({
                 : 'bg-primary text-accent hover:bg-graphite'
             }`}
           >
-            Book a call or send a message
+            {CONVERSION_LABEL}
           </Link>
         </div>
       </div>

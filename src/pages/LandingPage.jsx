@@ -7,6 +7,7 @@ import { caseStudies } from './CaseStudiesPage';
 import { prism } from '../data/prism';
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
+import { CONVERSION_LABEL } from '../components/cta';
 import HorizontalRail from '../components/HorizontalRail';
 
 // Kept under 60 characters so Google does not truncate it in results. The
@@ -57,7 +58,7 @@ export default function LandingPage() {
                 onClick={() => track('cta_click', { location: 'home_hero', target: 'services' })}
                 className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-7 py-3.5 text-sm font-medium hover:bg-graphite transition-colors"
               >
-                Explore our capabilities
+                See what we build
               </Link>
               {/*
                 Two things this is deliberately not.
@@ -192,7 +193,7 @@ export default function LandingPage() {
                 onClick={() => track('cta_click', { location: 'home_product', target: 'products' })}
                 className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-accent hover:bg-graphite transition-colors"
               >
-                See Prism
+                What Prism tells you
               </Link>
             </div>
           </div>
@@ -353,7 +354,7 @@ export default function LandingPage() {
             onClick={() => track('cta_click', { location: 'home_footer_cta', target: 'contact' })}
             className="inline-flex items-center justify-center rounded-full bg-primary text-accent px-9 py-4 text-sm font-medium hover:bg-graphite transition-colors"
           >
-            Talk to our team
+            {CONVERSION_LABEL}
           </Link>
         </div>
       </section>

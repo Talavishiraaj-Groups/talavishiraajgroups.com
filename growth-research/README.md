@@ -30,9 +30,8 @@ results are invented. Where a number is unknown, it says unknown.
 | `11-microsite-strategy.md` | The build vs buy tool: why it stays on the main domain |
 | `13-course-library-extraction.md` | The 27-course marketing library: what is in it, what is additive, what is not |
 | `12-inbound-launch-plan.md` | **Operational.** What to register, in what order, and what the deploy does not automate |
-| `10-prism-canon-and-seo.md` | Prism positioning, keyword intent, and current page direction |
-| `11-microsite-strategy.md` | One build-vs-buy worksheet, distribution, measurement, and expansion gates |
 | `14-search-console-baseline.md` | **The reference point.** First real Search Console data, and what it proves |
+| `15-optise-audit.md` | Third party audit, Oct 2026: its three findings measured independently, and the six real competitors it named |
 | `99-log.md` | Session log, open questions, what to do next |
 
 ## Start here
