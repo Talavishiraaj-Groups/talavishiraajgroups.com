@@ -32,6 +32,7 @@ results are invented. Where a number is unknown, it says unknown.
 | `12-inbound-launch-plan.md` | **Operational.** What to register, in what order, and what the deploy does not automate |
 | `14-search-console-baseline.md` | **The reference point.** First real Search Console data, and what it proves |
 | `15-optise-audit.md` | Third party audit, Oct 2026: its three findings measured independently, and the six real competitors it named |
+| `16-competitor-keywords.md` | What Kellton, Softeq, McKinsey, BCG and Umbrex target, and which keywords are actually winnable |
 | `99-log.md` | Session log, open questions, what to do next |
 
 ## Start here
