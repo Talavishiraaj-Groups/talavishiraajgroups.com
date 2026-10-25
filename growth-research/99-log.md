@@ -915,3 +915,100 @@ actually asks for and no part of it can be written in code.
 
 Visibility 3 and Discovery 21 are not code problems and nothing here moves
 them. They agree with `14-search-console-baseline.md`.
+
+---
+
+## 2026-10-25 (second pass) — Optise suggestion 02, and the text density problem
+
+### The cost page, and the constraint it had to respect
+
+Optise listed "missing dedicated pricing page and comparison page" as critical.
+The standing rule is that our own numbers do not go on the public site, so the
+obvious reading of that recommendation is the one thing the page must not be.
+
+Resolved by answering a different question. A visitor searching for cost is not
+asking what we charge, they are asking whether they can afford this kind of work
+and whether they are about to be overcharged. Both are answerable from published
+market data. `/what-it-costs` says in its opening paragraph that there is no rate
+card on it, because naming the omission is more credible than quietly not having
+one, and then spends the page on evidence.
+
+**[FACT] Verified against the built output: the only currency amounts anywhere
+in the site are the published market figures, and the known internal price
+points appear nowhere.** Every figure on the page is interpolated from
+`benchmarks.js`, which is the single file permitted to carry a currency amount
+and the one that forces each number to name a source. Writing the numbers into
+the page directly would have passed review and quietly removed that guarantee.
+
+[FACT] Demand checked before building, by the autocomplete method used in
+`02-demand-evidence.md`: "custom software development cost" returns multiple
+live variants including 2026 and geographic ones, and "how much does custom
+software development cost" exists in question form, which is what an assistant
+answers. The site had no page for either.
+
+### The comparison page
+
+[FACT] "in house vs outsourcing" and "in house vs agency" both return in
+autocomplete. `/in-house-vs-agency` compares four routes across seven criteria.
+
+[INFER] The design decision worth recording: **three of the seven rows go to
+routes other than ours, on purpose.** A comparison table where one column wins
+everything is read as marketing and discarded, and in this case it would also be
+false. Your own team genuinely wins on cost, ownership and knowledge of the
+business. The single row we win outright is the incentive to say no, which is
+the whitespace established in `15-optise-audit.md` section 3b: all six verified
+competitors are paid to build.
+
+No competitor is named. Naming them invites a comparison on proof, which is the
+axis where five of the six carry client logos we cannot match yet.
+
+### Text density, measured
+
+[FACT] The site before this pass: **25,553 words across 36 pages, two images in
+the whole of `<main>`, and one table.** Both images were the leadership
+portraits on `/about`. Every numeric argument on the site was carried by prose.
+
+Three figures now exist, plus the comparison table. They are the site's first.
+
+### A mistake worth recording, because it would have shipped
+
+The figures were built first in SVG, which is the obvious choice and was wrong.
+**An SVG with a fixed viewBox scales its text along with its geometry.** These
+are 700 units wide; inside a 375px viewport the rendered width is 293px, a scale
+factor of 0.42.
+
+[FACT] Measured in the browser: a 15 unit label rendered at **6.3 real pixels**,
+a 12 unit axis tick at **5**. Every number on every chart was illegible on a
+phone, which is the exact device Optise had already scored as a losing area. The
+charts looked correct in every desktop screenshot.
+
+Rebuilt in HTML and CSS. Bars are rectangles and CSS draws rectangles natively,
+so the labels stay ordinary text at ordinary sizes, legible at any width and
+indexable without special handling. [FACT] Re-verified at 375px: legible, no
+horizontal page overflow, and the comparison table scrolls inside its own region
+rather than dragging the page sideways.
+
+The general lesson: a chart that is only ever checked on a desktop screenshot
+has not been checked.
+
+### Storytelling, and the dead end on `/products`
+
+The observation that every element "ends there" was correct and most costly on
+the product page. Its order ran hero, what Prism is, does this sound like you,
+then what you get. **It moved from recognition straight to remedy with nothing
+in between establishing that there was anything worth remedying.** Recognition
+on its own produces a nod, not a decision.
+
+A stakes section now sits between them, carrying the discovery overrun figure.
+The stakes are not asserted by us, which would be worthless; the published data
+is the argument. It also gives the page a route onward into the cost evidence
+instead of stopping where it stood.
+
+### Still outstanding
+
+[OBS] This pass added figures to three pages. The other 33 remain prose only,
+and the insight articles at roughly 1,200 words each are the next candidates.
+That is a larger pass and was not attempted here.
+
+[FACT] The bundle finding from the first pass of 25 October is unchanged and
+still the largest mobile cost. Two new pages were added to it.

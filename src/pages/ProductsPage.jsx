@@ -4,7 +4,10 @@ import Seo, { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from '
 import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
 import { prism } from '../data/prism';
+import benchmarks from '../data/benchmarks';
 import CtaBand from '../components/CtaBand';
+import RelatedPath from '../components/RelatedPath';
+import { RangeCompareFigure } from '../components/Figures';
 
 /**
  * Products page. Prism is the product it carries.
@@ -165,6 +168,60 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* WHAT IT COSTS TO GET WRONG.
+          This section was missing and its absence was the page's largest
+          persuasive gap. The page went straight from "does this sound like
+          you" to "here is what you get", which asks a reader to want a remedy
+          before anything has established that there is something worth
+          remedying. Recognition on its own produces a nod, not a decision.
+
+          The stakes are not ours to assert, so they are not asserted. The
+          published overrun data is the argument, and it is drawn rather than
+          described because the whole point is the size of the gap between two
+          quantities, which a sentence makes a reader compute and a bar does
+          not. It also gives the page its first route onward into the cost
+          evidence rather than ending where it stands. */}
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-20">
+        <h2 className="text-3xl font-semibold text-black mb-4">What it costs to get this wrong</h2>
+        <p className="text-gray-700 leading-relaxed text-lg mb-2 max-w-2xl">
+          The reason to settle the decision first is not tidiness. It is that the published gap
+          between projects that worked the question out beforehand and projects that went straight
+          to building is not a small one.
+        </p>
+
+        <RangeCompareFigure
+          title="How far over budget projects land"
+          standfirst="Projects that defined the requirement before committing, against projects that went straight to building."
+          rows={[
+            {
+              label: 'Went straight to building',
+              low: benchmarks.discovery.figures.withoutLowPct,
+              high: benchmarks.discovery.figures.withoutHighPct,
+              emphasis: true,
+            },
+            {
+              label: 'Worked out the requirement first',
+              low: benchmarks.discovery.figures.withLowPct,
+              high: benchmarks.discovery.figures.withHighPct,
+            },
+          ]}
+          unit="% over"
+          source={benchmarks.discovery.source}
+          url={benchmarks.discovery.url}
+        />
+
+        <p className="text-gray-700 leading-relaxed max-w-2xl">
+          That figure comes from a firm that sells the same kind of work we do, so treat the
+          direction as sound and the exact numbers as indicative. The overrun data supports it
+          independently: build projects run about 38 percent over on cost and 42 percent over on
+          timeline. Whichever number you believe, the expensive mistake is almost never the build
+          itself. It is building the wrong thing competently.
+        </p>
+
+        <RelatedPath to="/what-it-costs" label="what this work costs" location="prism_stakes">
+          For the published figures on budget, including what a build quote leaves out, see
+        </RelatedPath>
+      </section>
 
       {/* WHAT YOU GET. */}
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
