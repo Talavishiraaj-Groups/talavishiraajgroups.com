@@ -1,7 +1,14 @@
 import React from 'react';
 import CtaBand from '../components/CtaBand';
 import { Link, useParams } from 'react-router-dom';
-import Seo, { BRAND, absoluteUrl, breadcrumbSchema, itemListSchema, webPageSchema } from '../seo';
+import Seo, {
+  BRAND,
+  absoluteUrl,
+  breadcrumbSchema,
+  faqSchema,
+  itemListSchema,
+  webPageSchema,
+} from '../seo';
 import {
   INSIGHTS_DESCRIPTION,
   INSIGHTS_TITLE,
@@ -178,6 +185,40 @@ export function InsightArticlePage() {
             mainEntityOfPage: absoluteUrl(path),
             inLanguage: 'en',
           },
+          /*
+            Every section heading in every one of these articles is already a
+            question, 25 out of 25 across the four of them, and the body under
+            it is already the answer. Until now none of that was exposed as
+            structured data, so a machine reading the page saw one long Article
+            and had to infer the question and answer pairs from prose.
+
+            That is the gap behind an audit finding the site named in 0 of 9
+            buyer questions put to AI assistants. One of those questions was
+            why enterprise AI initiatives stall between notebook and
+            production, which is the subject and almost the wording of an
+            article already published here.
+
+            Worth being clear about what this does and does not buy, because
+            FAQPage is often added for the wrong reason. Google restricted
+            FAQ rich results in 2023 to government and health sites, so this
+            will not produce a rich snippet. It is here because assistants and
+            other consumers of structured data still parse it, and that is
+            precisely the channel being measured as failing.
+
+            Only articles whose headings really are questions get this. The
+            filter is not decoration: a declarative heading asserted as a
+            Question would be wrong, and the schema would be describing
+            something the page does not contain.
+          */
+          ...(() => {
+            const pairs = article.sections
+              .filter((section) => section.heading.trim().endsWith('?'))
+              .map((section) => ({
+                question: section.heading.trim(),
+                answer: section.body.join(' '),
+              }));
+            return pairs.length >= 3 ? [faqSchema(pairs)] : [];
+          })(),
         ]}
       />
 
