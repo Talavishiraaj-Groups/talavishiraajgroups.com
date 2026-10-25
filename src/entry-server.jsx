@@ -24,6 +24,8 @@ export const routes = [
   ...serviceCategories.map((category) => `/services/${category.slug}`),
   '/products',
   '/build-vs-buy',
+  '/what-it-costs',
+  '/in-house-vs-agency',
   '/case-studies',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
   '/insights',

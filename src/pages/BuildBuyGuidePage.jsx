@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Seo, { breadcrumbSchema, faqSchema, webPageSchema } from '../seo';
 import { track } from '../components/analytics';
+import RelatedPath from '../components/RelatedPath';
 
 /**
  * The build, buy or partner decision framework.
@@ -361,6 +362,20 @@ export default function BuildBuyGuidePage() {
               </div>
             ))}
           </dl>
+
+          {/* The framework answers which route. The two questions a reader
+              reaches next are what it will cost and who should do it, so both
+              get an in body route out rather than a footer link. */}
+          <RelatedPath to="/what-it-costs" label="the published market figures" location="framework_cost">
+            Once the route is clear, the next question is budget. For what this work actually costs, see
+          </RelatedPath>
+          <RelatedPath
+            to="/in-house-vs-agency"
+            label="in house, agency or independent"
+            location="framework_compare"
+          >
+            And if the open question is who should do the work rather than what to do, compare
+          </RelatedPath>
         </div>
       </section>
     </>

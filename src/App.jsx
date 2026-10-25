@@ -13,6 +13,8 @@ import ContactPage from './pages/ContactPage';
 import CommunityPage from './pages/CommunityPage';
 import ProductsPage from './pages/ProductsPage';
 import BuildBuyGuidePage from './pages/BuildBuyGuidePage';
+import CostPage from './pages/CostPage';
+import ComparePage from './pages/ComparePage';
 import BookPage from './pages/BookPage';
 import RefundPolicyPage from './pages/RefundPolicyPage';
 import DeliveryPolicyPage from './pages/DeliveryPolicyPage';
@@ -52,6 +54,8 @@ export default function App() {
           <Route path="/services/:slug" element={<CapabilityPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/build-vs-buy" element={<BuildBuyGuidePage />} />
+          <Route path="/what-it-costs" element={<CostPage />} />
+          <Route path="/in-house-vs-agency" element={<ComparePage />} />
           {/* The product page used to live at /systems. Keep the old path working. */}
           <Route path="/systems" element={<Navigate to="/products" replace />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />

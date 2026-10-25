@@ -308,6 +308,21 @@ export function InsightArticlePage() {
           </section>
         )}
 
+        {/* An article about cost earns a second route out, to the page that
+            carries the wider figures. It is placed before the framework link
+            rather than instead of it: a reader who is budgeting wants the
+            numbers first, but every article still owes a path to the product
+            or the framework, which is what stops these pages being dead ends. */}
+        {article.slug === 'what-ai-integration-costs' && (
+          <RelatedPath
+            to="/what-it-costs"
+            label="what this work costs, with the published figures"
+            location="insight_article_cost"
+          >
+            For the wider picture on budget, across software as well as AI, see
+          </RelatedPath>
+        )}
+
         <RelatedPath to="/build-vs-buy" label="the build vs buy vs partner framework" location="insight_article">
         Weighing a build of your own against buying something that nearly fits? Work the question through with
         </RelatedPath>

@@ -16,6 +16,8 @@ const linkGroups = [
       { label: 'Case Studies', to: '/case-studies' },
       { label: 'Insights', to: '/insights' },
       { label: 'Resources', to: '/resources' },
+      { label: 'What it costs', to: '/what-it-costs' },
+      { label: 'In-house vs agency', to: '/in-house-vs-agency' },
       { label: 'Partnerships', to: '/partnerships' },
       { label: 'Contact', to: '/contact' },
     ],

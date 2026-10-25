@@ -160,6 +160,8 @@ const KNOWN_ROUTES = new Set([
   ...[...resourceSlugs].map((slug) => `/resources/${slug}`),
   '/products',
   '/build-vs-buy',
+  '/what-it-costs',
+  '/in-house-vs-agency',
   '/systems',
   '/case-studies',
   '/partnerships',
