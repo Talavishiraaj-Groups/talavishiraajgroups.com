@@ -117,13 +117,27 @@ export const webPageSchema = ({ path, title, description, type = 'WebPage' }) =>
   inLanguage: 'en',
 });
 
+/**
+ * Breadcrumb trail.
+ *
+ * The root crumb is always named for the brand, whatever the caller passed.
+ * Every page on the site was declaring position 1 as "Home", which is the
+ * structured data version of a title tag set to "Home": it is the default
+ * nobody changes, it describes the page to a machine as nothing in particular,
+ * and Google can render it straight into a search result. "Talavishiraaj
+ * Groups > Capabilities" puts the brand in front of a stranger. "Home >
+ * Capabilities" spends the same slot on a word that means nothing.
+ *
+ * Enforced here rather than at the fifteen call sites, so it cannot be one
+ * page's job to remember.
+ */
 export const breadcrumbSchema = (trail) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: trail.map((crumb, index) => ({
     '@type': 'ListItem',
     position: index + 1,
-    name: crumb.name,
+    name: crumb.path === '/' ? BRAND : crumb.name,
     item: absoluteUrl(crumb.path),
   })),
 });

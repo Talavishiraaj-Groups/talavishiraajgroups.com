@@ -1170,3 +1170,87 @@ leaves acronyms alone.
 directly and **the content checker rejected it**. Composed from benchmarks.js
 instead, via new `shortClaim` fields kept beside their sources. The guard
 worked exactly as intended against its own author.
+
+---
+
+## 2026-10-25 (fifth pass) — the transcript end to end, including the "Home" point
+
+Previous pass took three of the video's points. This one works it through
+completely and catches what was missed.
+
+### The "Home" point (03:12 and 04:14)
+
+The video: title tags left as "Home" are a website builder default, tell Google
+nothing, and "you will almost always rank first for search of your title tag".
+
+[FACT] The home page title is **not** "Home", so the literal warning did not
+apply. Three other places did carry it:
+
+1. **Breadcrumb schema said `"name":"Home"` in position 1 on all 37 pages.**
+   This is the structured data version of the same mistake: a default nobody
+   changed, naming the most important page on the site as nothing in
+   particular, and Google can render it directly into a result. Now the brand.
+   Enforced inside `breadcrumbSchema` rather than at the fifteen call sites, so
+   it cannot be one page's job to remember. [FACT] 0 pages still say Home.
+
+2. **Nav and footer anchor text "Home", three links per page.** [FACT] Checked
+   and left alone: the logo link already carries "Talavishiraaj Groups" as its
+   anchor text, so the brand signal exists, and renaming a nav item that every
+   visitor expects would cost usability for nothing.
+
+3. [INFER] Nothing else.
+
+### The h1 and title mismatch on the home page, which the previous pass missed
+
+[FACT] Home page title terms were software, systems, engineering. Home page h1
+terms were problems, kind, engineer. **Zero shared terms**, which is the exact
+mismatch corrected on two other hubs the day before and missed on the page that
+matters most.
+
+Front loading the subject into the h1 was tried, rendered, and **rejected on
+looking at it**: it pushed the headline to five lines and blunted the sharpest
+line on the site. The eyebrow above the h1 now carries the terms instead. It
+previously said "Talavishiraaj Groups", which the navbar says two lines above
+and the title says again, so it was three statements of the brand before a
+stranger learned what the company does.
+
+### Cannibalisation (07:45 to 10:05), which the previous pass caused
+
+The video's point: optimising one page can cost you the rank of another, so
+pick a page that is not already ranking for other things.
+
+[FACT] A term overlap check across all 36 indexable pages found **5 colliding
+pairs**, the worst a three way collision on "software, systems, engineering"
+between `/`, `/services` and `/services/technology-and-engineering`.
+
+[FACT] **The previous pass caused part of it.** Front loading "Software, AI and
+systems engineering" into the `/services` h1 fixed a title mismatch and walked
+straight into the capability page's keyword.
+
+Resolved by intent rather than wording. The capability page keeps the specific
+discipline term. The hub leads on services and breadth. The home page leads on
+the brand it already ranks first for, plus the proposition no capability page
+claims, instead of a head term it cannot win from its own child page.
+
+[FACT] 5 pairs down to 2. Both survivors are deliberate: an article asking "Do
+You Need Data Engineering?" and a service page about data engineering share
+vocabulary but not intent, which is the video's own black dress versus black
+dress history distinction. Keeping them apart is correct.
+
+### Word count against what ranks (11:56), measured rather than assumed
+
+[FACT] `/what-it-costs` is 1,528 words. A page one result for the target query,
+soltech.net, is roughly 1,400 to 1,500. **At parity. No words needed.**
+
+[FACT] More useful: that ranking page's opening paragraph does **not** give a
+cost figure, it cites an industry market total. After the previous pass this
+page leads with the published range, so on the video's own goal completion test
+it now beats a page one result.
+
+[OBS] That page carries several images including a cost factors chart. This one
+carries three information graphics. No gap.
+
+### Still not applicable
+
+[FACT] Step four, prioritising by Search Console position 6 to 15, remains
+unusable: there are no rankings to lift. Unchanged from the previous pass.

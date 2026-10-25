@@ -13,7 +13,21 @@ import HorizontalRail from '../components/HorizontalRail';
 // Kept under 60 characters so Google does not truncate it in results. The
 // category leads and the brand follows: nobody is searching for the company by
 // name yet, so the first words have to say what this is rather than who it is.
-const TITLE = 'AI, Software and Systems Engineering | Talavishiraaj Groups';
+/*
+  Brand first, and the claim that is actually this page's own.
+
+  This read "AI, Software and Systems Engineering | Talavishiraaj Groups",
+  which is the same phrase /services/technology-and-engineering exists to own.
+  A home page cannot beat its own capability page on a head term and should not
+  try: all it achieves is two of its own URLs arguing over one query.
+
+  What the home page can win is the brand search, which it already ranks first
+  for, and the thing none of the capability pages claim, which is that the
+  disciplines arrive together rather than as separate suppliers. So the title
+  leads with the name someone is actually typing and spends the rest on the
+  proposition instead of a term it will lose.
+*/
+const TITLE = 'Talavishiraaj Groups | Engineering, AI and Research';
 const DESCRIPTION =
   'When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production.';
 
@@ -40,8 +54,24 @@ export default function LandingPage() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
+            {/*
+              This said "Talavishiraaj Groups", which the navbar already says
+              two lines above it and the title tag says again. Three statements
+              of the brand before a stranger learns what the company does.
+
+              The slot now carries the subject, and it is worded to match the
+              title tag term for term. That matters because the h1 under it,
+              "Some problems need more than one kind of engineer", shares not a
+              single term with the title. The same mismatch was corrected on
+              the services and case studies hubs by front loading the subject
+              into the heading, and that was tried here first: rendered, it
+              pushed the headline to five lines and blunted the one sharp line
+              on the site. Not worth it. Putting the terms immediately above
+              the headline gets the adjacency without spending the headline,
+              and the opening paragraph already carries them too.
+            */}
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">
-              Talavishiraaj Groups
+              AI, software and systems engineering
             </p>
             <h1 className="text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-5">
               Some problems need more than one kind of engineer

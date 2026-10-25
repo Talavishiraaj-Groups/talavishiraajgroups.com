@@ -26,7 +26,24 @@ import Differentiator from '../components/Differentiator';
 /* Kept under 60 characters so it survives to the SERP intact. The previous
    title listed all four capability groups and ran to 91, which Google
    truncated mid-phrase and often rewrote. */
-const TITLE = 'AI, Software and Systems Services | Talavishiraaj Groups';
+/*
+  The hub owns breadth, the capability page owns the specific term.
+
+  A term overlap check across the built pages found this hub and
+  /services/technology-and-engineering sharing "software", "systems" and
+  "engineering" in both title and h1, which is three quarters of the shorter
+  page's vocabulary. The previous pass caused half of it: front loading
+  "Software, AI and systems engineering" into this h1 fixed a title mismatch
+  and walked straight into the capability page's keyword.
+
+  Two pages one level apart competing for one phrase is the cannibalisation
+  problem, and the fix is intent rather than wording. Someone searching
+  "software and systems engineering" wants the capability page. Someone
+  searching for what this firm offers wants this one. So this page now leads on
+  services and the range of them, and leaves the specific discipline term to
+  the page that is only about that discipline.
+*/
+const TITLE = 'Engineering and AI Services | Talavishiraaj Groups';
 
 /* ------------------------------------------------------------------ *
  * Hub page
@@ -61,11 +78,9 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6">Capabilities</p>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] mb-6 max-w-4xl">
-            {/* The keyword front loaded, the original line kept. The title
-                tag said "AI, Software and Systems Services" while the h1 said
-                only "What we build and run", which names nothing a person
-                searches for and leaves the two signals disagreeing. */}
-            Software, AI and systems engineering: what we build and run
+            {/* Front loaded with the hub's own subject, not the capability
+                page's. See the note on TITLE above. */}
+            Engineering and AI services: what we build and run
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed">
             Six core capabilities across research, engineering, AI, product development, and commercial systems. Real problems usually require a mix of these. We keep them under one roof because projects often stall when strategy is handed off to a separate delivery team.
