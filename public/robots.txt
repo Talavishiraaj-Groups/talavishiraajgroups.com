@@ -6,3 +6,7 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://www.talavishiraajgroups.com/sitemap.xml
+
+# A short, grouped summary of the site for assistants and agents, generated at
+# build time from the pages themselves. See https://llmstxt.org
+# llms.txt: https://www.talavishiraajgroups.com/llms.txt

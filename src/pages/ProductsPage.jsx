@@ -105,7 +105,10 @@ export default function ProductsPage() {
                 Is this your situation?
               </a>
             </div>
-            <p className="text-xs text-gray-500 pt-2">
+            {/* gray-400 rather than gray-500 because this sits on the dark
+                hero. The contrast rule inverts with the background: 500 on
+                near black measures 4.1 to 1 and fails, 400 measures about 7. */}
+            <p className="text-xs text-gray-400 pt-2">
               Two weeks. Fixed scope. We will tell you not to proceed if that is the answer.
             </p>
           </div>

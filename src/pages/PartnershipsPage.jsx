@@ -128,7 +128,7 @@ export default function PartnershipsPage() {
               className={`grid gap-8 lg:grid-cols-[0.9fr_1.1fr] ${index > 0 ? 'border-t border-border pt-12' : ''}`}
             >
               <div>
-                <span className="block text-xs font-mono text-gray-400 mb-3">
+                <span className="block text-xs font-mono text-gray-500 mb-3">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="text-2xl font-semibold tracking-tight mb-3 leading-snug">

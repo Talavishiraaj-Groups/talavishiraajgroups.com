@@ -124,7 +124,7 @@ export default function AboutPage() {
         <div className="grid gap-8 md:grid-cols-3">
           {principles.map((principle, index) => (
             <div key={principle.title}>
-              <span className="block text-xs font-mono text-gray-400 mb-3">
+              <span className="block text-xs font-mono text-gray-500 mb-3">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <h3 className="text-lg font-semibold mb-2.5 leading-snug">{principle.title}</h3>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 list-none">
           {valueChain.map((stage, index) => (
             <li key={stage.step} className="border border-border rounded-2xl p-5">
-              <span className="block text-xs font-mono text-gray-400 mb-2">
+              <span className="block text-xs font-mono text-gray-500 mb-2">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <h3 className="font-semibold mb-1.5">{stage.step}</h3>

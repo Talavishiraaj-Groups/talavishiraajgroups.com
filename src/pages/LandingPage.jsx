@@ -329,7 +329,7 @@ export default function LandingPage() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {differentiators.map((item, index) => (
             <div key={item.title}>
-              <span className="block text-xs font-mono text-gray-400 mb-2">
+              <span className="block text-xs font-mono text-gray-500 mb-2">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <h3 className="font-semibold mb-2 leading-snug">{item.title}</h3>

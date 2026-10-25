@@ -83,7 +83,7 @@ export default function ServicesPage() {
             >
               <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
-                  <span className="block text-xs font-mono text-gray-400 mb-3">
+                  <span className="block text-xs font-mono text-gray-500 mb-3">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 leading-tight">
@@ -339,7 +339,7 @@ export function CapabilityPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {category.approach.map((item, index) => (
               <div key={item.title}>
-                <span className="block text-xs font-mono text-gray-400 mb-2">
+                <span className="block text-xs font-mono text-gray-500 mb-2">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="font-semibold mb-2 leading-snug">{item.title}</h3>

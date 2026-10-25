@@ -287,7 +287,7 @@ export default function CostPage() {
               },
             ].map((item, index) => (
               <li key={item.q} className="flex gap-5">
-                <span className="text-sm font-mono text-gray-400 pt-1 flex-shrink-0">
+                <span className="text-sm font-mono text-gray-500 pt-1 flex-shrink-0">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <div>
