@@ -35,6 +35,7 @@ export const benchmarks = {
     source: 'Monterail, Trawlii and ivector published 2026 ranges',
     url: 'https://www.monterail.com/blog/software-development-cost-breakdown-by-project-type',
     basis: 'Vendor published price guides. Directional only, and they disagree with each other, which is itself the point.',
+    shortClaim: 'Published ranges run from about $25,000 to $400,000 or more',
   },
   quoteSpread: {
     claim: 'The same brief is routinely quoted at $40,000 by one firm and $400,000 by another',
@@ -49,6 +50,7 @@ export const benchmarks = {
     url: 'https://mobisoftinfotech.com/resources/blog/product-engineering/custom-software-development-cost',
     basis: 'Clutch aggregates buyer reported project data. Reported second hand here.',
     figures: { average: 132000, months: 13, unit: 'USD' },
+    shortClaim: 'about $132,000',
   },
   maintenance: {
     claim: 'Annual maintenance commonly runs 15 to 25 percent of the original build cost, every year',

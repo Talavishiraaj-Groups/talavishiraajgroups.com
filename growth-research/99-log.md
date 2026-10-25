@@ -1085,3 +1085,88 @@ evidence to reopen it. Recorded here as an observation only.
 No pages were written to chase the two queries with no matching content. One
 needs third party review profiles and the other is listicle intent that a
 vendor site cannot own.
+
+---
+
+## 2026-10-25 (fourth pass) — the "goal completion" SEO method, applied and bounded
+
+Source: a video arguing three on page fixes, prioritised from Search Console.
+
+### What the method says, and which parts apply here
+
+1. **First paragraph answers the query immediately.** Applies, and found real
+   problems. Done.
+2. **Title tag and H1 aligned to the target keyword.** Applies. Two H1s carried
+   no keyword at all. Done.
+3. **Match the format of what already ranks.** Applies. Done for the strongest
+   target query, by reading the live SERP rather than guessing.
+4. **Prioritise with Search Console: find queries at position 6 to 15 and lift
+   them.** **[FACT] Does not apply yet.** The method needs existing rankings to
+   work on. `14-search-console-baseline.md` records zero non branded clicks in
+   nine weeks and Optise measured 1 of 12 on Google. There are no position 6 to
+   15 queries to find. This step becomes usable once anything ranks at all.
+
+[INFER] The video's headline claim, 10x traffic in 30 minutes with no
+backlinks, does not transfer to this site, and the video itself concedes why at
+15:03: "you might need more authority." That is the same conclusion reached
+independently in the previous pass. On page work is necessary and is now done
+to a good standard; it is not sufficient on a nine week old domain with no
+external links.
+
+### Goal completion: measured, and nine pages failed
+
+[FACT] Extracted the H1 and first paragraph of every page. Nine opened with
+context, an aphorism or a refusal rather than the answer:
+
+- All six capability pages opened with the situation that makes the work
+  necessary rather than what we do. "Most organizations do not have a software
+  problem in the abstract" is true and is a bad first paragraph.
+- `/what-it-costs` asked what the work costs in its H1 and opened with "there
+  is no rate card on this page". **Written the previous day, by me.** The
+  figures were four screens down.
+- `/in-house-vs-agency` opened on what most comparisons skip rather than the
+  recommendation.
+- `/case-studies` opened on how engagements begin rather than what the page is.
+
+[FACT] The capability page fix needed **no new copy**. Each category already
+had a `summary` field, one direct sentence, written for the hub and never shown
+on the detail page at all. It now leads and the intro follows. That is the
+video's actual point working as advertised: the win was in fixing what was
+already there.
+
+### Title and H1 alignment
+
+[FACT] `/services` had title "AI, Software and Systems Services" against h1
+"What we build and run". `/case-studies` had "AI and Operations Case Studies"
+against "What the work looks like when it is finished". Both h1s named nothing
+anyone searches. Both now front load the subject and **keep the original line**
+rather than replacing it.
+
+### Search intent, read from the live SERP
+
+[FACT] Fetched page one for "custom software development cost". Pattern:
+
+- **Every result leads its snippet with a figure range.** `/what-it-costs` now
+  does too.
+- **Every result carries the exact phrase "software development cost".** This
+  page's title said "What Custom Software Costs", dropping "development", the
+  highest volume word in the phrase. Changed.
+- People Also Ask is present, so question format is rewarded. FAQPage schema
+  was added in the previous pass.
+- [OBS] Seven of nine results carry 2026 in the title.
+
+[INFER] The year was **not** copied. It would match the pattern and it commits
+the owner to revisiting the title every January or looking stale. That trade
+belongs to the owner. Recorded as an available option, not taken.
+
+### Two bugs this pass surfaced
+
+[FACT] `.toLowerCase()` on a whole sourced claim had shipped "ai deployments
+routinely reach 1.6 to 2.2 times the build cost" to the live FAQ, lowercasing
+the acronym. Replaced with a helper that lowers only the first character and
+leaves acronyms alone.
+
+[FACT] The first version of the new meta description typed the currency amounts
+directly and **the content checker rejected it**. Composed from benchmarks.js
+instead, via new `shortClaim` fields kept beside their sources. The guard
+worked exactly as intended against its own author.

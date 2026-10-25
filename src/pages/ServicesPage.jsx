@@ -61,7 +61,11 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6">Capabilities</p>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] mb-6 max-w-4xl">
-            What we build and run
+            {/* The keyword front loaded, the original line kept. The title
+                tag said "AI, Software and Systems Services" while the h1 said
+                only "What we build and run", which names nothing a person
+                searches for and leaves the two signals disagreeing. */}
+            Software, AI and systems engineering: what we build and run
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed">
             Six core capabilities across research, engineering, AI, product development, and commercial systems. Real problems usually require a mix of these. We keep them under one roof because projects often stall when strategy is handed off to a separate delivery team.
@@ -289,7 +293,27 @@ export function CapabilityPage() {
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6 max-w-3xl">
             {category.h1}
           </h1>
-          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">{category.intro}</p>
+          {/*
+            The summary leads and the intro follows, which is the reverse of
+            how this read before.
+
+            Someone arriving from a search for this capability is asking what
+            we do. The intro did not tell them: every one of the six opened
+            with the situation that makes the work necessary, which is an
+            observation about their business rather than an answer about ours.
+            "Most organizations do not have a software problem in the abstract"
+            is a true sentence and a bad first paragraph.
+
+            The answer already existed. category.summary is one direct sentence
+            per capability, written for the hub, and the detail page was not
+            showing it at all. So this is a reordering rather than new copy,
+            and the context the intro carries is not lost, it just stops going
+            first.
+          */}
+          <p className="text-lg text-primary font-medium leading-relaxed max-w-3xl mb-4">
+            {category.summary}
+          </p>
+          <p className="text-base text-gray-700 leading-relaxed max-w-3xl">{category.intro}</p>
         </div>
       </section>
 

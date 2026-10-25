@@ -158,10 +158,21 @@ export default function ComparePage() {
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
           In house, agency, or an independent read first
         </h1>
+        {/* The short answer first, then the reasoning. Someone searching
+            "in house vs agency" wants the recommendation, not a preamble
+            about what most comparisons skip. */}
         <p className="text-lg text-gray-700 leading-relaxed mb-5">
-          Four routes, and the right one depends on something most comparisons skip: whether the
-          decision is actually settled yet. If it is, this is a capacity question. If it is not, you
-          are about to buy a build to answer a question a build cannot answer.
+          Build in house when the capability is core to your business and you genuinely have the
+          people free. Hire an agency when the requirement is settled and what you lack is capacity.
+          Bring in a consultancy when the question is organizational rather than technical. Get an
+          independent read first when you cannot yet say, with evidence, that the commitment is the
+          right one.
+        </p>
+        <p className="text-base text-gray-700 leading-relaxed mb-5">
+          The table below sets out what each route costs you, who owns the outcome, and what happens
+          when the answer turns out to be wrong. The thing most comparisons skip is whether the
+          decision is settled yet: if it is, this is a capacity question, and if it is not, you are
+          about to buy a build to answer something a build cannot answer.
         </p>
         <p className="text-base text-gray-700 leading-relaxed">
           We do one of these four. The table says where the other three are better, because a

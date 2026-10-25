@@ -36,9 +36,47 @@ import RelatedPath from '../components/RelatedPath';
  * That rule is correct and stays. Write "cost", "quote" or "budget" instead.
  */
 
-const TITLE = 'What Custom Software Costs | Talavishiraaj Groups';
-const DESCRIPTION =
-  'What custom software and AI work actually costs, from published market data: why the same brief is quoted ten times apart, what a build quote leaves out, and how to read one before you sign.';
+/**
+ * Join a sourced claim into the middle of a sentence.
+ *
+ * The claims in benchmarks.js are written as standalone sentences and start
+ * with a capital, so quoting one mid sentence needs its first letter lowered.
+ * Calling .toLowerCase() on the whole string does that and also destroys every
+ * acronym in it: "AI deployments routinely reach 1.6 to 2.2 times the build
+ * cost" came out as "ai deployments", which shipped. Only the first character
+ * changes, and not even that when the first word is an acronym.
+ */
+const lowerFirst = (s) => {
+  const firstWord = s.split(' ')[0];
+  if (/^[A-Z]{2,}$/.test(firstWord.replace(/[^A-Za-z]/g, ''))) return s;
+  return s.charAt(0).toLowerCase() + s.slice(1);
+};
+
+/*
+  Title and description both changed after reading the live SERP for the target
+  query rather than guessing at it.
+
+  Every result on page one for "custom software development cost" opens its
+  snippet with a figure range, and every one of them carries the exact phrase
+  "software development cost". This page said "What Custom Software Costs",
+  which drops "development", the highest volume word in the phrase, and its
+  description opened with a description of the page rather than a number.
+
+  Deliberately not copied from the SERP: the year. Seven of the nine results
+  carry 2026 in the title, and adding it would match the pattern, but it also
+  commits whoever owns this page to revisiting the title every January or
+  looking visibly stale. That is a real trade and it belongs to the owner, not
+  to this edit. Noted rather than taken.
+*/
+const TITLE = 'Custom Software Development Cost | Talavishiraaj Groups';
+/*
+  Composed from benchmarks.js rather than typed, because typing it here is
+  exactly what the currency rule exists to stop, and it caught this on the
+  first attempt. The shortClaim fields are display length variants of the same
+  sourced figures, kept in the same file as their sources so the shorter
+  wording cannot drift away from what was published.
+*/
+const DESCRIPTION = `${benchmarks.buildRanges.shortClaim}, averaging ${benchmarks.clutchAverage.shortClaim}. Why one brief gets quoted ten times apart, and what a quote leaves out.`;
 
 /**
  * Every currency amount below is interpolated from benchmarks.js rather than
@@ -50,7 +88,7 @@ const DESCRIPTION =
 const faqs = [
   {
     question: 'How much does custom software development cost?',
-    answer: `${benchmarks.buildRanges.claim}. ${benchmarks.clutchAverage.claim}. Those numbers are close to useless on their own, because ${benchmarks.quoteSpread.claim.toLowerCase()}. What the figure actually depends on is scope, the state of the data the system has to read, how many existing systems it must integrate with, and how wrong the software is allowed to be.`,
+    answer: `${benchmarks.buildRanges.claim}. ${benchmarks.clutchAverage.claim}. Those numbers are close to useless on their own, because ${lowerFirst(benchmarks.quoteSpread.claim)}. What the figure actually depends on is scope, the state of the data the system has to read, how many existing systems it must integrate with, and how wrong the software is allowed to be.`,
   },
   {
     question: 'Why do quotes for the same project vary so much?',
@@ -59,7 +97,7 @@ const faqs = [
   },
   {
     question: 'What does a build quote usually leave out?',
-    answer: `Integration with the systems you already run. ${benchmarks.integrationCost.claim}. Then everything after launch: ${benchmarks.maintenance.claim.toLowerCase()}, so ${benchmarks.tcoShare.claim.toLowerCase()}. For AI specifically, ${benchmarks.aiTco.claim.toLowerCase()}.`,
+    answer: `Integration with the systems you already run. ${benchmarks.integrationCost.claim}. Then everything after launch: ${lowerFirst(benchmarks.maintenance.claim)}, so ${lowerFirst(benchmarks.tcoShare.claim)}. For AI specifically, ${lowerFirst(benchmarks.aiTco.claim)}.`,
   },
   {
     question: 'How long does custom software take to build?',
@@ -103,15 +141,33 @@ export default function CostPage() {
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
           What custom software and AI work actually costs
         </h1>
+        {/*
+          The answer goes first, and that is a correction to how this page was
+          written yesterday.
+
+          It opened with "there is no rate card on this page", which is honest
+          and well intentioned and is still the second paragraph. But the H1
+          asks what this work costs, and a visitor who arrives from a search
+          for exactly that was met with a refusal before an answer. The figures
+          were four screens down. A reader deciding in the first two seconds
+          whether a page is worth their time had nothing to hold.
+
+          So the published range leads, then the caveat that makes it usable,
+          then what the page covers. Nothing was removed and no claim changed.
+        */}
         <p className="text-lg text-gray-700 leading-relaxed mb-5">
-          There is no rate card on this page, and you should be wary of one anywhere else. A firm
-          that can quote your project before understanding the requirement is quoting a different
-          project.
+          {benchmarks.buildRanges.claim}, and {lowerFirst(benchmarks.clutchAverage.claim)}. Those
+          are published market figures, not ours, and the rest of this page is about why the spread
+          between them is so wide and what the number actually depends on.
+        </p>
+        <p className="text-base text-gray-700 leading-relaxed mb-5">
+          There is no rate card here, and you should be wary of one anywhere else. A firm that can
+          quote your project before understanding the requirement is quoting a different project.
         </p>
         <p className="text-base text-gray-700 leading-relaxed">
           What follows is the published market evidence: how far apart quotes for the same brief
           land, what a build figure leaves out, and the one thing that reliably keeps a project
-          inside its budget. Every number names its source. None of them is ours.
+          inside its budget. Every number names its source.
         </p>
       </section>
 

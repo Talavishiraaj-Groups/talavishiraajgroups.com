@@ -227,12 +227,17 @@ export default function CaseStudiesPage() {
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Case studies</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-5 max-w-3xl">
-          What the work looks like when it is finished
+          {/* Same correction as the services hub: the subject first, the
+              original line kept rather than replaced. */}
+          Case studies: what the work looks like when it is finished
         </h1>
+        {/* What these are, before why they are interesting. The previous
+            opening was an observation about how engagements begin, which is
+            true but is not what someone who clicked "case studies" asked. */}
         <p className="text-lg text-gray-700 max-w-3xl leading-relaxed mb-4">
-          Each of these engagements started with a problem someone could feel but could not name
-          precisely. Each entry sets out the situation, what was actually built, and what changed as a
-          result.
+          Six engagements across AI and automation, operations, growth systems and moving research
+          into production. Each one sets out the situation, the problem, what was actually built,
+          how it was implemented and what changed as a result.
         </p>
         <p className="text-sm text-gray-500 max-w-3xl">{CASE_STUDY_DISCLOSURE}</p>
       </section>
