@@ -4,7 +4,7 @@ import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function DeliveryPolicyPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
       <Seo
         title="Delivery Policy | Talavishiraaj Groups"
         description="Our delivery framework: engagement timelines, client responsibilities, scope boundaries between decision and implementation work, and how communication is structured."

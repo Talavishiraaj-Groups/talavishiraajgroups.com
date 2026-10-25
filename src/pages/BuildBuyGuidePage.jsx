@@ -224,7 +224,7 @@ export default function BuildBuyGuidePage() {
       />
 
       <section className="bg-secondary text-accent">
-        <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24 space-y-6">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 py-14 md:py-20 space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-gray-400 font-medium">Free framework</p>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
             Build it, buy it, or partner? Seven questions that decide it
@@ -250,7 +250,7 @@ export default function BuildBuyGuidePage() {
         </div>
       </section>
 
-      <section id="framework" className="scroll-mt-24 max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20">
+      <section id="framework" className="scroll-mt-24 max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <form onSubmit={submit} className="space-y-10">
           {DIMENSIONS.map((dimension, index) => (
             <fieldset key={dimension.id} className="space-y-3">
@@ -352,7 +352,7 @@ export default function BuildBuyGuidePage() {
       </section>
 
       <section className="bg-muted border-t border-border">
-        <div className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-16 space-y-6">
+        <div className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-14 space-y-6">
           <h2 className="text-2xl font-semibold text-primary">Questions</h2>
           <dl className="space-y-5">
             {faqs.map(({ q, a }) => (

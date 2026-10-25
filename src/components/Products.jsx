@@ -148,7 +148,7 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="products" className="py-12 md:py-14 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -37,7 +37,7 @@ export default function LandingPage() {
       />
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">
@@ -124,7 +124,7 @@ export default function LandingPage() {
         capability links are still here, one per problem, so the route to each
         service page is unchanged.
       */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">What we work on</p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
@@ -165,7 +165,7 @@ export default function LandingPage() {
 
       {/* PRODUCT. Kept deliberately short: the product, the line, one way in. */}
       <section className="border-y border-border bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <div className="grid md:grid-cols-[1fr_auto] gap-10 md:gap-16 md:items-center">
             <div className="space-y-4">
               <h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">
@@ -202,7 +202,7 @@ export default function LandingPage() {
 
       {/* WHO WE ARE */}
       <section className="bg-secondary text-accent">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-4">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 space-y-4">
           <h2 className="text-xs uppercase tracking-[0.3em] text-gray-400">Who we are</h2>
           <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-4xl">
             A research driven organization with deep engineering and implementation capability. We bring software engineering, artificial intelligence, product development, applied research, and commercial systems together under one accountable partner.
@@ -217,7 +217,7 @@ export default function LandingPage() {
 
       {/* CAPABILITIES */}
       <section className="bg-muted border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <div className="max-w-3xl mb-10">
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Capabilities</p>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
@@ -253,7 +253,7 @@ export default function LandingPage() {
       </section>
 
       {/* WHO WE WORK WITH */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Who we work with</p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
@@ -276,7 +276,7 @@ export default function LandingPage() {
 
       {/* SELECTED WORK */}
       <section className="bg-muted border-y border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
             <div className="max-w-2xl">
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Selected work</p>
@@ -317,7 +317,7 @@ export default function LandingPage() {
       </section>
 
       {/* WHY US */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">
             Why Talavishiraaj Groups
@@ -341,7 +341,7 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="border-t border-border bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             Discuss a problem with us
           </h2>

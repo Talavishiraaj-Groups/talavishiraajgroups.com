@@ -87,7 +87,7 @@ export default function ProductsPage() {
         Prism is that cost alone does not settle a cross functional call.
       */}
       <section className="bg-secondary text-accent overflow-hidden relative">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-20 md:py-28 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20 relative z-10">
           <div className="max-w-3xl space-y-6">
             <p className="text-xs uppercase tracking-[0.4em] text-gray-400 font-medium">
               Products · {prism.name}
@@ -122,7 +122,7 @@ export default function ProductsPage() {
       </section>
 
       {/* WHAT IT IS, plus the contrast against the biased alternatives. */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold text-black">What Prism is</h2>
@@ -148,7 +148,7 @@ export default function ProductsPage() {
       </section>
 
       {/* RECOGNITION. Self qualification instead of a six way sort. */}
-      <section id="is-this-you" className="scroll-mt-24 bg-muted py-20">
+      <section id="is-this-you" className="scroll-mt-24 bg-muted py-12 md:py-14">
         <div className="max-w-4xl mx-auto px-4 md:px-8 space-y-10">
           <h2 className="text-3xl font-semibold text-black text-center">
             Does this sound like you?
@@ -181,7 +181,7 @@ export default function ProductsPage() {
           quantities, which a sentence makes a reader compute and a bar does
           not. It also gives the page its first route onward into the cost
           evidence rather than ending where it stands. */}
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <h2 className="text-3xl font-semibold text-black mb-4">What it costs to get this wrong</h2>
         <p className="text-gray-700 leading-relaxed text-lg mb-2 max-w-2xl">
           The reason to settle the decision first is not tidiness. It is that the published gap
@@ -224,7 +224,7 @@ export default function ProductsPage() {
       </section>
 
       {/* WHAT YOU GET. */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="space-y-12">
           <div className="text-center space-y-3">
             <h2 className="text-3xl font-semibold text-black">What you get</h2>
@@ -244,7 +244,7 @@ export default function ProductsPage() {
       </section>
 
       {/* WHAT WE NEED FROM YOU. Short, and about their effort only. */}
-      <section className="bg-secondary text-accent py-20">
+      <section className="bg-secondary text-accent py-12 md:py-14">
         <div className="max-w-6xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold">What we need from you</h2>
@@ -274,7 +274,7 @@ export default function ProductsPage() {
       </section>
 
       {/* FIT AND BOUNDARIES. */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="grid md:grid-cols-2 gap-16">
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-black">When Prism is the right call</h2>
@@ -305,7 +305,7 @@ export default function ProductsPage() {
       </section>
 
       {/* QUESTIONS. Answers the things buyers ask before they will talk. */}
-      <section className="bg-muted py-20">
+      <section className="bg-muted py-12 md:py-14">
         <div className="max-w-3xl mx-auto px-4 md:px-8 space-y-10">
           <h2 className="text-3xl font-semibold text-black text-center">Questions</h2>
           <dl className="space-y-6">

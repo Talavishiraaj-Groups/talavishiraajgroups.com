@@ -1,5 +1,33 @@
 @import './fonts.css';
 
+/*
+ * Vertical rhythm. Two scales, and there is a reason to keep it to two.
+ *
+ *   Hero, the first band on a page   py-14 md:py-20   56 / 80px
+ *   Every other band                 py-12 md:py-14   48 / 56px
+ *
+ * The site had grown seven different section paddings doing the same job:
+ * py-24, py-20, py-20 md:py-28, py-16 md:py-24, py-16 md:py-20, py-14 md:py-20
+ * and py-14 md:py-16. Because a band's bottom padding meets the next band's
+ * top padding, that produced gaps between content of 128 to 176px with no
+ * pattern to them. Measured on the home page at 1024px wide, the gaps alone
+ * came to 1,216px, which is more than a full screen of nothing on one page.
+ *
+ * Worth recording why those numbers were not obviously wrong. A verified
+ * competitor in the same category measured at 80px top and bottom, the same as
+ * the old py-20 here, so the absolute values sat inside category norms. The
+ * difference is what the bands contain: theirs carry images, logos and cards,
+ * and ours are almost entirely text. The same gap between two dense visual
+ * blocks reads as composition, and between two blocks of gray text it reads as
+ * the page having run out of things to say.
+ *
+ * So this is tuned for text-led bands, not copied from a site with pictures.
+ * Adjacent sections now leave 112px on desktop and 96px on mobile, down from
+ * 160 and 128.
+ *
+ * If you add a band, use one of the two above. If a band genuinely needs more
+ * air, give it more inside, not more padding around it.
+ */
 
 @tailwind base;
 @tailwind components;

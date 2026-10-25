@@ -4,7 +4,7 @@ import ArrowIcon from '../components/icons/ArrowIcon';
 
 export default function DataHandlingPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
       <Seo
         title="Confidentiality and Data Handling | Talavishiraaj Groups"
         description="How client information, documents and research data are handled: confidentiality commitments, access controls, third party platforms and retention practices."

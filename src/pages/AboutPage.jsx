@@ -75,7 +75,7 @@ export default function AboutPage() {
       />
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">About</p>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.06] mb-7 max-w-4xl">
           A multidisciplinary organization built around difficult problems
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
       {/* WHY THE ORGANISATION IS SHAPED THIS WAY */}
       <section id="why-we-work-this-way" className="scroll-mt-24 border-y border-border bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Why we work this way</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       {/* PRINCIPLES */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">How we think</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Three commitments</h2>
@@ -136,7 +136,7 @@ export default function AboutPage() {
 
       {/* DISCIPLINES */}
       <section className="border-y border-border bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <div className="max-w-3xl mb-10">
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">
               What sits inside the organization
@@ -172,7 +172,7 @@ export default function AboutPage() {
       </section>
 
       {/* HOW WORK MOVES */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">How work moves</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
@@ -198,7 +198,7 @@ export default function AboutPage() {
 
       {/* DISTRIBUTED TEAMS */}
       <section className="border-y border-border bg-secondary text-accent">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">How we are organised</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -235,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* LEADERSHIP */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Leadership</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">Core leadership</h2>
@@ -266,7 +266,7 @@ export default function AboutPage() {
 
       {/* GOVERNANCE */}
       <section className="border-y border-border bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Governance</p>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
@@ -309,7 +309,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
             Want to know whether we are the right fit?
           </h2>

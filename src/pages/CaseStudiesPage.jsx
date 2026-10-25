@@ -224,7 +224,7 @@ export default function CaseStudiesPage() {
         ]}
       />
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Case studies</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-5 max-w-3xl">
           What the work looks like when it is finished
@@ -260,7 +260,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="grid gap-6 md:grid-cols-2">
           {visible.map((study) => (
             <article
@@ -310,7 +310,7 @@ export default function CaseStudiesPage() {
         points={CASE_STUDY_DIFFERENTIATORS}
       />
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-xl">
             <h2 className="text-xl font-semibold mb-2">Working through something similar?</h2>
@@ -350,7 +350,7 @@ export function CaseStudyDetailPage() {
           path={`/case-studies/${slug || ''}`}
           noindex
         />
-        <section className="max-w-3xl mx-auto px-4 md:px-8 py-24 text-center">
+        <section className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h1 className="text-3xl font-semibold mb-4">We could not find that case study</h1>
           <p className="text-gray-600 mb-8">It may have been renamed or removed.</p>
           <Link
@@ -401,7 +401,7 @@ export function CaseStudyDetailPage() {
         ]}
       />
 
-      <article className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20">
+      <article className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm">
           <Link
             to="/case-studies"

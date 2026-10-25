@@ -21,7 +21,7 @@ export default function TermsPage() {
           ]),
         ]}
       />
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Terms of Service</h1>
         <p className="text-sm text-gray-500">Last Updated: June 2026</p>

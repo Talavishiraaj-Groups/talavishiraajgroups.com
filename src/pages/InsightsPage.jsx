@@ -53,7 +53,7 @@ export default function InsightsPage() {
         ]}
       />
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Insights</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-5 max-w-3xl">
           Answers to the questions that come up before a project starts
@@ -132,7 +132,7 @@ export function InsightArticlePage() {
           path={`/insights/${slug || ''}`}
           noindex
         />
-        <section className="max-w-3xl mx-auto px-4 md:px-8 py-24 text-center">
+        <section className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h1 className="text-3xl font-semibold mb-4">We could not find that article</h1>
           <p className="text-gray-600 mb-8">It may have been renamed or moved.</p>
           <Link
@@ -181,7 +181,7 @@ export function InsightArticlePage() {
         ]}
       />
 
-      <article className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20">
+      <article className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm">
           <Link
             to="/insights"

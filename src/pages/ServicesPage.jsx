@@ -58,7 +58,7 @@ export default function ServicesPage() {
 
       {/* HERO */}
       <section className="bg-secondary text-accent">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6">Capabilities</p>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] mb-6 max-w-4xl">
             What we build and run
@@ -79,7 +79,7 @@ export default function ServicesPage() {
             <section
               key={category.id}
               id={category.id}
-              className={`scroll-mt-24 py-14 md:py-20 ${index > 0 ? 'border-t border-border' : ''}`}
+              className={`scroll-mt-24 py-12 md:py-14 ${index > 0 ? 'border-t border-border' : ''}`}
             >
               <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
       {/* CROSS SECTOR. White, because the differentiator band directly above it
           is muted and two adjacent muted bands read as one grey slab. */}
       <section className="border-b border-border bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Across sectors</p>
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
@@ -178,7 +178,7 @@ export default function ServicesPage() {
 
       {/* NEXT STEPS */}
       <section className="bg-secondary text-accent">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4">Next steps</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
@@ -233,7 +233,7 @@ export function CapabilityPage() {
           path={`/services/${slug || ''}`}
           noindex
         />
-        <section className="max-w-3xl mx-auto px-4 md:px-8 py-24 text-center">
+        <section className="max-w-3xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
           <h1 className="text-3xl font-semibold mb-4">We could not find that page</h1>
           <p className="text-gray-600 mb-8">It may have been renamed or moved.</p>
           <Link
@@ -277,7 +277,7 @@ export function CapabilityPage() {
 
       {/* HERO */}
       <section className="border-b border-border bg-white">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm">
             <Link
               to="/services"
@@ -294,7 +294,7 @@ export function CapabilityPage() {
       </section>
 
       {/* SIGNALS + WHAT WE DO */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 mb-5">
@@ -334,7 +334,7 @@ export function CapabilityPage() {
 
       {/* APPROACH */}
       <section className="border-y border-border bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">How we approach it</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {category.approach.map((item, index) => (
@@ -351,7 +351,7 @@ export function CapabilityPage() {
       </section>
 
       {/* DELIVERS + RELATED WORK */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16 grid gap-10 lg:grid-cols-2">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-10 lg:grid-cols-2">
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             What you end up with
@@ -394,7 +394,7 @@ export function CapabilityPage() {
       {/* FAQ */}
       {category.faq && category.faq.length > 0 && (
         <section className="border-y border-border bg-muted">
-          <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+          <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
               Questions we are asked
             </h2>
@@ -414,7 +414,7 @@ export function CapabilityPage() {
           non-branded entry points, and gives those articles a path back. */}
       {relatedInsights.length > 0 && (
         <section className="border-y border-border bg-white">
-          <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
               Further reading
             </h2>
@@ -446,7 +446,7 @@ export function CapabilityPage() {
       )}
 
       {/* OTHER CAPABILITIES */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 mb-6">
           Other capabilities
         </h2>
@@ -480,7 +480,7 @@ export function CapabilityPage() {
       </RelatedPath>
 
       <section className="border-t border-border bg-white">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20 text-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             Discuss a {category.label.toLowerCase()} requirement
           </h2>

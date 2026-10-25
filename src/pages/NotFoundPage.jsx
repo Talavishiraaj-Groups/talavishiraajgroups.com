@@ -21,7 +21,7 @@ export default function NotFoundPage() {
         noindex
       />
 
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-20 md:py-28">
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">Error 404</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-5">
           We could not find that page

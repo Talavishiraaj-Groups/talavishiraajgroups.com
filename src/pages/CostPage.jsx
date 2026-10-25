@@ -98,7 +98,7 @@ export default function CostPage() {
           whether this page wastes their time, and being told up front that
           there is no rate card buys the credibility the rest of the page
           spends. */}
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">What it costs</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
           What custom software and AI work actually costs
@@ -117,7 +117,7 @@ export default function CostPage() {
 
       {/* 1. THE SPREAD */}
       <section className="border-t border-border bg-muted">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             The same brief, quoted ten times apart
           </h2>
@@ -149,7 +149,7 @@ export default function CostPage() {
 
       {/* 2. WHAT THE QUOTE LEAVES OUT */}
       <section className="border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             The number you are quoted is not the number you pay
           </h2>
@@ -213,7 +213,7 @@ export default function CostPage() {
 
       {/* 3. WHAT KEEPS IT IN BUDGET */}
       <section className="border-t border-border bg-muted">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             One thing reliably predicts whether it lands on budget
           </h2>
@@ -255,7 +255,7 @@ export default function CostPage() {
 
       {/* 4. HOW TO READ A QUOTE */}
       <section className="border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">
             Five questions to ask before you sign anything
           </h2>
@@ -307,7 +307,7 @@ export default function CostPage() {
       {/* FAQ. Carries the FAQPage schema, which is what an assistant reads when
           someone asks it what this work costs. */}
       <section className="border-t border-border bg-muted">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
             Questions people ask about cost
           </h2>

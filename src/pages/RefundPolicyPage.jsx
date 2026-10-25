@@ -13,7 +13,7 @@ export default function RefundPolicyPage() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
       <Seo
         title="Refund Policy | Talavishiraaj Groups"
         description="How refunds are handled across consultation, service and implementation engagements, the stage based eligibility structure, how to raise a request, and how disputes are escalated."

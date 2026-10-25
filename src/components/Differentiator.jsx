@@ -36,7 +36,7 @@ export default function Differentiator({
     <section
       className={`border-y border-border ${tone === 'white' ? 'bg-white' : 'bg-muted'}`}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">{eyebrow}</p>
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-10 max-w-2xl leading-tight">
           {heading}

@@ -21,7 +21,7 @@ export default function IpPolicyPage() {
           ]),
         ]}
       />
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-6">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 space-y-6">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold">Intellectual Property Policy</h1>
         <p className="text-sm text-gray-500">Last Updated: November 2025</p>

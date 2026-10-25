@@ -111,7 +111,7 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Contact</p>
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">

@@ -153,7 +153,7 @@ export default function ComparePage() {
         ]}
       />
 
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Choosing a route</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
           In house, agency, or an independent read first
@@ -174,7 +174,7 @@ export default function ComparePage() {
           cards: a comparison read down a single column at a time is no longer a
           comparison, and the whole value here is reading across a row. */}
       <section className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <div
             className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0"
             tabIndex={0}
@@ -229,7 +229,7 @@ export default function ComparePage() {
       </section>
 
       <section className="border-t border-border bg-muted">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-5">
             The row that decides it
           </h2>
@@ -254,7 +254,7 @@ export default function ComparePage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">
             Questions people ask when choosing
           </h2>

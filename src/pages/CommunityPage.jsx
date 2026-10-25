@@ -68,7 +68,7 @@ export default function CommunityPage() {
         noindex
       />
 
-      <section className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Keep in touch</p>
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-5">
           Tell us what you would find useful

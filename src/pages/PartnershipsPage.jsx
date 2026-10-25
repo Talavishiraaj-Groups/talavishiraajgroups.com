@@ -81,7 +81,7 @@ export default function PartnershipsPage() {
         ]}
       />
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">Partnerships</p>
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] mb-6 max-w-4xl">
           We work well with organizations that build things
@@ -103,7 +103,7 @@ export default function PartnershipsPage() {
       </section>
 
       <section id="how-we-assess" className="scroll-mt-24 border-y border-border bg-muted">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <p className="text-lg text-gray-700 max-w-4xl leading-relaxed">
             We do not run a partner programme with tiers and badges. Each collaboration is assessed on
             whether there is genuine technical fit, whether both sides bring something the other needs,
@@ -113,7 +113,7 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="max-w-3xl mb-12">
           <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">How we collaborate</p>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -152,7 +152,7 @@ export default function PartnershipsPage() {
       </section>
 
       <section className="bg-secondary text-accent">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">How we work</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -170,7 +170,7 @@ export default function PartnershipsPage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight mb-4">

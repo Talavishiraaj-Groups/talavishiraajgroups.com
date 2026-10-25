@@ -55,7 +55,7 @@ export default function RiskMitigationPage() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-8 py-16 md:py-24">
+    <div className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
       <Seo
         title="Risk and Mitigation Framework | Talavishiraaj Groups"
         description="The governance framework covering delivery quality, risk identification, escalation paths, quality review and the recovery actions available if an engagement falls below standard."
