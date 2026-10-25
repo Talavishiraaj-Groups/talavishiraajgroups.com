@@ -35,7 +35,8 @@ const linkGroups = [
   {
     title: 'Company',
     items: [
-      { label: 'Home', to: '/' },
+      // No "Home" here either. See the note in Navbar.jsx: the logo above is
+      // the link home and carries the brand as its anchor text.
       { label: 'About', to: '/about' },
       { label: 'Services', to: '/services' },
       { label: 'Products', to: '/products' },

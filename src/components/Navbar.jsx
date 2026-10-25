@@ -2,8 +2,27 @@ import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
+/**
+ * No "Home" item, deliberately.
+ *
+ * The logo to the left is the link home, which is the convention every
+ * professional site in this category relies on, and it already carries
+ * "Talavishiraaj Groups" as its anchor text rather than a generic word.
+ *
+ * This was checked rather than assumed, because the first version of this
+ * judgement went the other way. Across the rivals in
+ * growth-research/16-competitor-keywords.md, the nav of Kellton, Softeq,
+ * McKinsey and BCG contains no Home item: McKinsey's reads Industries,
+ * Capabilities, Tech & AI, Our Insights, Careers, About Us. Four out of four.
+ *
+ * It matters beyond tidiness. The first nav slot gets the most attention of
+ * any link on the page, and spending it on "Home" spends it on a word that
+ * tells a stranger nothing about what this company does, while every one of
+ * the remaining items does. It is also the website builder default that the
+ * SEO transcript singles out, the same default that had put "Home" into the
+ * breadcrumb schema of all 37 pages.
+ */
 const links = [
-  { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
   { label: 'Products', to: '/products' },
