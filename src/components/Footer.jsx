@@ -5,6 +5,32 @@ import { CONTACT_EMAIL, LINKEDIN_URL, TAGLINE, TWITTER_URL } from '../seo';
 import { capabilityPath, serviceCategories } from '../data/servicesData';
 import { track, trackOutbound } from './analytics';
 
+/**
+ * Footer structure.
+ *
+ * Adding the two cost and comparison pages took the Company column to eleven
+ * items and made the footer visibly top heavy. Lengthening a list was the
+ * symptom; the cause was that the column had been carrying three unrelated
+ * kinds of thing at once. Primary sections of the site, content hubs, and the
+ * pages that help somebody decide are different jobs, and a reader scanning for
+ * one of them had to read past the other two.
+ *
+ * So the regrouping is by what a link is for, not by what fits:
+ *
+ *   Company     where the organization is described and reached
+ *   Capabilities the six service pages, generated from the data
+ *   Guides      everything written to help somebody decide something
+ *
+ * /build-vs-buy is in the footer for the first time here. It is an indexed page
+ * with real search demand behind it and it had no sitewide link at all, which
+ * meant the only routes to it were editorial ones inside other pages.
+ *
+ * The legal block has left the grid entirely and now runs as a single wrapped
+ * row above the copyright. Seven policy pages with long names made the tallest
+ * column on the site out of the links that are looked for least, and a reader
+ * only ever wants one of them, by name, having already gone looking. A row is
+ * the right shape for that. Nothing was removed.
+ */
 const linkGroups = [
   {
     title: 'Company',
@@ -14,10 +40,6 @@ const linkGroups = [
       { label: 'Services', to: '/services' },
       { label: 'Products', to: '/products' },
       { label: 'Case Studies', to: '/case-studies' },
-      { label: 'Insights', to: '/insights' },
-      { label: 'Resources', to: '/resources' },
-      { label: 'What it costs', to: '/what-it-costs' },
-      { label: 'In-house vs agency', to: '/in-house-vs-agency' },
       { label: 'Partnerships', to: '/partnerships' },
       { label: 'Contact', to: '/contact' },
     ],
@@ -30,17 +52,29 @@ const linkGroups = [
     })),
   },
   {
-    title: 'Governance & Legal',
+    title: 'Guides',
     items: [
-      { label: 'Privacy Policy', to: '/privacy-policy' },
-      { label: 'Terms & Conditions', to: '/terms' },
-      { label: 'Refund Policy', to: '/refund-policy' },
-      { label: 'Delivery Policy', to: '/delivery-policy' },
-      { label: 'Risk & Mitigation Framework', to: '/risk-mitigation' },
-      { label: 'Confidentiality & Data Handling', to: '/data-handling' },
-      { label: 'Intellectual Property Policy', to: '/ip-policy' },
+      { label: 'What it costs', to: '/what-it-costs' },
+      { label: 'In-house vs agency', to: '/in-house-vs-agency' },
+      { label: 'Build vs buy vs partner', to: '/build-vs-buy' },
+      { label: 'Insights', to: '/insights' },
+      { label: 'Resources', to: '/resources' },
     ],
   },
+];
+
+/**
+ * Shorter labels than the page titles they point at, because a wrapped row of
+ * seven full policy names is unreadable. The full name is the h1 on each page.
+ */
+const legalLinks = [
+  { label: 'Privacy', to: '/privacy-policy' },
+  { label: 'Terms', to: '/terms' },
+  { label: 'Refunds', to: '/refund-policy' },
+  { label: 'Delivery', to: '/delivery-policy' },
+  { label: 'Risk framework', to: '/risk-mitigation' },
+  { label: 'Data handling', to: '/data-handling' },
+  { label: 'Intellectual property', to: '/ip-policy' },
 ];
 
 const socialLinks = [
@@ -62,8 +96,13 @@ export default function Footer() {
   return (
     <footer className="border-t border-border bg-white text-primary">
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-14 space-y-12">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
-          <div className="space-y-4">
+        {/* Two columns of links on a phone rather than one. Stacked single
+            file, the three groups ran to more than one and a half screens of
+            footer, which is a long way to scroll past something nobody is
+            reading. The brand block keeps the full width at that size because
+            its paragraph is unreadable in a half column. */}
+        <div className="grid gap-x-6 gap-y-10 grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
+          <div className="space-y-4 col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
               <img src={logo} alt="" width="32" height="33" className="h-8 w-auto" />
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Talavishiraaj Groups</p>
@@ -122,9 +161,22 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-border pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-gray-500">
-          <span>© {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.</span>
-          <span>{TAGLINE}</span>
+        <div className="border-t border-border pt-6 space-y-5">
+          <nav aria-label="Governance and legal">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs list-none">
+              {legalLinks.map((item) => (
+                <li key={item.label}>
+                  <Link to={item.to} className="text-gray-500 hover:text-primary transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs text-gray-500">
+            <span>© {new Date().getFullYear()} Talavishiraaj Groups. All rights reserved.</span>
+            <span>{TAGLINE}</span>
+          </div>
         </div>
       </div>
     </footer>
