@@ -1012,3 +1012,76 @@ That is a larger pass and was not attempted here.
 
 [FACT] The bundle finding from the first pass of 25 October is unchanged and
 still the largest mobile cost. Two new pages were added to it.
+
+---
+
+## 2026-10-25 (third pass) — the visibility detail, and what it actually says
+
+Optise ran 12 Google queries and 12 assistant questions. Result: **1 of 12 on
+Google, 2 of 12 in AI answers.** Every hit was a brand query.
+
+### The finding that matters is not the score
+
+[FACT] Mapping the 11 Google misses against what is already published:
+
+| query | matching page | gap |
+|---|---|---|
+| prism ai readiness assessment tool | `/products` | vocabulary |
+| ai and systems engineering consulting firm reviews | none | needs third party profiles |
+| custom hardware and software integration services | `/services/product-engineering-and-rd` | authority |
+| production grade ai implementation services | `/services/artificial-intelligence-and-automation` | authority |
+| enterprise internal platform development agency | `/services/technology-and-engineering` | authority |
+| how to transition ai model from notebook to production | `/insights/why-ai-prototypes-stall-before-production` | authority |
+| internal systems fragmented across departments | `/services/business-and-operating-systems` | authority |
+| custom software project stalled between multiple vendors | home page h1 | authority |
+| build vs buy enterprise ai platform assessment | `/build-vs-buy`, `/products` | authority |
+| best embedded systems companies for startups | none | listicle intent, cannot be owned on site |
+| ai workflow automation consulting for b2b operations | `/insights/when-workflow-automation...` | authority |
+
+**[INFER] Nine of the eleven misses already have a page that answers the query.
+This is not a content gap.** One of them, notebook to production, is the exact
+subject of a published article.
+
+[FACT] Vocabulary was checked as a possible cause and largely cleared it:
+"vendor" appears on 13 built pages, "production" on 19, "integration" on 20,
+"notebook" on 7. Only "fragmented" is absent from the entire site.
+
+[FACT] The brand query ranks **#1**, so the domain is indexed and ranks
+normally when nothing competes.
+
+[INFER] So the constraint is domain authority and age, not on page work. The
+site is nine weeks old with no external links. The six verified competitors in
+`15-optise-audit.md` are established domains carrying named client logos, ISO
+certification and years of accumulated links. No amount of further page writing
+closes that, and the marginal return on more pages is now close to zero.
+
+**[INFER] What moves this is the directory and citation work already set out in
+`12-inbound-launch-plan.md`, and time indexed. Both of the highest value
+directories are gated on the owner supplied items: client references and a
+physical address.**
+
+### What was done on page, because it was cheap and genuinely missing
+
+[FACT] All four insight articles had `Article` schema and no `FAQPage`, despite
+**25 of 25 section headings across them already being questions** with the
+answer directly underneath. Now exposed as FAQPage: 4 blocks, 25 pairs, all
+parsing cleanly.
+
+Note on what that buys. Google restricted FAQ rich results in 2023 to
+government and health sites, so it will not produce a snippet. It is for the
+assistants, which is the channel measured at 2 of 12.
+
+[FACT] `llms.txt` added, generated from the render pass. Previously absent,
+which was the stated cause of the AI engines and agentic browsing scores.
+
+### Deliberately not done
+
+[INFER] The query "prism ai readiness assessment tool" suggests Prism could be
+renamed toward "AI readiness assessment", which has clearer search intent.
+**Not acted on.** Prism's positioning is governed by canon and by the owner's
+explicit instructions on its language, and one audit query is not sufficient
+evidence to reopen it. Recorded here as an observation only.
+
+No pages were written to chase the two queries with no matching content. One
+needs third party review profiles and the other is listicle intent that a
+vendor site cannot own.
