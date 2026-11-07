@@ -1346,3 +1346,79 @@ nearest realistic move is a dedicated data engineering capability page rather
 than a seventh article, which `16-competitor-keywords.md` notes is the Kellton
 pattern. That is a larger decision about whether to compete on head service
 terms at all, and it is unchanged: not yet.
+
+---
+
+## 2026-11-07 (second pass) — the analytics geography question, and three reference sites
+
+### The geography reading, and why it is not actionable yet
+
+[FACT] Last 7 days: 31 visitors, 89 page views, bounce 58 percent (down 18).
+Countries: India 48, United States 23, UAE 6, Nigeria 6, Canada 3.
+
+[INFER] **31 visitors is too small to read geographically.** 48 percent is
+about 15 people and 23 percent is about 7. The difference between them is
+eight people, which is noise, not a market signal. Nothing in the site should
+be changed on this.
+
+[FACT] **The top referrer is wellfound.com with 5 of 31 visitors.** Wellfound
+is a startup job board, formerly AngelList Talent.
+
+[INFER] That is roughly a sixth of all traffic arriving from a jobs
+marketplace, and it is the most likely explanation for the India weighting,
+since Wellfound's engineering audience skews heavily Indian. **This is the
+fourth appearance of the career intent pattern**, after audit and COO terms,
+forward-deployed engineer, and the whole data engineering keyword space.
+
+[FACT] There is no careers page on the site. Candidates arriving from Wellfound
+find nothing for them, which is consistent with the bounce rate.
+
+[INFER] The geography is therefore a **channel** question, not a website one.
+No edit to the site makes an American visit. The levers are where the company
+is listed and where it publishes. Worth the owner deciding whether the
+Wellfound presence is wanted at all, because right now it is the largest single
+source of traffic and it is bringing the wrong audience.
+
+[OBS] `areaServed` in the organization schema already lists Worldwide plus all
+five markets in order, so the machine readable signal is correct.
+
+[OBS] Mobile is 19 percent of visitors. The mobile work done earlier was still
+correct, and it mattered less than the audits implied.
+
+[OBS] `/partnerships` is the second most visited page at 7 visitors, ahead of
+`/contact` and `/products`. Partnership and vendor inbound rather than buyer
+inbound.
+
+### Three reference sites, assessed
+
+Supplied for UI and UX reference: webxela.com, yatricloud.com, uimitra.com.
+
+| site | what it is | taken |
+|---|---|---|
+| webxela.com | Enterprise IT and AI engineering. The closest comparable of the three | **capability chips under the hero** |
+| uimitra.com | Bengaluru brand and design studio | nothing. Its dual hero CTA pattern is already in place here |
+| yatricloud.com | AWS and Azure certification vouchers, B2C training | nothing. Not a comparable business |
+
+**Adopted:** a row of capability chips under the hero, from webxela. The gap it
+closes is real. The span of disciplines is this company's entire
+differentiator and a visitor previously had to read a five line paragraph to
+discover what the span was. They are labels rather than links, because the
+hero carries one primary action and one secondary by design.
+[FACT] Verified at 375px: wraps to two rows, no overflow.
+
+**Deliberately not adopted, and this matters given the geography question in
+the same conversation:**
+
+- [INFER] **A floating WhatsApp button**, which webxela carries. It is a strong
+  India market signal. Adding it while trying to reach US, UK and UAE buyers
+  would work against the stated hierarchy. The two halves of this request pull
+  in opposite directions and the chips are the part that does not.
+- A floating "send your project requirements" nudge. Intrusive, and it would be
+  a second competing action in violation of the one action per page rule
+  established in the conversions work.
+- A cookie consent banner, which webxela carries. See the cookie notice work:
+  this site sets no cookies and a banner would ask consent for nothing.
+- Coloured accents and large stat rows. The monochrome is deliberate, and
+  **there are no honest numbers to put in a stat row.** Yatricloud's 50K+ and
+  4.8 are real for a training business. Inventing an equivalent here is the
+  fabrication line that has been held throughout.

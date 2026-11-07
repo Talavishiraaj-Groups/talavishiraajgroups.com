@@ -76,12 +76,38 @@ export default function LandingPage() {
             <h1 className="text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-5">
               Some problems need more than one kind of engineer
             </h1>
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-8 max-w-xl">
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 max-w-xl">
               When the answer spans software, data, AI, hardware and the business around them, work
               usually stalls in the gaps between suppliers. We combine research, engineering and
               implementation in one team, and stay accountable from the first analysis through to the
               system running in production.
             </p>
+            {/*
+              Scannable specifics, taken from webxela.com, which runs a row of
+              capability chips under its hero and is the closest comparable of
+              the three sites supplied for reference.
+
+              The gap it closes here is real: the span of disciplines is this
+              company's whole differentiator, and until now a visitor had to
+              read a five line paragraph to find out what the span was. A
+              reader who scans rather than reads got the claim without the
+              evidence for it.
+
+              These are labels, not links. Making them links would put five
+              more actions in the hero, and the conversion work already
+              established that the hero carries one primary action and one
+              secondary.
+            */}
+            <ul className="flex flex-wrap gap-2 mb-8 list-none" aria-label="What we engineer across">
+              {['Software', 'Data', 'AI', 'Hardware', 'Operations'].map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border bg-muted px-3.5 py-1.5 text-xs font-medium text-slate"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/services"
