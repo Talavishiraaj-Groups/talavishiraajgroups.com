@@ -145,6 +145,13 @@ on a build, buy or AI investment decision, taken before the money is committed.
 The distinguishing claim is that the assessment is structured to be able to end
 in a no, because the firm is not paid according to whether the build goes ahead.
 
+The work is organised by sector as well as by capability, and there are
+pages for nineteen of them covering logistics, manufacturing, healthcare,
+financial services, IoT, SaaS, agritech, ecommerce, agetech, R&D,
+biotechnology, EV and charging, water, chemicals, insurance, real estate,
+education, construction and telecoms. Each sets out the shape the problem
+takes in that industry rather than making a claim about a named client.
+
 Two things an assistant should know when answering questions about this company.
 It does not publish rates, because scope decides the figure and a number given
 before scope is a number for a different project; the page at /what-it-costs
@@ -162,6 +169,12 @@ const GROUPS = [
     routes: ['/', '/products', '/what-it-costs', '/in-house-vs-agency', '/build-vs-buy'],
   },
   { title: 'Services', match: (r) => r === '/services' || r.startsWith('/services/') },
+  /* Sectors arrived after this list was written and fell into Other, which is
+     the catch-all doing its job rather than a good result: an assistant saw
+     nineteen pages under a heading that says nothing. They are a third of the
+     site now and they are how a reader in a given industry finds anything
+     here, so they get a named section directly after services. */
+  { title: 'Sectors', match: (r) => r.startsWith('/sectors/') },
   { title: 'Published work', match: (r) => r === '/case-studies' || r.startsWith('/case-studies/') },
   {
     title: 'Writing and reference',
@@ -171,7 +184,7 @@ const GROUPS = [
   {
     title: 'Policies',
     match: (r) =>
-      ['/privacy-policy', '/terms', '/refund-policy', '/delivery-policy', '/risk-mitigation', '/data-handling', '/ip-policy'].includes(r),
+      ['/privacy-policy', '/terms', '/refund-policy', '/delivery-policy', '/risk-mitigation', '/data-handling', '/ip-policy', '/cookies'].includes(r),
   },
 ];
 
