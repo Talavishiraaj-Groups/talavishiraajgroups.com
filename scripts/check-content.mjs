@@ -149,7 +149,13 @@ const capabilitySlugs = new Set(
 );
 
 /** Every route the application serves. Used to validate internal links. */
+const sectorSource = await readFile(join(root, 'src/data/sectors.js'), 'utf8');
+const sectorSlugs = [...sectorSource.matchAll(/label: '([^']+)'/g)].map((m) =>
+  m[1].toLowerCase().replace(/ and /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+);
+
 const KNOWN_ROUTES = new Set([
+  ...sectorSlugs.map((s) => `/sectors/${s}`),
   '/',
   '/about',
   '/services',

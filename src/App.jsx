@@ -16,6 +16,7 @@ import BuildBuyGuidePage from './pages/BuildBuyGuidePage';
 import CostPage from './pages/CostPage';
 import ComparePage from './pages/ComparePage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
+import SectorPage from './pages/SectorPage';
 import BookPage from './pages/BookPage';
 import RefundPolicyPage from './pages/RefundPolicyPage';
 import DeliveryPolicyPage from './pages/DeliveryPolicyPage';
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="/what-it-costs" element={<CostPage />} />
           <Route path="/in-house-vs-agency" element={<ComparePage />} />
           <Route path="/cookies" element={<CookiePolicyPage />} />
+          <Route path="/sectors/:slug" element={<SectorPage />} />
           {/* The product page used to live at /systems. Keep the old path working. */}
           <Route path="/systems" element={<Navigate to="/products" replace />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />

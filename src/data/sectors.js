@@ -32,84 +32,182 @@
 export const sectors = [
   {
     id: 'logistics',
+    keyword: 'Logistics',
+    capabilities: ['tech','ai','strategy'],
+    signals: [
+      'Movements tracked in a TMS, a spreadsheet and somebody’s inbox, reconciled by hand each morning',
+      'Exceptions found by a customer calling before the system flags them',
+      'Carrier and warehouse data arriving in formats nobody owns the mapping for',
+    ],
     label: 'Supply chain and logistics',
     problem:
       'Movements tracked in three systems that disagree, and a planner reconciling them by hand before anyone can act.',
   },
   {
     id: 'manufacturing',
+    keyword: 'Manufacturing',
+    capabilities: ['tech','ai','rd'],
+    signals: [
+      'Line data that exists on the floor and never reaches the people scheduling the next run',
+      'Quality issues traced back days later, by which point the batch has shipped',
+      'Maintenance history in one system and sensor telemetry in another',
+    ],
     label: 'Manufacturing',
     problem:
       'Line and quality data that exists but never reaches the people deciding what to run next, or arrives a shift too late.',
   },
   {
     id: 'healthcare',
+    keyword: 'Healthcare',
+    capabilities: ['tech','strategy','delivery'],
+    signals: [
+      'Clinical and administrative systems bought separately, with integration treated as an afterthought',
+      'Reporting assembled by hand for people who need it daily',
+      'A rollout stalled because nobody owns the decision when the output is wrong',
+    ],
     label: 'Healthcare',
     problem:
       'Clinical and administrative systems that were bought separately, where the integration work is the project and the interface is the easy part.',
   },
   {
     id: 'finance',
+    keyword: 'Financial Services',
+    capabilities: ['ai','strategy','tech'],
+    signals: [
+      'Assessment decisions concentrated in a few experienced people who cannot be cloned',
+      'A model that performs well and cannot be explained to a reviewer',
+      'Controls documented in one place and enforced in another',
+    ],
     label: 'Financial services',
     problem:
       'Decisions made by a handful of experienced people, under review requirements that make an unexplainable model useless however accurate it is.',
   },
   {
     id: 'iot',
+    keyword: 'IoT',
+    capabilities: ['rd','tech','ai'],
+    signals: [
+      'Firmware, gateway and cloud built by teams on different schedules',
+      'Integration failures visible months before anyone has time to act',
+      'Devices in the field reporting unevenly, with no trusted baseline',
+    ],
     label: 'IoT and connected devices',
     problem:
       'Firmware, gateway and cloud built by teams that are not talking to each other, with the integration failures visible months before anyone acts.',
   },
   {
     id: 'saas',
+    keyword: 'SaaS',
+    capabilities: ['tech','growth','strategy'],
+    signals: [
+      'A product that works and an operation around it held together by people',
+      'Onboarding, support and reporting each depending on someone remembering',
+      'Usage data that cannot answer which accounts are at risk',
+    ],
     label: 'SaaS',
     problem:
       'A product that works and an operation around it that does not, where onboarding, support and reporting are still held together by people.',
   },
   {
     id: 'agritech',
+    keyword: 'Agritech',
+    capabilities: ['rd','ai','tech'],
+    signals: [
+      'Sensor and field data collected faithfully and acted on rarely',
+      'Models built against a season that will not repeat exactly',
+      'Connectivity assumptions that hold in the office and not in the field',
+    ],
     label: 'Agritech',
     problem:
       'Sensor and field data collected faithfully and used for very little, because nobody has defined the decision it should change.',
   },
   {
     id: 'ecommerce',
+    keyword: 'Ecommerce',
+    capabilities: ['tech','growth','ai'],
+    signals: [
+      'Catalogue, stock and fulfilment each holding a different version of the truth',
+      'Customers discovering the discrepancy before the business does',
+      'Marketing spend attributed by guesswork',
+    ],
     label: 'Ecommerce',
     problem:
       'Catalogue, stock and fulfilment that each hold a different version of the truth, which customers discover before the business does.',
   },
   {
     id: 'agetech',
+    keyword: 'Agetech',
+    capabilities: ['rd','ai','tech'],
+    signals: [
+      'Monitoring that generates more alerts than anyone can triage',
+      'False alarms costing trust rather than money',
+      'Devices used by people who will not troubleshoot them',
+    ],
     label: 'Agetech and care',
     problem:
       'Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money.',
   },
   {
     id: 'rnd',
+    keyword: 'R&D',
+    capabilities: ['rd','tech','strategy'],
+    signals: [
+      'An investment decision waiting on a technical answer nobody has produced',
+      'Internal capacity fully committed to the roadmap',
+      'A prototype that impresses and does not answer the question asked',
+    ],
     label: 'Research and development',
     problem:
       'An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap.',
   },
   {
     id: 'biotech',
+    keyword: 'Biotech',
+    capabilities: ['rd','ai','tech'],
+    signals: [
+      'Research code that runs in a notebook and nowhere else',
+      'Analysis that cannot be reproduced by the next person',
+      'Instrument and LIMS data that never meet',
+    ],
     label: 'Biotechnology and life sciences',
     problem:
       'Research code that works in a notebook, in the hands of the person who wrote it, and cannot yet be relied on by anyone else.',
   },
   {
     id: 'ev',
+    keyword: 'EV Charging',
+    capabilities: ['tech','ai','rd'],
+    signals: [
+      'Hardware in the field where uptime is the product',
+      'Faults reported by users before telemetry surfaces them',
+      'Charging, billing and support systems that disagree',
+    ],
     label: 'Electric vehicles and charging',
     problem:
       'A network of hardware in the field, reporting unevenly, where uptime is the product and visibility arrives after the complaint.',
   },
   {
     id: 'water',
+    keyword: 'Water Utilities',
+    capabilities: ['tech','ai','rd'],
+    signals: [
+      'Long lived assets with telemetry retrofitted later',
+      'Detection running against a baseline nobody has validated',
+      'Compliance evidence assembled by hand at reporting time',
+    ],
     label: 'Water and utilities',
     problem:
       'Long lived assets with telemetry added later, where detection has to work against a baseline nobody has validated.',
   },
   {
     id: 'chemical',
+    keyword: 'Chemical',
+    capabilities: ['tech','strategy','ai'],
+    signals: [
+      'Process data, compliance evidence and maintenance history in separate systems',
+      'A simple question taking a week to answer',
+      'Changes to a process recorded informally, if at all',
+    ],
     label: 'Chemical and process industries',
     problem:
       'Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question.',
@@ -123,35 +221,68 @@ export const sectors = [
   */
   {
     id: 'insurance',
+    keyword: 'Insurance',
     label: 'Insurance',
     problem:
       'Assessment decisions concentrated in a few experienced people, where consistency matters as much as speed and every call has to be explainable.',
   },
   {
     id: 'proptech',
+    keyword: 'Proptech',
     label: 'Real estate and proptech',
     problem:
       'Portfolio, tenancy and building systems bought at different times, where a simple question takes a week because nothing reconciles.',
   },
   {
     id: 'edtech',
+    keyword: 'Edtech',
     label: 'Education and edtech',
     problem:
       'Learner data spread across enrolment, delivery and assessment tools, so nobody can see a cohort end to end while there is still time to act.',
   },
   {
     id: 'construction',
+    keyword: 'Construction',
     label: 'Construction and infrastructure',
     problem:
       'Site reality and the plan diverging quietly, reported upward in documents written after the fact rather than from what the systems hold.',
   },
   {
     id: 'telecom',
+    keyword: 'Telecom',
     label: 'Telecommunications',
     problem:
       'Network and customer systems at different speeds, where the operational picture is assembled nightly and the questions are asked hourly.',
   },
 ];
+
+/**
+ * Only sectors with their own specific content get a page.
+ *
+ * This is enforced rather than trusted. A sector needs both a capability
+ * mapping and its own signals before it is routed, which means the five
+ * entries added by extension cannot quietly ship as near-empty pages while
+ * waiting for confirmation. That is the thin-page failure this project has
+ * warned about twice; a rule in code is worth more than a note in a comment.
+ *
+ * To publish one of the pending sectors: confirm the firm has worked in it,
+ * give it capabilities and signals, and it routes automatically.
+ */
+export const publishedSectors = () =>
+  sectors.filter((s) => s.capabilities && s.capabilities.length && s.signals && s.signals.length);
+
+export const pendingSectors = () =>
+  sectors.filter((s) => !(s.capabilities && s.capabilities.length && s.signals && s.signals.length));
+
+export const sectorSlug = (sector) =>
+  sector.label
+    .toLowerCase()
+    .replace(/ and /g, '-')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+export const sectorPath = (sector) => `/sectors/${sectorSlug(sector)}`;
+export const sectorBySlug = (slug) => sectors.find((s) => sectorSlug(s) === slug);
 
 export const sectorById = (id) => sectors.find((s) => s.id === id);
 

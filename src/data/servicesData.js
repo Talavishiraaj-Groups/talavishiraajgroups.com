@@ -89,9 +89,23 @@ export const serviceCategories = [
       'There is pressure to adopt AI without a clear view of where it would pay',
       'An automation was built, broke quietly, and nobody noticed until a customer did',
     ],
+    /*
+      The vocabulary here was a year behind the market and it cost us
+      invisibility. A scan of the built site found "agentic" on zero pages,
+      and the same for LLM, copilot, predictive and forecasting, while
+      McKinsey's explainer cluster carries both "agentic AI explained" and
+      "what is an AI agent" as live topics. A buyer searching the words they
+      actually use could not find this page.
+
+      These additions describe work the firm does; they are not keyword
+      padding. If any line below stops being true, delete it rather than
+      soften it.
+    */
     work: [
       'Use case assessment: where automation is worth building, and where it is not',
-      'Machine learning models and evaluation pipelines',
+      'Agentic systems: agents that take actions in your tools, with the limits and approvals set first',
+      'Large language model applications on your own documents and data, with retrieval and evaluation',
+      'Machine learning models and evaluation pipelines, including forecasting and predictive maintenance',
       'Language and document systems: extraction, classification, summarization, generation',
       'Computer vision where the problem and the data support it',
       'Workflow automation across existing tools and native integrations',

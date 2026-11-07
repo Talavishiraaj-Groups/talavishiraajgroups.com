@@ -9,6 +9,7 @@ import { caseStudies } from './pages/CaseStudiesPage.jsx';
 import { serviceCategories } from './data/servicesData.js';
 import { insights } from './data/insights.js';
 import { resources } from './data/resources.js';
+import { publishedSectors, sectorPath } from './data/sectors.js';
 
 /**
  * Every route that gets its own static HTML file at build time.
@@ -27,6 +28,7 @@ export const routes = [
   '/what-it-costs',
   '/in-house-vs-agency',
   '/cookies',
+  ...publishedSectors().map((s) => sectorPath(s)),
   '/case-studies',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
   '/insights',
