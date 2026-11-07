@@ -306,6 +306,159 @@ export const insights = [
       },
     ],
   },
+  {
+    slug: 'what-is-ai-readiness',
+    title: 'What is AI readiness?',
+    h1: 'What is AI readiness, and what a readiness score does not tell you',
+    metaTitle: 'What Is AI Readiness? | Talavishiraaj Groups',
+    metaDescription:
+      'AI readiness measures whether an organisation could deploy AI. It does not measure whether it should. The pillars, how readiness is scored, and the question every readiness framework leaves out.',
+    published: '2026-11-07',
+    readingTime: '9 min read',
+    capability: 'ai',
+    caseStudy: 'ai-workflow-notebook-to-production',
+    summary:
+      'Every published definition of AI readiness describes the same thing: how prepared an organisation is to adopt and scale AI. Data, governance, skills, infrastructure, strategy. All of it is useful and none of it answers the question that decides whether the money is well spent, which is whether this organisation should be deploying AI at all, and against which specific decision.',
+    takeaways: [
+      'AI readiness is a measure of capability to deploy, not of whether deploying is worthwhile.',
+      'The common pillars are data, infrastructure, governance, skills and strategy. They are reasonable and they are incomplete.',
+      'Almost every readiness framework is published by a party that sells AI adoption, so readiness is framed as a gap to be closed by buying something.',
+      'A readiness score of zero on data quality is usually the real finding. The data problem is the project, and the AI is a label on it.',
+      'The question a readiness assessment should answer first is which decision the output will change. If nobody can name one, readiness is irrelevant.',
+    ],
+    sections: [
+      {
+        heading: 'What is AI readiness?',
+        body: [
+          'AI readiness is a measure of how prepared an organisation is to deploy artificial intelligence and keep it running. It is usually expressed as a score or a maturity level across several dimensions, and it is meant to tell leadership where the gaps are before a project starts rather than after it stalls.',
+          'That is a genuinely useful thing to know. A model pointed at inconsistent data, in a business with nobody accountable for the output, will fail for reasons that have nothing to do with the model. Readiness assessments exist because that failure is common and expensive, and because it is visible in advance to anyone who looks.',
+          'The limitation is in the question being asked. Readiness measures whether you could. It does not measure whether you should, and those are different findings with different consequences.',
+        ],
+      },
+      {
+        heading: 'What are the pillars of AI readiness?',
+        body: [
+          'Published frameworks differ in count but converge on the same ground. Data, meaning whether the information a model would read is accessible, consistent and trustworthy. Infrastructure, meaning whether anything can be deployed, monitored and rolled back. Governance, meaning whether someone owns the decision when the output is wrong. Skills, meaning whether the people who will maintain it exist. Strategy, meaning whether the work connects to something the business is actually trying to achieve.',
+          'Some frameworks split these into five pillars, some into three, some into seven. The number is a presentation choice rather than a finding. If you are comparing frameworks and the pillar counts differ, you are comparing packaging.',
+          'What matters more is the weighting nobody states out loud. In practice the data pillar decides most outcomes. An organisation strong on strategy and weak on data is not sixty percent ready. It is not ready, and the honest output of the assessment is a data project.',
+        ],
+      },
+      {
+        heading: 'How is AI readiness measured?',
+        body: [
+          'Typically by structured interview and document review against a scoring rubric, producing a level per pillar and an overall figure. The rubric is the important part and it is rarely published, which makes most scores difficult to compare across providers.',
+          'Treat a single number with suspicion. Averaging across pillars hides exactly the thing you need to see, because readiness is not additive. A blocking weakness in one dimension is not offset by strength in another, and an average is designed to produce the impression that it is.',
+          'The more useful output is the list of what would have to be true, in order, before the first deployment is sensible. That is a sequence rather than a score, and it can be acted on.',
+        ],
+      },
+      {
+        heading: 'What does a readiness score not tell you?',
+        body: [
+          'Whether the thing is worth building. A high score says the organisation can deploy AI competently. It says nothing about whether this particular application earns the engineering and the permanent maintenance behind it.',
+          'That gap matters because the costs arrive after the score. Integration with existing systems commonly runs a third to a half of initial development and is the most frequent source of overrun. Running costs for AI specifically scale with use rather than with headcount, so the bill grows when the thing succeeds. A readiness assessment that stops at capability leaves all of that unexamined.',
+          'It also will not tell you which decision changes as a result. That is the question worth asking first, and it is the one most likely to end a project early and cheaply. If the honest answer to "and then what happens" is that somebody looks at the output, there is no value yet, whatever the score says.',
+        ],
+      },
+      {
+        heading: 'Who publishes these frameworks, and does it matter?',
+        body: [
+          'Almost all of them are published by organisations that sell AI adoption: platform vendors, cloud providers, implementation firms. That is not dishonesty, it is incentive, and it shapes the frame rather than the facts.',
+          'The effect is consistent. Readiness is presented as a gap, gaps are presented as closable, and closing them involves a purchase. A framework produced by a party with no stake in the answer would be free to conclude that the correct next step is to do nothing, and you will notice how rarely that conclusion appears.',
+          'We build AI systems, so this applies to us as well. The reason we can write it down is that the assessment work is structured to be able to end in a no, and a no costs us the build.',
+        ],
+      },
+      {
+        heading: 'When is the honest answer not yet?',
+        body: [
+          'When the data the model would read is contested. If two systems disagree about the same fact and nobody owns the reconciliation, that is the project. Putting a model on top produces confident output derived from an argument.',
+          'When the process is not written down. Automating an undocumented process encodes whatever it currently does, including the parts that are wrong, and makes them harder to see afterwards.',
+          'When nobody will own it in year two. Models drift, dependencies change, and an AI system with no owner degrades quietly rather than failing loudly. The first person to notice is usually a customer.',
+        ],
+      },
+      {
+        heading: 'When is the answer no, and how would you know?',
+        body: [
+          'When the volume is low. Engineering, monitoring and maintenance do not get cheaper because the task is rare, and a rare task rarely repays them however irritating it is.',
+          'When the real driver is that a competitor announced something. That is a genuine force in these decisions and it is worth naming in the room, because it is frequently the one actually deciding. It is also the one that produces projects nobody can defend eighteen months later.',
+          'And when a simpler thing would work. A rule, a form, a fixed report or a cleaned up spreadsheet will solve a surprising share of what arrives described as an AI problem, at a fraction of the cost and with none of the maintenance. Checking that first is not a lack of ambition. It is the cheapest test available, and a readiness assessment that never considers it is not assessing much.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'what-is-vendor-lock-in',
+    title: 'What is vendor lock-in?',
+    h1: 'What is vendor lock-in, and when is it the right trade?',
+    metaTitle: 'What Is Vendor Lock-In? | Talavishiraaj Groups',
+    metaDescription:
+      'Vendor lock-in is the cost of leaving a platform, not the fact of using one. What actually creates it, what exit really costs, and why accepting lock-in is often the correct commercial decision.',
+    published: '2026-11-07',
+    readingTime: '8 min read',
+    capability: 'tech',
+    caseStudy: 'founder-operations-cockpit',
+    summary:
+      'Vendor lock-in is usually described as a danger to escape, almost always by a vendor who would like you to escape towards them. It is more useful as a number: the cost of leaving, estimated before you sign rather than discovered later. Costed that way, lock-in is frequently the right trade, and the mistake is not accepting it but accepting it without knowing what it costs.',
+    takeaways: [
+      'Lock-in is not using a platform. It is the cost and time of leaving one, which is a number you can estimate in advance.',
+      'Four things create it: your data model, proprietary extensions, integrations built around it, and the operational knowledge your team accumulates.',
+      'Operational knowledge is the component nobody budgets for and it is often the largest.',
+      'Accepting lock-in is frequently correct. Avoiding it entirely means building more yourself, which carries its own permanent cost.',
+      'Ask for an export of your real data during evaluation, not a promise of one in the contract.',
+    ],
+    sections: [
+      {
+        heading: 'What is vendor lock-in?',
+        body: [
+          'Vendor lock-in is the situation where moving off a product costs enough that you stay on it regardless of whether it is still the right product. The lock is the switching cost, not the dependency itself.',
+          'That distinction gets lost in most discussions of the term, and losing it leads to bad decisions. Every platform you adopt creates some dependency. That is what adopting a platform means and it is not a failure. The question is how much leaving would cost, and whether that figure is acceptable given what you get in return.',
+          'Framed as a number rather than a risk, it becomes something you can weigh against the alternative instead of something to be feared.',
+        ],
+      },
+      {
+        heading: 'What actually creates it?',
+        body: [
+          'Your data model is the first and most underestimated. Once your records live in a vendor’s structure, with its field names, its relationships and its particular way of representing an exception, moving means a translation project rather than a copy.',
+          'Proprietary extensions are the second. Workflow rules, custom objects, scripts and automations written in a vendor specific language do not travel. The more of your business logic lives there, the more of it you rewrite to leave.',
+          'Integrations are the third. Every other system wired to this one has to be rewired, and those connections are usually built once, by someone who has since moved on, with no record of why a particular field was mapped the way it was.',
+          'The fourth is the one nobody budgets for. Your team knows this platform. They know the workarounds, the reporting quirks, the thing that breaks at month end. That knowledge took years to accumulate and leaving resets it to zero, which shows up as months of reduced output rather than as a line in a migration plan.',
+        ],
+      },
+      {
+        heading: 'What does leaving really cost?',
+        body: [
+          'More than the migration quote, because the quote covers moving the data and the data is the easy part. The expensive items are rebuilding the integrations, re-encoding the business logic, running both systems in parallel while you prove the new one, and the productivity dip while people relearn their jobs.',
+          'Published figures put integration work at a third to a half of initial development cost in ordinary projects, and a platform migration is largely integration work. That is a reasonable starting point for an estimate when nothing better exists.',
+          'There is also a cost to not leaving, and it is the one that compounds. A platform you have outgrown shapes every subsequent decision: features get designed around what it can do, and the gap between what the business needs and what the system permits widens quietly for years.',
+        ],
+      },
+      {
+        heading: 'Is vendor lock-in always bad?',
+        body: [
+          'No, and treating it as always bad produces worse outcomes than accepting it deliberately. The alternative to depending on a vendor is building and maintaining the capability yourself, which is not freedom from cost, it is a different and usually larger cost that never ends.',
+          'Lock-in is a reasonable trade when the platform does something genuinely hard that is not your differentiator, when the alternative is eighteen months of your own engineers building a worse version, and when the switching cost is proportionate to the value you get while you stay.',
+          'It is a bad trade when the thing being locked in is the part of your business that makes you different from your competitors. Outsourcing your differentiator to a platform every competitor can also buy is the version of this decision that is genuinely hard to recover from.',
+          'Worth noting who tends to write about this. Most of what is published on vendor lock-in comes from platform vendors, and the advice reliably concludes that you should avoid being locked into someone else. We sell no platform, which is why this piece can say that lock-in is often correct.',
+        ],
+      },
+      {
+        heading: 'How do you price lock-in before you sign?',
+        body: [
+          'Ask for an export of your own data during evaluation, in a format you have to work with, and have someone technical actually open it. A contractual right to export is not the same as a usable export, and the difference only appears when you try.',
+          'Write down which parts of your business logic would live inside the platform, and get an estimate for rebuilding them elsewhere. You will not get a precise number. You will find out whether it is weeks or quarters, which is the decision relevant distinction.',
+          'Count the integrations the platform will sit behind, and treat each one as work to be redone. Then ask who would do that work and whether they still work here.',
+          'Put the resulting figure in the evaluation alongside the licence cost. A platform that is cheaper to run and far more expensive to leave is not cheaper, and that comparison is almost never made because the two numbers arrive at different times.',
+        ],
+      },
+      {
+        heading: 'When should you walk away from a platform?',
+        body: [
+          'When the switching cost is rising faster than the value you get. That is the signal that matters, and it is measurable: if each year adds more integrations and more embedded logic without adding capability, the trade is deteriorating even though nothing has broken.',
+          'When you are designing around its limits rather than your customers’ needs. The moment a roadmap conversation turns on what the system will allow, the system has started making commercial decisions.',
+          'And when the vendor’s direction has diverged from yours. A platform being acquired, repositioned upmarket or quietly deprioritised is a change to your switching cost whether or not anyone tells you, and it is worth re-estimating rather than assuming the figure you calculated at signing still holds.',
+        ],
+      },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug) => insights.find((a) => a.slug === slug);
