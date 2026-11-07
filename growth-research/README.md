@@ -33,6 +33,7 @@ results are invented. Where a number is unknown, it says unknown.
 | `14-search-console-baseline.md` | **The reference point.** First real Search Console data, and what it proves |
 | `15-optise-audit.md` | Third party audit, Oct 2026: its three findings measured independently, and the six real competitors it named |
 | `16-competitor-keywords.md` | What Kellton, Softeq, McKinsey, BCG and Umbrex target, and which keywords are actually winnable |
+| `17-mckinsey-explainer-cluster.md` | The 116-explainer cluster mapped, and the two topics selected for /insights with evidence |
 | `99-log.md` | Session log, open questions, what to do next |
 
 ## Start here
