@@ -70,6 +70,7 @@ const linkGroups = [
  */
 const legalLinks = [
   { label: 'Privacy', to: '/privacy-policy' },
+  { label: 'Cookies', to: '/cookies' },
   { label: 'Terms', to: '/terms' },
   { label: 'Refunds', to: '/refund-policy' },
   { label: 'Delivery', to: '/delivery-policy' },

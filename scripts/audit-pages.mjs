@@ -55,6 +55,7 @@ if (!existsSync(distDir)) {
  */
 const UTILITY = new Set([
   '/privacy-policy',
+  '/cookies',
   '/terms',
   '/refund-policy',
   '/delivery-policy',

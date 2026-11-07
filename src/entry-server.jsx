@@ -26,6 +26,7 @@ export const routes = [
   '/build-vs-buy',
   '/what-it-costs',
   '/in-house-vs-agency',
+  '/cookies',
   '/case-studies',
   ...caseStudies.map((study) => `/case-studies/${study.slug}`),
   '/insights',

@@ -82,8 +82,25 @@ function CalEmbed({ link }) {
   }, [link]);
 
   return (
-    <div className="rounded-2xl border border-border bg-white overflow-hidden">
-      <div ref={ref} />
+    <div>
+      <div className="rounded-2xl border border-border bg-white overflow-hidden">
+        <div ref={ref} />
+      </div>
+      {/* Disclosed at the point it happens rather than only in a policy.
+          This frame is the one third party the site loads, and it loads here,
+          on request, not on arrival. Saying so next to it is worth more than
+          a line someone would have to go looking for. */}
+      <p className="mt-3 text-xs text-gray-500 leading-relaxed">
+        The calendar above is provided by Cal.com and runs inside this page. It loads only at this
+        step, and it may set its own cookies to handle the booking.{' '}
+        <Link
+          to="/cookies"
+          className="underline decoration-gray-300 underline-offset-2 hover:text-black"
+        >
+          What this site stores
+        </Link>
+        .
+      </p>
     </div>
   );
 }

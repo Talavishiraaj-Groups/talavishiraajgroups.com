@@ -162,6 +162,7 @@ const KNOWN_ROUTES = new Set([
   '/build-vs-buy',
   '/what-it-costs',
   '/in-house-vs-agency',
+  '/cookies',
   '/systems',
   '/case-studies',
   '/partnerships',
