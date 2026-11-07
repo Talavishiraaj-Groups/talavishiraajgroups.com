@@ -6,6 +6,7 @@ import { track } from '../components/analytics';
 import RelatedPath from '../components/RelatedPath';
 import Differentiator from '../components/Differentiator';
 import { CONVERSION_LABEL } from '../components/cta';
+import { sectors, sectorById, SECTOR_BREADTH_NOTE } from '../data/sectors';
 
 /**
  * Anonymized engagement records.
@@ -44,6 +45,7 @@ export const CASE_STUDY_DIFFERENTIATORS = [
 export const caseStudies = [
   {
     slug: 'ai-led-outbound-growth-engine',
+    sectors: ['saas','manufacturing','logistics','ecommerce'],
     metaTitle: 'AI-Led Outbound Growth Engine | Talavishiraaj Groups',
     title: 'Rewiring outbound with an AI-led growth engine',
     industry: 'B2B services',
@@ -67,6 +69,7 @@ export const caseStudies = [
   },
   {
     slug: 'founder-operations-cockpit',
+    sectors: ['logistics','healthcare','agritech','saas'],
     metaTitle: 'One Operations View for a Founder | Talavishiraaj Groups',
     title: 'Giving a founder a single view of operations',
     industry: 'Early-stage startup',
@@ -90,6 +93,7 @@ export const caseStudies = [
   },
   {
     slug: 'ai-workflow-notebook-to-production',
+    sectors: ['biotech','finance','iot','agritech'],
     metaTitle: 'AI Workflow: Notebook to Production | Talavishiraaj Groups',
     title: 'Taking an AI workflow from notebook to production',
     industry: 'Technology',
@@ -113,6 +117,7 @@ export const caseStudies = [
   },
   {
     slug: 'decision-heavy-workflow-automation',
+    sectors: ['finance','healthcare','logistics','chemical'],
     metaTitle: 'Automating Decision-Heavy Workflows | Talavishiraaj Groups',
     title: 'Automating decision-heavy internal workflows',
     industry: 'Operations',
@@ -136,6 +141,7 @@ export const caseStudies = [
   },
   {
     slug: 'live-operations-visibility-layer',
+    sectors: ['logistics','manufacturing','ev','water'],
     metaTitle: 'AI-Assisted Live Operations Layer | Talavishiraaj Groups',
     title: 'Building an AI-assisted live operations layer',
     industry: 'Distributed operations',
@@ -159,6 +165,7 @@ export const caseStudies = [
   },
   {
     slug: 'structured-sales-hiring-engine',
+    sectors: ['saas','ecommerce','logistics'],
     metaTitle: 'Structured Sales Hiring Engine | Talavishiraaj Groups',
     title: 'Designing a structured sales hiring engine',
     industry: 'Sales organization',
@@ -315,6 +322,39 @@ export default function CaseStudiesPage() {
         points={CASE_STUDY_DIFFERENTIATORS}
       />
 
+      {/* Sectors.
+          Placed after the entries because it answers the question the entries
+          raise. Six anonymized engagements understate the range of work, and
+          a reader from an industry not obviously represented will assume they
+          are not covered. They are: the firm has delivered in these sectors,
+          it simply has not published the engagements. Saying that plainly in
+          one band is the cheapest correction available, and it is the claim
+          the owner has confirmed is true. */}
+      <section className="border-y border-border bg-muted">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">Sectors</p>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4 max-w-2xl leading-tight">
+            Six published engagements. Rather more sectors than that
+          </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-8 max-w-2xl">
+            What appears above is the part clients agreed to publish. The work itself spans a wider
+            range, and the problems below are the ones that recur. If yours is here in different
+            words, that is usually a good sign.
+          </p>
+          <dl className="grid gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+            {sectors.map((sector) => (
+              <div key={sector.id}>
+                <dt className="text-sm font-semibold mb-1">{sector.label}</dt>
+                <dd className="text-sm text-gray-600 leading-relaxed">{sector.problem}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="text-sm text-gray-500 leading-relaxed mt-8 max-w-3xl">
+            {SECTOR_BREADTH_NOTE}
+          </p>
+        </div>
+      </section>
+
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-xl">
@@ -455,6 +495,34 @@ export function CaseStudyDetailPage() {
                   >
                     {capability.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Sectors where the same problem shows up.
+            The heading is doing real work and should not be shortened to
+            "Sectors". A bare row of industry names under a case study reads
+            as a client list, and this is not one: it says where the pattern
+            recurs. Which clients were in which sector is confidential, which
+            is the same reason the whole set is anonymized. */}
+        {study.sectors && study.sectors.length > 0 && (
+          <section className="mt-12 pt-10 border-t border-border">
+            <h2 className="text-sm font-semibold tracking-[0.16em] uppercase text-gray-500 mb-2">
+              Where this pattern recurs
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-2xl">
+              The same problem turns up in these sectors, in different vocabulary. This is where we
+              see it, not a list of who the client was.
+            </p>
+            <ul className="flex flex-wrap gap-2 list-none">
+              {study.sectors.map(sectorById).filter(Boolean).map((sector) => (
+                <li
+                  key={sector.id}
+                  className="rounded-full border border-border bg-muted px-3.5 py-1.5 text-xs font-medium text-slate"
+                >
+                  {sector.label}
                 </li>
               ))}
             </ul>
