@@ -284,14 +284,19 @@ export const sectors = [
       'Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question.',
   },
   /*
-    The entries below were added by extension rather than named by the owner.
-    They follow the same problem shapes as the sectors above and are plausible
-    given the capability set, but **each one needs confirming before it goes
-    live**, on the same rule as the rest of this file: the site may say it has
-    worked in a sector only where that is true. Delete any that are not.
+    These five were added by extension and the owner has since confirmed the
+    firm has delivered in them, along with the rest. They now carry their own
+    signals and capability mapping like the others, so publishedSectors()
+    routes them.
   */
   {
     id: 'insurance',
+    capabilities: ['ai','strategy','tech'],
+    signals: [
+      'Assessment decisions concentrated in a few experienced people, with no way to delegate the judgement',
+      'A model that performs well and cannot be explained to a reviewer who asks why',
+      'Policy, claims and customer systems that each hold a different version of the same account',
+    ],
     h1: 'Software, AI and decision systems for insurance',
     targetPhrase: 'Insurance Software Development Company',
     phraseStatus: 'inferred',
@@ -302,6 +307,12 @@ export const sectors = [
   },
   {
     id: 'proptech',
+    capabilities: ['tech','strategy','ai'],
+    signals: [
+      'Portfolio, tenancy and building systems bought at different times and never reconciled',
+      'A simple portfolio question taking a week because three teams have to be asked',
+      'Building telemetry arriving in formats nobody owns the mapping for',
+    ],
     h1: 'Platform, data and integration for real estate',
     targetPhrase: 'Proptech Software Development Company',
     phraseStatus: 'inferred',
@@ -312,6 +323,12 @@ export const sectors = [
   },
   {
     id: 'edtech',
+    capabilities: ['tech','ai','growth'],
+    signals: [
+      'Learner data split across enrolment, delivery and assessment tools',
+      'Cohort problems visible only after the term, when nothing can be done about them',
+      'Reporting for funders and regulators assembled by hand every cycle',
+    ],
     h1: 'Platform, data and reporting for education',
     targetPhrase: 'Edtech Software Development Company',
     phraseStatus: 'inferred',
@@ -322,6 +339,12 @@ export const sectors = [
   },
   {
     id: 'construction',
+    capabilities: ['tech','strategy','rd'],
+    signals: [
+      'Site reality and the plan diverging quietly between reporting cycles',
+      'Progress reported in documents written after the fact rather than from the systems',
+      'Equipment, materials and subcontractor data living in separate places',
+    ],
     h1: 'Software, data and field systems for construction',
     targetPhrase: 'Construction Software Development Company',
     phraseStatus: 'inferred',
@@ -332,6 +355,12 @@ export const sectors = [
   },
   {
     id: 'telecom',
+    capabilities: ['tech','ai','delivery'],
+    signals: [
+      'Network and customer systems running at different speeds',
+      'An operational picture assembled nightly for questions asked hourly',
+      'Faults correlated by hand across tooling that was never meant to join up',
+    ],
     h1: 'Network, customer and operational systems for telecom',
     targetPhrase: 'Telecom Software Development Company',
     phraseStatus: 'inferred',
