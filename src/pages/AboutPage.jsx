@@ -196,6 +196,67 @@ export default function AboutPage() {
         </ol>
       </section>
 
+      {/*
+        WHAT AN ENGAGEMENT IS ACTUALLY LIKE.
+
+        An audit asked for a "how engagements run" section on the grounds that
+        the page had no process or leadership detail. That premise was wrong
+        and worth recording: the arc above is a numbered process, and Core
+        leadership below names both people with their responsibilities.
+
+        Checking it did surface a real gap next to the one claimed. The page
+        described the *shape* of an engagement and never what it is like to be
+        in one: how it starts, what the client has to put in, how often they
+        hear from us, how it ends. Prism's page answers that for the product
+        and nothing answered it for the services, which is the larger half of
+        the business and the more expensive commitment.
+
+        Written as four plain answers rather than a methodology, because the
+        point of the section is to remove uncertainty, not to add a diagram.
+      */}
+      <section className="border-y border-border">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">
+            What it is like to work with us
+          </p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 max-w-2xl">
+            How an engagement actually runs
+          </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-10 max-w-2xl">
+            The arc above is the shape of the work. This is the part people usually want to know
+            before committing: what we need from you, how often you hear from us, and how it ends.
+          </p>
+          <div className="grid gap-8 md:grid-cols-2">
+            {[
+              {
+                title: 'How it starts',
+                body: 'A conversation, then a written scope. We will not quote before we understand the requirement, because a number produced earlier than that is a number for a different project. Where the decision itself is still open, we will say so and point at the shorter piece of work that settles it rather than selling the larger one.',
+              },
+              {
+                title: 'What we need from you',
+                body: 'Less time than you expect, and it is specific: access to the systems and the people who know why they work the way they do, and someone empowered to decide when a question needs answering. Engagements slow down for want of a decision far more often than for want of engineering.',
+              },
+              {
+                title: 'How often you hear from us',
+                body: 'A working session at an agreed cadence, and progress demonstrated rather than described. Where something has slipped it gets raised while there is still room to respond, which is the only point at which that information is useful to you.',
+              },
+              {
+                title: 'How it ends',
+                body: 'With documentation, runbooks and training that were scoped at the start rather than offered at the end. The measure of the work is that your team can change what was built after we leave. A partner who has become structurally necessary has failed at the job.',
+              },
+            ].map((item, index) => (
+              <div key={item.title}>
+                <span className="block text-xs font-mono text-gray-500 mb-2">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-semibold mb-2 leading-snug">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* DISTRIBUTED TEAMS */}
       <section className="border-y border-border bg-secondary text-accent">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
