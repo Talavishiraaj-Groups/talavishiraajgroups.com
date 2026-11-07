@@ -55,3 +55,46 @@ If `/assets/*` comes back as `max-age=60`, the ordering has regressed. Fix the o
 ## What this is not
 
 It is not a performance fix for first time visitors. Server response was already measured at 12ms and the assets were already immutable before this change. The only things it alters are repeat visits and the unfingerprinted root images, which were previously revalidating on every request.
+
+## Compression
+
+Vercel negotiates Brotli automatically for text responses. There is nothing to
+configure and no server config file to edit: there is no `.htaccess` and no
+`nginx.conf` on this platform.
+
+### Verifying it, and the trap
+
+Compression is **negotiated**. A client that does not send `Accept-Encoding`
+is correctly served an uncompressed response, so a test that omits the header
+will report compression as disabled:
+
+```bash
+# What a browser sends. Expect: content-encoding: br
+curl -sI -H "Accept-Encoding: gzip, deflate, br" https://www.talavishiraajgroups.com/ | grep -i content-encoding
+
+# What a naive crawler sends. Expect: no content-encoding, full size
+curl -sI https://www.talavishiraajgroups.com/ | grep -i content-length
+```
+
+Measured 2026-11-08, live:
+
+| resource | uncompressed | brotli | saved |
+| --- | --- | --- | --- |
+| `/` | 41,548 | 8,880 | 78% |
+| `/assets/*.css` | 40,508 | 7,536 | 81% |
+| `/assets/*.js` | 510,912 | 145,656 | 71% |
+
+**An external audit reported `gzip: false` for this site and quoted a homepage
+size of 41,322 bytes.** That figure is the uncompressed response, and it is
+within 226 bytes of the uncompressed size measured above. The crawler did not
+send `Accept-Encoding`, received exactly what the spec says it should, and
+reported the absence of something it never asked for. Before acting on a
+compression finding from any tool, re-run the two commands above.
+
+### The real number in that table
+
+The JavaScript bundle is 510,912 bytes raw and 145,656 over the wire. That is
+the largest single thing the site ships and compression is already doing its
+part; the remaining fix is route splitting, written up in
+`growth-research/15-optise-audit.md` section 1b and deliberately not attempted
+because it means diverging the server and client trees.
