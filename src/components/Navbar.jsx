@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import BrandMark from './BrandMark';
 
 /**
  * No "Home" item, deliberately.
@@ -61,7 +61,7 @@ export default function Navbar() {
           to="/"
           className="flex items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
         >
-          <img src={logo} alt="" width="32" height="33" className="h-8 w-auto" />
+          <BrandMark />
           <span className="text-sm font-semibold tracking-[0.28em] uppercase text-black hidden sm:inline">
             Talavishiraaj Groups
           </span>

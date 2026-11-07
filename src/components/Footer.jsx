@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import BrandMark from './BrandMark';
 import { CONTACT_EMAIL, LINKEDIN_URL, TAGLINE, TWITTER_URL } from '../seo';
 import { capabilityPath, serviceCategories } from '../data/servicesData';
 import { track, trackOutbound } from './analytics';
@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="grid gap-x-6 gap-y-10 grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           <div className="space-y-4 col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="" width="32" height="33" className="h-8 w-auto" />
+              <BrandMark lazy />
               <p className="text-xs uppercase tracking-[0.3em] text-gray-500">Talavishiraaj Groups</p>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
