@@ -1498,3 +1498,49 @@ workspace but **not authorised**, so no volumes can be pulled directly. The
 owner evidently has an Ahrefs seat, since they supplied its output. Authorising
 it via `/mcp` would let this be done properly rather than by autocomplete
 proxy.
+
+### Real volume data, pulled from Ahrefs' free Keyword Generator
+
+[FACT] `app.ahrefs.com` is not signed in on this machine, so the paid tool was
+unavailable. The **free** Keyword Generator needs no login and returns volume
+bucket plus keyword difficulty, which is where the owner's pasted figures came
+from. Pulled via the browser, US, Google.
+
+| keyword | difficulty | volume |
+|---|---|---|
+| software development company | Medium | **>10,000** |
+| ai consulting | Hard | >1,000 |
+| ai consulting services | Medium | >1,000 |
+| custom software development company | Medium | >1,000 |
+| ai software development company | Medium | >1,000 |
+| **healthcare** software development company | **Easy** | >1,000 |
+| **fintech** software development company | **Easy** | >1,000 |
+| **enterprise** software development | **Easy** | >1,000 |
+| custom ai software development *(the earlier target)* | — | **700** |
+
+Seed breadth: "ai consulting" returns 4,960 ideas, "software development
+company" returns 3,746.
+
+[INFER] **The pattern is the industry qualifier.** Generic and AI qualified
+terms come back Medium or Hard. Every vertical qualified variant came back
+**Easy at over a thousand searches**, which is more volume than the term the
+previous pass examined and a fraction of the competition.
+
+[INFER] This is the same shape as Finding 4 in `02-demand-evidence.md`, where
+`[service]+[geo]` was the strongest pattern. `[industry]+[service]` behaves
+the same way and for the same reason: the qualifier removes the national
+players from the SERP.
+
+[HYP] So the realistic ladder is not one exact-match page at number one on a
+700 volume term. It is several Easy, thousand-plus terms, each narrow enough
+to win.
+
+**[INFER] The blocker is the same one as always, and it must be said. The Easy
+verticals surfaced here are healthcare and fintech, and there is no healthcare
+or fintech evidence anywhere in the published work.** The six case studies
+cover B2B services, an early stage startup, technology, operations,
+distributed operations and a sales organisation. Writing a healthcare software
+development page without a healthcare client is the fabrication line this
+project has held throughout. **The vertical pages are worth building only for
+verticals where an engagement actually exists**, which is an owner question
+before it is an SEO one.
