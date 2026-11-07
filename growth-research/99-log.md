@@ -1544,3 +1544,72 @@ development page without a healthcare client is the fabrication line this
 project has held throughout. **The vertical pages are worth building only for
 verticals where an engagement actually exists**, which is an owner question
 before it is an SEO one.
+
+### ScienceSoft, the working model, measured
+
+[FACT] Ahrefs free traffic checker (supplied by the owner; the tool now gates
+results behind a paid signup, which was not completed):
+
+```
+scnsoft.com     organic traffic   91,800 / month
+                traffic value     $435,700 / month
+countries       US 77%  India 10%  UK 3%  Canada 2%  Australia 1%
+```
+
+Top keywords: `software development company` **#1** (11K) · `mobile app
+development services` **#1** (5.9K) · `ecommerce website development company`
+**#1** (3.1K) · `healthcare app development` **#1** (2.9K) ·
+`custom software development` #7 (16K)
+
+Top pages: `/ecommerce/services/development` 3.9K · `/` 3.3K ·
+`/healthcare/mobile` 3.2K · `/application/mobile/development` 2.7K ·
+`/software-development/services` 1.5K
+
+### Four things this settles
+
+**1. [INFER] No page carries the site.** The best page is 5 percent of traffic
+and the top five together are about 20 percent. **Roughly 80 percent comes
+from pages outside the top five.** The model is many pages each winning a
+modest term, not one page winning a big one. That is the direct answer to
+"choose the highest traffic keyword": there isn't one, there is a matrix.
+
+**2. [FACT] The URL structure is an industry by service matrix.**
+`/healthcare/mobile`, `/ecommerce/services/development`,
+`/application/mobile/development`, `/software-development/services`. This is
+the same `[industry]+[service]` pattern the Keyword Generator flagged as
+**Easy** difficulty, confirmed in a site that earns 91.8K a month from it.
+
+**3. [FACT] One vertical page at number one is worth about 3,200 visits a
+month.** `/healthcare/mobile` ranks #1 for `healthcare app development`
+(2.9K volume) and pulls 3.2K. Against the 79 visits deployedminds earns for
+first place on a 700 volume AI term, that is roughly **40 times the return for
+the same single page of effort.** The previous pass's conclusion stands and is
+now quantified: the AI keyword family was the wrong target.
+
+**4. [INFER] Their country split is almost exactly the stated hierarchy**: US
+77, India 10, UK 3, Canada 2, Australia 1. **A US dominant profile is reached
+by ranking for US intent commercial terms, not by detecting location.** This is
+the clearest available evidence against the geo auto-detect idea: the site
+that achieves the desired split does it with a page matrix, nothing else.
+
+[OBS] ScienceSoft also carries a **4.8 star, 46 review rich snippet** in the
+organic result. That is a trust signal rendered inside the SERP, earned
+through review platforms, and it is the same owner-blocked gap recorded since
+`15-optise-audit.md`.
+
+### Correction to the previous entry
+
+[INFER] The previous pass warned that vertical pages would be fabrication
+because no healthcare or fintech case study exists. **The owner has corrected
+this: the firm has people with expertise across multiple industries.** The
+distinction matters and the earlier framing was too narrow. Claiming *clients*
+in a vertical without having them is fabrication. Describing *capability* the
+firm genuinely holds is not. Vertical pages are therefore legitimate, provided
+they describe expertise and do not imply engagements that did not happen.
+
+[HYP] **Remaining input needed from the owner: which industries the firm
+actually has depth in.** The matrix should start with two or three of those
+rather than with whichever terms scored Easy.
+
+[INFER] Scale caution, unchanged. ScienceSoft is a twenty year old domain. Two
+or three real vertical pages beat thirty thin ones, and the timeline is months.
