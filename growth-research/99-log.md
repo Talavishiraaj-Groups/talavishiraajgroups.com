@@ -1613,3 +1613,45 @@ rather than with whichever terms scored Easy.
 
 [INFER] Scale caution, unchanged. ScienceSoft is a twenty year old domain. Two
 or three real vertical pages beat thirty thin ones, and the timeline is months.
+
+### Sector keyword data, and the suffix that carries the volume
+
+[FACT] Ahrefs free Keyword Generator, US, Google:
+
+| term | difficulty | volume | ideas |
+|---|---|---|---|
+| healthcare software development company | Easy | >1,000 | — |
+| fintech software development company | Easy | >1,000 | — |
+| **logistics software development company** | **Easy** | **>1,000** | 54 |
+| logistics software development *(no suffix)* | Easy | >100 | 54 |
+| manufacturing software development | Easy | **>100** | **23** |
+| custom manufacturing software development | Easy | >100 | 23 |
+
+**[INFER] Two findings, and the second is the more useful.**
+
+1. **Sectors are not equal.** Manufacturing returns 23 ideas at >100 volume.
+   Logistics returns 54 with the head term at >1,000. Healthcare and fintech
+   are >1,000. Choosing sectors by where the firm has depth is right; choosing
+   the *order* to build them in should follow the volume, and manufacturing is
+   near the bottom despite feeling like an obvious one.
+
+2. **The `company` suffix carries the volume.** `logistics software
+   development company` is >1,000; the same phrase without `company` is >100.
+   Ten times the demand for one word. This is the same pattern Kellton uses in
+   its slugs, recorded in `16-competitor-keywords.md`:
+   `/metaverse-development-company`. **Sector pages should target
+   `[sector] software development company`, not the bare phrase.**
+
+[FACT] Research and development added as a sector, bringing the named list to
+14 plus 5 marked for confirmation.
+
+### Blocked: Cloudflare
+
+[FACT] After four queries the free Keyword Generator served a **"Verify you
+are human" checkbox**. CAPTCHAs are not something this assistant completes, so
+automated pulls stop there. Remaining sector volumes need either the owner
+clicking through once, or the figures pasted in as before.
+
+[OBS] Entering the domain and pressing Return works; clicking the button
+earlier had hit the wrong element and opened the paid signup flow. Noted so
+the next attempt does not repeat it.

@@ -85,6 +85,12 @@ export const sectors = [
       'Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money.',
   },
   {
+    id: 'rnd',
+    label: 'Research and development',
+    problem:
+      'An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap.',
+  },
+  {
     id: 'biotech',
     label: 'Biotechnology and life sciences',
     problem:
