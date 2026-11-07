@@ -29,9 +29,41 @@
  * names under a case study reads as a client list.
  */
 
+/**
+ * targetPhrase and phraseStatus.
+ *
+ * The first version of the sector pages put every single one on
+ * "[sector] software development company". That was wrong and the owner
+ * caught it: the firm sells six services, not one, and the service a sector
+ * actually searches for differs by sector.
+ *
+ * Autocomplete evidence for the mismatch. "healthcare digital transformation"
+ * returns consulting services, companies and solutions, all commercial.
+ * "healthcare ai" returns jobs, courses and remote roles, all career. The same
+ * sector pairs well with one service and badly with another, so one blanket
+ * pattern across fourteen pages leaves most of them on the wrong phrase.
+ *
+ * phraseStatus says how much to trust each one:
+ *
+ *   'verified'  volume and difficulty checked in Ahrefs. Three of these:
+ *               logistics, healthcare and fintech software development
+ *               company all came back Easy at over a thousand searches.
+ *   'inferred'  chosen from autocomplete shape and the service mapping, with
+ *               no volume behind it yet. **Check before relying on it.** The
+ *               manufacturing one is the clearest candidate for being wrong:
+ *               manufacturing software development measured weak at >100,
+ *               which is why it is pointed at automation instead, but that
+ *               substitution is a judgement rather than a measurement.
+ *
+ * Changing a target is a one line edit here. Nothing in the page component
+ * hardcodes a service.
+ */
 export const sectors = [
   {
     id: 'logistics',
+    h1: 'Software, data and automation for supply chain and logistics',
+    targetPhrase: 'Logistics Software Development Company',
+    phraseStatus: 'verified',
     keyword: 'Logistics',
     capabilities: ['tech','ai','strategy'],
     signals: [
@@ -45,6 +77,9 @@ export const sectors = [
   },
   {
     id: 'manufacturing',
+    h1: 'Automation, systems and data engineering for manufacturing',
+    targetPhrase: 'Manufacturing Automation Company',
+    phraseStatus: 'inferred',
     keyword: 'Manufacturing',
     capabilities: ['tech','ai','rd'],
     signals: [
@@ -58,6 +93,9 @@ export const sectors = [
   },
   {
     id: 'healthcare',
+    h1: 'Software, integration and data engineering for healthcare',
+    targetPhrase: 'Healthcare Software Development Company',
+    phraseStatus: 'verified',
     keyword: 'Healthcare',
     capabilities: ['tech','strategy','delivery'],
     signals: [
@@ -71,6 +109,9 @@ export const sectors = [
   },
   {
     id: 'finance',
+    h1: 'Software, AI and decision systems for financial services',
+    targetPhrase: 'Fintech Software Development Company',
+    phraseStatus: 'verified',
     keyword: 'Financial Services',
     capabilities: ['ai','strategy','tech'],
     signals: [
@@ -84,6 +125,9 @@ export const sectors = [
   },
   {
     id: 'iot',
+    h1: 'Hardware, firmware and cloud for connected devices',
+    targetPhrase: 'IoT Product Development Company',
+    phraseStatus: 'inferred',
     keyword: 'IoT',
     capabilities: ['rd','tech','ai'],
     signals: [
@@ -97,6 +141,9 @@ export const sectors = [
   },
   {
     id: 'saas',
+    h1: 'Product engineering and operating systems for SaaS',
+    targetPhrase: 'SaaS Product Engineering Company',
+    phraseStatus: 'inferred',
     keyword: 'SaaS',
     capabilities: ['tech','growth','strategy'],
     signals: [
@@ -110,6 +157,9 @@ export const sectors = [
   },
   {
     id: 'agritech',
+    h1: 'Sensing, data and software for agritech',
+    targetPhrase: 'Agritech Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Agritech',
     capabilities: ['rd','ai','tech'],
     signals: [
@@ -123,6 +173,9 @@ export const sectors = [
   },
   {
     id: 'ecommerce',
+    h1: 'Platform, data and automation for ecommerce',
+    targetPhrase: 'Ecommerce Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Ecommerce',
     capabilities: ['tech','growth','ai'],
     signals: [
@@ -136,6 +189,9 @@ export const sectors = [
   },
   {
     id: 'agetech',
+    h1: 'Devices, monitoring and software for agetech and care',
+    targetPhrase: 'Agetech Product Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Agetech',
     capabilities: ['rd','ai','tech'],
     signals: [
@@ -149,6 +205,9 @@ export const sectors = [
   },
   {
     id: 'rnd',
+    h1: 'Prototyping, validation and applied research',
+    targetPhrase: 'R&D Engineering Services Company',
+    phraseStatus: 'inferred',
     keyword: 'R&D',
     capabilities: ['rd','tech','strategy'],
     signals: [
@@ -162,6 +221,9 @@ export const sectors = [
   },
   {
     id: 'biotech',
+    h1: 'Research software and production systems for life sciences',
+    targetPhrase: 'Biotech Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Biotech',
     capabilities: ['rd','ai','tech'],
     signals: [
@@ -175,6 +237,9 @@ export const sectors = [
   },
   {
     id: 'ev',
+    h1: 'Telemetry, software and systems for EV and charging networks',
+    targetPhrase: 'EV Charging Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'EV Charging',
     capabilities: ['tech','ai','rd'],
     signals: [
@@ -188,6 +253,9 @@ export const sectors = [
   },
   {
     id: 'water',
+    h1: 'Telemetry, detection and reporting for water and utilities',
+    targetPhrase: 'Water Utility Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Water Utilities',
     capabilities: ['tech','ai','rd'],
     signals: [
@@ -201,6 +269,9 @@ export const sectors = [
   },
   {
     id: 'chemical',
+    h1: 'Process data, compliance and systems for chemical industries',
+    targetPhrase: 'Chemical Process Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Chemical',
     capabilities: ['tech','strategy','ai'],
     signals: [
@@ -221,6 +292,9 @@ export const sectors = [
   */
   {
     id: 'insurance',
+    h1: 'Software, AI and decision systems for insurance',
+    targetPhrase: 'Insurance Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Insurance',
     label: 'Insurance',
     problem:
@@ -228,6 +302,9 @@ export const sectors = [
   },
   {
     id: 'proptech',
+    h1: 'Platform, data and integration for real estate',
+    targetPhrase: 'Proptech Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Proptech',
     label: 'Real estate and proptech',
     problem:
@@ -235,6 +312,9 @@ export const sectors = [
   },
   {
     id: 'edtech',
+    h1: 'Platform, data and reporting for education',
+    targetPhrase: 'Edtech Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Edtech',
     label: 'Education and edtech',
     problem:
@@ -242,6 +322,9 @@ export const sectors = [
   },
   {
     id: 'construction',
+    h1: 'Software, data and field systems for construction',
+    targetPhrase: 'Construction Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Construction',
     label: 'Construction and infrastructure',
     problem:
@@ -249,6 +332,9 @@ export const sectors = [
   },
   {
     id: 'telecom',
+    h1: 'Network, customer and operational systems for telecom',
+    targetPhrase: 'Telecom Software Development Company',
+    phraseStatus: 'inferred',
     keyword: 'Telecom',
     label: 'Telecommunications',
     problem:

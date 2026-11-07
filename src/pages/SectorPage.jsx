@@ -86,7 +86,7 @@ export default function SectorPage() {
     "Biotechnology and life sciences" are written to read well on the page and
     are not what anyone types.
   */
-  const title = `${sector.keyword} Software Development Company`;
+  const title = sector.targetPhrase;
   const description = `${sector.problem} We build and integrate the systems behind it.`;
 
   const capabilities = (sector.capabilities || []).map(capabilityById).filter(Boolean);
@@ -95,7 +95,7 @@ export default function SectorPage() {
 
   const faqs = [
     {
-      question: `What does ${sector.label.toLowerCase()} software development involve?`,
+      question: `What does ${sector.label.toLowerCase()} technology work involve?`,
       answer: `${sector.problem} The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it.`,
     },
     {
@@ -122,9 +122,9 @@ export default function SectorPage() {
             { name: sector.label, path },
           ]),
           serviceSchema({
-            name: `${sector.label} software development and engineering`,
+            name: sector.h1,
             description: sector.problem,
-            serviceType: `Software, data and AI engineering for ${sector.label.toLowerCase()}`,
+            serviceType: `${sector.h1}`,
             path,
           }),
           faqSchema(faqs),
@@ -136,8 +136,13 @@ export default function SectorPage() {
           we sell. */}
       <section className="max-w-4xl mx-auto px-4 md:px-8 py-14 md:py-20">
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Sector</p>
+        {/* The h1 comes from the sector rather than being built from one
+            service. The first version read "[sector] software development and
+            engineering" on all fourteen pages, which named one of six
+            services and was wrong for most of them: manufacturing leads on
+            automation, IoT on hardware and firmware, R&D on prototyping. */}
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] mb-6">
-          {sector.label} software development and engineering
+          {sector.h1}
         </h1>
         <p className="text-lg text-primary font-medium leading-relaxed mb-4">{sector.problem}</p>
         <p className="text-base text-gray-700 leading-relaxed mb-8">
