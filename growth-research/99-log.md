@@ -1655,3 +1655,68 @@ clicking through once, or the figures pasted in as before.
 [OBS] Entering the domain and pressing Return works; clicking the button
 earlier had hit the wrong element and opened the paid signup flow. Noted so
 the next attempt does not repeat it.
+
+---
+
+## 2026-11-07 (fourth pass) — will LLMs surface this, and the Bing finding
+
+Three questions were asked together and they have different answers.
+
+### 1. Head terms like "manufacturing", "finance", "SaaS", "software"
+
+[FACT] SERP for the bare word **manufacturing**: Wikipedia, Britannica, "What
+is Manufacturing: an in-depth industry overview", "Manufacturing: Definition,
+Types, Examples", Manufacturing.net.
+
+[INFER] **Definitional intent, not commercial.** No vendor ranks on those
+terms and no buyer searching them is buying. Not showing up there is the
+correct outcome, not a gap. The sector pages built this session target
+`[sector] software development company` precisely because that is the phrase
+a buyer uses and the bare noun is not.
+
+### 2. **The site is not in Bing's index. This is the finding of the session.**
+
+[FACT] `site:talavishiraajgroups.com` on DuckDuckGo returns **no results**.
+[FACT] The same query on Bing **ignores the operator entirely** and serves
+unrelated fallback results (GitHub repositories, Zhihu threads), which is what
+Bing does when a site query matches nothing.
+
+[FACT] For contrast, Google has the site indexed: the brand query ranks #1,
+established in `15-optise-audit.md`.
+
+**[INFER] Why this matters more than any on-page work done so far:**
+
+| surface | index it uses | can it cite us today |
+|---|---|---|
+| ChatGPT search | Bing | **no** |
+| Microsoft Copilot | Bing | **no** |
+| DuckDuckGo | Bing | **no** |
+| Google AI Overviews, Gemini | Google | yes, in principle |
+| Perplexity | own crawl plus others | unknown |
+
+[INFER] An audit measured the site as named in 0 of 9 buyer questions put to
+AI assistants and the response was `llms.txt` and FAQPage schema. Both were
+worth doing and **neither can work on a surface whose index does not contain
+the site**. A retrieval based assistant cannot cite a page it cannot retrieve.
+The schema work was treating the symptom.
+
+**[FACT] The fix is free and takes minutes: submit the site to Bing Webmaster
+Tools**, which can import the property and sitemap directly from Google Search
+Console. That single action is worth more to AI visibility than everything
+written into the markup this month.
+
+[OBS] This also partly explains the Search Console baseline. Zero non-branded
+clicks was read as an authority problem, which it mostly is, but a whole
+search engine and the assistants built on it were never seeing the site at
+all.
+
+### 3. Browsers and geography
+
+[INFER] Browsers do not have indexes. Chrome, Firefox, Safari and Edge all
+query a search engine, so the browser is irrelevant to ranking. What differs
+is the **engine**: Google and Bing are separate indexes, which is exactly how
+the gap above went unnoticed.
+
+[FACT] Geography was measured in the third pass: the same four domains rank
+across US, UK, UAE and India, with one local domain inserted per market.
+Unchanged.
