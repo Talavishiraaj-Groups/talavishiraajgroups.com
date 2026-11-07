@@ -1422,3 +1422,79 @@ the same conversation:**
   **there are no honest numbers to put in a stat row.** Yatricloud's 50K+ and
   4.8 are real for a training business. Inventing an equivalent here is the
   fabrication line that has been held throughout.
+
+---
+
+## 2026-11-07 (third pass) — SERP across five markets, and the traffic maths
+
+### The geography question, answered with data
+
+[FACT] Same query, `udm=14`, personalisation off, five country parameters:
+
+| market | organic results |
+|---|---|
+| USA `gl=us` | futurismai, deployedminds, stssoftware, Codetrade |
+| UK `gl=gb` | futurismai, deployedminds, **luminarybrands.co.uk**, stssoftware, Codetrade, basecode.com.au |
+| UAE `gl=ae` | futurismai, deployedminds, stssoftware, Codetrade, **agenticaitechhub.com** |
+| India `gl=in` | **Codetrade.io first**, deployedminds, futurismai, stssoftware |
+
+[INFER] **The same four domains rank in every market.** Geography re-ranks and
+inserts one local domain; it does not produce a different competitive set.
+India promotes Codetrade, an Indian company, to first. The UK inserts a
+`.co.uk`.
+
+**Consequence: per market content is not the lever.** The job is to rank at
+all, not to rank differently in five places.
+
+[FACT] A methodological note worth keeping. The first UK run looked completely
+different from the US one, service pages versus guides. That was `udm=14`, the
+web-only filter, not geography. Re-running both with identical parameters
+showed near-identical sets. **Always hold the parameters constant before
+attributing a difference to location.**
+
+[OBS] `gl=` is country-level and is not identical to a VPN, which also changes
+IP and can pull in city-level results. For comparing competitive sets it is
+sufficient; for local-pack work it is not.
+
+### The traffic maths, which changes the conclusion
+
+[FACT] Ahrefs data supplied by the owner for deployedminds.tech, the domain
+ranking in all five markets:
+
+- Total organic traffic: **79 visits per month**
+- Traffic value: $924
+- Ranks **#1** for "custom ai software development" (volume 700)
+- Ranks **#6** for "custom ai development" (volume 1.1K)
+- One page produces 100 percent of it
+
+[INFER] **First position on a 700 volume keyword is worth under 79 visits a
+month.** That is the whole prize for winning this SERP outright. The keyword
+family is not worth building a strategy around, and the owner is right to
+push back on it.
+
+[INFER] The useful general rule: at these click-through rates a page needs
+either a keyword in the tens of thousands of searches, or a cluster of many
+keywords, before organic traffic becomes a channel rather than a trickle. One
+exact-match page at number one is a rounding error.
+
+### What cannot be done, and why it matters
+
+[FACT] A geographic auto-detect on page load **cannot** affect ranking.
+Position is decided in Google's index before any visitor arrives. Googlebot
+crawls from a small number of locations, so runtime adaptation is invisible to
+it. Worse, serving different content to crawlers than to users is cloaking and
+is a penalty risk.
+
+The legitimate mechanisms are separate URLs per market with `hreflang`, or
+distinct country pages with genuinely different content. Both require real
+content per market and neither is justified while the same four domains rank
+everywhere.
+
+### Blocked
+
+[FACT] Proper volume-led keyword selection across the full service and product
+set needs Ahrefs or a volume API. The Ahrefs MCP is connected to this
+workspace but **not authorised**, so no volumes can be pulled directly. The
+owner evidently has an Ahrefs seat, since they supplied its output. Authorising
+it via `/mcp` would let this be done properly rather than by autocomplete
+proxy.
