@@ -22,6 +22,7 @@ import ArrowIcon from '../components/icons/ArrowIcon';
 import { track } from '../components/analytics';
 import { CONVERSION_LABEL } from '../components/cta';
 import RelatedPath from '../components/RelatedPath';
+import { RangeCompareFigure } from '../components/Figures';
 
 const formatDate = (iso) =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
@@ -270,6 +271,24 @@ export function InsightArticlePage() {
                   </p>
                 ))}
               </div>
+              {/* A section may carry one sourced figure. The articles were
+                  entirely prose until now, which on a site already measured at
+                  25,553 words and two images meant every numeric argument was
+                  a sentence asking the reader to hold two quantities and
+                  compare them. The figure components already exist and already
+                  take their numbers from benchmarks.js, so this is a rendering
+                  hook rather than new machinery. Optional on purpose: a figure
+                  that is not carrying an argument is decoration. */}
+              {section.figure && (
+                <RangeCompareFigure
+                  title={section.figure.title}
+                  standfirst={section.figure.standfirst}
+                  rows={section.figure.rows}
+                  unit={section.figure.unit}
+                  source={section.figure.source}
+                  url={section.figure.url}
+                />
+              )}
             </section>
           ))}
         </div>

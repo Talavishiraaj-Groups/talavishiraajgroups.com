@@ -1254,3 +1254,95 @@ carries three information graphics. No gap.
 
 [FACT] Step four, prioritising by Search Console position 6 to 15, remains
 unusable: there are no rankings to lift. Unchanged from the previous pass.
+
+---
+
+## 2026-11-07 — REVALIN "publish a data engineering explainer", declined as specified
+
+The brief: create an article under /insights with the exact H1 "Data
+engineering, explained for the people who have to sign it off".
+
+**Not done as written, and the brief itself says why: "The task lacks specific
+evidence to support its implementation."** The evidence was gathered and it
+points the other way.
+
+### 1. The article already exists
+
+[FACT] `/insights/do-you-need-data-engineering`, 1,186 words, published
+September. Its H1 is "Do you need data engineering, or do you need one
+spreadsheet to stop being retyped?", which is already written for the person
+approving the budget rather than for an engineer.
+
+[FACT] Its six section headings already cover the three part structure the
+brief asks for: what the problem looks like, how to tell a pipeline problem
+from a smaller one, what it costs after it is built, when buying a tool is
+better, what to do before committing, and who should read it as a reason not
+to build.
+
+[INFER] A second data engineering article would be **keyword cannibalisation**,
+which is the exact fault found and fixed in the cannibalisation pass. Two pages
+one level apart competing for one phrase.
+
+### 2. The specified H1 has no search demand
+
+[INFER] Nobody searches "data engineering explained for the people who have to
+sign it off". It is a positioning statement, not a query, and the SEO
+transcript work established that the H1 should match search intent.
+
+### 3. The whole keyword space is career intent, for the third time
+
+[FACT] Autocomplete:
+
+| query | what it returns |
+|---|---|
+| data engineering | courses, interview questions, jobs, roadmap |
+| what is data engineering | in simple words, role, vs data science, course |
+| do i need data engineering | do I need DSA, math, a degree, a masters |
+| **data engineering consulting** | **jobs, reddit, consultant salary, salary in optum** |
+
+Even the commercial query returns jobs and salary.
+
+[FACT] Live SERP for "data engineering consulting": service pages and **three
+listicles** ("Top 25...", "Top...in 2026", "8 Best...in 2026"), plus an
+r/dataengineering thread. People Also Ask includes *"Is data engineering a high
+paying job?"* and *"Is PwC good for data engineers?"*.
+
+[INFER] Two conclusions. The commercial SERP serves **service pages and
+listicles, not articles**, so an /insights explainer cannot rank there whatever
+it says. And the surrounding demand is overwhelmingly people who want the job,
+not people who want to buy the work.
+
+**[OBS] This is the third time this trap has appeared**: audit and COO terms in
+`02-demand-evidence.md`, forward-deployed engineer in
+`17-mckinsey-explainer-cluster.md`, and now data engineering. It is a
+systematic property of this vocabulary: engineering job titles are searched by
+candidates. Worth treating as a standing rule rather than rediscovering it.
+
+### What was done instead
+
+The useful parts of the brief were taken and the duplication was not.
+
+[FACT] Step 3, internal links: the article **already** links to
+`/services/technology-and-engineering`, which is the data related service page
+and carries "data pipelines, warehousing and reporting infrastructure". Also
+already links to the related case study, the framework and contact.
+
+[FACT] Step 5, images or diagrams: this was a real gap and is now closed. The
+insights template carried no figure support at all, so all six articles were
+pure prose. A section can now hold one sourced figure, rendered by the existing
+components from `benchmarks.js`. The data engineering article's cost section
+now carries one showing integration at 35 to 50 percent one off against
+maintenance at 15 to 25 percent every year, which is the argument that section
+was making in words.
+
+[INFER] That hook is reusable across all six articles and addresses the text
+density finding independently of this brief.
+
+### Recommendation recorded
+
+If the goal is traffic from data engineering buyers, the evidence says an
+article is the wrong instrument. The SERP wants a **service page**, and the
+nearest realistic move is a dedicated data engineering capability page rather
+than a seventh article, which `16-competitor-keywords.md` notes is the Kellton
+pattern. That is a larger decision about whether to compete on head service
+terms at all, and it is unchanged: not yet.

@@ -10,6 +10,8 @@
  * marketing-research/experiments.md before adding more.
  */
 
+import benchmarks from './benchmarks';
+
 export const insights = [
   {
     slug: 'why-ai-prototypes-stall-before-production',
@@ -205,6 +207,26 @@ export const insights = [
           'The cost that surprises people is not the build. It is the second year, once the people who built it have moved on and nobody remaining can say why a particular transformation exists.',
           'So the honest question before commissioning any of this is not what it costs to build. It is who maintains it in year two, and whether that person knows yet.',
         ],
+        figure: {
+          title: 'What the running cost looks like after launch',
+          standfirst:
+            'Both expressed as a percentage of what the build itself cost. The first is one off, the second repeats every year.',
+          rows: [
+            {
+              label: 'Integrating it with the systems you already run, one off',
+              low: benchmarks.integrationCost.figures.lowPct,
+              high: benchmarks.integrationCost.figures.highPct,
+              emphasis: true,
+            },
+            {
+              label: 'Keeping it running, every year',
+              low: benchmarks.maintenance.figures.lowPct,
+              high: benchmarks.maintenance.figures.highPct,
+            },
+          ],
+          source: benchmarks.maintenance.source,
+          url: benchmarks.maintenance.url,
+        },
       },
       {
         heading: 'When is buying a tool the better answer?',
