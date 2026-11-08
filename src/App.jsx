@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
+import BehaviourAnalytics from './components/BehaviourAnalytics';
 import ScrollToSection from './components/ScrollToSection';
 import { usePageViews } from './components/analytics';
 import LandingPage from './pages/LandingPage';
@@ -92,6 +93,7 @@ export default function App() {
       </main>
       <Footer />
       <CookieConsent />
+      <BehaviourAnalytics />
       {/*
         Vercel Web Analytics.
 

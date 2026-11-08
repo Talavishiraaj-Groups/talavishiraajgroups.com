@@ -51,10 +51,16 @@ const rows = [
       'There are no advertising pixels, no remarketing tags and no social network trackers anywhere on the site.',
   },
   {
-    what: 'Analytics',
+    what: 'Page view counting',
     answer: 'Cookieless.',
     detail:
-      'We use Vercel Analytics, which counts page views without cookies and without building a profile of you. It cannot follow you to other websites.',
+      'Vercel Analytics counts page views without cookies and without building a profile of you. It cannot follow you to other websites and it runs whether or not you accept anything.',
+  },
+  {
+    what: 'Behaviour analytics',
+    answer: 'Only if you allow it.',
+    detail:
+      'If you accept, Microsoft Clarity shows us which pages hold attention, how far people read, where they go next and where they give up. It sets cookies and can replay a session. Text you type into forms is masked and stays masked. Decline and it is never loaded.',
   },
   {
     what: 'Fonts',
@@ -122,18 +128,18 @@ export default function CookiePolicyPage() {
       <section className="border-t border-border bg-muted">
         <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-5">
-            The one third party, and when it loads
+            The third parties, and when they load
           </h2>
           <p className="text-base text-gray-700 leading-relaxed mb-4 max-w-2xl">
-            If you choose to book a call, the calendar is provided by Cal.com and runs inside a
-            frame on our page. It is not loaded when you arrive. No request reaches Cal.com until
-            you ask for the calendar, so simply reading the site never involves them.
+            Two, and both wait for your answer. Microsoft Clarity measures how the site is used,
+            and loads only if you accept. Cal.com provides the booking calendar inside our page,
+            and loads only if you accept and then go to book. Decline and no request reaches
+            either of them, ever: the scripts are not inserted rather than inserted and idle.
           </p>
           <p className="text-base text-gray-700 leading-relaxed max-w-2xl">
-            Once it loads, Cal.com may set its own cookies inside that frame, under its own terms,
-            to run the booking. We do not control those and we do not read them. If you would
-            rather not load it at all, the contact form reaches us just as well and involves no
-            third party.
+            Both set their own cookies under their own terms once loaded. We do not control those
+            and we do not read them. Declining costs you nothing that matters: the contact form
+            reaches us identically and involves nobody else.
           </p>
         </div>
       </section>

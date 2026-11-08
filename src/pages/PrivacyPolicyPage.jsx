@@ -228,10 +228,19 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-black">7. Cookies and Similar Technologies</h2>
           <p>
-            We do not currently use cookies or third‑party tracking technologies on our public websites for marketing or behavioural profiling. However, our servers may log technical information as described in Section 2.2 for security and operational purposes.
+            Nothing is set while you read the site. Two things can change that, and both require you to accept the notice shown on your first visit. Neither is loaded, and no request is made to either provider, unless you do.
           </p>
           <p>
-            If we introduce cookies or similar tracking technologies in the future, we will update this Policy and, where required, provide a separate notice or consent mechanism before such technologies are enabled.
+            The first is Microsoft Clarity, which we use to understand how the site is used: which pages hold attention, how far people read, where they go next and where they give up. It records page interactions and may replay a session to show us where a page confused someone. It sets its own cookies. Text you type into form fields is masked by default and we keep that setting on, so the content of an enquiry is not captured by it.
+          </p>
+          <p>
+            The second is Cal.com, which provides the booking calendar inside our page if you choose to book a call. It may set its own cookies under its own terms to run the booking.
+          </p>
+          <p>
+            We use no advertising pixels, no remarketing tags and no social network trackers, and we do not sell or share this information. Separately from any of the above, our hosting provider records ordinary request information as described in Section 2.2 for security and reliability, and our page view counting is cookieless.
+          </p>
+          <p>
+            You can decline, and declining costs you nothing: the contact form reaches us the same way. Your choice is remembered in your browser so you are not asked again, and clearing your site data resets it. If we introduce anything beyond the two named above, we will update this Policy and ask before enabling it.
           </p>
         </section>
 

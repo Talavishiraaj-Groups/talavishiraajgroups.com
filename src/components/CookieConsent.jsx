@@ -55,9 +55,10 @@ export default function CookieConsent() {
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-3.5 md:py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-8">
         <p className="text-xs md:text-sm text-gray-700 leading-relaxed flex-1">
-          This site sets no cookies and stores nothing while you read it. If you book a call, the
-          calendar is provided by Cal.com and may set its own. You can allow that now, or decline
-          and use the contact form instead.{' '}
+          We would like to measure how this site is used, which pages hold attention and where
+          people give up, so it can be made better. That uses Microsoft Clarity and sets cookies.
+          The booking calendar from Cal.com needs the same permission. Decline and neither loads:
+          nothing here breaks and the contact form still reaches us.{' '}
           <Link
             to="/cookies"
             className="font-medium text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black whitespace-nowrap"
