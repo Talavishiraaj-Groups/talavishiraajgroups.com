@@ -9,40 +9,45 @@ import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
  * than assumed, because the usual version of this page is boilerplate that
  * describes a site the author never checked.
  *
- * What the measurement found, on every page: no cookies, no localStorage, no
- * sessionStorage, no external scripts. On /book, Vercel Analytics loads and
- * sets no cookie, which matches its documentation. The Cal.com embed issues no
- * request at all until a visitor submits the form and asks for the calendar.
+ * This page has been rewritten twice, both times because the site changed
+ * under it, and that is the point worth preserving. It first described a site
+ * with no cookies, no storage and no third party scripts, which was measured
+ * rather than assumed and was true at the time. Then a consent banner arrived,
+ * and then behaviour analytics, and each time this page briefly contradicted
+ * itself: it went on claiming the choice was about one thing only while the
+ * banner was asking about two.
  *
- * There is a consent banner, added at the owner's request after this page was
- * first written. It is wired to the only third party the site has rather than
- * being decorative: declining means the Cal.com frame is never created.
+ * So: when anything is added that loads a third party or writes to a browser,
+ * three places change together, and none of them is optional. The banner copy,
+ * section 7 of the privacy policy, and this page. A legal page that describes
+ * last month's site is worse than no page, because it reads as a promise.
  *
- * The storage irony is real and is described on the page rather than hidden.
- * Remembering a dismissal takes storage, so the consent choice is the only
- * thing this site writes to a browser. One key, one word, strictly necessary
- * by definition.
- *
- * If tracking is ever added, this page and the consent position both have to
- * change, and section 7 of the privacy policy already commits to that.
+ * What is true today. This domain sets no cookies of its own. The only thing
+ * we write is the consent answer itself, one key holding one word, which is
+ * the real irony of a dismissible banner and is stated on the page rather than
+ * hidden. Two third parties wait on an explicit yes: Microsoft Clarity for
+ * measurement, Cal.com for the booking calendar. Both are never inserted
+ * rather than inserted and idle. Vercel Analytics counts page views without
+ * cookies and runs regardless, which is disclosed as its own row rather than
+ * folded into the word "analytics".
  */
 
 const TITLE = 'Cookie Notice | Talavishiraaj Groups';
 const DESCRIPTION =
-  'This site sets no cookies and stores nothing while you read it. What the banner is actually asking, the one third party that loads when you book a call, and what your answer controls.';
+  'Nothing is set in your browser until you answer the banner. What accepting actually permits, the two third parties involved, and what declining costs you, which is nothing that matters.';
 
 const rows = [
   {
-    what: 'Cookies set by this site',
+    what: 'Cookies set by this site itself',
     answer: 'None.',
     detail:
-      'No cookies are set on any page, for any purpose, including analytics, advertising and personalisation.',
+      'This domain sets no cookies of its own, for any purpose. The cookies that can appear if you accept belong to the two third parties named below and are set under their own terms.',
   },
   {
-    what: 'Data stored in your browser',
-    answer: 'None.',
+    what: 'Data stored in your browser by us',
+    answer: 'Your answer, and nothing else.',
     detail:
-      'Nothing is written to local storage or session storage. Closing the tab leaves nothing behind.',
+      'One entry holding one word, recording whether you accepted or declined, so you are not asked again. Nothing else is written to local storage or session storage. Clear site data and it goes, along with the record of your answer.',
   },
   {
     what: 'Advertising and cross site tracking',
@@ -96,13 +101,14 @@ export default function CookiePolicyPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold mb-6">Cookie notice</h1>
         <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          This site sets no cookies and stores nothing in your browser while you read it. The only
-          thing that can change that is booking a call, which loads a calendar from Cal.com.
+          Nothing is set in your browser until you answer the banner, and declining keeps it that
+          way. Accepting permits two things and no more: measuring how the site is used, and
+          loading a booking calendar if you go to book a call.
         </p>
         <p className="text-base text-gray-700 leading-relaxed">
-          That is unusual enough to be worth setting out precisely, so the whole position is below
-          rather than buried in a policy. Everything on this page describes what the site does
-          today, and it was checked in a browser rather than copied from a template.
+          That is a short enough list to set out precisely, so the whole position is below rather
+          than buried in a policy. Everything on this page describes what the site does today, and
+          it was checked in a browser rather than copied from a template.
         </p>
       </section>
 
@@ -150,10 +156,11 @@ export default function CookiePolicyPage() {
             What the banner is actually asking
           </h2>
           <p className="text-base text-gray-700 leading-relaxed mb-4 max-w-2xl">
-            Not much, which is the point. Nothing is stored while you read the site, so the choice
-            is about one thing only: whether the Cal.com calendar may load if you go to book a
-            call. Decline and that frame is never created, and the contact form reaches us just as
-            well.
+            Two things, and they are worth separating. The first is measurement: whether we may see
+            which pages held your attention, how far you read and where you gave up, so the site
+            can be made less annoying than it is. The second is the booking calendar, which runs
+            inside our page and belongs to Cal.com. Decline and neither loads. You can read every
+            page, and the contact form reaches us just as well.
           </p>
           <p className="text-base text-gray-700 leading-relaxed mb-4 max-w-2xl">
             There is an irony in it worth stating rather than hiding. A banner you can dismiss has
