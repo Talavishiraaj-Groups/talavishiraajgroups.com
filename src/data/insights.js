@@ -1081,6 +1081,108 @@ export const insights = [
       },
     ],
   },
+  {
+    /**
+     * This article exists because of a measured contradiction.
+     *
+     * Every use of the word "consulting" on this site described what we are
+     * not: a consultancy hands over a specification and leaves, consultants
+     * leave before the build starts, not a consultancy deck. Good lines, and
+     * true. But they were the entire footprint of the word, so the only
+     * consulting signal we had was an argument against the category.
+     *
+     * Meanwhile the demand sits almost entirely in selection questions. Of
+     * the ten highest volume questions in the "ai consulting" family, nine
+     * are people choosing between firms rather than learning what AI is.
+     * That is the moment our actual differentiator is worth something, and
+     * we were absent from it.
+     *
+     * Deliberately not a bid for "management consulting". That is McKinsey
+     * and BCG work, we do not do it, and the comparison on /in-house-vs-agency
+     * stays exactly as it is. The separation from the existing partner
+     * selection article is by subject rather than by phrasing: that one is
+     * about quotes, exclusions and portfolios on any build, this one is about
+     * the questions that only apply when the thing being bought is AI, where
+     * the failure mode is a pilot that never reaches production.
+     */
+    slug: 'how-to-evaluate-an-ai-consulting-firm',
+    title: 'How to evaluate an AI consulting firm',
+    h1: 'How to evaluate an AI consulting firm, and the question most buyers never ask',
+    metaTitle: 'How to Evaluate an AI Consulting Firm | Talavishiraaj Groups',
+    metaDescription:
+      'Most AI consulting engagements end at a recommendation, not a running system. The four questions that reveal which kind of firm you are speaking to.',
+    published: '2026-11-08',
+    readingTime: '10 min read',
+    capability: 'ai',
+    caseStudy: 'ai-workflow-notebook-to-production',
+    summary:
+      'The decisive question is not what a firm knows about AI. It is where the engagement ends. A great many AI consulting engagements conclude with a strategy, a roadmap and a prioritised list of use cases, all of which can be entirely correct and none of which runs on a Tuesday. Finding out which kind of firm you are speaking to takes about four questions, and they are not the ones usually asked.',
+    takeaways: [
+      'Ask where the engagement ends. A deliverable that is a document and a deliverable that is a running system are different purchases at similar prices.',
+      'Ask to see something in production, not a demo. The gap between a prototype that works and a system that can be relied on is where most AI spending disappears.',
+      'Ask how they would know the thing is working six months later. A firm without an answer is proposing something nobody will be able to tell has degraded.',
+      'Ask what they would do with your data, where it goes, and what happens to it when the engagement ends.',
+      'Ask what would make them tell you not to build it. A firm paid for the next phase has no structural reason to say the work is unnecessary.',
+    ],
+    sections: [
+      {
+        heading: 'What is AI consulting, and what are you actually buying?',
+        body: [
+          'In practice the term covers two quite different purchases sold under one name. The first is advisory: an assessment of where AI could help, a prioritised list of use cases, a roadmap, sometimes a business case. The deliverable is a document and the engagement ends when it is handed over. The second is delivery: something is built, integrated and put in front of real users, and the engagement ends when it runs.',
+          'Both are legitimate and the first is not a lesser thing. An organisation that genuinely does not know where to start is well served by someone who can tell it, and that work is harder than it looks. The problem is that the two often cost about the same, are described in similar language, and are bought without the distinction ever being made explicit.',
+          'So the first question is not about capability at all. It is: at the end of this, what exists that did not exist before? If the honest answer is a document, that may be exactly right for you. It should be a decision rather than a discovery made in month four.',
+        ],
+      },
+      {
+        heading: 'Which AI consulting firm should you choose?',
+        body: [
+          'The one whose answer to "where does this end" matches what you actually need, which is more often delivery than the market assumes. Most organisations asking about AI are not short of ideas about where it could help. They are short of anything running.',
+          'Beyond that, the firms worth shortlisting share three observable traits. They can point at something in production rather than in a demo environment. They can describe a project that went badly and what they changed afterwards. And they are willing, during selection, to tell you that part of what you asked for is not worth doing.',
+          'The third is the most informative and the easiest to test, because it costs a firm money to do it. A firm that agrees with everything during selection has shown you how it will behave when the brief turns out to be wrong.',
+        ],
+      },
+      {
+        heading: 'Why does a working demonstration tell you so little?',
+        body: [
+          'Because a demonstration and a production system are optimised for opposite things, and almost nothing that makes the first impressive survives into the second. A demo runs on chosen inputs, in one person’s hands, with no requirement to behave sensibly when a dependency fails.',
+          'The work between those two states is unglamorous and substantial: an explicit interface contract, defined behaviour when the model is not confident or an upstream service times out, observability so somebody notices degradation before a user does, an evaluation set that can be rerun, and a rollout that can be reversed. None of it demonstrates well, and it is routinely scoped last or not at all.',
+          'This is the single largest source of wasted AI budget we encounter, and it is visible during selection. Ask what happens when the model is wrong. A firm that answers with accuracy figures has misunderstood the question; the useful answer describes a fallback, a route to a person, or a typed error the calling system can handle.',
+        ],
+      },
+      {
+        heading: 'What should you ask about your data?',
+        body: [
+          'Where it goes, who can see it, whether it is used to train anything, and what happens to it when the engagement ends. These should be answerable immediately and in writing. Hesitation here is itself the answer.',
+          'Ask specifically whether your data, prompts or outputs would be used to improve a model or product that other clients also use. The answer is sometimes yes and is not always unreasonable, but it is a commercial term and should be negotiated as one rather than discovered in an appendix.',
+          'Ask what the firm would need from you before it could start, and listen for whether the answer includes data quality. An engagement that assumes your data is trustworthy is making the most common wrong assumption in this field, and the discovery usually arrives after the budget is committed.',
+        ],
+      },
+      {
+        heading: 'How much do AI consulting services cost, and why is the spread so wide?',
+        body: [
+          'The spread is wide because the same brief is being quoted as different projects. One firm is quoting for an assessment, another for a pilot, another for a system that runs with support. Those are not competing bids for one thing, and comparing them as though they were produces a decision based on an arithmetic error.',
+          'The more useful question is the three year figure, split into build, running and change. AI systems have an unusually high ratio of running cost to build cost, because a model reads data from systems that are versioned, renamed and replaced without consulting it, and because evaluation is not a one off. A quote covering only the build is a deposit.',
+          'Ask what is excluded, in writing. Integration, monitoring, evaluation and the work of keeping the thing accurate after launch are where a low number hides, and a firm that will not list its exclusions has told you something useful.',
+        ],
+      },
+      {
+        heading: 'How do you tell advice from a sales process?',
+        body: [
+          'By whether anyone changes your mind. A firm that returns your brief to you in tidier language has done no thinking you could not have done yourself, and the tidiness is easy to mistake for insight.',
+          'The signal worth watching for is a reframe you did not expect: being told that what you described as an AI problem is a data problem, or that the use case you ranked first will produce an output nobody has the authority to act on. You do not have to accept it. You do have to notice whether the firm is capable of it.',
+          'And ask directly what would make them recommend against the project. The structural issue with advisory engagements is that the next phase is the firm’s revenue, so there is no commercial reason to conclude that the work is unnecessary. That does not make anyone dishonest. It does mean the question has to be asked out loud, and that the answer is worth more than a portfolio.',
+        ],
+      },
+      {
+        heading: 'What is the difference between this and management consulting?',
+        body: [
+          'Scope and deliverable. Management consulting addresses organisational questions that span functions, and it is genuinely good at them. The deliverable is a recommendation, the engagement is usually larger than the question, and execution is somebody else’s problem by design.',
+          'That is a real service and this is not an argument against it. It is a different purchase, and the mismatch appears when an organisation buys a strategy for a problem that was actually a build.',
+          'The distinction worth holding onto during selection: a firm that only advises has no obligation to make its recommendation work, and a firm that only builds has no reason to tell you the brief is wrong. What you are looking for is whoever is accountable for both, and the way to find out is to ask who owns the outcome when it does not work.',
+        ],
+      },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug) => insights.find((a) => a.slug === slug);

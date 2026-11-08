@@ -106,10 +106,10 @@ export default function AboutPage() {
               A coordination issue often hides a data problem. A data problem often hides an integration problem. Solving just one part usually just moves the friction somewhere else.
             </p>
             <p>
-              Most of the industry separates these pieces. Consultants provide strategy and leave before the build starts. Developers build exactly what is asked for, even if it doesn't solve the core issue. Neither takes full responsibility for the final outcome.
+              Most of the industry separates these pieces. Advisory work ends at a recommendation and stops before the build starts. Development work delivers exactly what was asked for, even when that is not what solves the problem. Neither side is accountable for whether the thing finally works.
             </p>
             <p>
-              Talavishiraaj Groups is built to handle the entire lifecycle. We research the problem, design the solution, build the software, and see it through to deployment. This means we only recommend solutions we know we can actually build and deliver.
+              We do both halves, which is the whole point. Our consulting work and our engineering work are the same engagement: we research the problem, design the solution, build the software, and see it through to deployment. The practical consequence is that we only recommend what we know we can build, because we are the ones who will have to build it.
             </p>
           </div>
         </div>

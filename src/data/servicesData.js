@@ -266,7 +266,7 @@ export const serviceCategories = [
       {
         question: 'How is this different from management consulting?',
         answer:
-          'We build what we recommend. An operating design usually depends on something being engineered, whether that is a reporting layer, an integration or an automation. Handing over a specification and leaving is where most of these initiatives stall.',
+          'We do the consulting and then build what we recommend, in the same engagement. An operating design almost always depends on something being engineered, whether that is a reporting layer, an integration or an automation, so a recommendation that stops at the specification stalls at exactly that point. Management consulting is a different purchase and a legitimate one: it addresses organisational questions spanning several functions, and execution is somebody else’s problem by design. If your question is organisational rather than technical, that is the better route and we will say so.',
       },
     ],
   },
@@ -410,7 +410,7 @@ export const SERVICES_DIFFERENTIATORS = [
   },
   {
     title: 'We build what we recommend',
-    body: 'Advice and delivery sit in the same place. A consultancy hands over a specification and leaves, which is where most of these initiatives stall. If an operating change needs a reporting layer or an integration built to work, that is part of the engagement rather than the next supplier’s problem.',
+    body: 'The consulting and the engineering are one engagement rather than two suppliers. Where advice ends at a specification, the initiative stalls at exactly that handover. If an operating change needs a reporting layer or an integration built to work, that is part of what you are buying rather than the next supplier’s problem.',
   },
   {
     title: 'The engagement is designed to end',
