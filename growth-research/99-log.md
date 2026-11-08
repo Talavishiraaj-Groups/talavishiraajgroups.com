@@ -1720,3 +1720,69 @@ the gap above went unnoticed.
 [FACT] Geography was measured in the third pass: the same four domains rank
 across US, UK, UAE and India, with one local domain inserted per market.
 Unchanged.
+
+---
+
+## 2026-11-08 — three insight articles, and the point where adding more stops paying
+
+### Built
+
+Three articles, chosen on autocomplete evidence rather than topic appeal:
+
+| article | why this one | words | Q&A |
+|---|---|---|---|
+| `why-ai-projects-fail` | *most*, *so many*, *gartner*, *genai projects are failing*. High demand, squarely our subject | 1,335 | 7 |
+| `how-to-choose-a-software-development-partner` | four buyer-intent variants, and the brief is our differentiation | 1,301 | 7 |
+| `legacy-system-modernization` | *services*, *companies*, *strategies*, *case study*. Commercial, and the tech capability already covers it | 1,256 | 7 |
+
+All three follow the house shape, so the FAQPage schema picks them up with no
+extra work. Insights go from 6 to 9, site from 61 to 64 routes.
+
+### The finding that matters more: the buyer-intent space is nearly exhausted
+
+[FACT] Autocomplete across the remaining service areas, looking for commercial
+modifiers:
+
+| seed | what it returns | intent |
+|---|---|---|
+| design for manufacturing | ppt, book pdf, (dfm), and assembly | academic |
+| hardware prototyping | meaning, engineer, **jobs**, services | career, one buyer modifier |
+| operating model design | framework, meaning, principles, examples | definitional |
+| business process automation | **jobs**, in sap, meaning, **course** | career |
+| crm implementation | meaning, process, steps, **jobs** | practitioner |
+| go to market strategy | **course**, means, example, framework | learner |
+| sales pipeline | meaning, management, stages, vs funnel | learner |
+| technical feasibility study | example, meaning, **template**, **pdf** | learner |
+
+[INFER] **Seven of the eight are definitional, academic or career intent.**
+Only "hardware prototyping services" carries a buyer modifier at all. Writing
+articles into this space would attract students, job seekers and
+practitioners, which is the fifth appearance of this pattern after audit and
+COO terms, forward-deployed engineer, the whole data engineering vocabulary,
+and the Wellfound referral data.
+
+**[INFER] The commercial keyword space in this market is small, and the site
+now covers most of it:**
+
+- `custom software development cost` → `/what-it-costs`
+- `build vs buy` → `/build-vs-buy`
+- `in house vs agency` → `/in-house-vs-agency`
+- `why do ai projects fail` → new
+- `how to choose a software development partner` → new
+- `legacy system modernization` → new
+- `[sector] software development company` and variants → 19 sector pages
+- `what is ai readiness`, `what is vendor lock-in` → the previous pair
+
+[INFER] **So the recommendation changes.** Up to now "write another page" has
+been the right answer because obvious gaps existed. They largely do not any
+more. Further articles would be written into definitional space, would pull
+the wrong audience, and would dilute rather than add.
+
+What is left is not content. It is authority: external links, directory
+presence, review profiles, and indexation. The Bing finding from the previous
+session is still the single highest-value outstanding item, and it costs
+nothing.
+
+[HYP] The one content exception worth testing later is
+`hardware prototyping services`, the only buyer modifier found in this sweep.
+Low priority and unverified for volume.

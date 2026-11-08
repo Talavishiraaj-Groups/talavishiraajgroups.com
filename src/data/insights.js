@@ -481,6 +481,245 @@ export const insights = [
       },
     ],
   },
+  {
+    slug: 'why-ai-projects-fail',
+    title: 'Why do AI projects fail?',
+    h1: 'Why do AI projects fail, and which of those reasons is yours?',
+    metaTitle: 'Why Do AI Projects Fail? | Talavishiraaj Groups',
+    metaDescription:
+      'Most reported AI failure rates measure projects that were never going to work. The five ways they actually fail, how to tell which one you are heading for, and the check that costs nothing.',
+    published: '2026-11-08',
+    readingTime: '10 min read',
+    capability: 'ai',
+    caseStudy: 'ai-workflow-notebook-to-production',
+    summary:
+      'The widely quoted failure rates are real and almost useless, because they lump together five quite different failures with different causes and different fixes. A model that was never accurate enough is not the same problem as a model that works and nobody uses, and neither is the same as an initiative that was approved without anyone naming the decision it would change.',
+    takeaways: [
+      'The headline failure rates are not one phenomenon. At least five distinct failures are being counted together.',
+      'The most common is not technical: nobody could name the decision the output would change.',
+      'The second most common is a prototype that works being mistaken for a system that can be relied on.',
+      'Data quality is usually the real project, wearing an AI label.',
+      'Almost every one of these is visible before the build starts, which is why the cheapest intervention is a question rather than an engineer.',
+    ],
+    sections: [
+      {
+        heading: 'Why do AI projects fail?',
+        body: [
+          'Because five different things are being counted as one. The reported rates are high and they are not wrong, but a single number covering all of them tells you nothing about which one is about to happen to you, and the remedies have almost nothing in common.',
+          'In rough order of how often we see them: nobody named the decision the output would change; a working prototype was mistaken for a production system; the data the model reads was never trustworthy; the thing shipped and nobody used it; and the model was genuinely not accurate enough for the job. Only the last of those is a modelling problem, and it is the rarest.',
+          'That ordering matters because it inverts the usual response. Teams facing a failure rate tend to hire for the technical end, and the technical end is where the smallest share of the failures actually sits.',
+        ],
+      },
+      {
+        heading: 'What does "nobody named the decision" look like in practice?',
+        body: [
+          'It looks like a project with an output and no consequence. The dashboard gets built, the model scores well, the demo is impressive, and when you ask what happens differently on a Tuesday as a result, the honest answer is that someone looks at it.',
+          'The test is one question, asked before anything is built: when this produces an answer, who acts on it, and what do they do that they were not doing before? If that cannot be answered in a sentence by the person sponsoring the work, the project has not failed yet but it is going to.',
+          'This is the cheapest failure to avoid and the most frequently skipped, because the question feels obvious enough that everyone assumes it has already been asked.',
+        ],
+      },
+      {
+        heading: 'Why does a working prototype so often fail in production?',
+        body: [
+          'Because the two are optimised for opposite things. A notebook is optimised for the author to learn something quickly. A production system is optimised to behave predictably for people who were not there when it was written, on inputs nobody anticipated, at a time when the author has moved on.',
+          'What separates them is unglamorous and almost always scoped last: explicit interface contracts, defined behaviour when a dependency misbehaves, observability, an evaluation set you can rerun, and a rollout that can be reversed.',
+          'The commercial consequence is that the demo creates momentum the engineering estimate then has to survive. By the time anyone prices the remaining work, a decision has effectively been made.',
+        ],
+      },
+      {
+        heading: 'How much of this is really a data problem?',
+        body: [
+          'More than most post mortems admit. A model pointed at records that two systems disagree about will produce confident output derived from an argument, and no amount of model work fixes that.',
+          'The tell is simple. Ask which system is authoritative for the field the model depends on most. If the answer takes a meeting, the data work is the project and the AI is a label on it.',
+          'That is not a reason to abandon the work. It is a reason to sequence it honestly, because a data project described as an AI project will be judged against the wrong expectations and declared a failure when it was actually a necessary first phase.',
+        ],
+      },
+      {
+        heading: 'What about projects that work and nobody uses?',
+        body: [
+          'This is the quietest failure and the one least likely to be reported as one. The system does what was asked, the team moves on, and usage decays until the thing is quietly switched off at the next renewal.',
+          'It usually traces back to where the output lands. An answer that arrives in a tool somebody already has open on a Tuesday gets used. An answer that requires logging into something else, at a moment nobody chose, does not.',
+          'It also traces back to trust. A system that was wrong early, visibly, and without explanation will not be believed later even after it improves, which is an argument for designing the failure behaviour before the happy path rather than after the first incident.',
+        ],
+      },
+      {
+        heading: 'How do you tell which failure you are heading for?',
+        body: [
+          'Four questions, none of which need an engineer to answer. What decision changes when this works. Which system is authoritative for the data it reads. Who owns it in year two, and have they been told. And what would make us stop, stated before we start.',
+          'A project that can answer all four is not guaranteed to succeed, but it has ruled out the four most common ways of failing, which is most of the available risk reduction and costs an afternoon.',
+          'A project that cannot answer them is not ready to be scoped, let alone built, and that is a far cheaper thing to discover now than after the prototype has created momentum.',
+        ],
+      },
+      {
+        heading: 'Is the honest answer sometimes not to build it?',
+        body: [
+          'Often. When the volume is low, the engineering, monitoring and maintenance do not get cheaper because the task is rare, and a rare task rarely repays them however irritating it is.',
+          'When the underlying process is undocumented, automating it encodes whatever it currently does, including the parts that are wrong, and makes them harder to see afterwards.',
+          'And when the real driver is that a competitor announced something. That is a genuine force in these decisions and worth naming out loud in the room, because it is frequently the one actually deciding, and it produces the projects nobody can defend eighteen months later.',
+          'We build AI systems, so this is worth stating plainly: the party telling you whether to proceed is usually the party paid to build it. That does not make them wrong. It does mean the question is worth asking somewhere with nothing riding on the answer.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'how-to-choose-a-software-development-partner',
+    title: 'How to choose a software development partner',
+    h1: 'How to choose a software development partner, and what the sales process hides',
+    metaTitle: 'How to Choose a Software Partner | Talavishiraaj Groups',
+    metaDescription:
+      'Portfolios and day rates tell you very little. What to ask instead, which answers actually predict how an engagement goes, and the questions that make a weak firm uncomfortable.',
+    published: '2026-11-08',
+    readingTime: '10 min read',
+    capability: 'delivery',
+    caseStudy: 'founder-operations-cockpit',
+    summary:
+      'Most selection processes compare the things that are easy to compare: portfolio, day rate, team size, logos. None of those predict how the engagement goes. What predicts it is how a firm behaves when the brief is wrong, who owns the outcome when several parties are involved, and whether anyone is willing to tell you the work is not worth doing.',
+    takeaways: [
+      'Day rate is the least useful comparison available. The same brief is routinely quoted ten times apart because each firm is quoting a different project.',
+      'Ask what is excluded, in writing. Integration, testing, monitoring and post launch support are where a low number hides.',
+      'Ask what would make them tell you not to build it. A firm with no answer has no criteria.',
+      'Ask who maintains it in year two and whether that person has been told.',
+      'A portfolio shows what a firm has shipped. It says nothing about what it is like when something goes wrong, which is the thing you are actually buying.',
+    ],
+    sections: [
+      {
+        heading: 'How do you choose a software development partner?',
+        body: [
+          'By testing the things that determine how an engagement goes, rather than the things that are easy to put side by side. Portfolio, day rate, headcount and client logos are all simple to compare and none of them predicts the outcome, which is why selection processes built on them so often end in surprise.',
+          'What does predict it: how the firm behaves when the brief turns out to be wrong, whether anyone owns the result when several parties are involved, and whether the firm is structurally able to tell you the work is not worth doing.',
+          'Those are observable during selection if you ask for them directly, and almost invisible if you do not.',
+        ],
+      },
+      {
+        heading: 'Why is comparing quotes so unreliable?',
+        body: [
+          'Because the brief is usually underspecified, so each firm is quoting a different project. Published accounts of this market describe the same requirement being quoted at forty thousand by one firm and four hundred thousand by another, and the spread is not dishonesty. It is each party filling the gaps in the brief with different assumptions.',
+          'A low quote often assumes a narrower scope, excludes integration, or prices a demonstration rather than something your business can run on. Comparing it to a higher quote that includes those things is not comparing like with like, and the decision that follows is wrong.',
+          'The fix is not to collect more quotes. It is to define the requirement well enough that the quotes become comparable, which is work that happens before anyone is approached.',
+        ],
+      },
+      {
+        heading: 'What should you ask that most buyers do not?',
+        body: [
+          'What is excluded, in writing. Testing, monitoring, integration and post launch support are where a low number hides its real cost, and a firm that will not list exclusions is telling you something.',
+          'What the three year total looks like, split into build, running and change. A quote that covers only the build is not a cost, it is a deposit. A firm that cannot produce the three year figure has scoped a demonstration rather than a project.',
+          'Who maintains this in year two, and has that person been told. The answer is revealing more often than it should be.',
+          'And what would make you tell me not to build this. A firm with no answer has no criteria, which means the judgement about whether your project should proceed is being made by someone who gets paid either way.',
+        ],
+      },
+      {
+        heading: 'What does a portfolio actually tell you?',
+        body: [
+          'That the firm has shipped things, which is worth confirming and is a low bar. What it does not show is the part you are buying: what happened when a dependency changed mid build, how a scope disagreement was handled, whether the team that pitched is the team that delivered.',
+          'Case studies are selected by the firm and describe successes. That is not deceptive, it is what a case study is for, but it means the useful question is not "show me your work" but "tell me about an engagement that went badly and what you changed afterwards".',
+          'A firm that cannot answer that has either not been doing this long or is not being straight with you. Both are useful to know.',
+        ],
+      },
+      {
+        heading: 'How do you judge whether they understood the problem?',
+        body: [
+          'By whether they changed your mind about anything. A firm that reflects your brief back to you in tidier language has told you nothing and has not done any thinking you could not have done yourself.',
+          'The signal worth watching for is a reframe: being told that the thing you described as a reporting problem is an integration problem, or that the automation you asked for would encode a process nobody has written down. You do not have to agree. You do have to notice whether anyone is capable of it.',
+          'Firms that only ever agree during selection do not become more challenging after the contract is signed.',
+        ],
+      },
+      {
+        heading: 'In-house, agency, or something smaller first?',
+        body: [
+          'Build in house when the capability is core to your business, the requirement is well understood, and you genuinely have the people free. The cost there is hidden rather than absent: it is the roadmap those people stop working on.',
+          'Hire an agency when the requirement is settled and what you lack is capacity. The honest warning is that a build quote typically covers the build and not the integration or the years of maintenance after it.',
+          'And where the decision itself is not settled, neither of those is the right first purchase. Committing to a build in order to find out whether you should have built it is the most expensive way to answer that question.',
+        ],
+      },
+      {
+        heading: 'What should the contract actually pin down?',
+        body: [
+          'Who owns the outcome when several vendors are involved. Where more than one party is in play, someone has to own the result across them, and if the contract does not name who, the answer in practice is nobody.',
+          'What happens when the requirement changes, because it will. What matters is whether that is treated as a costed change with an agreed rate or as an argument.',
+          'And how it ends. Documentation, runbooks and training should be scoped at the start, not offered at the end. A partner who becomes structurally necessary has failed at the job, and the measure of the work is that your team can change what was built after they leave.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'legacy-system-modernization',
+    title: 'Legacy system modernization',
+    h1: 'Legacy system modernization, and how to avoid replacing something that works',
+    metaTitle: 'Legacy System Modernization | Talavishiraaj Groups',
+    metaDescription:
+      'Most modernization projects are larger than they needed to be. The four routes, how to tell which one your system needs, and why a full rebuild is usually the wrong first answer.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'tech',
+    caseStudy: 'founder-operations-cockpit',
+    summary:
+      'A legacy system is not an old system, it is one that costs more to work around than to change. That distinction decides the whole project, because the four available routes range from leaving it alone to replacing it entirely, and the expensive mistake is reaching for the last one when the problem only ever justified the second.',
+    takeaways: [
+      'Age is not the criterion. A twenty year old system nobody needs to change is not a problem.',
+      'There are four routes, not one: leave it, wrap it, refactor it in place, or replace it. Most projects jump to the fourth.',
+      'Rebuilds fail more often from unrecorded dependencies than from technical difficulty.',
+      'The knowledge of why the system behaves as it does is usually the asset at risk, not the code.',
+      'If the business cannot run during the migration, the plan is wrong regardless of the architecture.',
+    ],
+    sections: [
+      {
+        heading: 'What makes a system legacy?',
+        body: [
+          'Not its age. A system is legacy when the cost of working around it exceeds the cost of changing it, and that can be true of something built three years ago and false of something built in the nineties.',
+          'The practical symptoms are consistent: changes take longer than they should and nobody can say exactly why, people have built private workarounds that the business now depends on, and the group who understand why it behaves as it does is smaller every year.',
+          'Defining it this way matters commercially, because "old" invites replacement and "expensive to change" invites a question about which part is expensive. Those lead to very different budgets.',
+        ],
+      },
+      {
+        heading: 'What are the options besides replacing it?',
+        body: [
+          'Four, and replacement is the last. Leave it alone, which is correct more often than it is proposed: a stable system nobody needs to change is not costing you anything by existing. Wrap it, putting an interface in front so other systems can integrate without touching the inside. Refactor in place, improving the parts that actually hurt while it keeps running. Or replace it.',
+          'Most proposals arrive as the fourth option because it is the easiest to scope and the most satisfying to present. It is also the one that carries migration risk, retraining cost and a period of reduced capability, so it has to be justified rather than assumed.',
+          'The useful discipline is to make the case for each of the first three and record why it was rejected. A rebuild that survives that is a rebuild worth doing.',
+        ],
+      },
+      {
+        heading: 'Why do rebuilds go wrong?',
+        body: [
+          'Rarely for technical reasons. They go wrong because of behaviour nobody wrote down: the edge case the old system handles quietly, the report finance depends on that was never in the specification, the field three other systems read even though it was deprecated years ago.',
+          'The second cause is duration. A rebuild long enough to outlast the attention of its sponsors becomes a project nobody can cancel and nobody can finish, running alongside the thing it was meant to replace.',
+          'The third is that the new system is specified against what the business says it does rather than what the old system actually does, and those differ more than anyone expects. What people describe and what the systems record is usually where the real requirement is hiding.',
+        ],
+      },
+      {
+        heading: 'How do you find out what the system really does?',
+        body: [
+          'By reading the system rather than the documentation, and by watching who uses what. Logs, query patterns and integration traffic tell you which parts are live and which are decorative, which is information no interview produces reliably.',
+          'Then by talking to the people who built the workarounds. They know where the behaviour is that nobody specified, and they are usually not the people invited to the planning meeting.',
+          'This phase feels like a delay and is the cheapest insurance available. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for those that skipped it.',
+        ],
+      },
+      {
+        heading: 'How do you keep the business running through it?',
+        body: [
+          'By staging it so there is never a single switch. Strangle the old system gradually: route one capability at a time to the new one, keep both answering until the new one has been right for long enough to trust, and keep the ability to route back.',
+          'That is slower and more expensive on paper than a cutover, and it is the difference between a bad week and a bad quarter when something is wrong. The cost of the parallel period is the price of being able to reverse.',
+          'If a plan cannot describe how to reverse each step, it is not a migration plan, it is a hope.',
+        ],
+      },
+      {
+        heading: 'What does it cost after the project ends?',
+        body: [
+          'More than the build, which is the part most business cases omit. Annual maintenance commonly runs 15 to 25 percent of the original build cost, every year, and integration with surrounding systems commonly runs 35 to 50 percent of initial development on its own.',
+          'A modernization case built on the build figure alone will therefore compare a known cost against an unknown one and reach a confident wrong answer. The comparison that matters is five years of the current system against five years of the proposed one, including both.',
+          'Done that way, some modernization projects stop being obviously worth it, which is a useful thing to discover before committing rather than during year two.',
+        ],
+      },
+      {
+        heading: 'When is the answer to leave it alone?',
+        body: [
+          'When it is stable, the change rate is near zero, and the cost of running it is predictable. Systems like that are not debt, they are infrastructure, and replacing them buys modernity rather than value.',
+          'When the thing actually causing pain is one integration or one report, which can be solved for a fraction of the cost without touching the core.',
+          'And when nobody can state what would be true after the project that is not true now. A modernization with no answer to that is being driven by discomfort with the technology rather than by a business constraint, and discomfort is a poor justification for a multi year commitment.',
+        ],
+      },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug) => insights.find((a) => a.slug === slug);
