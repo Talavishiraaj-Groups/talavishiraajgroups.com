@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { hasConsent, writeConsent, CONSENT_GRANTED } from '../components/consent';
 import { Link } from 'react-router-dom';
 import Seo, { breadcrumbSchema, webPageSchema, CONTACT_EMAIL } from '../seo';
 import { track } from '../components/analytics';
@@ -63,12 +64,36 @@ const CAL_LINK = import.meta.env.VITE_CAL_LINK || '';
  */
 const FRAME_CLASSES = 'h-[760px] md:h-[560px]';
 
+/**
+ * The calendar is gated on consent.
+ *
+ * This is what makes the banner mean something. Cal.com is the only third
+ * party the site loads and the only thing that may set a cookie, so a visitor
+ * who declined must not have that frame created. Declining and then silently
+ * loading it anyway is the behaviour consent banners are criticised for, and
+ * it would be worse than having no banner.
+ *
+ * Declining is not a dead end: the contact form reaches us identically and
+ * involves nobody else, so the fallback below offers it rather than telling
+ * someone they have locked themselves out.
+ */
+function useConsent() {
+  const [granted, setGranted] = useState(false);
+  useEffect(() => {
+    const sync = () => setGranted(hasConsent());
+    sync();
+    window.addEventListener('tg-consent-change', sync);
+    return () => window.removeEventListener('tg-consent-change', sync);
+  }, []);
+  return granted;
+}
+
 function CalEmbed({ link }) {
   const ref = useRef(null);
 
   useEffect(() => {
     const host = ref.current;
-    if (!link || !host) return undefined;
+    if (!link || !host || !granted) return undefined;
     const frame = document.createElement('iframe');
     frame.src = `https://cal.com/${link}?theme=light`;
     frame.title = 'Choose a time to talk';
@@ -79,12 +104,30 @@ function CalEmbed({ link }) {
     return () => {
       host.innerHTML = '';
     };
-  }, [link]);
+  }, [link, granted]);
 
   return (
     <div>
       <div className="rounded-2xl border border-border bg-white overflow-hidden">
-        <div ref={ref} />
+        {granted ? (
+          <div ref={ref} />
+        ) : (
+          <div className="p-6 md:p-8">
+            <p className="text-sm font-medium text-primary mb-2">The calendar is not loaded</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-xl">
+              You declined third party content, so Cal.com has not been contacted. Nothing is lost:
+              the form above reaches us the same way and involves nobody else. If you would rather
+              pick a time yourself, allow it and the calendar appears here.
+            </p>
+            <button
+              type="button"
+              onClick={() => writeConsent(CONSENT_GRANTED)}
+              className="inline-flex items-center justify-center rounded-full border border-gray-300 px-6 py-2.5 text-sm font-medium text-primary hover:bg-muted transition-colors"
+            >
+              Allow the calendar
+            </button>
+          </div>
+        )}
       </div>
       {/* Disclosed at the point it happens rather than only in a policy.
           This frame is the one third party the site loads, and it loads here,

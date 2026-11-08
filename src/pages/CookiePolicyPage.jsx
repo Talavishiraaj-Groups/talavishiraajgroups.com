@@ -14,16 +14,14 @@ import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
  * sets no cookie, which matches its documentation. The Cal.com embed issues no
  * request at all until a visitor submits the form and asks for the calendar.
  *
- * So there is no consent banner on this site, and that is a deliberate
- * decision rather than an omission. Consent is required for storage that is
- * not strictly necessary. There is none. A banner would ask permission for
- * something that does not happen, and it would train a reader to dismiss a
- * dialog that means nothing.
+ * There is a consent banner, added at the owner's request after this page was
+ * first written. It is wired to the only third party the site has rather than
+ * being decorative: declining means the Cal.com frame is never created.
  *
- * There is also a neat trap in the alternative: a dismissible banner has to
- * remember that it was dismissed, which takes a cookie or a localStorage
- * entry. Adding one would create the first client side storage on the site.
- * The banner would become the thing it warns about.
+ * The storage irony is real and is described on the page rather than hidden.
+ * Remembering a dismissal takes storage, so the consent choice is the only
+ * thing this site writes to a browser. One key, one word, strictly necessary
+ * by definition.
  *
  * If tracking is ever added, this page and the consent position both have to
  * change, and section 7 of the privacy policy already commits to that.
@@ -31,7 +29,7 @@ import Seo, { breadcrumbSchema, webPageSchema } from '../seo';
 
 const TITLE = 'Cookie Notice | Talavishiraaj Groups';
 const DESCRIPTION =
-  'This site sets no cookies and stores nothing in your browser. What that means, the one third party that loads when you book a call, and why there is no consent banner.';
+  'This site sets no cookies and stores nothing while you read it. What the banner is actually asking, the one third party that loads when you book a call, and what your answer controls.';
 
 const rows = [
   {
@@ -92,8 +90,8 @@ export default function CookiePolicyPage() {
         <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-5">Legal</p>
         <h1 className="text-3xl md:text-5xl font-semibold mb-6">Cookie notice</h1>
         <p className="text-lg text-gray-700 leading-relaxed mb-4">
-          This site sets no cookies and stores nothing in your browser. There is nothing here to
-          accept or decline, which is why you were not asked.
+          This site sets no cookies and stores nothing in your browser while you read it. The only
+          thing that can change that is booking a call, which loads a calendar from Cal.com.
         </p>
         <p className="text-base text-gray-700 leading-relaxed">
           That is unusual enough to be worth setting out precisely, so the whole position is below
@@ -143,22 +141,25 @@ export default function CookiePolicyPage() {
       <section className="border-t border-border">
         <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-5">
-            Why there is no consent banner
+            What the banner is actually asking
           </h2>
           <p className="text-base text-gray-700 leading-relaxed mb-4 max-w-2xl">
-            Consent is required for storage that is not strictly necessary. There is none here, so
-            a banner would be asking your permission for something that does not happen. We would
-            rather not train you to dismiss a dialog that means nothing.
+            Not much, which is the point. Nothing is stored while you read the site, so the choice
+            is about one thing only: whether the Cal.com calendar may load if you go to book a
+            call. Decline and that frame is never created, and the contact form reaches us just as
+            well.
           </p>
           <p className="text-base text-gray-700 leading-relaxed mb-4 max-w-2xl">
-            There is also a small irony in the alternative. A banner you can dismiss has to
-            remember that you dismissed it, which takes a cookie or a stored entry. Adding one
-            would create the first thing this site stores on your device. The banner would become
-            the thing it warns about.
+            There is an irony in it worth stating rather than hiding. A banner you can dismiss has
+            to remember that you dismissed it, so your answer is the one thing this site does write
+            to your browser. It is a single entry holding a single word, it is readable only by
+            this site, and remembering a consent decision is permitted without asking permission
+            for it. If you clear site data it comes back, because the record of your answer went
+            with it.
           </p>
           <p className="text-base text-gray-700 leading-relaxed max-w-2xl">
-            If that ever changes, this notice changes with it and you will be asked properly before
-            anything is set.{' '}
+            Neither answer is made easier than the other, and declining is not a dead end anywhere
+            on the site.{' '}
             <Link
               to="/privacy-policy"
               className="font-medium text-primary underline decoration-gray-300 underline-offset-4 hover:decoration-black"
