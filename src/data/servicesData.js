@@ -68,6 +68,11 @@ export const serviceCategories = [
         answer:
           'We work with them wherever that is the better answer. Replacing a system carries migration risk, retraining cost and a period of reduced capability, so it has to be justified. Where a rebuild genuinely is warranted, we stage it so the business keeps running throughout.',
       },
+      {
+        question: 'Nobody here understands the system we inherited. Can you still work on it?',
+        answer:
+          'Yes, and it is one of the more common reasons people get in touch. The first work is mapping what exists, where the data actually lives and which behaviour people depend on without realising it. Rebuilds and changes fail more often from a dependency nobody recorded than from technical difficulty, so establishing that picture is what makes the system safe to change rather than merely possible to change.',
+      },
     ],
   },
   {
@@ -212,6 +217,11 @@ export const serviceCategories = [
         answer:
           'Yes. That is a common arrangement when internal capacity is committed to the roadmap and a separate question needs answering in parallel. Scope, interfaces and reporting cadence are agreed at the start so the two tracks do not diverge.',
       },
+      {
+        question: 'What happens if the research concludes the idea will not work?',
+        answer:
+          'That is a successful outcome and it is worth saying so plainly. The purpose of a research track is to answer a question that an investment decision depends on, and an answer of no is the cheapest result available, provided it arrives before the commitment rather than after it. The deliverable is the evidence and the reasoning, so the conclusion can be checked rather than taken on trust.',
+      },
     ],
   },
   {
@@ -268,6 +278,16 @@ export const serviceCategories = [
         answer:
           'We do the consulting and then build what we recommend, in the same engagement. An operating design almost always depends on something being engineered, whether that is a reporting layer, an integration or an automation, so a recommendation that stops at the specification stalls at exactly that point. Management consulting is a different purchase and a legitimate one: it addresses organisational questions spanning several functions, and execution is somebody else’s problem by design. If your question is organisational rather than technical, that is the better route and we will say so.',
       },
+      {
+        question: 'We already have process documentation nobody follows. Why would this be different?',
+        answer:
+          'Because documentation that nobody follows is usually a symptom rather than the problem. A process is ignored when it requires attention, headcount or discipline the organisation does not actually have, so the work is to design against real capacity rather than to write the same process down more thoroughly. Where a step is only followed because one person remembers to do it, the answer is normally to build it into a system rather than to restate it in a document.',
+      },
+      {
+        question: 'What if we already know what the problem is?',
+        answer:
+          'Then say so, and if you are right this is the wrong engagement to buy. Sometimes the named problem really is the thing holding the business back, in which case what you need is it built rather than an analysis telling you what you already knew. The reason it is worth checking first is that the loudest complaint and the actual constraint are often different, and the way to tell them apart is whether what people describe matches what the systems record. Where those two agree, we will say the analysis is unnecessary and move to the build.',
+      },
     ],
   },
   {
@@ -323,6 +343,16 @@ export const serviceCategories = [
         answer:
           'No. We build the systems and instrumentation behind demand and pipeline rather than running campaigns. The output is a motion your team can operate and measure, not an ongoing outsourced marketing function.',
       },
+      {
+        question: 'Our pipeline depends entirely on the founder. Can that be fixed?',
+        answer:
+          'Usually, and the first step is rarely hiring. Pipeline concentrates on a founder because qualification lives in their judgement rather than in written criteria, which is precisely what makes the motion impossible to delegate. Writing those criteria down is what lets somebody else run it, and it is also what makes the result measurable rather than anecdotal.',
+      },
+      {
+        question: 'What does market entry work involve, and when is it too early?',
+        answer:
+          'It involves the operating structure behind the entry: delivery capacity, compliance readiness, support coverage and how the motion is coordinated across locations. It is too early when demand in the new market has not been established, because entry is rarely blocked by demand and planning the structure first does not create it. Where that is the situation we will say so rather than plan an expansion into a market that has not yet shown interest.',
+      },
     ],
   },
   {
@@ -377,6 +407,16 @@ export const serviceCategories = [
         question: 'Can you work alongside our existing vendors?',
         answer:
           'Yes, and it is a common arrangement. Where several parties are involved we take the coordinating role and hold accountability for the outcome across them, rather than adding another supplier with a partial view of the work.',
+      },
+      {
+        question: 'How is this different from hiring contractors?',
+        answer:
+          'Contract capacity executes tasks that somebody else is accountable for sequencing. This engagement takes the accountability as well, which is the part that is usually missing when an initiative stalls between a correct decision and a delivered result. If what you need is additional hands on a plan somebody internal already owns and drives, contractors are the cheaper answer and we will say so.',
+      },
+      {
+        question: 'What happens at the end, and how do we avoid depending on you?',
+        answer:
+          'Transition, documentation and training are scoped at the start rather than offered at the end, because a delivery partner who becomes structurally necessary has failed at the job. The measure we hold ourselves to is that your team can change what was built after we leave, which means handover is a deliverable with a date rather than a final conversation.',
       },
     ],
   },
