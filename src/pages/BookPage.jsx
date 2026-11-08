@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { hasConsent, writeConsent, CONSENT_GRANTED } from '../components/consent';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Seo, { breadcrumbSchema, webPageSchema, CONTACT_EMAIL } from '../seo';
 import { track } from '../components/analytics';
@@ -24,129 +23,15 @@ import EnquiryForm from '../components/EnquiryForm';
  * indexed calendar page competes with the pages that should rank.
  */
 
+/**
+ * Only used to decide whether online booking is live at all. The calendar
+ * itself, its consent gate and the Cal.com framing notes all live in
+ * EnquiryForm, which renders it after the details are collected. There used to
+ * be a second copy of that component here, unreferenced since the form took
+ * over, and it had drifted out of working order without anyone noticing
+ * because nothing rendered it. One copy only.
+ */
 const CAL_LINK = import.meta.env.VITE_CAL_LINK || '';
-
-/**
- * The calendar, framed.
- *
- * Two things here are deliberate and were arrived at by testing rather than
- * from the docs:
- *
- * 1. The URL carries no `embed=true`. That parameter expects Cal.com's own
- *    embed script to be present and, used on a bare iframe, renders a blank
- *    page: the frame loads, no error is thrown, and nothing appears. The plain
- *    booking URL frames correctly on its own. Cal.com sends no X-Frame-Options
- *    or CSP that would prevent it.
- *
- * 2. The frame is taller than its container, which has overflow hidden, so the
- *    strip at the very bottom of the Cal.com page is clipped out of view. That
- *    strip is below the booking card and holds nothing interactive, so nothing
- *    a visitor needs is lost. CLIP_PX is the only number to change if Cal.com
- *    alters that footer, and setting it to 0 restores the page exactly as
- *    Cal.com serves it.
- */
-/**
- * Frame height is responsive, and it has to be.
- *
- * Cal.com lays the booker out side by side on a wide screen and stacks it on a
- * narrow one, so a single height is wrong somewhere: tall enough for the
- * stacked mobile layout leaves a large empty band on desktop, and sized for
- * desktop cuts the mobile confirm step off. Hence two heights.
- *
- * The frame is never trimmed. An earlier version clipped the bottom to hide
- * the Cal.com wordmark under the card. Testing at 375px showed why that is
- * unsafe: the confirm step is shorter than the calendar step, so the Confirm
- * button landed inside the hidden band and could not be reached or scrolled
- * to. The page looked normal and bookings simply stopped at the last step.
- * Cal.com's content height varies by step and by breakpoint, so no fixed trim
- * is safe. The wordmark can only be removed properly on Cal.com's Teams plan,
- * at Settings > Appearance.
- */
-const FRAME_CLASSES = 'h-[760px] md:h-[560px]';
-
-/**
- * The calendar is gated on consent.
- *
- * This is what makes the banner mean something. Cal.com is the only third
- * party the site loads and the only thing that may set a cookie, so a visitor
- * who declined must not have that frame created. Declining and then silently
- * loading it anyway is the behaviour consent banners are criticised for, and
- * it would be worse than having no banner.
- *
- * Declining is not a dead end: the contact form reaches us identically and
- * involves nobody else, so the fallback below offers it rather than telling
- * someone they have locked themselves out.
- */
-function useConsent() {
-  const [granted, setGranted] = useState(false);
-  useEffect(() => {
-    const sync = () => setGranted(hasConsent());
-    sync();
-    window.addEventListener('tg-consent-change', sync);
-    return () => window.removeEventListener('tg-consent-change', sync);
-  }, []);
-  return granted;
-}
-
-function CalEmbed({ link }) {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const host = ref.current;
-    if (!link || !host || !granted) return undefined;
-    const frame = document.createElement('iframe');
-    frame.src = `https://cal.com/${link}?theme=light`;
-    frame.title = 'Choose a time to talk';
-    frame.loading = 'lazy';
-    frame.className = `w-full border-0 bg-white block ${FRAME_CLASSES}`;
-    host.appendChild(frame);
-    track('book_page_embed_loaded');
-    return () => {
-      host.innerHTML = '';
-    };
-  }, [link, granted]);
-
-  return (
-    <div>
-      <div className="rounded-2xl border border-border bg-white overflow-hidden">
-        {granted ? (
-          <div ref={ref} />
-        ) : (
-          <div className="p-6 md:p-8">
-            <p className="text-sm font-medium text-primary mb-2">The calendar is not loaded</p>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-xl">
-              You declined third party content, so Cal.com has not been contacted. Nothing is lost:
-              the form above reaches us the same way and involves nobody else. If you would rather
-              pick a time yourself, allow it and the calendar appears here.
-            </p>
-            <button
-              type="button"
-              onClick={() => writeConsent(CONSENT_GRANTED)}
-              className="inline-flex items-center justify-center rounded-full border border-gray-300 px-6 py-2.5 text-sm font-medium text-primary hover:bg-muted transition-colors"
-            >
-              Allow the calendar
-            </button>
-          </div>
-        )}
-      </div>
-      {/* Disclosed at the point it happens rather than only in a policy.
-          This frame is the one third party the site loads, and it loads here,
-          on request, not on arrival. Saying so next to it is worth more than
-          a line someone would have to go looking for. */}
-      <p className="mt-3 text-xs text-gray-500 leading-relaxed">
-        The calendar above is provided by Cal.com and runs inside this page. It loads only at this
-        step, and it may set its own cookies to handle the booking.{' '}
-        <Link
-          to="/cookies"
-          className="underline decoration-gray-300 underline-offset-2 hover:text-black"
-        >
-          What this site stores
-        </Link>
-        .
-      </p>
-    </div>
-  );
-}
 
 export default function BookPage() {
   return (

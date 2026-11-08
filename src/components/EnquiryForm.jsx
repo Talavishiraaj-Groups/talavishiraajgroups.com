@@ -60,9 +60,10 @@ function useConsent() {
 
 function CalEmbed({ link }) {
   const ref = useRef(null);
+  const granted = useConsent();
 
   useEffect(() => {
-    if (!link || !ref.current) return undefined;
+    if (!link || !ref.current || !granted) return undefined;
     const frame = document.createElement('iframe');
     // No `embed=true`. That parameter expects Cal.com's own embed script and
     // renders a blank frame on a bare iframe: it loads, throws nothing, and
