@@ -4,6 +4,7 @@ import Seo, { breadcrumbSchema, faqSchema, serviceSchema, webPageSchema } from '
 import { sectors, sectorBySlug, sectorPath, SECTOR_BREADTH_NOTE } from '../data/sectors';
 import { capabilityById, capabilityPath } from '../data/servicesData';
 import { caseStudies } from './CaseStudiesPage';
+import { insightsForSector, insightPath } from '../data/insights';
 import CtaBand from '../components/CtaBand';
 import RelatedPath from '../components/RelatedPath';
 import ArrowIcon from '../components/icons/ArrowIcon';
@@ -92,6 +93,7 @@ export default function SectorPage() {
   const capabilities = (sector.capabilities || []).map(capabilityById).filter(Boolean);
   const relatedCases = caseStudies.filter((c) => (c.sectors || []).includes(sector.id)).slice(0, 2);
   const others = sectors.filter((s) => s.id !== sector.id);
+  const sectorInsights = insightsForSector(sector.id);
 
   const faqs = [
     {
@@ -231,6 +233,42 @@ export default function SectorPage() {
                     </Link>
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{study.teaser}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* FURTHER READING.
+          Articles that address this sector's specific problem. Each article
+          declares which sectors it speaks to, so this list fills itself when
+          a piece is added rather than needing a second edit here. Without it
+          the sector pages ended on a call to action with nothing to read
+          first, which is a lot to ask of a stranger. */}
+      {sectorInsights.length > 0 && (
+        <section className="border-t border-border">
+          <div className="max-w-4xl mx-auto px-4 md:px-8 py-12 md:py-14">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
+              Worth reading first
+            </h2>
+            <ul className="grid gap-4 sm:grid-cols-2 list-none">
+              {sectorInsights.map((article) => (
+                <li key={article.slug}>
+                  <Link
+                    to={insightPath(article)}
+                    className="group block border border-border rounded-2xl p-5 hover:border-gray-400 transition-colors h-full"
+                  >
+                    <span className="block text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-2">
+                      {article.readingTime}
+                    </span>
+                    <span className="block font-semibold mb-1.5 leading-snug group-hover:underline underline-offset-4 decoration-gray-400">
+                      {article.h1}
+                    </span>
+                    <span className="block text-sm text-gray-600 leading-relaxed">
+                      {article.summary.slice(0, 150)}…
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>

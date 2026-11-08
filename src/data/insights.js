@@ -720,10 +720,384 @@ export const insights = [
       },
     ],
   },
+  {
+    slug: 'supply-chain-visibility',
+    title: 'What supply chain visibility actually requires',
+    h1: 'What supply chain visibility actually requires, beyond a dashboard',
+    metaTitle: 'Supply Chain Visibility | Talavishiraaj Groups',
+    metaDescription:
+      'Most visibility projects buy a dashboard and inherit the same disagreeing data. What has to be true underneath, how to tell a reporting problem from an integration one, and when not to build.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'tech',
+    caseStudy: 'live-operations-visibility-layer',
+    sectors: ['logistics', 'manufacturing', 'ecommerce'],
+    summary:
+      'Visibility is usually bought as a screen and fails as a data problem. If three systems disagree about where something is, a dashboard renders the disagreement faster. What makes visibility real is deciding which system is authoritative for each fact, capturing events rather than snapshots, and putting the result where somebody already works.',
+    takeaways: [
+      'A dashboard built on disagreeing sources renders the disagreement faster. It does not resolve it.',
+      'Decide which system is authoritative for each fact before building anything. That argument is the project.',
+      'Capture events rather than nightly snapshots, or you can report what happened and never what is happening.',
+      'Validate detection against incidents you already know about before trusting it on ones you do not.',
+      'Visibility that arrives somewhere nobody already works will be checked for a fortnight and then ignored.',
+    ],
+    sections: [
+      {
+        heading: 'What is supply chain visibility?',
+        body: [
+          'Knowing where things are and what is about to go wrong, early enough to act. That second half is what separates it from reporting: a system that tells you accurately on Thursday what went wrong on Tuesday is a record, not visibility.',
+          'The distinction matters commercially because the two cost very different amounts. A record can be assembled from nightly extracts. Acting in time needs events as they happen, which means integration work against systems that were not built to emit them.',
+          'Most disappointment in this category comes from buying the first and expecting the second.',
+        ],
+      },
+      {
+        heading: 'Why do visibility projects fail so often?',
+        body: [
+          'Because the hard part is not the screen. A transport system, a warehouse system and a spreadsheet will each hold a different version of where a consignment is, and a dashboard laid over the top renders all three faster without deciding between them.',
+          'Once that happens, trust goes quickly. People notice the number is wrong, check the underlying system instead, and the visibility layer becomes a thing nobody looks at that still costs money to run.',
+          'The failure is almost always upstream of the tool, which is why changing the tool rarely fixes it.',
+        ],
+      },
+      {
+        heading: 'How do you tell a reporting problem from an integration problem?',
+        body: [
+          'Ask which system is authoritative for the fact you care about most. If somebody can answer immediately, you have a reporting problem and it is tractable: the data exists and is trustworthy, it just is not in front of the right person.',
+          'If the answer takes a meeting, you have an integration problem wearing a reporting label, and it is a larger piece of work. That is not bad news if it is discovered now. It is expensive news if it is discovered after a platform has been bought.',
+          'The same test applies per field rather than per system. It is common for a business to be authoritative about location and hopeless about expected arrival, and only the second one matters for acting early.',
+        ],
+      },
+      {
+        heading: 'What does the work actually involve?',
+        body: [
+          'Deciding ownership of each fact, which is an organisational conversation rather than a technical one and is usually the longest part.',
+          'Capturing events rather than states. A nightly snapshot tells you what was true at midnight; an event stream tells you something moved at eleven. Only the second supports acting before a customer notices.',
+          'Establishing a baseline before adding detection. Anomaly logic validated against incidents nobody has confirmed produces alerts nobody believes, and the fastest way to kill an alerting system is to be wrong in its first fortnight.',
+          'And putting the output where people already are. An answer in a tool somebody has open anyway gets used. An answer requiring a separate login at a moment nobody chose does not.',
+        ],
+      },
+      {
+        heading: 'When is buying a platform the right answer?',
+        body: [
+          'When your flows are standard, your carriers are already integrated with the platform, and the gap is genuinely a user interface rather than a data model. That is a real situation and the build case against it is weak.',
+          'When it is not the right answer: where the useful signal lives in systems the platform does not speak to, where your definition of an exception is specific to how you operate, or where the integration work is the project and the platform is the easy part at the end of it.',
+          'Worth costing the exit before signing either way. Switching cost on operational platforms accumulates quietly through integrations and workarounds, and it is far easier to estimate before the contract than after.',
+        ],
+      },
+      {
+        heading: 'When should you not build this at all?',
+        body: [
+          'When nobody can name the decision that changes. If the honest answer to "and then what happens" is that someone looks at a screen, the value is not there yet.',
+          'When the volume of exceptions is low enough that a person checking twice a day is genuinely sufficient. Engineering and monitoring do not get cheaper because the problem is rare.',
+          'And when the underlying process is not written down. Visibility over an undocumented process shows you the symptoms of decisions nobody has recorded, which generates argument rather than action.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'healthcare-interoperability',
+    title: 'Healthcare interoperability in practice',
+    h1: 'Healthcare interoperability in practice, and why the standard is the easy part',
+    metaTitle: 'Healthcare Interoperability | Talavishiraaj Groups',
+    metaDescription:
+      'FHIR and HL7 describe how systems talk, not what the data means. Where integration projects actually stall, what to settle before writing an interface, and how to scope it honestly.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'tech',
+    caseStudy: 'decision-heavy-workflow-automation',
+    sectors: ['healthcare', 'agetech', 'insurance'],
+    summary:
+      'Interoperability is usually scoped as a standards problem and delivered as a semantics problem. Two systems can both speak FHIR and still disagree about what a patient episode is, when it started, and which identifier is the real one. The interface is days of work. Reconciling the meaning is the project.',
+    takeaways: [
+      'A shared standard means systems can exchange messages. It does not mean they agree what the messages mean.',
+      'Identity reconciliation is the most underestimated part of almost every healthcare integration.',
+      'Decide the authoritative source per field before building, not during testing.',
+      'Workflow matters more than throughput: data arriving outside the moment of care is not used.',
+      'Governance is not paperwork here. Who may see what, and who answers when the system is wrong, has to be settled before go live.',
+    ],
+    sections: [
+      {
+        heading: 'What is healthcare interoperability?',
+        body: [
+          'The ability of clinical and administrative systems to exchange information and use it. Both halves are load bearing, and projects consistently scope the first and discover the second.',
+          'Exchange is largely solved. Standards exist, most modern systems speak them, and moving a message from one place to another is well understood engineering.',
+          'Use is where the work is. A receiving system has to interpret what arrived in the same way the sending system meant it, and that agreement does not come with the standard.',
+        ],
+      },
+      {
+        heading: 'If there are standards, why is this still hard?',
+        body: [
+          'Because a standard governs structure, not meaning. Two systems can both emit a conformant message and still disagree about when an episode of care began, whether a cancelled appointment counts, or which of three identifiers refers to the same person.',
+          'Those disagreements are invisible in testing with clean sample data and appear immediately with real records, which is why integration projects so often look finished and then stall at the point of trusting the output.',
+          'The implication for scoping is uncomfortable but useful: the interface work is predictable and the semantic work is not, so a plan that budgets mostly for the interface has budgeted for the easy half.',
+        ],
+      },
+      {
+        heading: 'What is the most underestimated part?',
+        body: [
+          'Identity. Deciding that this record and that record describe the same person, when the sources disagree on spelling, date of birth, address history and which number is authoritative.',
+          'Every organisation has an answer to this that works well enough for its own purposes and breaks on contact with another organisation’s answer. Reconciling them is slow, needs clinical input rather than only technical input, and cannot be deferred, because everything downstream depends on it being right.',
+          'A project that has not named who owns identity reconciliation has not started.',
+        ],
+      },
+      {
+        heading: 'What has to be settled before writing an interface?',
+        body: [
+          'Which system is authoritative for each field, field by field rather than system by system. It is normal for one system to be definitive about demographics and another about clinical events, and the integration has to encode that rather than assume a winner.',
+          'What happens when they conflict. Silent precedence rules are the most common source of quiet, long lived data problems, because nothing visibly fails.',
+          'What the data is for. An integration built to populate a report has different accuracy and latency requirements from one informing a decision at the bedside, and conflating them produces a system that is over engineered for one use and unsafe for the other.',
+        ],
+      },
+      {
+        heading: 'How does workflow decide whether it works?',
+        body: [
+          'More than throughput does. Information that arrives correctly but outside the moment someone is making a decision is not used, and an integration judged on messages per second can be a complete success by its own metrics and change nothing clinically.',
+          'The test is where the output lands. If using it means leaving the system someone already has open, adoption will be poor regardless of data quality.',
+          'This is also why pilots mislead. A pilot with motivated participants will use a worse integration than a full rollout will tolerate.',
+        ],
+      },
+      {
+        heading: 'How should this be scoped and governed?',
+        body: [
+          'In stages that each end with something usable, rather than one programme that delivers at the end. Integration work has a long tail of exceptions, and a plan with no intermediate value has no way to stop sensibly.',
+          'With governance settled first: who may see what, under what lawful basis, with what audit trail, and who answers when the system produces something wrong. In this sector that is not administrative overhead, it is a precondition.',
+          'And with the running cost stated. Integrations have a permanent relationship with systems that are versioned, renamed and replaced without consulting them, so maintenance is not optional and should appear in the business case rather than arriving in year two as a surprise.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'iot-device-management',
+    title: 'What IoT device management has to handle',
+    h1: 'What IoT device management has to handle once the fleet is real',
+    metaTitle: 'IoT Device Management | Talavishiraaj Groups',
+    metaDescription:
+      'A hundred devices forgive almost any design. Ten thousand do not. Provisioning, updates, observability and the failure modes that only appear at scale, plus when to buy rather than build.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'rd',
+    caseStudy: 'live-operations-visibility-layer',
+    sectors: ['iot', 'ev', 'water', 'agetech'],
+    summary:
+      'Device management looks straightforward at pilot scale because a hundred devices forgive almost any design decision. The problems that decide whether a product is viable appear later: provisioning without manual steps, updating safely over bad connections, knowing a device is unhealthy before a customer does, and retiring hardware that will outlive the software team.',
+    takeaways: [
+      'A pilot fleet forgives everything. Design for the fleet size that makes the business work, not the one in the lab.',
+      'Over the air update is the single capability that decides whether a product can be supported, and it has to fail safely.',
+      'If you cannot tell a broken device from an idle one, support costs scale with the fleet.',
+      'Provisioning that needs a human step does not survive volume.',
+      'Devices outlive software teams. Whoever maintains this in year five is a design input, not an afterthought.',
+    ],
+    sections: [
+      {
+        heading: 'What does IoT device management cover?',
+        body: [
+          'Getting a device securely onto the network, knowing it is there and working, changing its software safely, and retiring it at end of life. Four things, all unremarkable at small scale and all decisive at large scale.',
+          'The reason it is underestimated is that a pilot works without any of it done properly. Devices can be configured by hand, watched informally and updated by someone visiting them.',
+          'None of that survives a fleet that earns money, and the gap between the two is where most connected product plans lose their margin.',
+        ],
+      },
+      {
+        heading: 'Why does what worked at a hundred units break at ten thousand?',
+        body: [
+          'Because manual steps that cost minutes become the dominant cost, and because rare failures stop being rare. A fault affecting one device in five hundred is invisible in a pilot and is twenty support cases a week at scale.',
+          'Connectivity assumptions break too. In the lab devices are on good networks; in the field they are intermittent, behind unpredictable firewalls, or asleep when you need them.',
+          'And the distribution of device states widens. At scale you always have some devices on old firmware, some half provisioned, some that have been offline for months and will reappear expecting the world to be as they left it.',
+        ],
+      },
+      {
+        heading: 'What makes over the air updates safe?',
+        body: [
+          'The ability to fail without bricking. An update interrupted by power loss or a dropped connection has to leave the device bootable, which usually means dual partitions and a verified rollback rather than writing over the running image.',
+          'Staged rollout, so a bad build reaches a handful of devices rather than the fleet. The value of that is proportional to how expensive a site visit is, and for devices in the field it is usually the single highest return design decision.',
+          'And signing, so a device will only accept software you actually produced. Retrofitting that later is considerably harder than including it.',
+        ],
+      },
+      {
+        heading: 'How do you know a device is unhealthy?',
+        body: [
+          'By deciding in advance what healthy means and having devices report it, rather than inferring from silence. Silence is ambiguous: it means broken, asleep, out of coverage or decommissioned, and the four need different responses.',
+          'A heartbeat with a small amount of state is usually enough, and far cheaper in bandwidth than streaming telemetry nobody reads.',
+          'The commercial consequence of getting this wrong is that support cost scales with fleet size instead of flattening, because every question requires a human to investigate a specific device.',
+        ],
+      },
+      {
+        heading: 'Should you buy a platform or build one?',
+        body: [
+          'Buy, for most teams, most of the time. Provisioning, update and monitoring are solved problems with mature offerings, and building them is months of work that does not differentiate your product.',
+          'Build or extend where your device does something the platform has no concept of, where regulation requires control a vendor will not give you, or where the per device economics of a platform break your unit cost at target volume. That last one is worth modelling at the fleet size that makes the business work rather than at current volume.',
+          'Either way, price the exit. Device fleets are long lived, platform relationships are sticky, and the cost of moving is much easier to estimate before signing than after.',
+        ],
+      },
+      {
+        heading: 'What gets forgotten until it is expensive?',
+        body: [
+          'End of life. Devices outlive the teams that built them, and a fleet with no decommissioning path accumulates hardware that still connects, still consumes certificates, and still appears in support queues years after anyone intended to support it.',
+          'Certificate and credential rotation, which arrives suddenly as an expiry date and is painful to do for the first time under pressure.',
+          'And documentation of why things are the way they are. The engineer who knew why a timeout is set to that particular value is the most important dependency in most device fleets, and that dependency is rarely written down.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'erp-integration',
+    title: 'ERP integration, and what makes it expensive',
+    h1: 'ERP integration, and the part that makes it expensive',
+    metaTitle: 'ERP Integration | Talavishiraaj Groups',
+    metaDescription:
+      'The connector is rarely the hard part. Process mismatch, master data ownership and customisation are where ERP integration projects overrun, and all three are visible before you start.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'tech',
+    caseStudy: 'founder-operations-cockpit',
+    sectors: ['manufacturing', 'chemical', 'logistics', 'ecommerce'],
+    summary:
+      'ERP integration is usually budgeted as connector work and overruns on everything else: whose definition of a customer wins, which system owns a price, and how much of your business logic lives in customisations nobody documented. Published figures put integration at a third to a half of initial development cost, and ERP is the clearest example of why.',
+    takeaways: [
+      'The connector is days. Reconciling what the two systems mean is the project.',
+      'Master data ownership has to be decided per entity before any interface is written.',
+      'Customisations are where business logic hides, and they do not travel.',
+      'Batch versus real time is a business decision disguised as a technical one.',
+      'If the integration cannot be reversed step by step, the plan is a hope rather than a migration.',
+    ],
+    sections: [
+      {
+        heading: 'What makes ERP integration harder than it looks?',
+        body: [
+          'Not the connection. Most ERPs expose reasonable interfaces and moving records between systems is understood work that can be estimated with confidence.',
+          'What cannot be estimated from the outside is the mismatch underneath: two systems holding different definitions of a customer, an order, a unit of measure or a completed job, each correct within its own context and incompatible across the boundary.',
+          'Published analysis puts integration work at roughly a third to a half of initial development cost and names it the most frequent source of overrun. ERP is where that shows up most clearly, because the ERP is usually the system with the strongest opinions.',
+        ],
+      },
+      {
+        heading: 'What is master data ownership and why decide it first?',
+        body: [
+          'It is the answer to "when these two systems disagree about this field, which one is right". It has to be decided per entity, sometimes per field, and it is an organisational decision rather than a technical one.',
+          'Deciding it first is cheap. Discovering it during testing means rework, and discovering it after go live means two systems quietly diverging while everyone assumes they are in sync.',
+          'The common failure is deciding it implicitly, through whichever interface was written first. That produces a rule nobody chose and nobody can find.',
+        ],
+      },
+      {
+        heading: 'Why are customisations such a problem?',
+        body: [
+          'Because that is where the business logic lives. The workflow rule, the discount exception, the approval step someone added years ago and the report finance depends on are usually not in the standard system, and they are not in the documentation either.',
+          'They also do not travel. Logic written in a vendor specific language has to be rebuilt rather than moved, and the first step is working out what it currently does, which is slower than rewriting it.',
+          'This is the strongest argument for reading the system rather than interviewing about it. What people describe and what the customisations actually do differ more than anyone expects, and the gap is where the overrun comes from.',
+        ],
+      },
+      {
+        heading: 'Real time or batch?',
+        body: [
+          'A business question before a technical one. Real time costs more to build and considerably more to operate, because every failure becomes urgent and every dependency becomes a availability requirement.',
+          'Batch is cheaper, more forgiving and sufficient for most reporting and reconciliation. It is insufficient wherever someone acts on the data inside the batch window, and that is the only test that matters.',
+          'Mixing them deliberately is usually the right answer, and mixing them accidentally, by making everything real time because it sounded better, is a common way to buy operational burden nobody needed.',
+        ],
+      },
+      {
+        heading: 'How should the rollout be staged?',
+        body: [
+          'One entity at a time, each stage reversible, with both systems answering until the new path has been right for long enough to trust.',
+          'That is slower on paper than a cutover and it is the difference between a bad afternoon and a bad quarter. If a plan cannot describe how to reverse each step, it is not a migration plan.',
+          'Run a reconciliation during the parallel period and look at it. A parallel run nobody checks provides the comfort of a safety net without the safety.',
+        ],
+      },
+      {
+        heading: 'What should be in the business case that usually is not?',
+        body: [
+          'The running cost. An integration has a permanent relationship with systems that are upgraded, renamed and replaced without consulting it, and annual maintenance commonly runs 15 to 25 percent of the original build cost.',
+          'The cost of the parallel period, which is real and is the price of being able to reverse.',
+          'And who owns it in year two. Integrations fail quietly rather than loudly, and an integration with no owner degrades until someone downstream notices a number is wrong, by which point the cause is months old.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'document-processing-automation',
+    title: 'When document processing automation is worth it',
+    h1: 'When document processing automation is worth it, and when a form is better',
+    metaTitle: 'Document Processing Automation | Talavishiraaj Groups',
+    metaDescription:
+      'Extraction accuracy is the wrong first question. What the error actually costs, why exception handling decides the economics, and the cheaper fix most businesses skip.',
+    published: '2026-11-08',
+    readingTime: '9 min read',
+    capability: 'ai',
+    caseStudy: 'decision-heavy-workflow-automation',
+    sectors: ['finance', 'insurance', 'healthcare', 'logistics'],
+    summary:
+      'Document automation is usually evaluated on extraction accuracy and lives or dies on exception handling. A system that reads ninety five percent of documents correctly still routes one in twenty to a person, and whether that is a success depends entirely on how expensive the remaining five percent are to find and fix.',
+    takeaways: [
+      'Accuracy is not the metric. The cost of an undetected error is.',
+      'Exceptions decide the economics, so design the exception path before the happy path.',
+      'A confidence score you cannot act on is decoration.',
+      'Automating a document you could stop producing is the most expensive way to solve that problem.',
+      'Low volume rarely repays the engineering and the permanent maintenance, however irritating the task.',
+    ],
+    sections: [
+      {
+        heading: 'What is document processing automation?',
+        body: [
+          'Reading information out of documents that were not designed to be read by software, and putting it somewhere a process can use. Invoices, forms, certificates, statements, claims, delivery notes.',
+          'It is often described as a solved problem, and the extraction part largely is. Modern systems read structured and semi structured documents well.',
+          'What is not solved is what happens when they are unsure, which is where the value and the cost both sit.',
+        ],
+      },
+      {
+        heading: 'Why is accuracy the wrong first question?',
+        body: [
+          'Because accuracy without a cost of error is a number with no meaning. Ninety five percent is excellent for routing documents to a team and unacceptable for posting payments without review.',
+          'The question that decides the design is what an undetected mistake costs, and how long it takes to surface. A wrong figure caught in the same hour is an annoyance. The same error found at period end, after it has propagated, is a different category of problem.',
+          'Work that out first and the required accuracy, the review design and the budget all follow from it. Start with accuracy and you have specified a system without knowing what it is for.',
+        ],
+      },
+      {
+        heading: 'Why do exceptions decide the economics?',
+        body: [
+          'Because the automated path is cheap and the exception path is not. If one document in twenty needs a person, the cost of the system is largely the cost of that one, including the time to work out what the machine found confusing.',
+          'That makes exception design the main design task, not an edge case to handle later. A person picking up an exception needs the document, the extracted values, what the system was unsure about and a fast way to correct it. Without that they re key the whole thing and the saving disappears.',
+          'It also means the honest success metric is total handling time across all documents, not accuracy on the easy ones.',
+        ],
+      },
+      {
+        heading: 'What makes a confidence score useful?',
+        body: [
+          'Being calibrated and being actionable. A score is useful when a chosen threshold reliably separates documents that can pass unreviewed from those that cannot, and when someone has decided where that threshold sits and who owns moving it.',
+          'A score nobody acts on is decoration, and a threshold set once at launch and never revisited drifts as document mixes change.',
+          'The practical test: can you state what percentage of documents pass without review today, and what happened the last time that number moved. If not, the score is not doing work.',
+        ],
+      },
+      {
+        heading: 'When is a simpler fix better?',
+        body: [
+          'When you control the document. A form, a template or a structured upload removes the extraction problem rather than solving it, and is cheaper to build and to run. Businesses routinely automate the reading of documents they could have stopped producing in that shape.',
+          'When the volume is low. Engineering, monitoring and maintenance do not get cheaper because the task is rare, and a rare task rarely repays them however irritating it is.',
+          'And when the process behind the document is not written down. Automating extraction into an undocumented process encodes whatever it currently does, including the parts that are wrong.',
+        ],
+      },
+      {
+        heading: 'What does it cost after it works?',
+        body: [
+          'More than the build, and it arrives as drift. Suppliers change their layouts, regulations change the fields, and a system that was accurate at launch degrades without anyone changing anything.',
+          'That makes monitoring a requirement rather than an enhancement. Without it the first person to notice a drop in accuracy is whoever receives the wrong output, and by then it has been happening for a while.',
+          'Budget for an evaluation set you can rerun and someone whose job includes rerunning it. An automation nobody is watching will fail silently, and silent failure is worse than the manual process it replaced.',
+        ],
+      },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug) => insights.find((a) => a.slug === slug);
 export const insightPath = (article) => `/insights/${article.slug}`;
+/**
+ * Articles that speak to a sector.
+ *
+ * The sector pages and the articles were built in separate passes and had no
+ * link between them, which left each sector page ending in a call to action
+ * with nothing to read first, and left articles about a sector's exact
+ * problem invisible from that sector's page. An article declares its sectors
+ * rather than a sector listing its articles, so adding a piece wires it up
+ * without editing anything else.
+ */
+export const insightsForSector = (sectorId) =>
+  insights.filter((a) => (a.sectors || []).includes(sectorId));
+
 export const insightsForCapability = (capabilityId) =>
   insights.filter((a) => a.capability === capabilityId);
 
