@@ -2,6 +2,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import { renderVisual } from './blog-visuals';
+
+marked.use({
+  renderer: {
+    code(token) {
+      return renderVisual((token.lang || '').trim(), token.text) ?? false;
+    },
+  },
+});
 
 /**
  * Blog posts are Markdown files in content/blog. Files starting with "_" are ignored.
@@ -15,11 +24,13 @@ export type Post = {
   updated?: string;
   author: string;
   tags: string[];
+  keyword?: string;
   answer: string;
   faq: { q: string; a: string }[];
   sources: { title: string; url: string }[];
   cover?: { motif?: string; palette?: string };
   html: string;
+  markdown: string;
   toc: { id: string; label: string }[];
   words: number;
   readTime: string;
@@ -40,7 +51,7 @@ function load(file: string): Post {
   });
   // External links open in a new tab and pass no referrer weight.
   html = html.replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener nofollow"');
-  const words = content.split(/\s+/).filter(Boolean).length;
+  const words = content.replace(/```[\s\S]*?```/g, '').split(/\s+/).filter(Boolean).length;
   const date = data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date);
   const updated = data.updated instanceof Date ? data.updated.toISOString().slice(0, 10) : data.updated ? String(data.updated) : undefined;
   return {
@@ -51,11 +62,13 @@ function load(file: string): Post {
     updated,
     author: String(data.author || 'Talavishiraaj Groups'),
     tags: (data.tags as string[]) || [],
+    keyword: data.keyword ? String(data.keyword) : undefined,
     answer: String(data.answer || ''),
     faq: (data.faq as Post['faq']) || [],
     sources: (data.sources as Post['sources']) || [],
     cover: (data.cover as Post['cover']) || undefined,
     html,
+    markdown: content.trim(),
     toc,
     words,
     readTime: `${Math.max(3, Math.round(words / 220))} min read`,
@@ -79,3 +92,37 @@ export function getPosts(): Post[] {
 export const getPost = (slug: string) => getPosts().find((p) => p.slug === slug);
 
 export const formatDate = (d: string) => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const BASE = 'https://www.talavishiraajgroups.com';
+
+/** A post as clean Markdown for AI assistants and agents: answer first, then the article, FAQ and sources. */
+export function postMarkdown(p: Post) {
+  const plainVisuals = p.markdown.replace(/```(chart|stats|steps)\n([\s\S]*?)```/g, (_, kind: string, json: string) => {
+    try {
+      const d = JSON.parse(json);
+      if (kind === 'chart') return [d.title && `${d.title}:`, ...(d.data || []).map((r: { label: string; value: number }) => `- ${r.label}: ${d.unit ?? ''}${r.value}${d.suffix ?? ''}`), d.note && `(${d.note})`].filter(Boolean).join('\n');
+      if (kind === 'stats') return (d as { value: string; label: string }[]).map((x) => `- ${x.value}: ${x.label}`).join('\n');
+      return (d as string[]).map((x, i) => `${i + 1}. ${x}`).join('\n');
+    } catch {
+      return '';
+    }
+  });
+  const abs = plainVisuals.replace(/\]\(\//g, `](${BASE}/`);
+  return [
+    `# ${p.title}`,
+    '',
+    `> ${p.description}`,
+    '',
+    `Published ${p.date}${p.updated ? `, updated ${p.updated}` : ''} by ${p.author}. Canonical URL: ${BASE}/blog/${p.slug}`,
+    '',
+    `**Short answer:** ${p.answer}`,
+    '',
+    abs,
+    '',
+    p.faq.length ? '## Questions people ask\n\n' + p.faq.map((f) => `### ${f.q}\n\n${f.a}`).join('\n\n') : '',
+    '',
+    p.sources.length ? '## Sources\n\n' + p.sources.map((s) => `- [${s.title}](${s.url})`).join('\n') : '',
+    '',
+    `Talavishiraaj Groups helps companies decide what to build, buy or automate with AI, and then builds it. Contact: ${BASE}/contact`,
+  ].join('\n');
+}

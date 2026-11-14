@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowUpRight, Check, Loader2 } from 'lucide-react';
 import { EMAIL } from '@/content';
+import { track } from '@vercel/analytics';
 import { ease } from './motion';
+import { describeSource, getSource } from './Attribution';
 
 const topics = [
   'Technology & Engineering',
@@ -40,9 +42,10 @@ export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?
     setStatus('sending');
     setError('');
     const endpoint = mode === 'community' ? '/api/send-email' : '/api/send-contact-email';
+    const src = getSource();
     const payload =
       mode === 'community'
-        ? { name: get('name'), email: get('email'), number: get('phone'), message: get('message'), website: get('website') }
+        ? { name: get('name'), email: get('email'), number: get('phone'), message: get('message'), website: get('website'), ...src }
         : {
             name: get('name'),
             email: get('email'),
@@ -51,11 +54,13 @@ export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?
             service: mode === 'book' ? 'Call booking' : topic,
             message: mode === 'book' ? `Booking a call. What they would like to talk about: ${get('message')}` : get('message'),
             website: get('website'),
+            ...src,
           };
     try {
       const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || `The server returned ${res.status}`);
+      track(mode === 'community' ? 'Keep in touch' : mode === 'book' ? 'Booking started' : 'Enquiry sent', { landing: src.landing || 'unknown', channel: describeSource(src) });
       setStatus('sent');
       onSent?.();
     } catch (err) {

@@ -108,6 +108,21 @@ body {
 .cv-draw { animation: cvdraw 2s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .cv-blink { animation: cvblink 2.4s ease-in-out infinite; }
 .cover-frame svg { display: block; width: 100%; height: 100%; }
+/* In-post visuals (src/lib/blog-visuals.ts) */
+@keyframes cvgrowx { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.cv-grow-x { transform-box: fill-box; transform-origin: left; animation: cvgrowx 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.prose-tj .viz { margin: 2.5rem 0; border: 1px solid rgba(10,11,13,0.12); border-radius: 24px; background: #fff; padding: 1.5rem; }
+.prose-tj .viz svg { display: block; width: 100%; height: auto; }
+.prose-tj .viz-title { margin-bottom: 1rem; font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em; color: #0A0B0D; }
+.prose-tj .viz-note { margin: 0.75rem 0 0; font-size: 13px; color: #5C6068; }
+.prose-tj .viz-stats { margin: 2.5rem 0; display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); overflow: hidden; border: 1px solid rgba(10,11,13,0.12); border-radius: 24px; background: rgba(10,11,13,0.12); }
+.prose-tj .viz-stat { display: flex; flex-direction: column; gap: 0.4rem; background: #fff; padding: 1.4rem 1.5rem; }
+.prose-tj .viz-stat-v { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+.prose-tj .viz-stat-l { font-size: 14px; line-height: 1.45; color: #5C6068; }
+.prose-tj .viz-steps { margin: 2.5rem 0; display: grid; gap: 0.75rem; counter-reset: none; }
+.prose-tj .viz-steps li { display: flex; gap: 1rem; align-items: baseline; padding: 1rem 1.25rem; border-radius: 18px; background: #fff; border: 1px solid rgba(10,11,13,0.12); }
+.prose-tj .viz-steps li::before { content: none; }
+.prose-tj .viz-step-n { flex: none; font-size: 12px; color: #2B55FF; }
 @keyframes cvring { from { stroke-dashoffset: 0.72; } to { stroke-dashoffset: 0; } }
 .cv-ring { animation: cvring 2s cubic-bezier(0.22, 1, 0.36, 1) both; }
 

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, transport } from '@/lib/mail';
+import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, sourceInfo, transport } from '@/lib/mail';
 
 export const runtime = 'nodejs';
 
@@ -29,14 +29,16 @@ export async function POST(req: Request) {
     if (company) rows.push(['Organization', esc(company)]);
     if (phone) rows.push(['Phone', esc(phone)]);
     if (service) rows.push(['Focus area', esc(service)]);
+    const src = sourceInfo(body);
+    rows.push(...src.rows);
 
     await transport().sendMail({
       from: `"${header(name)}" <${user}>`,
       to: INBOX,
       replyTo: String(email),
-      subject: `New Contact Form Submission from ${header(name)}${company ? ` - ${header(company)}` : ''}`,
+      subject: `New Contact Form Submission from ${header(name)}${company ? ` - ${header(company)}` : ''}${src.subjectTag}`,
       html: emailHtml('New contact form submission', rows, 'Their situation', esc(message), `Reply to this email to reach ${esc(name)} directly.`),
-      text: [`Name: ${name}`, `Email: ${email}`, company && `Organization: ${company}`, phone && `Phone: ${phone}`, service && `Focus area: ${service}`, '', String(message)].filter((x) => x !== undefined && x !== '').join('\n'),
+      text: [`Name: ${name}`, `Email: ${email}`, company && `Organization: ${company}`, phone && `Phone: ${phone}`, service && `Focus area: ${service}`, src.text, '', String(message)].filter((x) => x !== undefined && x !== '').join('\n'),
     });
     return NextResponse.json({ success: true, message: 'Email sent successfully' });
   } catch (error) {

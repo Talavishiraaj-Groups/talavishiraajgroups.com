@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, transport } from '@/lib/mail';
+import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, sourceInfo, transport } from '@/lib/mail';
 
 export const runtime = 'nodejs';
 
@@ -20,22 +20,24 @@ export async function POST(req: Request) {
 
   try {
     const { user } = smtpUser();
+    const src = sourceInfo(body);
     await transport().sendMail({
       from: `"${header(name)}" <${user}>`,
       to: INBOX,
       replyTo: String(email),
-      subject: `New Community Form Submission from ${header(name)}`,
+      subject: `New Community Form Submission from ${header(name)}${src.subjectTag}`,
       html: emailHtml(
         'New keep-in-touch registration',
         [
           ['Name', esc(name)],
           ['Email', `<a href="mailto:${esc(email)}">${esc(email)}</a>`],
           ['Phone', esc(number)],
+          ...src.rows,
         ],
         'What they are working on',
         esc(message),
       ),
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${number}\n\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${number}\n${src.text}\n\n${message}`,
     });
     return NextResponse.json({ success: true, message: 'Email sent successfully' });
   } catch (error) {

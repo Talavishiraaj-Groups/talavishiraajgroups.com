@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, transport } from '@/lib/mail';
+import { INBOX, MailNotConfigured, clientIp, emailHtml, esc, header, isEmail, rateLimited, smtpUser, sourceInfo, transport } from '@/lib/mail';
 import { roles } from '@/content/careers';
 
 export const runtime = 'nodejs';
@@ -55,6 +55,8 @@ export async function POST(req: Request) {
     ];
     if (link) rows.push(['Profile', `<a href="${esc(link)}">${esc(link)}</a>`]);
     rows.push(['CV', cv ? 'Attached' : 'Not attached']);
+    const src = sourceInfo({ landing: get('landing'), referrer: get('referrer'), campaign: get('campaign') });
+    rows.push(...src.rows);
 
     const attachments = cv
       ? [{ filename: `CV - ${header(name).replace(/[^\w .-]/g, '')}.${TYPES[cv.type]}`, content: Buffer.from(await cv.arrayBuffer()), contentType: cv.type }]
@@ -66,7 +68,7 @@ export async function POST(req: Request) {
       replyTo: email,
       subject: `Application: ${header(role)} - ${header(name)} (${header(location)})`,
       html: emailHtml('New job application', rows, note ? 'Why this role' : undefined, note ? esc(note) : undefined, `Reply to this email to reach ${esc(name)} directly.`),
-      text: [`Role: ${role}`, `Name: ${name}`, `Email: ${email}`, `Phone: ${phone}`, `Based in: ${location}`, link && `Profile: ${link}`, '', note].filter(Boolean).join('\n'),
+      text: [`Role: ${role}`, `Name: ${name}`, `Email: ${email}`, `Phone: ${phone}`, `Based in: ${location}`, link && `Profile: ${link}`, src.text, '', note].filter(Boolean).join('\n'),
       attachments,
     });
     return NextResponse.json({ success: true });

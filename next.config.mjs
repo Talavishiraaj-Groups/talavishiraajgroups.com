@@ -21,5 +21,9 @@ const nextConfig = {
       { source: '/systems', destination: '/products', permanent: true },
     ];
   },
+  async rewrites() {
+    // Plain Markdown version of every blog post for AI assistants and agents: /blog/<slug>.md
+    return [{ source: '/blog/:slug.md', destination: '/blog-md/:slug' }];
+  },
 };
 export default nextConfig;

@@ -1,6 +1,7 @@
 ---
 title: "Prebuilt AI agents or a custom build: how to choose in 2026"
-description: "IBM and Microsoft now offer over 6,000 ready made agents and Zendesk charges per resolution. When buying beats building, and how to tell for your team."
+description: "Prebuilt AI agents from IBM, Microsoft and Zendesk are now easy to start with. When they beat a custom build, and how to tell for your team."
+keyword: prebuilt ai agents vs custom
 date: 2026-11-14
 author: Talavishiraaj Groups
 tags: [AI agents, Build vs buy, Cost]
@@ -24,7 +25,15 @@ sources:
     url: "https://securitybrief.asia/story/island-launches-enterprise-browser-to-control-ai-agents"
 ---
 
-Three announcements in the space of a week tell you where AI agents are heading. On 10 November, [IBM and Microsoft launched Imagine Enterprise](https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation), a platform for building, running and governing agents, with more than 6,000 prebuilt agents and assets from IBM Consulting. Zendesk is rolling out agents for internal IT and HR teams priced per resolution. And on 13 November, Island released a browser that lets companies control what agents can do on the web apps their staff already use.
+Prebuilt AI agents or a custom build? Three announcements in the space of a week make that question harder to ignore. On 10 November, [IBM and Microsoft launched Imagine Enterprise](https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation), a platform for building, running and governing agents, with more than 6,000 prebuilt agents and assets from IBM Consulting. Zendesk is rolling out agents for internal IT and HR teams priced per resolution. And on 13 November, Island released a browser that lets companies control what agents can do on the web apps their staff already use.
+
+```stats
+[
+  { "value": "6,000+", "label": "prebuilt agents and assets IBM Consulting brings to Imagine Enterprise" },
+  { "value": "$0.99", "label": "Zendesk's price per extra automated resolution" },
+  { "value": "10 to 15", "label": "resolutions included per agent each month, by Zendesk plan" }
+]
+```
 
 The menu of ready made agents is getting long. For a founder or operations lead, the practical question is which jobs to hand to an agent you rent, and which ones are worth building yourself.
 

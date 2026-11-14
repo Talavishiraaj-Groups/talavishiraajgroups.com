@@ -58,6 +58,27 @@ export function emailHtml(title: string, rows: [string, string][], blockTitle?: 
   </div>`;
 }
 
+/**
+ * Where the lead came from: the first page they landed on in this visit, the
+ * referring site and any campaign tags, captured client side by Attribution.tsx.
+ */
+export function sourceInfo(b: Record<string, unknown>) {
+  const clean = (v: unknown, n = 200) => String(v ?? '').replace(/[\r\n]/g, ' ').trim().slice(0, n);
+  const landing = clean(b.landing);
+  const referrer = clean(b.referrer, 120);
+  const campaign = clean(b.campaign);
+  const path = /^\/[\w\-/.]*$/.test(landing) ? landing : '';
+  const r = referrer.toLowerCase();
+  const channel = /google\./.test(r) ? 'Google search' : /bing\./.test(r) ? 'Bing search' : /chatgpt|openai/.test(r) ? 'ChatGPT' : /perplexity/.test(r) ? 'Perplexity' : /linkedin/.test(r) ? 'LinkedIn' : /duckduckgo/.test(r) ? 'DuckDuckGo' : !r || r === 'direct' ? 'Direct or unknown' : referrer;
+  const rows: [string, string][] = [];
+  if (path) rows.push(['First page', `<a href="https://www.talavishiraajgroups.com${esc(path)}">${esc(path)}</a>`]);
+  rows.push(['Came from', esc(channel)]);
+  if (campaign) rows.push(['Campaign', esc(campaign)]);
+  const text = [path && `First page: ${path}`, `Came from: ${channel}`, campaign && `Campaign: ${campaign}`].filter(Boolean).join('\n');
+  const subjectTag = path.startsWith('/blog/') ? ' (from blog)' : '';
+  return { rows, text, subjectTag };
+}
+
 /** Very small in-memory rate limit per IP, enough to blunt form spam on a single instance. */
 const hits = new Map<string, number[]>();
 export function rateLimited(ip: string, max = 5, windowMs = 10 * 60_000) {

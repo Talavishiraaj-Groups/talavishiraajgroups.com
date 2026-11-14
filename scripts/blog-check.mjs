@@ -20,7 +20,19 @@ const BANNED = [
   'i hope this helps', 'whether you\'re', 'whether you are a', 'look no further', 'elevate', 'empower', 'synergy', 'holistic', 'robust solution', 'transformative',
   'landscape of', 'evolving landscape', 'digital landscape', 'ai landscape', 'plays a crucial role', 'plays a vital role', 'a myriad of', 'myriad', 'furthermore',
   'moreover', 'additionally,', 'in essence', 'ultimately,', 'stay ahead of the curve', 'as an ai', 'knowledge cutoff',
+  // Business jargon that makes readers work harder for no reason.
+  'leverage', 'leveraging', 'synergies', 'paradigm', 'operationalize', 'operationalise', 'utilize', 'utilise', 'facilitate', 'best-in-class',
+  'value proposition', 'mission-critical', 'frictionless', 'next-gen', 'low-hanging fruit', 'move the needle', 'actionable insights',
+  'stakeholder alignment', 'thought leadership', 'circle back', 'deep learning journey', 'digital transformation journey', 'ecosystem play',
 ];
+// Acronyms most readers know. Anything else must be spelled out the first time it is used.
+const KNOWN = new Set(['AI', 'IT', 'HR', 'US', 'UK', 'EU', 'UAE', 'CEO', 'CTO', 'COO', 'CFO', 'CRM', 'ERP', 'API', 'APIs', 'SaaS', 'FAQ', 'PDF', 'IBM', 'GPU', 'GPUs', 'CPU', 'USD', 'INR', 'SEO', 'ROI', 'KPI', 'OK', 'Q1', 'Q2', 'Q3', 'Q4', 'B2B', 'SMB', 'SMBs', 'AWS', 'GPT', 'LLM', 'LLMs', 'TV', 'PC', 'URL', 'ID', 'MVP', 'NASA', 'SAP']);
+const syllables = (w) => {
+  w = w.toLowerCase().replace(/[^a-z]/g, '');
+  if (w.length <= 3) return 1;
+  w = w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '').replace(/^y/, '');
+  return Math.max(1, (w.match(/[aeiouy]{1,2}/g) || []).length);
+};
 const INTERNAL = /\]\(\/(services|insights|what-it-costs|build-vs-buy|in-house-vs-agency|products|case-studies|sectors|resources|blog|contact|book)[^)]*\)/g;
 
 let failed = 0;
@@ -41,12 +53,13 @@ for (const file of files) {
   const slug = path.basename(file, '.md');
   const all = raw.replace(/^---[\s\S]*?---/, '') + '\n' + [data.title, data.description, data.answer, ...(data.faq || []).flatMap((f) => [f.q, f.a])].join('\n');
   const lower = all.toLowerCase();
-  const words = content.split(/\s+/).filter(Boolean).length;
+  const words = content.replace(/```[\s\S]*?```/g, '').split(/\s+/).filter(Boolean).length;
 
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug) || slug.length > 70) errors.push('file name must be a short lowercase-hyphen slug (max 70 chars)');
   if (slugs.has(slug)) errors.push('duplicate slug');
   slugs.add(slug);
   for (const k of ['title', 'description', 'date', 'tags', 'answer', 'faq', 'sources']) if (!data[k]) errors.push(`missing frontmatter: ${k}`);
+  if (data.updated && !/^\d{4}-\d{2}-\d{2}$/.test(data.updated instanceof Date ? data.updated.toISOString().slice(0, 10) : String(data.updated))) errors.push('updated must be YYYY-MM-DD');
   const date = data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date || '');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) errors.push('date must be YYYY-MM-DD');
   if (data.title && String(data.title).length > 70) errors.push(`title is ${String(data.title).length} chars, keep it to 70`);
@@ -55,6 +68,21 @@ for (const file of files) {
   if (aw < 35 || aw > 75) errors.push(`answer is ${aw} words, needs 35 to 75`);
   if (!Array.isArray(data.tags) || data.tags.length < 2 || data.tags.length > 5) errors.push('tags: 2 to 5');
   else if (String(data.tags[0]).length > 22) errors.push('first tag is printed on the cover; keep it to 22 characters');
+  // Target search phrase: must appear where search engines weigh it most.
+  const STOP = new Set(['the', 'and', 'for', 'with', 'how', 'what', 'why', 'when', 'are', 'you', 'your', 'from', 'into', 'does', 'that', 'this', 'than', 'vs', 'or', 'a', 'an', 'to', 'of', 'in', 'is', 'on']);
+  const kw = String(data.keyword || '').toLowerCase().trim();
+  if (!kw) errors.push('missing frontmatter: keyword (the one search phrase this post targets)');
+  else {
+    const n = kw.split(/\s+/).length;
+    if (n < 2 || n > 8) errors.push(`keyword should be 2 to 8 words, got ${n}`);
+    const words = kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2 && !STOP.has(w));
+    const has = (s) => words.every((w) => String(s || '').toLowerCase().includes(w.replace(/s$/, '')));
+    if (!has(data.title)) errors.push(`title must contain the keyword words: ${words.join(', ')}`);
+    if (!has(data.description)) errors.push(`description must contain the keyword words: ${words.join(', ')}`);
+    if (!has(content.split(/\s+/).slice(0, 120).join(' '))) errors.push('the keyword words must appear in the first 120 words of the body');
+    if (!(content.match(/^##+ .+$/gm) || []).some((h) => words.filter((w) => h.toLowerCase().includes(w.replace(/s$/, ''))).length >= Math.min(2, words.length))) warn.push('no heading mentions the keyword; consider phrasing one H2 around it');
+    if (!words.some((w) => slug.includes(w.replace(/s$/, '')))) warn.push('the slug does not contain the keyword');
+  }
   if (data.cover) {
     const motifs = ['network', 'bars', 'shield', 'layers', 'wave', 'flow', 'grid', 'chip', 'orbit'];
     const palettes = ['signal', 'ink', 'paper', 'ember', 'mint', 'night', 'sky', 'sand'];
@@ -82,6 +110,42 @@ for (const file of files) {
   }
   const notBut = (all.match(/\b(isn't|is not|not just|not only)\b[^.]{0,80}\b(but|it's|it is)\b/gi) || []).length;
   if (notBut > 1) errors.push(`${notBut} "not X but Y" contrasts; keep at most one`);
+  // Visuals: every post needs at least one table, chart, stats or steps block, and visual blocks must be valid JSON.
+  const blocks = [...content.matchAll(/```(chart|stats|steps)\n([\s\S]*?)```/g)];
+  for (const [, kind, json] of blocks) {
+    try {
+      JSON.parse(json);
+    } catch {
+      errors.push(`the ${kind} block is not valid JSON`);
+    }
+  }
+  if (!blocks.length && !/^\|.*\|\s*\n\|\s*-/m.test(content)) errors.push('add at least one visual: a table, or a chart, stats or steps block (see the guide)');
+
+  // Plain language: short sentences and paragraphs, readable words, no unexplained acronyms.
+  const prose = content.replace(/```[\s\S]*?```/g, '').replace(/^\|.*$/gm, '').replace(/^#.*$/gm, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  const paras = prose.split(/\n\s*\n/).map((p) => p.trim()).filter((p) => p && !/^[-*\d]/.test(p));
+  const longParas = paras.filter((p) => p.split(/\s+/).length > 95).length;
+  if (longParas) errors.push(`${longParas} paragraph(s) over 95 words; split them`);
+  const proseSentences = prose.split(/(?<=[.?!])\s+/).map((s) => s.trim()).filter((s) => s.split(/\s+/).length > 2);
+  const sw = proseSentences.map((s) => s.split(/\s+/).length);
+  const avg = sw.reduce((a, b) => a + b, 0) / (sw.length || 1);
+  const veryLong = sw.filter((n) => n > 38).length;
+  if (avg > 22) errors.push(`average sentence is ${avg.toFixed(1)} words; keep it under 22`);
+  if (veryLong > 2) errors.push(`${veryLong} sentences over 38 words; break them up`);
+  const allWords = prose.split(/\s+/).filter((w) => /[a-z]/i.test(w));
+  const syl = allWords.reduce((a, w) => a + syllables(w), 0);
+  const ease = 206.835 - 1.015 * (allWords.length / (proseSentences.length || 1)) - 84.6 * (syl / (allWords.length || 1));
+  if (ease < 35) errors.push(`reading ease ${ease.toFixed(0)} is too hard (aim for 50+); use shorter words and sentences`);
+  else if (ease < 50) warn.push(`reading ease ${ease.toFixed(0)}; aim for 50 or more`);
+  const seen = new Set();
+  for (const m of prose.matchAll(/\b([A-Z][A-Z0-9]{1,5}s?)\b/g)) {
+    const a = m[1];
+    if (KNOWN.has(a) || seen.has(a)) continue;
+    seen.add(a);
+    const around = prose.slice(Math.max(0, m.index - 80), m.index + a.length + 80);
+    if (!/\(/.test(around)) warn.push(`acronym "${a}" is not explained near its first use`);
+  }
+
   const sentences = content.replace(/^#.*$/gm, '').split(/(?<=[.?!])\s+/).filter((s) => s.split(/\s+/).length > 2);
   const lens = sentences.map((s) => s.split(/\s+/).length);
   const mean = lens.reduce((a, b) => a + b, 0) / (lens.length || 1);

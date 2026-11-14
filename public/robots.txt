@@ -1,12 +1,28 @@
 # https://www.talavishiraajgroups.com
-# Public pages are open to all legitimate crawlers, including AI crawlers.
+# Public pages are open to all legitimate crawlers, including AI search and AI training crawlers.
+# We want people to find us through search engines and through AI assistants alike.
 
 User-agent: *
 Allow: /
 Disallow: /api/
 
+# AI search and answer engines, named explicitly so there is no doubt they are welcome.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
 Sitemap: https://www.talavishiraajgroups.com/sitemap.xml
 
-# A short, grouped summary of the site for assistants and agents, generated at
-# build time from the pages themselves. See https://llmstxt.org
-# llms.txt: https://www.talavishiraajgroups.com/llms.txt
+# A short, grouped summary of the site for assistants and agents: https://www.talavishiraajgroups.com/llms.txt
+# The full text of every blog post in one file: https://www.talavishiraajgroups.com/llms-full.txt
+# Any blog post is also available as plain Markdown by adding .md to its URL.

@@ -22,9 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: p.title,
     description: p.description,
-    alternates: { canonical: `/blog/${p.slug}` },
+    alternates: { canonical: `/blog/${p.slug}`, types: { 'text/markdown': `/blog/${p.slug}.md` } },
     authors: [{ name: p.author }],
-    keywords: p.tags,
+    keywords: p.keyword ? [p.keyword, ...p.tags] : p.tags,
     openGraph: { type: 'article', title: p.title, description: p.description, publishedTime: p.date, modifiedTime: p.updated || p.date, tags: p.tags, url: `${BASE}/blog/${p.slug}` },
     twitter: { card: 'summary_large_image', title: p.title, description: p.description },
   };
@@ -51,11 +51,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     description: p.description,
     datePublished: p.date,
     dateModified: p.updated || p.date,
-    author: { '@type': 'Organization', name: p.author, url: BASE },
-    publisher: { '@type': 'Organization', name: 'Talavishiraaj Groups', logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` } },
+    author: { '@type': 'Organization', name: p.author, url: BASE, '@id': `${BASE}/#org` },
+    publisher: { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'Talavishiraaj Groups', logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` } },
+    about: p.keyword,
     mainEntityOfPage: url,
     image: `${url}/opengraph-image`,
-    keywords: p.tags.join(', '),
+    keywords: [p.keyword, ...p.tags].filter(Boolean).join(', '),
     wordCount: p.words,
     citation: p.sources.map((s) => s.url),
   };

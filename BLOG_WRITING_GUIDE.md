@@ -17,6 +17,35 @@ Founders, COOs, CTOs and heads of operations at small and mid-sized companies in
 3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the India side, the risk side) or pick the next story.
 4. About one post in five can be evergreen instead of news, answering a question buyers search for ("how much does an AI chatbot cost to build", "RAG vs fine tuning for a small team"). These still need current sources.
 
+## Trend radar: what people are reading right now
+
+Before choosing a topic, spend a few minutes seeing what buyers are actually reading, sharing and searching. Look for a story that is both new (last 72 hours) and likely to be searched for in the weeks after.
+
+| Where | How | What it tells you |
+| --- | --- | --- |
+| Google Trends | SerpApi engine `google_trends_trending_now` with `geo=IN` and `geo=US`; `google_trends` for interest in a candidate phrase over 7 days | What is spiking in search, and whether a phrase is rising |
+| Google News | SerpApi engine `google_news`, query such as "AI agents", "OpenAI", "AI regulation India" | Which stories the press is running with |
+| Hacker News | `https://hn.algolia.com/api/v1/search?tags=front_page` (and `search_by_date?query=AI`) | What technical decision makers are reading and arguing about |
+| Reddit | `https://www.reddit.com/r/<sub>/top.json?t=week` for r/artificial, r/OpenAI, r/LocalLLaMA, r/smallbusiness, r/Entrepreneur, r/IndianStartups (skip if blocked) | The real questions and frustrations people have, in their words |
+| YouTube | SerpApi engine `youtube` with the candidate phrase | Whether people want this explained, and which angles get views |
+| Google results | SerpApi `google` search for the phrase: "People also ask", related searches, top 10 | How people phrase the question, and how hard it is to rank |
+
+Score each candidate quickly: is it new, is search interest rising, does it change a decision for our readers, and can we say something the top results do not? Pick the one that scores best on all four. Use the exact words people use on Reddit and in "People also ask" for headings and FAQs.
+
+If nothing clears the bar today, do not publish a thin post. Instead, refresh the post that `_performance.md` lists as closest to page one (better title, clearer answer, new facts, `updated:` set to today), or skip the day and say so. Google treats lots of low-value pages as spam; one strong post beats three weak ones.
+
+## Search, trends and what is working
+
+Every post targets one search phrase (`keyword` in the frontmatter) that a buyer would actually type. Pick it like this:
+
+1. **Read `content/blog/_performance.md` first** if it exists. The weekly SEO review writes it: which posts rank on Google and for what, which phrases are close to page one, and which topics to do next. Follow its "Next topics" and "Do not repeat" lists unless today's news is clearly bigger.
+2. **Check demand.** Use the SerpApi connector: the `google_trends` engine for interest over the last 7 days in India and worldwide, and a normal Google search for the candidate phrase. Prefer a phrase with rising interest and buyer intent ("cost", "vs", "how to", "for small business", "pricing", "best way to") over a broad head term you cannot win ("artificial intelligence").
+3. **Check the competition.** Look at the top 10 results. If they are all huge brands answering the exact phrase well, choose a more specific phrase (add the audience, the use case, India, or the year).
+4. **Use the questions people ask.** The Google results include "People also ask" questions. Use the best two or three as FAQ questions, and phrase one H2 the way people search.
+5. **Place it.** The keyword words must be in the title (near the start), the description, the first paragraph and ideally one H2 and the slug. The checker enforces the first three. Write naturally; never repeat the phrase just to repeat it.
+
+Good post titles promise a specific answer: "What an AI chatbot costs a 50 person company in 2026", not "The future of AI chatbots".
+
 ## Shape of a post
 
 - **Angle**: what happened, whether it matters for the reader, and what we would do about it. Have an opinion. Say when the honest answer is "ignore this for now".
@@ -27,6 +56,40 @@ Founders, COOs, CTOs and heads of operations at small and mid-sized companies in
 - **Internal links**: at least two, written into sentences, to pages that genuinely help: `/services/artificial-intelligence-and-automation`, `/services/technology-and-engineering`, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, relevant `/insights/...` and earlier `/blog/...` posts.
 - **Sources**: link at least one source inline where the fact is used, and list 3 to 6 in the frontmatter. Only cite pages you actually opened.
 - **Ending**: end on the practical next step for the reader. Do not add a summary section and do not write a sales pitch; the page template adds the enquiry box.
+
+## Easy to read, easy to act on
+
+Write so a busy founder can skim it in two minutes and still get the point. No jargon, no heavy thinking required.
+
+- One idea per paragraph, three or four sentences at most. The checker rejects paragraphs over 95 words.
+- Average sentence under 22 words, and almost none over 38. Mix short and long.
+- Everyday words: "use" not "utilize", "help" not "facilitate", "cost" not "total cost of ownership" unless you explain it.
+- Spell out any acronym a non-engineer might not know the first time, for example "retrieval augmented generation (RAG)".
+- Explain one technical idea with a concrete comparison from ordinary business life.
+- Reading ease (Flesch) of 50 or more. The checker reports it.
+
+## Visuals inside the post
+
+Every post needs at least one visual so the main point lands at a glance. Use whichever fits the content, and never invent numbers for it:
+
+- A Markdown table for comparisons.
+- A `chart` block for a handful of numbers (horizontal bars, highlight the one that matters):
+
+  ````
+  ```chart
+  { "title": "Monthly cost at 40% automation", "unit": "$", "data": [ { "label": "600 requests", "value": 188 }, { "label": "1,500 requests", "value": 545 } ], "highlight": 1, "note": "Our calculation from Zendesk's published pricing" }
+  ```
+  ````
+- A `stats` block for two to four headline numbers, each with what it means:
+
+  ````
+  ```stats
+  [ { "value": "$0.99", "label": "Zendesk's price per extra automated resolution" } ]
+  ```
+  ````
+- A `steps` block for a short process or plan: `["First step", "Second step", "Third step"]`.
+
+Put the first visual within the first third of the post.
 
 ## Facts
 
@@ -94,6 +157,7 @@ title: "Under 65 characters, main search phrase near the start"
 description: "110 to 160 characters. What the reader will learn, in plain words. Used as the search snippet."
 date: 2026-11-14
 author: Talavishiraaj Groups
+keyword: prebuilt ai agents vs custom
 tags: [AI agents, Cost, Build vs buy]
 cover: { motif: network, palette: signal }
 answer: "35 to 75 words. The direct answer to the question the post is about, written so an AI assistant could quote it on its own."
@@ -125,9 +189,10 @@ Do not put an H1 in the body. Use `##` and `###` only.
 ## Publishing checklist (the daily routine follows this)
 
 1. `git pull` on `main`, then `npm ci` if `node_modules` is missing.
-2. Pick the topic and read the sources, following the rules above.
+2. Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
 3. Write the post to `content/blog/<slug>.md` with today's date (India time).
-4. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.
-5. Commit only that file with the message `Blog: <title>` and push to `main`. Vercel publishes it in about two minutes.
-6. Wait three minutes, check that `https://www.talavishiraajgroups.com/blog/<slug>` returns 200, then run `npm run blog:ping -- /blog/<slug>`.
-7. If the Vercel build fails, revert the commit so the site stays up, and report why.
+4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens.
+5. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.
+6. Commit only that file with the message `Blog: <title>` and push to `main`. Vercel publishes it in about two minutes.
+7. Wait three minutes, check that `https://www.talavishiraajgroups.com/blog/<slug>` returns 200, then run `npm run blog:ping -- /blog/<slug>`.
+8. If the Vercel build fails, revert the commit so the site stays up, and report why.

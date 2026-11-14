@@ -6,6 +6,7 @@ import { AlertCircle, ArrowUpRight, Check, FileText, Loader2 } from 'lucide-reac
 import { EMAIL } from '@/content';
 import { roles } from '@/content/careers';
 import { ease } from './motion';
+import { getSource } from './Attribution';
 
 const field = 'w-full rounded-xl border border-line bg-white px-4 pb-3 pt-6 text-[15px] outline-none transition-colors focus:border-signal';
 const label = 'pointer-events-none absolute left-4 top-2 text-[11px] text-muted';
@@ -30,6 +31,10 @@ export function ApplyForm({ initialRole = '' }: { initialRole?: string }) {
     if (file && file.size > MAX) return fail('The CV must be under 4 MB');
     if (!file && !String(f.get('link') || '').trim()) return fail('Attach a CV or add a LinkedIn or profile link');
     f.set('role', role);
+    const src = getSource();
+    f.set('landing', src.landing);
+    f.set('referrer', src.referrer);
+    f.set('campaign', src.campaign);
     if (file) f.set('cv', file);
     else f.delete('cv');
     setStatus('sending');

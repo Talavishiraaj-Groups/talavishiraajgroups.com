@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { BehaviourAnalytics, CookieConsent } from '@/components/consent';
 import { Analytics } from '@vercel/analytics/next';
+import { Attribution } from '@/components/Attribution';
 
 const sans = Inter_Tight({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif', display: 'swap' });
@@ -19,6 +20,11 @@ export const metadata: Metadata = {
   openGraph: { siteName: 'Talavishiraaj Groups', type: 'website', locale: 'en_US', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Talavishiraaj Groups' }] },
   twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
   alternates: { canonical: './' },
+  // Search engine ownership checks. Add the codes in Vercel as GOOGLE_SITE_VERIFICATION and BING_SITE_VERIFICATION.
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : {}),
+    ...(process.env.BING_SITE_VERIFICATION ? { other: { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } } : {}),
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -31,6 +37,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body className="font-sans">
+        {/* Who we are, in a form search engines and AI assistants can read without guessing. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://www.talavishiraajgroups.com/#org',
+                  name: 'Talavishiraaj Groups',
+                  alternateName: 'TJ Groups',
+                  url: 'https://www.talavishiraajgroups.com',
+                  logo: 'https://www.talavishiraajgroups.com/logo.png',
+                  description: 'An engineering, AI and research firm that combines software and systems engineering, applied AI and automation, product engineering and implementation in one accountable team, plus an independent read on build, buy and AI decisions.',
+                  email: 'info@talavishiraajgroups.com',
+                  areaServed: ['India', 'Worldwide'],
+                  knowsAbout: ['Artificial intelligence', 'AI agents', 'Workflow automation', 'Software engineering', 'Data engineering', 'Product engineering', 'Build vs buy decisions'],
+                  sameAs: ['https://www.linkedin.com/company/talavishiraaj-groups/'],
+                  contactPoint: { '@type': 'ContactPoint', contactType: 'sales', email: 'info@talavishiraajgroups.com', url: 'https://www.talavishiraajgroups.com/contact' },
+                },
+                { '@type': 'WebSite', '@id': 'https://www.talavishiraajgroups.com/#site', url: 'https://www.talavishiraajgroups.com', name: 'Talavishiraaj Groups', publisher: { '@id': 'https://www.talavishiraajgroups.com/#org' } },
+              ],
+            }),
+          }}
+        />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-white">
           Skip to main content
         </a>
@@ -41,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <BehaviourAnalytics />
         <Analytics />
+        <Attribution />
       </body>
     </html>
   );
