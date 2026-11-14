@@ -45,6 +45,7 @@ To refresh content from the live site, re-download pages into `scripts/source-pa
 | --- | --- | --- |
 | Contact and booking forms | `/api/send-contact-email` | Zoho SMTP, same URL and payload as before. Honeypot, validation, basic rate limit, HTML escaped. |
 | Keep in touch (`/community`) | `/api/send-email` | Same as before. |
+| Blog (`/blog`, `/blog/rss.xml`) | `content/blog/*.md` | One Markdown file per post. Rules in `BLOG_WRITING_GUIDE.md`; `npm run blog:check` is the quality gate; `npm run blog:ping -- /blog/<slug>` notifies IndexNow. Posts carry BlogPosting, FAQPage and BreadcrumbList structured data and a generated share image. |
 | Job applications (`/careers`, `/careers/[role]`) | `/api/careers` | Emails the application with the CV attached (PDF or Word, up to 4 MB). Goes to `CAREERS_NOTIFY_TO` if set, else info@. Roles live in `src/content/careers.ts`; each role page has JobPosting structured data for Google Jobs. |
 | Cal.com bookings into the inbox | `/api/cal-webhook` | Verifies `x-cal-signature-256` with `CAL_WEBHOOK_SECRET`, fails closed. |
 | Booking calendar | `/book` | Short qualifier, then the Cal.com calendar, loaded only after consent. |

@@ -30,6 +30,7 @@ export function Footer() {
               { href: '/about', label: 'About' },
               { href: '/products', label: 'Prism' },
               { href: '/case-studies', label: 'Case studies' },
+              { href: '/blog', label: 'Blog' },
               { href: '/sectors', label: 'Sectors' },
               { href: '/partnerships', label: 'Partnerships' },
               { href: '/careers', label: 'Careers' },

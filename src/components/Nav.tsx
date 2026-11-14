@@ -19,6 +19,7 @@ const links: { label: string; href: string; menu?: MenuKey }[] = [
   { label: 'Work', href: '/case-studies' },
   { label: 'Sectors', href: '/sectors', menu: 'sectors' },
   { label: 'Insights', href: '/insights', menu: 'insights' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Careers', href: '/careers' },
 ];
@@ -64,7 +65,7 @@ export function Nav() {
                     <Link
                       href={l.href}
                       className={clsx(
-                        'relative rounded-full px-4 py-2 text-[14px] transition-colors',
+                        'relative rounded-full px-3 py-2 text-[14px] transition-colors xl:px-4',
                         active ? 'text-ink' : 'text-ink/65 hover:text-ink',
                       )}
                     >
@@ -197,6 +198,7 @@ function InsightMenu() {
         <div className="eyebrow text-muted">Insights & tools</div>
         <ul className="mt-4 space-y-2 text-[15px]">
           <li><Link className="hover:text-signal" href="/insights">All insights</Link></li>
+          <li><Link className="hover:text-signal" href="/blog">Blog</Link></li>
           <li><Link className="hover:text-signal" href="/build-vs-buy">Build vs buy framework</Link></li>
           <li><Link className="hover:text-signal" href="/what-it-costs">What it costs</Link></li>
           <li><Link className="hover:text-signal" href="/in-house-vs-agency">In house vs agency</Link></li>

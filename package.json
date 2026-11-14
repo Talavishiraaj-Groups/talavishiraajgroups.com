@@ -6,14 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "content": "node scripts/build-content.mjs"
+    "content": "node scripts/build-content.mjs",
+    "blog:check": "node scripts/blog-check.mjs",
+    "blog:ping": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
     "clsx": "2.1.1",
     "framer-motion": "11.18.2",
+    "gray-matter": "^4.0.3",
     "lenis": "1.1.20",
     "lucide-react": "0.469.0",
+    "marked": "^15.0.12",
     "next": "15.5.29",
     "nodemailer": "^7.0.12",
     "react": "19.3.1",

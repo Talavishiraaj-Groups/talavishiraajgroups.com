@@ -85,6 +85,7 @@ are no named logos to cite.
 
 ## Writing and reference
 
+- [Blog](https://www.talavishiraajgroups.com/blog): Short, sourced posts on what is changing in AI and what it means for companies deciding what to build, buy or automate. New posts most days; RSS at https://www.talavishiraajgroups.com/blog/rss.xml.
 - [Insights: Engineering, AI and Systems](https://www.talavishiraajgroups.com/insights): Practical answers to the questions that come up before a project starts: what production readiness actually requires, when automation is worth engineering, and how to judge technical work before committing to it.
 - [Why AI Prototypes Stall](https://www.talavishiraajgroups.com/insights/why-ai-prototypes-stall-before-production): A working AI prototype and a production system are different artifacts. What actually has to be built between them: interface contracts, failure behavior, observability, evaluation you can rerun, and staged rollout.
 - [When Workflow Automation Pays Off](https://www.talavishiraajgroups.com/insights/when-workflow-automation-is-worth-engineering): Not every manual process should be automated. A practical test based on volume, repeatability and error cost, plus how to separate decisions that are genuine judgement from decisions that were simply never written down.
