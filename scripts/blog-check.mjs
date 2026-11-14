@@ -54,6 +54,13 @@ for (const file of files) {
   const aw = String(data.answer || '').split(/\s+/).filter(Boolean).length;
   if (aw < 35 || aw > 75) errors.push(`answer is ${aw} words, needs 35 to 75`);
   if (!Array.isArray(data.tags) || data.tags.length < 2 || data.tags.length > 5) errors.push('tags: 2 to 5');
+  else if (String(data.tags[0]).length > 22) errors.push('first tag is printed on the cover; keep it to 22 characters');
+  if (data.cover) {
+    const motifs = ['network', 'bars', 'shield', 'layers', 'wave', 'flow', 'grid', 'chip', 'orbit'];
+    const palettes = ['signal', 'ink', 'paper', 'ember', 'mint', 'night', 'sky', 'sand'];
+    if (data.cover.motif && !motifs.includes(data.cover.motif)) errors.push(`cover.motif must be one of ${motifs.join(', ')}`);
+    if (data.cover.palette && !palettes.includes(data.cover.palette)) errors.push(`cover.palette must be one of ${palettes.join(', ')}`);
+  }
   if (!Array.isArray(data.faq) || data.faq.length < 3 || data.faq.length > 6 || data.faq.some((f) => !f.q || !f.a)) errors.push('faq: 3 to 6 items, each with q and a');
   if (!Array.isArray(data.sources) || data.sources.length < 3 || data.sources.some((s) => !s.title || !/^https:\/\//.test(s.url || ''))) errors.push('sources: at least 3, each with title and https url');
   if (words < 900 || words > 1900) errors.push(`body is ${words} words, needs 900 to 1900`);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
+import { OutcomeArt } from '@/components/illustrations';
 import { CaseIndex } from '@/components/cases';
 import { Reveal } from '@/components/motion';
 import { CtaBand, SectionHead } from '@/components/ui';
@@ -21,6 +22,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <PageHero
+        aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><OutcomeArt /></div>}
         eyebrow="Case studies"
         title="What the work looks like when it is finished"
         italic={['finished']}

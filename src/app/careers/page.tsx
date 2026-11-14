@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { ApplyForm } from '@/components/Careers';
 import { PageHero } from '@/components/PageHero';
+import { GlobalReach } from '@/components/illustrations';
 import { Reveal } from '@/components/motion';
 import { hiringSteps, roles, terms } from '@/content/careers';
 
@@ -16,6 +17,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
+        aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><GlobalReach /></div>}
         eyebrow="Careers"
         title="Sell work you can stand behind"
         italic={['stand', 'behind']}

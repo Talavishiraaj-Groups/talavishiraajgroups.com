@@ -4,6 +4,7 @@ description: "IBM and Microsoft now offer over 6,000 ready made agents and Zende
 date: 2026-11-14
 author: Talavishiraaj Groups
 tags: [AI agents, Build vs buy, Cost]
+cover: { motif: network, palette: signal }
 answer: "Buy a prebuilt agent when the work is common across companies, lives inside one tool you already pay for, and is priced per outcome you can predict. Build when the work depends on your own data, crosses several systems, or is the thing customers choose you for. Most mid-size teams end up doing both, and the useful decision is where to draw the line."
 faq:
   - q: "Are prebuilt AI agents cheaper than building one?"

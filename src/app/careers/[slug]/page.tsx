@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { ApplyForm } from '@/components/Careers';
 import { Crumbs } from '@/components/PageHero';
+import { RoleArt } from '@/components/illustrations';
 import { SplitWords } from '@/components/motion';
 import { DATE_POSTED, findRole, hiringSteps, payDetail, roles } from '@/content/careers';
 
@@ -74,12 +75,19 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
       <section className="pb-12 pt-32 md:pt-40">
         <div className="wrap">
           <Crumbs items={[{ href: '/careers', label: 'Careers' }, { label: role.title }]} />
-          <h1 className="mt-8 max-w-4xl text-display font-medium">
-            <SplitWords text={role.title} />
-          </h1>
-          <p className="fade-up mt-6 max-w-2xl text-xl leading-relaxed text-ink/70" style={{ animationDelay: '0.3s' }}>
-            {role.summary}
-          </p>
+          <div className="mt-8 grid items-center gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <h1 className="text-display font-medium">
+                <SplitWords text={role.title} />
+              </h1>
+              <p className="fade-up mt-6 max-w-2xl text-xl leading-relaxed text-ink/70" style={{ animationDelay: '0.3s' }}>
+                {role.summary}
+              </p>
+            </div>
+            <div className="fade-up lg:col-span-5" style={{ animationDelay: '0.45s' }}>
+              <RoleArt slug={role.slug} />
+            </div>
+          </div>
           <dl className="fade-up mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4" style={{ animationDelay: '0.45s' }}>
             {facts.map(([k, v]) => (
               <div key={k} className="bg-paper p-5">

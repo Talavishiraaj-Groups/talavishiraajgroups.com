@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
+import { ReadinessArt } from '@/components/illustrations';
 import { CtaBand } from '@/components/ui';
 import { checklist } from '@/content';
 
@@ -15,6 +16,7 @@ export default function ResourcesPage() {
   return (
     <>
       <PageHero
+        aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><ReadinessArt /></div>}
         eyebrow="Resources"
         title="Reference material our teams actually work from"
         italic={['actually']}

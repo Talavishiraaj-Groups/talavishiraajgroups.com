@@ -18,6 +18,7 @@ export type Post = {
   answer: string;
   faq: { q: string; a: string }[];
   sources: { title: string; url: string }[];
+  cover?: { motif?: string; palette?: string };
   html: string;
   toc: { id: string; label: string }[];
   words: number;
@@ -53,6 +54,7 @@ function load(file: string): Post {
     answer: String(data.answer || ''),
     faq: (data.faq as Post['faq']) || [],
     sources: (data.sources as Post['sources']) || [],
+    cover: (data.cover as Post['cover']) || undefined,
     html,
     toc,
     words,

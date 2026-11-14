@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { legal, legalNav } from '@/content';
 import { Blocks } from '@/components/Blocks';
 import { Eyebrow } from '@/components/ui';
+import { PolicyArt } from '@/components/illustrations';
 
 export const dynamicParams = false;
 
@@ -36,6 +37,9 @@ export default async function LegalPage({ params }: { params: Promise<{ legalSlu
                 </Link>
               ))}
             </nav>
+            <div className="mt-8 hidden lg:block">
+              <PolicyArt slug={slug} />
+            </div>
           </div>
         </aside>
         <article className="lg:col-span-8">

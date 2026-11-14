@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Check } from 'lucide-react';
 import { BookFlow } from '@/components/BookFlow';
 import { SplitWords } from '@/components/motion';
+import { CalendarArt } from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'Book a call',
@@ -27,6 +28,9 @@ export default function BookPage() {
               </li>
             ))}
           </ul>
+          <div className="fade-up mt-12 hidden max-w-md lg:block" style={{ animationDelay: '0.6s' }}>
+            <CalendarArt />
+          </div>
         </div>
         <div className="lg:col-span-7">
           <BookFlow />

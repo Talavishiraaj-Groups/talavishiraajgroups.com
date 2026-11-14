@@ -88,6 +88,29 @@ body {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
 
+/* Generative blog covers (src/lib/cover.ts) */
+@keyframes cvspin { to { transform: rotate(360deg); } }
+@keyframes cvpulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes cvping { 0% { transform: scale(0.7); opacity: 0.9; } 100% { transform: scale(1.6); opacity: 0; } }
+@keyframes cvfloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes cvdash { to { stroke-dashoffset: -40; } }
+@keyframes cvgrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes cvdraw { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+@keyframes cvblink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+.cv-spin, .cv-spin-rev, .cv-spin-slow { transform-box: fill-box; transform-origin: center; animation: cvspin 28s linear infinite; }
+.cv-spin-rev { animation-direction: reverse; animation-duration: 20s; }
+.cv-spin-slow { animation-duration: 60s; }
+.cv-pulse { animation: cvpulse 3.2s ease-in-out infinite; }
+.cv-ping { transform-box: fill-box; transform-origin: center; animation: cvping 2.6s ease-out infinite; }
+.cv-float { animation: cvfloat 6s ease-in-out infinite; }
+.cv-dash { animation: cvdash 1.6s linear infinite; }
+.cv-grow { transform-box: fill-box; transform-origin: bottom; animation: cvgrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.cv-draw { animation: cvdraw 2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.cv-blink { animation: cvblink 2.4s ease-in-out infinite; }
+.cover-frame svg { display: block; width: 100%; height: 100%; }
+@keyframes cvring { from { stroke-dashoffset: 0.72; } to { stroke-dashoffset: 0; } }
+.cv-ring { animation: cvring 2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
 /* Entrance animations that run without waiting for JavaScript */
 @keyframes rise { from { transform: translateY(110%); } to { transform: translateY(0); } }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ContactForm } from '@/components/ContactForm';
 import { SplitWords } from '@/components/motion';
+import { SignalArt } from '@/components/illustrations';
 
 export const metadata: Metadata = {
   title: 'Keep in touch',
@@ -23,6 +24,9 @@ export default function CommunityPage() {
           <p className="mt-6 text-[15px] text-muted">
             If you have a specific project or question, the <Link href="/contact" className="text-signal underline-offset-4 hover:underline">contact page</Link> will reach us faster.
           </p>
+          <div className="fade-up mt-12 max-w-md" style={{ animationDelay: '0.5s' }}>
+            <SignalArt />
+          </div>
         </div>
         <div className="lg:col-span-7">
           <ContactForm mode="community" />

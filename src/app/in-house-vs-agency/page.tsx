@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { PageHero } from '@/components/PageHero';
+import { CompareArt } from '@/components/illustrations';
 import { Reveal } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
 
@@ -33,6 +34,7 @@ export default function InHousePage() {
   return (
     <>
       <PageHero
+        aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><CompareArt /></div>}
         eyebrow="Choosing a route"
         title="In house, agency, or an independent read first"
         italic={['independent', 'read']}

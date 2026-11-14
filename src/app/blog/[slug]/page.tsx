@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
+import { BlogCover } from '@/components/BlogCover';
 import { Crumbs } from '@/components/PageHero';
 import { ReadingProgress, Toc } from '@/components/insights';
 import { SplitWords } from '@/components/motion';
@@ -91,6 +92,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <span>{p.readTime}</span>
             </div>
           </div>
+          <div className="wrap mt-12">
+            <div className="fade-up overflow-hidden rounded-[28px] border border-line" style={{ animationDelay: '0.3s' }}>
+              <BlogCover post={p} />
+            </div>
+          </div>
         </header>
 
         <div className="wrap py-14 md:py-20">
@@ -169,9 +175,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <h2 className="text-2xl font-medium tracking-tight">Keep reading</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {related.map((m) => (
-                <Link key={m.slug} href={`/blog/${m.slug}`} className="group rounded-3xl border border-line bg-white p-7 transition-shadow hover:shadow-xl">
-                  <p className="text-[13px] text-muted">{formatDate(m.date)}</p>
-                  <h3 className="mt-3 text-lg font-medium leading-snug tracking-tight group-hover:text-signal">{m.title}</h3>
+                <Link key={m.slug} href={`/blog/${m.slug}`} className="group block">
+                  <div className="overflow-hidden rounded-2xl border border-line">
+                    <BlogCover post={m} className="transition-transform duration-700 group-hover:scale-[1.03]" />
+                  </div>
+                  <p className="mt-4 text-[13px] text-muted">{formatDate(m.date)}</p>
+                  <h3 className="mt-2 text-lg font-medium leading-snug tracking-tight group-hover:text-signal">{m.title}</h3>
                 </Link>
               ))}
             </div>

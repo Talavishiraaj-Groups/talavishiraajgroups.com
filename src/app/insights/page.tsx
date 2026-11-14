@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
+import { ArticlesArt } from '@/components/illustrations';
 import { InsightGrid } from '@/components/insights';
 import { CtaBand } from '@/components/ui';
 import { insights } from '@/content';
@@ -14,6 +15,7 @@ export default function InsightsPage() {
   return (
     <>
       <PageHero
+        aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><ArticlesArt /></div>}
         eyebrow="Insights"
         title="Answers to the questions that come up before a project starts"
         italic={['before']}

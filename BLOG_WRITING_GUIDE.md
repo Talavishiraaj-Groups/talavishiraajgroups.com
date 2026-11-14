@@ -62,6 +62,28 @@ Apply the humanizer rules (github.com/blader/humanizer, based on Wikipedia's "Si
 
 Then read it aloud in your head. Vary sentence length: some short, some long. Keep the odd specific detail, aside or mild opinion that makes it sound like a person. Spelling: US English, "organization".
 
+## Cover image
+
+Every post gets a unique, animated cover automatically. It is drawn from the post's slug, title and first tag in the brand colors, and the same artwork is used on the blog cards, at the top of the post and as the social share image. There is nothing to design or upload.
+
+The first tag is printed large on the cover, so make it a short topic word or two ("AI agents", "Cost", "Security", "Regulation").
+
+You can steer the cover with an optional `cover` line in the frontmatter. Pick the motif that matches the story:
+
+| motif | use for |
+| --- | --- |
+| network | agents, assistants, copilots, orchestration |
+| bars | cost, pricing, spend, market numbers, earnings |
+| shield | security, risk, privacy, safety, governance |
+| grid | regulation, policy, standards, audits |
+| flow | automation, workflows, integrations, operations |
+| layers | data, RAG, knowledge, cloud, infrastructure |
+| chip | chips, GPUs, compute, devices, inference |
+| wave | models, LLM releases, voice, multimodal |
+| orbit | strategy, market shifts, anything else |
+
+Palettes: signal, ink, paper, ember, mint, night, sky, sand. Avoid using the same palette as the previous day's post, so the blog grid stays varied.
+
 ## File format
 
 File: `content/blog/<slug>.md`. The slug is the main search phrase, lowercase with hyphens, under 60 characters, no date in it.
@@ -73,6 +95,7 @@ description: "110 to 160 characters. What the reader will learn, in plain words.
 date: 2026-11-14
 author: Talavishiraaj Groups
 tags: [AI agents, Cost, Build vs buy]
+cover: { motif: network, palette: signal }
 answer: "35 to 75 words. The direct answer to the question the post is about, written so an AI assistant could quote it on its own."
 faq:
   - q: "A question a buyer would actually ask?"
