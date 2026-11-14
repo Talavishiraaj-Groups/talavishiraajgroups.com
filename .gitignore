@@ -1,8 +1,8 @@
 node_modules
+.next
+out
+*.tsbuildinfo
 .env
 .env.local
-dist
-
-# Local Netlify folder
-.netlify
+.env*.local
 .vercel

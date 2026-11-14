@@ -1,0 +1,204 @@
+[
+ {
+  "title": "Interface contract",
+  "lead": "Every team downstream is blocked until these are fixed. Settle them before tuning anything.",
+  "items": [
+   {
+    "id": "1.1",
+    "text": "Input schema is defined and validated at the boundary, with malformed input rejected rather than coerced."
+   },
+   {
+    "id": "1.2",
+    "text": "Output schema is defined, including the shape returned when the system declines to answer."
+   },
+   {
+    "id": "1.3",
+    "text": "Latency budget is agreed with whoever consumes the output, and the modeling approach fits inside it."
+   },
+   {
+    "id": "1.4",
+    "text": "Error taxonomy exists: the caller can distinguish \"no answer\", \"low confidence\", \"upstream failure\" and \"invalid request\"."
+   },
+   {
+    "id": "1.5",
+    "text": "The contract is versioned, and there is a stated policy for breaking changes."
+   }
+  ]
+ },
+ {
+  "title": "Failure behavior",
+  "lead": "Production systems are judged on what they do when they are wrong. Design this before the happy path.",
+  "items": [
+   {
+    "id": "2.1",
+    "text": "Behavior on low confidence is defined: fall back, escalate to a person, or decline and say so."
+   },
+   {
+    "id": "2.2",
+    "text": "Behavior when an upstream dependency times out or errors is defined and tested."
+   },
+   {
+    "id": "2.3",
+    "text": "Fallback path exists and has been exercised, not just written down."
+   },
+   {
+    "id": "2.4",
+    "text": "Degradation is graceful: one component misbehaving reduces capability rather than stopping the workflow."
+   },
+   {
+    "id": "2.5",
+    "text": "Rate limits and cost ceilings are enforced, so a loop or a traffic spike cannot run unbounded."
+   },
+   {
+    "id": "2.6",
+    "text": "There is a documented answer to \"what does a user see when this fails\"."
+   }
+  ]
+ },
+ {
+  "title": "Evaluation",
+  "lead": "If you cannot rerun the evaluation, you cannot safely change anything afterwards.",
+  "items": [
+   {
+    "id": "3.1",
+    "text": "An evaluation set exists, is version controlled, and lives alongside the code."
+   },
+   {
+    "id": "3.2",
+    "text": "It covers the awkward cases, not only the representative ones."
+   },
+   {
+    "id": "3.3",
+    "text": "Every case that has caused an incident has been added to it."
+   },
+   {
+    "id": "3.4",
+    "text": "It runs automatically when the model, prompt, retrieval or pipeline changes."
+   },
+   {
+    "id": "3.5",
+    "text": "A pass threshold is agreed in advance, so the result is a decision rather than a discussion."
+   },
+   {
+    "id": "3.6",
+    "text": "Results are recorded over time, so regressions are visible as a trend."
+   }
+  ]
+ },
+ {
+  "title": "Observability",
+  "lead": "Conventional monitoring tells you the service responded. It does not tell you the response was sensible.",
+  "items": [
+   {
+    "id": "4.1",
+    "text": "Input and output distributions are logged, so drift is visible against a baseline."
+   },
+   {
+    "id": "4.2",
+    "text": "Confidence scores are recorded where the method produces them."
+   },
+   {
+    "id": "4.3",
+    "text": "Fallback rate and human escalation rate are tracked. These usually move before anyone complains."
+   },
+   {
+    "id": "4.4",
+    "text": "Latency is tracked at the percentiles that matter, not only the mean."
+   },
+   {
+    "id": "4.5",
+    "text": "Cost per request is visible and attributable."
+   },
+   {
+    "id": "4.6",
+    "text": "Alerting fires on rate of change, not only on absolute thresholds."
+   },
+   {
+    "id": "4.7",
+    "text": "Logs are retained long enough to investigate an incident reported a week later."
+   }
+  ]
+ },
+ {
+  "title": "Data and privacy",
+  "lead": "Usually the item that delays a launch when it is discovered late.",
+  "items": [
+   {
+    "id": "5.1",
+    "text": "It is documented what data leaves your infrastructure, and where it goes."
+   },
+   {
+    "id": "5.2",
+    "text": "Personal data handling has a lawful basis, and retention is defined."
+   },
+   {
+    "id": "5.3",
+    "text": "Prompts and outputs containing personal or confidential data are excluded from logs, or redacted before they are written."
+   },
+   {
+    "id": "5.4",
+    "text": "Vendor terms have been read on whether submitted data is used for training."
+   },
+   {
+    "id": "5.5",
+    "text": "Deletion requests can be honored, including anything captured in logs or evaluation sets."
+   }
+  ]
+ },
+ {
+  "title": "Rollout",
+  "lead": "Each stage exists to surface a different class of problem.",
+  "items": [
+   {
+    "id": "6.1",
+    "text": "Internal use against real inputs, with no external consequence."
+   },
+   {
+    "id": "6.2",
+    "text": "Limited cohort with human review on every output."
+   },
+   {
+    "id": "6.3",
+    "text": "Wider cohort with review on flagged cases only."
+   },
+   {
+    "id": "6.4",
+    "text": "General availability with monitoring and an unambiguous rollback path."
+   },
+   {
+    "id": "6.5",
+    "text": "Rollback has been tested, not assumed."
+   },
+   {
+    "id": "6.6",
+    "text": "Feature flag or equivalent allows disabling without a deploy."
+   }
+  ]
+ },
+ {
+  "title": "Ownership",
+  "lead": "An unowned system becomes an unmonitored one, and an unmonitored system fails silently.",
+  "items": [
+   {
+    "id": "7.1",
+    "text": "A named person owns it, not a team inbox."
+   },
+   {
+    "id": "7.2",
+    "text": "There is a runbook covering the three most likely failures."
+   },
+   {
+    "id": "7.3",
+    "text": "Someone other than the original author has run the deploy and the rollback."
+   },
+   {
+    "id": "7.4",
+    "text": "Retraining or prompt revision has a defined trigger and a defined approver."
+   },
+   {
+    "id": "7.5",
+    "text": "A review date is in the calendar, so nobody has to remember to look."
+   }
+  ]
+ }
+]

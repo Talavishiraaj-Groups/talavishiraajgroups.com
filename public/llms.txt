@@ -1,0 +1,122 @@
+# Talavishiraaj Groups
+
+> Research, software and systems engineering, applied AI, and product development delivered by one accountable team, plus an independent read on build, buy and AI decisions before the money is committed.
+
+Talavishiraaj Groups is a multidisciplinary engineering and research firm. It
+combines software and systems engineering, applied artificial intelligence and
+automation, product engineering and R&D, operating and business systems, growth
+systems, and hands on delivery under one accountable partner, rather than
+splitting them across separate suppliers.
+
+It works with organizations whose problems cross those boundaries at once: a
+build that spans software, data, hardware and the business around it; an AI
+prototype that works in a notebook and cannot be trusted in production; founder
+led operations that have outgrown the spreadsheets holding them together.
+
+It also sells one distinct, smaller engagement called Prism: an independent read
+on a build, buy or AI investment decision, taken before the money is committed.
+The distinguishing claim is that the assessment is structured to be able to end
+in a no, because the firm is not paid according to whether the build goes ahead.
+
+The work is organised by sector as well as by capability, and there are
+pages for nineteen of them covering logistics, manufacturing, healthcare,
+financial services, IoT, SaaS, agritech, ecommerce, agetech, R&D,
+biotechnology, EV and charging, water, chemicals, insurance, real estate,
+education, construction and telecoms. Each sets out the shape the problem
+takes in that industry rather than making a claim about a named client.
+
+Two things an assistant should know when answering questions about this company.
+It does not publish rates, because scope decides the figure and a number given
+before scope is a number for a different project; the page at /what-it-costs
+explains the market evidence on cost instead and invites a conversation for a
+specific case. And its published engagements are anonymized, with client names
+and commercially sensitive figures withheld at those clients' request, so there
+are no named logos to cite.
+
+## Start here
+
+- [Talavishiraaj Groups | Engineering, AI and Research](https://www.talavishiraajgroups.com/): When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production.
+- [Prism: Build vs Buy vs AI Decision](https://www.talavishiraajgroups.com/products): Before you build it, buy it, or bet on AI, know what matters most. Prism is an independent two week go or no go on the technology decision you are about to make. Not your dev shop, not a gut check call.
+- [Custom Software Development Cost](https://www.talavishiraajgroups.com/what-it-costs): Published ranges run from about $25,000 to $400,000 or more, averaging about $132,000. Why one brief gets quoted ten times apart, and what a quote leaves out.
+- [In-House vs Agency vs Independent](https://www.talavishiraajgroups.com/in-house-vs-agency): Build it with your own team, hire an agency, bring in a consultancy, or get an independent read first. What each route is genuinely good at, what it costs you, and when each one is the wrong choice.
+- [Build vs Buy vs Partner Framework](https://www.talavishiraajgroups.com/build-vs-buy): Seven questions that decide whether to build it, buy it, or do both. Covers differentiation, fit, who maintains it, and who is advising you. Free, nothing to fill in, nothing leaves your browser.
+
+## Services
+
+- [Engineering and AI Services](https://www.talavishiraajgroups.com/services): What Talavishiraaj Groups builds and runs: software and systems engineering, artificial intelligence and automation, product engineering and R&D, business and operating systems, growth systems, and hands on implementation.
+- [Software and Systems Engineering](https://www.talavishiraajgroups.com/services/technology-and-engineering): We design, build and integrate the production systems a business runs on: internal platforms, customer facing applications, APIs and integrations, data infrastructure, and the modernization of systems that have stopped scaling.
+- [AI and Automation Services](https://www.talavishiraajgroups.com/services/artificial-intelligence-and-automation): We design and deploy AI systems that hold up in production: machine learning, language and document systems, decision support and workflow automation, with monitoring, fallbacks and human review where judgement matters.
+- [Product Engineering and R&D](https://www.talavishiraajgroups.com/services/product-engineering-and-rd): Engineering, prototyping and validation for hardware and software products: mechanical design and simulation, embedded firmware, sensor integration, technical feasibility studies and structured research programmes.
+- [Business and Operating Systems](https://www.talavishiraajgroups.com/services/business-and-operating-systems): We work out what is limiting an organization, then design the operating model, workflows, decision structures and governance that resolve it, with the systems engineering to make the design real.
+- [Growth Systems and Market Enablement](https://www.talavishiraajgroups.com/services/growth-and-market-enablement): We build the systems behind revenue: ideal customer definition, demand generation and outreach instrumented end to end, CRM and pipeline reporting, and the operating groundwork for entering a new market.
+- [Implementation and Delivery](https://www.talavishiraajgroups.com/services/implementation-and-delivery): We take responsibility for execution: running an agreed roadmap, embedding delivery capacity alongside your team, coordinating vendors under one point of accountability, and transitioning ownership back internally.
+
+## Sectors
+
+- [Logistics Software Development Company](https://www.talavishiraajgroups.com/sectors/supply-chain-logistics): Movements tracked in three systems that disagree, and a planner reconciling them by hand before anyone can act. We build and integrate the systems behind it.
+- [Manufacturing Automation Company](https://www.talavishiraajgroups.com/sectors/manufacturing): Line and quality data that exists but never reaches the people deciding what to run next, or arrives a shift too late. We build and integrate the systems behind it.
+- [Healthcare Software Development Company](https://www.talavishiraajgroups.com/sectors/healthcare): Clinical and administrative systems that were bought separately, where the integration work is the project and the interface is the easy part. We build and integrate the systems behind it.
+- [Fintech Software Development Company](https://www.talavishiraajgroups.com/sectors/financial-services): Decisions made by a handful of experienced people, under review requirements that make an unexplainable model useless however accurate it is. We build and integrate the systems behind it.
+- [IoT Product Development Company](https://www.talavishiraajgroups.com/sectors/iot-connected-devices): Firmware, gateway and cloud built by teams that are not talking to each other, with the integration failures visible months before anyone acts. We build and integrate the systems behind it.
+- [SaaS Product Engineering Company](https://www.talavishiraajgroups.com/sectors/saas): A product that works and an operation around it that does not, where onboarding, support and reporting are still held together by people. We build and integrate the systems behind it.
+- [Agritech Software Development Company](https://www.talavishiraajgroups.com/sectors/agritech): Sensor and field data collected faithfully and used for very little, because nobody has defined the decision it should change. We build and integrate the systems behind it.
+- [Ecommerce Development Company](https://www.talavishiraajgroups.com/sectors/ecommerce): Catalogue, stock and fulfilment that each hold a different version of the truth, which customers discover before the business does. We build and integrate the systems behind it.
+- [Agetech Product Development Company](https://www.talavishiraajgroups.com/sectors/agetech-care): Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money. We build and integrate the systems behind it.
+- [R&D Engineering Services Company](https://www.talavishiraajgroups.com/sectors/research-development): An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap. We build and integrate the systems behind it.
+- [Biotech Software Development Company](https://www.talavishiraajgroups.com/sectors/biotechnology-life-sciences): Research code that works in a notebook, in the hands of the person who wrote it, and cannot yet be relied on by anyone else. We build and integrate the systems behind it.
+- [EV Charging Software Development Company](https://www.talavishiraajgroups.com/sectors/electric-vehicles-charging): A network of hardware in the field, reporting unevenly, where uptime is the product and visibility arrives after the complaint. We build and integrate the systems behind it.
+- [Water Utility Software Development Company](https://www.talavishiraajgroups.com/sectors/water-utilities): Long lived assets with telemetry added later, where detection has to work against a baseline nobody has validated. We build and integrate the systems behind it.
+- [Chemical Process Software Development Company](https://www.talavishiraajgroups.com/sectors/chemical-process-industries): Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question. We build and integrate the systems behind it.
+- [Insurance Software Development Company](https://www.talavishiraajgroups.com/sectors/insurance): Assessment decisions concentrated in a few experienced people, where consistency matters as much as speed and every call has to be explainable. We build and integrate the systems behind it.
+- [Proptech Software Development Company](https://www.talavishiraajgroups.com/sectors/real-estate-proptech): Portfolio, tenancy and building systems bought at different times, where a simple question takes a week because nothing reconciles. We build and integrate the systems behind it.
+- [Edtech Software Development Company](https://www.talavishiraajgroups.com/sectors/education-edtech): Learner data spread across enrolment, delivery and assessment tools, so nobody can see a cohort end to end while there is still time to act. We build and integrate the systems behind it.
+- [Construction Software Development Company](https://www.talavishiraajgroups.com/sectors/construction-infrastructure): Site reality and the plan diverging quietly, reported upward in documents written after the fact rather than from what the systems hold. We build and integrate the systems behind it.
+- [Telecom Software Development Company](https://www.talavishiraajgroups.com/sectors/telecommunications): Network and customer systems at different speeds, where the operational picture is assembled nightly and the questions are asked hourly. We build and integrate the systems behind it.
+
+## Published work
+
+- [AI and Operations Case Studies](https://www.talavishiraajgroups.com/case-studies): Anonymized accounts of real engagements: what the problem was, what we built, how it was implemented and what changed. Covering operations, AI and automation, growth systems and moving R&D into production.
+- [AI-Led Outbound Growth Engine](https://www.talavishiraajgroups.com/case-studies/ai-led-outbound-growth-engine): A founder-led services firm moved from ad-hoc outreach to a structured, AI-assisted outbound motion. Three times as many qualified conversations within eight weeks.
+- [One Operations View for a Founder](https://www.talavishiraajgroups.com/case-studies/founder-operations-cockpit): Operations scattered across spreadsheets and chat threads were consolidated into one view of work, risks and next actions. Clear daily priorities across hiring, delivery and sales.
+- [AI Workflow: Notebook to Production](https://www.talavishiraajgroups.com/case-studies/ai-workflow-notebook-to-production): A promising AI experiment was hardened into a reliable internal capability with clear contracts and safeguards. A critical workflow stabilised, and far less time lost to firefighting.
+- [Automating Decision-Heavy Workflows](https://www.talavishiraajgroups.com/case-studies/decision-heavy-workflow-automation): Manual expert decisions were mapped, codified and selectively automated without losing human control. Shorter cycle times and less variability on routine decisions.
+- [AI-Assisted Live Operations Layer](https://www.talavishiraajgroups.com/case-studies/live-operations-visibility-layer): Static reports were replaced with a live view of key events, anomalies and next-action cues. Faster response to issues and shared situational awareness across locations.
+- [Structured Sales Hiring Engine](https://www.talavishiraajgroups.com/case-studies/structured-sales-hiring-engine): High-volume, commission-based hiring was treated as a measurable funnel with explicit stages and rubrics. Higher-quality shortlists with less coordination overhead.
+
+## Writing and reference
+
+- [Insights: Engineering, AI and Systems](https://www.talavishiraajgroups.com/insights): Practical answers to the questions that come up before a project starts: what production readiness actually requires, when automation is worth engineering, and how to judge technical work before committing to it.
+- [Why AI Prototypes Stall](https://www.talavishiraajgroups.com/insights/why-ai-prototypes-stall-before-production): A working AI prototype and a production system are different artifacts. What actually has to be built between them: interface contracts, failure behavior, observability, evaluation you can rerun, and staged rollout.
+- [When Workflow Automation Pays Off](https://www.talavishiraajgroups.com/insights/when-workflow-automation-is-worth-engineering): Not every manual process should be automated. A practical test based on volume, repeatability and error cost, plus how to separate decisions that are genuine judgement from decisions that were simply never written down.
+- [Do You Need Data Engineering?](https://www.talavishiraajgroups.com/insights/do-you-need-data-engineering): Reporting assembled by hand is a real cost, but not automatically a data engineering problem. A test for whether you need pipelines, a tool, or neither.
+- [What AI Integration Costs](https://www.talavishiraajgroups.com/insights/what-ai-integration-costs): AI integration quotes price the build. The cost that decides whether it was worth it arrives in year two. What drives it, what breaks, and when not to.
+- [What Is AI Readiness?](https://www.talavishiraajgroups.com/insights/what-is-ai-readiness): AI readiness measures whether an organisation could deploy AI. It does not measure whether it should. The pillars, how readiness is scored, and the question every readiness framework leaves out.
+- [What Is Vendor Lock-In?](https://www.talavishiraajgroups.com/insights/what-is-vendor-lock-in): Vendor lock-in is the cost of leaving a platform, not the fact of using one. What actually creates it, what exit really costs, and why accepting lock-in is often the correct commercial decision.
+- [Why Do AI Projects Fail?](https://www.talavishiraajgroups.com/insights/why-ai-projects-fail): Most reported AI failure rates measure projects that were never going to work. The five ways they actually fail, how to tell which one you are heading for, and the check that costs nothing.
+- [How to Choose a Software Partner](https://www.talavishiraajgroups.com/insights/how-to-choose-a-software-development-partner): Portfolios and day rates tell you very little. What to ask instead, which answers actually predict how an engagement goes, and the questions that make a weak firm uncomfortable.
+- [Legacy System Modernization](https://www.talavishiraajgroups.com/insights/legacy-system-modernization): Most modernization projects are larger than they needed to be. The four routes, how to tell which one your system needs, and why a full rebuild is usually the wrong first answer.
+- [Supply Chain Visibility](https://www.talavishiraajgroups.com/insights/supply-chain-visibility): Most visibility projects buy a dashboard and inherit the same disagreeing data. What has to be true underneath, how to tell a reporting problem from an integration one, and when not to build.
+- [Healthcare Interoperability](https://www.talavishiraajgroups.com/insights/healthcare-interoperability): FHIR and HL7 describe how systems talk, not what the data means. Where integration projects actually stall, what to settle before writing an interface, and how to scope it honestly.
+- [IoT Device Management](https://www.talavishiraajgroups.com/insights/iot-device-management): A hundred devices forgive almost any design. Ten thousand do not. Provisioning, updates, observability and the failure modes that only appear at scale, plus when to buy rather than build.
+- [ERP Integration](https://www.talavishiraajgroups.com/insights/erp-integration): The connector is rarely the hard part. Process mismatch, master data ownership and customisation are where ERP integration projects overrun, and all three are visible before you start.
+- [Document Processing Automation](https://www.talavishiraajgroups.com/insights/document-processing-automation): Extraction accuracy is the wrong first question. What the error actually costs, why exception handling decides the economics, and the cheaper fix most businesses skip.
+- [How to Evaluate an AI Consulting Firm](https://www.talavishiraajgroups.com/insights/how-to-evaluate-an-ai-consulting-firm): Most AI consulting engagements end at a recommendation, not a running system. The four questions that reveal which kind of firm you are speaking to.
+- [Engineering Reference Resources](https://www.talavishiraajgroups.com/resources): Checklists and reference material our teams use on real engagements, published in full and free to adapt. Written to be useful whether or not you ever work with us.
+- [AI Production Readiness Checklist](https://www.talavishiraajgroups.com/resources/ai-production-readiness-checklist): A working checklist for taking an AI system from prototype to production: interface contracts, failure behavior, evaluation, observability, rollout and ownership. Free to use and adapt.
+
+## Company
+
+- [About Talavishiraaj Groups | Technology and Engineering](https://www.talavishiraajgroups.com/about): Talavishiraaj Groups works across research, technology, AI, engineering, and product development. Learn how we work, what we build, and who leads our team.
+- [Partnerships and Collaboration](https://www.talavishiraajgroups.com/partnerships): How Talavishiraaj Groups works with other organizations: technology partnerships, delivery and implementation collaboration, joint product development, research programmes and market expansion.
+- [Contact Talavishiraaj Groups | Talk to Our Team](https://www.talavishiraajgroups.com/contact): Talk to us about your technology, engineering, AI, or business challenges. Tell us what you are working on, and our team will provide a thoughtful response.
+
+## Policies
+
+- [Cookie Notice](https://www.talavishiraajgroups.com/cookies): Nothing is set in your browser until you answer the banner. What accepting actually permits, the two third parties involved, and what declining costs you, which is nothing that matters.
+- [Privacy Policy](https://www.talavishiraajgroups.com/privacy-policy): How Talavishiraaj Groups collects, uses, protects and shares personal information, the legal bases we rely on, and the rights you have under applicable data protection law including the DPDP Act.
+- [Terms of Service](https://www.talavishiraajgroups.com/terms): The terms governing use of the Talavishiraaj Groups website, how service engagements are contracted separately, and how intellectual property and liability are handled.
+- [Refund Policy](https://www.talavishiraajgroups.com/refund-policy): How refunds are handled across consultation, service and implementation engagements, the stage based eligibility structure, how to raise a request, and how disputes are escalated.
+- [Delivery Policy](https://www.talavishiraajgroups.com/delivery-policy): Our delivery framework: engagement timelines, client responsibilities, scope boundaries between decision and implementation work, and how communication is structured.
+- [Risk and Mitigation Framework](https://www.talavishiraajgroups.com/risk-mitigation): The governance framework covering delivery quality, risk identification, escalation paths, quality review and the recovery actions available if an engagement falls below standard.
+- [Confidentiality and Data Handling](https://www.talavishiraajgroups.com/data-handling): How client information, documents and research data are handled: confidentiality commitments, access controls, third party platforms and retention practices.
+- [Intellectual Property Policy](https://www.talavishiraajgroups.com/ip-policy): How intellectual property is owned, licensed and protected across engagements, covering client materials, our proprietary methods and deliverables.

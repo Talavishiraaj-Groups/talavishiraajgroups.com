@@ -1,0 +1,639 @@
+[
+ {
+  "slug": "supply-chain-logistics",
+  "title": "Software, data and automation for supply chain and logistics",
+  "problem": "Movements tracked in three systems that disagree, and a planner reconciling them by hand before anyone can act.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Movements tracked in a TMS, a spreadsheet and somebody’s inbox, reconciled by hand each morning",
+   "Exceptions found by a customer calling before the system flags them",
+   "Carrier and warehouse data arriving in formats nobody owns the mapping for"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Business & Operating Systems"
+  ],
+  "reading": [
+   "supply-chain-visibility",
+   "erp-integration",
+   "document-processing-automation"
+  ],
+  "faqs": [
+   {
+    "q": "What does supply chain and logistics technology work involve?",
+    "a": "Movements tracked in three systems that disagree, and a planner reconciling them by hand before anyone can act. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in supply chain and logistics before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Supply chain and logistics"
+ },
+ {
+  "slug": "manufacturing",
+  "title": "Automation, systems and data engineering for manufacturing",
+  "problem": "Line and quality data that exists but never reaches the people deciding what to run next, or arrives a shift too late.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Line data that exists on the floor and never reaches the people scheduling the next run",
+   "Quality issues traced back days later, by which point the batch has shipped",
+   "Maintenance history in one system and sensor telemetry in another"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Product Engineering & R&D"
+  ],
+  "reading": [
+   "supply-chain-visibility",
+   "erp-integration"
+  ],
+  "faqs": [
+   {
+    "q": "What does manufacturing technology work involve?",
+    "a": "Line and quality data that exists but never reaches the people deciding what to run next, or arrives a shift too late. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in manufacturing before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Manufacturing"
+ },
+ {
+  "slug": "healthcare",
+  "title": "Software, integration and data engineering for healthcare",
+  "problem": "Clinical and administrative systems that were bought separately, where the integration work is the project and the interface is the easy part.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Clinical and administrative systems bought separately, with integration treated as an afterthought",
+   "Reporting assembled by hand for people who need it daily",
+   "A rollout stalled because nobody owns the decision when the output is wrong"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Business & Operating Systems",
+   "Implementation & Delivery"
+  ],
+  "reading": [
+   "healthcare-interoperability",
+   "document-processing-automation"
+  ],
+  "faqs": [
+   {
+    "q": "What does healthcare technology work involve?",
+    "a": "Clinical and administrative systems that were bought separately, where the integration work is the project and the interface is the easy part. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in healthcare before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Healthcare"
+ },
+ {
+  "slug": "financial-services",
+  "title": "Software, AI and decision systems for financial services",
+  "problem": "Decisions made by a handful of experienced people, under review requirements that make an unexplainable model useless however accurate it is.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Assessment decisions concentrated in a few experienced people who cannot be cloned",
+   "A model that performs well and cannot be explained to a reviewer",
+   "Controls documented in one place and enforced in another"
+  ],
+  "capabilities": [
+   "Artificial Intelligence & Automation",
+   "Business & Operating Systems",
+   "Technology & Engineering"
+  ],
+  "reading": [
+   "document-processing-automation"
+  ],
+  "faqs": [
+   {
+    "q": "What does financial services technology work involve?",
+    "a": "Decisions made by a handful of experienced people, under review requirements that make an unexplainable model useless however accurate it is. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in financial services before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Financial services"
+ },
+ {
+  "slug": "iot-connected-devices",
+  "title": "Hardware, firmware and cloud for connected devices",
+  "problem": "Firmware, gateway and cloud built by teams that are not talking to each other, with the integration failures visible months before anyone acts.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Firmware, gateway and cloud built by teams on different schedules",
+   "Integration failures visible months before anyone has time to act",
+   "Devices in the field reporting unevenly, with no trusted baseline"
+  ],
+  "capabilities": [
+   "Product Engineering & R&D",
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation"
+  ],
+  "reading": [
+   "iot-device-management"
+  ],
+  "faqs": [
+   {
+    "q": "What does iot and connected devices technology work involve?",
+    "a": "Firmware, gateway and cloud built by teams that are not talking to each other, with the integration failures visible months before anyone acts. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in iot and connected devices before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "IoT and connected devices"
+ },
+ {
+  "slug": "saas",
+  "title": "Product engineering and operating systems for SaaS",
+  "problem": "A product that works and an operation around it that does not, where onboarding, support and reporting are still held together by people.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "A product that works and an operation around it held together by people",
+   "Onboarding, support and reporting each depending on someone remembering",
+   "Usage data that cannot answer which accounts are at risk"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Growth & Market Enablement",
+   "Business & Operating Systems"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does saas technology work involve?",
+    "a": "A product that works and an operation around it that does not, where onboarding, support and reporting are still held together by people. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in saas before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "SaaS"
+ },
+ {
+  "slug": "agritech",
+  "title": "Sensing, data and software for agritech",
+  "problem": "Sensor and field data collected faithfully and used for very little, because nobody has defined the decision it should change.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Sensor and field data collected faithfully and acted on rarely",
+   "Models built against a season that will not repeat exactly",
+   "Connectivity assumptions that hold in the office and not in the field"
+  ],
+  "capabilities": [
+   "Product Engineering & R&D",
+   "Artificial Intelligence & Automation",
+   "Technology & Engineering"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does agritech technology work involve?",
+    "a": "Sensor and field data collected faithfully and used for very little, because nobody has defined the decision it should change. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in agritech before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Agritech"
+ },
+ {
+  "slug": "ecommerce",
+  "title": "Platform, data and automation for ecommerce",
+  "problem": "Catalogue, stock and fulfilment that each hold a different version of the truth, which customers discover before the business does.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Catalogue, stock and fulfilment each holding a different version of the truth",
+   "Customers discovering the discrepancy before the business does",
+   "Marketing spend attributed by guesswork"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Growth & Market Enablement",
+   "Artificial Intelligence & Automation"
+  ],
+  "reading": [
+   "supply-chain-visibility",
+   "erp-integration"
+  ],
+  "faqs": [
+   {
+    "q": "What does ecommerce technology work involve?",
+    "a": "Catalogue, stock and fulfilment that each hold a different version of the truth, which customers discover before the business does. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in ecommerce before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Ecommerce"
+ },
+ {
+  "slug": "agetech-care",
+  "title": "Devices, monitoring and software for agetech and care",
+  "problem": "Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Monitoring that generates more alerts than anyone can triage",
+   "False alarms costing trust rather than money",
+   "Devices used by people who will not troubleshoot them"
+  ],
+  "capabilities": [
+   "Product Engineering & R&D",
+   "Artificial Intelligence & Automation",
+   "Technology & Engineering"
+  ],
+  "reading": [
+   "healthcare-interoperability",
+   "iot-device-management"
+  ],
+  "faqs": [
+   {
+    "q": "What does agetech and care technology work involve?",
+    "a": "Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in agetech and care before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Agetech and care"
+ },
+ {
+  "slug": "research-development",
+  "title": "Prototyping, validation and applied research",
+  "problem": "An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "An investment decision waiting on a technical answer nobody has produced",
+   "Internal capacity fully committed to the roadmap",
+   "A prototype that impresses and does not answer the question asked"
+  ],
+  "capabilities": [
+   "Product Engineering & R&D",
+   "Technology & Engineering",
+   "Business & Operating Systems"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does research and development technology work involve?",
+    "a": "An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in research and development before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Research and development"
+ },
+ {
+  "slug": "biotechnology-life-sciences",
+  "title": "Research software and production systems for life sciences",
+  "problem": "Research code that works in a notebook, in the hands of the person who wrote it, and cannot yet be relied on by anyone else.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Research code that runs in a notebook and nowhere else",
+   "Analysis that cannot be reproduced by the next person",
+   "Instrument and LIMS data that never meet"
+  ],
+  "capabilities": [
+   "Product Engineering & R&D",
+   "Artificial Intelligence & Automation",
+   "Technology & Engineering"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does biotechnology and life sciences technology work involve?",
+    "a": "Research code that works in a notebook, in the hands of the person who wrote it, and cannot yet be relied on by anyone else. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in biotechnology and life sciences before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Biotechnology and life sciences"
+ },
+ {
+  "slug": "electric-vehicles-charging",
+  "title": "Telemetry, software and systems for EV and charging networks",
+  "problem": "A network of hardware in the field, reporting unevenly, where uptime is the product and visibility arrives after the complaint.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Hardware in the field where uptime is the product",
+   "Faults reported by users before telemetry surfaces them",
+   "Charging, billing and support systems that disagree"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Product Engineering & R&D"
+  ],
+  "reading": [
+   "iot-device-management"
+  ],
+  "faqs": [
+   {
+    "q": "What does electric vehicles and charging technology work involve?",
+    "a": "A network of hardware in the field, reporting unevenly, where uptime is the product and visibility arrives after the complaint. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in electric vehicles and charging before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Electric vehicles and charging"
+ },
+ {
+  "slug": "water-utilities",
+  "title": "Telemetry, detection and reporting for water and utilities",
+  "problem": "Long lived assets with telemetry added later, where detection has to work against a baseline nobody has validated.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Long lived assets with telemetry retrofitted later",
+   "Detection running against a baseline nobody has validated",
+   "Compliance evidence assembled by hand at reporting time"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Product Engineering & R&D"
+  ],
+  "reading": [
+   "iot-device-management"
+  ],
+  "faqs": [
+   {
+    "q": "What does water and utilities technology work involve?",
+    "a": "Long lived assets with telemetry added later, where detection has to work against a baseline nobody has validated. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in water and utilities before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Water and utilities"
+ },
+ {
+  "slug": "chemical-process-industries",
+  "title": "Process data, compliance and systems for chemical industries",
+  "problem": "Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Process data, compliance evidence and maintenance history in separate systems",
+   "A simple question taking a week to answer",
+   "Changes to a process recorded informally, if at all"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Business & Operating Systems",
+   "Artificial Intelligence & Automation"
+  ],
+  "reading": [
+   "erp-integration"
+  ],
+  "faqs": [
+   {
+    "q": "What does chemical and process industries technology work involve?",
+    "a": "Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in chemical and process industries before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Chemical and process industries"
+ },
+ {
+  "slug": "insurance",
+  "title": "Software, AI and decision systems for insurance",
+  "problem": "Assessment decisions concentrated in a few experienced people, where consistency matters as much as speed and every call has to be explainable.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Assessment decisions concentrated in a few experienced people, with no way to delegate the judgement",
+   "A model that performs well and cannot be explained to a reviewer who asks why",
+   "Policy, claims and customer systems that each hold a different version of the same account"
+  ],
+  "capabilities": [
+   "Artificial Intelligence & Automation",
+   "Business & Operating Systems",
+   "Technology & Engineering"
+  ],
+  "reading": [
+   "healthcare-interoperability",
+   "document-processing-automation"
+  ],
+  "faqs": [
+   {
+    "q": "What does insurance technology work involve?",
+    "a": "Assessment decisions concentrated in a few experienced people, where consistency matters as much as speed and every call has to be explainable. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in insurance before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Insurance"
+ },
+ {
+  "slug": "real-estate-proptech",
+  "title": "Platform, data and integration for real estate",
+  "problem": "Portfolio, tenancy and building systems bought at different times, where a simple question takes a week because nothing reconciles.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Portfolio, tenancy and building systems bought at different times and never reconciled",
+   "A simple portfolio question taking a week because three teams have to be asked",
+   "Building telemetry arriving in formats nobody owns the mapping for"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Business & Operating Systems",
+   "Artificial Intelligence & Automation"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does real estate and proptech technology work involve?",
+    "a": "Portfolio, tenancy and building systems bought at different times, where a simple question takes a week because nothing reconciles. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in real estate and proptech before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Real estate and proptech"
+ },
+ {
+  "slug": "education-edtech",
+  "title": "Platform, data and reporting for education",
+  "problem": "Learner data spread across enrolment, delivery and assessment tools, so nobody can see a cohort end to end while there is still time to act.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Learner data split across enrolment, delivery and assessment tools",
+   "Cohort problems visible only after the term, when nothing can be done about them",
+   "Reporting for funders and regulators assembled by hand every cycle"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Growth & Market Enablement"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does education and edtech technology work involve?",
+    "a": "Learner data spread across enrolment, delivery and assessment tools, so nobody can see a cohort end to end while there is still time to act. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in education and edtech before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Education and edtech"
+ },
+ {
+  "slug": "construction-infrastructure",
+  "title": "Software, data and field systems for construction",
+  "problem": "Site reality and the plan diverging quietly, reported upward in documents written after the fact rather than from what the systems hold.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Site reality and the plan diverging quietly between reporting cycles",
+   "Progress reported in documents written after the fact rather than from the systems",
+   "Equipment, materials and subcontractor data living in separate places"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Business & Operating Systems",
+   "Product Engineering & R&D"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does construction and infrastructure technology work involve?",
+    "a": "Site reality and the plan diverging quietly, reported upward in documents written after the fact rather than from what the systems hold. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in construction and infrastructure before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Construction and infrastructure"
+ },
+ {
+  "slug": "telecommunications",
+  "title": "Network, customer and operational systems for telecom",
+  "problem": "Network and customer systems at different speeds, where the operational picture is assembled nightly and the questions are asked hourly.",
+  "intro": "That problem is rarely solved by one more tool. It is solved by making the systems you already run agree with each other, deciding which numbers can be trusted, and putting the answer where someone acts on it. We do that work end to end, across software, data, AI and the hardware side where it reaches that far.",
+  "signals": [
+   "Network and customer systems running at different speeds",
+   "An operational picture assembled nightly for questions asked hourly",
+   "Faults correlated by hand across tooling that was never meant to join up"
+  ],
+  "capabilities": [
+   "Technology & Engineering",
+   "Artificial Intelligence & Automation",
+   "Implementation & Delivery"
+  ],
+  "reading": [],
+  "faqs": [
+   {
+    "q": "What does telecommunications technology work involve?",
+    "a": "Network and customer systems at different speeds, where the operational picture is assembled nightly and the questions are asked hourly. The work is usually less about building something new and more about making what already exists agree with itself: integrating the systems holding the data, establishing which numbers can be trusted, and putting the result where a decision gets made. We cover software and systems engineering, applied AI and automation, and the hardware side where the problem reaches it."
+   },
+   {
+    "q": "How do you know whether this is worth building?",
+    "a": "We look at volume, repeatability and what an error costs before proposing anything, and we say so when the work does not justify itself. Published data puts projects that defined the requirement before committing within about 10 to 15 percent of budget, against 30 to 60 percent over for projects that skipped it. The assessment is deliberately structured so that it can end in a no."
+   },
+   {
+    "q": "Have you worked in telecommunications before?",
+    "a": "Yes. Our published case studies are anonymized at our clients' request, so the engagements in this sector are not listed by name, and we will not imply otherwise. What we can do on a call is talk through the specific problem shape, what the work involved and what it took to make it hold up in production."
+   }
+  ],
+  "name": "Telecommunications"
+ }
+]
