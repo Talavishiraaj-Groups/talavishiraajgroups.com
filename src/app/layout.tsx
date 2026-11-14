@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { BehaviourAnalytics, CookieConsent } from '@/components/consent';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Attribution } from '@/components/Attribution';
 
 const sans = Inter_Tight({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <BehaviourAnalytics />
         <Analytics />
+        <SpeedInsights />
         <Attribution />
       </body>
     </html>
