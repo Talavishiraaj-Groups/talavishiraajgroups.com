@@ -83,6 +83,31 @@ export function RoleArt({ slug }: { slug: string }) {
       </Frame>
     );
   }
+  if (slug === 'sales-development-representative') {
+    const targets = [
+      { x: 300, y: 70, ok: true },
+      { x: 330, y: 140, ok: false },
+      { x: 310, y: 210, ok: true },
+      { x: 260, y: 270, ok: false },
+    ];
+    return (
+      <Frame label="Outbound calls going out to prospects, with qualified ones ticked">
+        <rect x={60} y={110} width={78} height={130} rx={16} fill={I} />
+        <rect x={70} y={124} width={58} height={88} rx={6} fill={S} />
+        <circle cx={99} cy={226} r={5} fill="#fff" opacity={0.7} />
+        {[30, 55, 80].map((r, i) => (
+          <path key={r} d={`M${150 + r * 0.2},${150 - r} a${r},${r} 0 0 1 0,${r * 2}`} fill="none" stroke={S} strokeWidth={2.5} strokeLinecap="round" className="cv-pulse" style={d(i * 0.3)} />
+        ))}
+        {targets.map((t, i) => (
+          <g key={i}>
+            <path d={`M190,175 Q${(190 + t.x) / 2},${(175 + t.y) / 2 - 20} ${t.x - 20},${t.y}`} fill="none" stroke={t.ok ? S : L} strokeWidth={2} strokeDasharray="5 7" className="cv-dash" style={d(i * 0.25)} />
+            <circle cx={t.x} cy={t.y} r={18} fill={t.ok ? M : '#fff'} stroke={t.ok ? 'none' : L} strokeWidth={1.5} />
+            {t.ok && <path d={`M${t.x - 7},${t.y} l5,5 l10,-11`} fill="none" stroke={I} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />}
+          </g>
+        ))}
+      </Frame>
+    );
+  }
   if (slug === 'business-development-executive') {
     return (
       <Frame label="A discovery conversation turning into written notes">
