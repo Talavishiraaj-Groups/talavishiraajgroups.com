@@ -6,12 +6,13 @@ import { PageHero } from '@/components/PageHero';
 import { Reveal } from '@/components/motion';
 import { CtaBand } from '@/components/ui';
 import { formatDate, getPosts } from '@/lib/blog';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/blog', {
   title: 'Blog',
   description: 'Plain reading on what is changing in AI and what it means for teams deciding what to build, buy or automate.',
   alternates: { canonical: '/blog', types: { 'application/rss+xml': '/blog/rss.xml' } },
-};
+});
 
 export default function BlogPage() {
   const posts = getPosts();

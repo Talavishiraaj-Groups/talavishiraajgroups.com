@@ -6,12 +6,13 @@ import { PageHero } from '@/components/PageHero';
 import { GlobalReach } from '@/components/illustrations';
 import { Reveal } from '@/components/motion';
 import { hiringSteps, roles, terms } from '@/content/careers';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/careers', {
   title: 'Careers',
   description: 'Commission only lead generation and sales roles. Fully remote, open across India and internationally.',
   alternates: { canonical: '/careers' },
-};
+});
 
 export default function CareersPage() {
   return (

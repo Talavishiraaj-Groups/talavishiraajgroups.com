@@ -6,7 +6,8 @@ import { ApplyForm } from '@/components/Careers';
 import { Crumbs } from '@/components/PageHero';
 import { RoleArt } from '@/components/illustrations';
 import { SplitWords } from '@/components/motion';
-import { DATE_POSTED, findRole, hiringSteps, payDetail, roles } from '@/content/careers';
+import { APPLY_EMAIL, DATE_POSTED, EXPERIENCE, findRole, hiringSteps, payDetail, roles } from '@/content/careers';
+import descriptions from '@/content/seo-descriptions.json';
 
 const BASE = 'https://www.talavishiraajgroups.com';
 
@@ -20,8 +21,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!r) return {};
   return {
     // Kept under 60 characters so search results show it in full.
-    title: { absolute: `${r.title}: Remote, Commission Only` },
-    description: `${r.summary} Commission only, fully remote, open in India and internationally.`,
+    title: { absolute: `${r.short}: Remote, Commission Only` },
+    description: (descriptions as Record<string, string>)[`/careers/${r.slug}`] ?? r.summary,
     alternates: { canonical: `/careers/${r.slug}` },
   };
 }
@@ -46,23 +47,31 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
   const role = findRole((await params).slug);
   if (!role) notFound();
 
+  // The same facts a Wellfound listing puts in its header.
   const facts: [string, string][] = [
-    ['Pay', 'Commission only, uncapped'],
-    ['Location', 'Remote, India and international'],
-    ['Basis', 'Independent contractor'],
+    ['Compensation', role.commission.tiers ? 'Commission only, up to 15%' : 'Commission only, uncapped'],
+    ['Experience', EXPERIENCE],
+    ['Job type', role.contract],
+    ['Location', 'Remote, hiring everywhere'],
+    ['Time zones', role.timezones],
     ['Hours', role.hours],
+    ['Visa sponsorship', 'Not available'],
+    ['Equity', 'None'],
   ];
 
-  // Google for Jobs structured data. No salary is published because commission is agreed per person.
+  // Google for Jobs structured data. Commission only, so no base salary is published.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
     title: role.title,
-    description: [...role.about, 'What you will do: ' + role.do.join(' '), 'What we are looking for: ' + role.need.join(' '), ...payDetail].map((p) => `<p>${p}</p>`).join(''),
+    description: [...role.about, 'What you will do: ' + role.do.join(' '), 'Requirements: ' + role.need.join(' '), 'Compensation: ' + role.commission.summary + (role.commission.tiers ? ' ' + role.commission.tiers.map(([k, v]) => k + ': ' + v + '.').join(' ') : ''), ...payDetail].map((p) => `<p>${p}</p>`).join(''),
+    experienceRequirements: { '@type': 'OccupationalExperienceRequirements', monthsOfExperience: 24 },
+    skills: role.skills.join(', '),
+    industry: 'Engineering, AI and consulting services',
     datePosted: DATE_POSTED,
     employmentType: 'CONTRACTOR',
     jobLocationType: 'TELECOMMUTE',
-    applicantLocationRequirements: [{ '@type': 'Country', name: 'India' }, { '@type': 'Country', name: 'Worldwide' }],
+    applicantLocationRequirements: ['United States', 'United Kingdom', 'United Arab Emirates', 'Germany', 'India'].map((name) => ({ '@type': 'Country', name })),
     hiringOrganization: { '@type': 'Organization', name: 'Talavishiraaj Groups', sameAs: BASE, logo: `${BASE}/logo.png` },
     directApply: true,
     url: `${BASE}/careers/${role.slug}`,
@@ -89,7 +98,7 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
               <RoleArt slug={role.slug} />
             </div>
           </div>
-          <dl className="fade-up mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4" style={{ animationDelay: '0.45s' }}>
+          <dl className="fade-up mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line grid-cols-2 lg:grid-cols-4" style={{ animationDelay: '0.45s' }}>
             {facts.map(([k, v]) => (
               <div key={k} className="bg-paper p-5">
                 <dt className="text-[13px] text-muted">{k}</dt>
@@ -103,20 +112,40 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
       <div className="wrap grid gap-12 pb-20 lg:grid-cols-12">
         <article className="lg:col-span-8">
           <section className="py-10">
-            <h2 className="text-2xl font-medium tracking-tight">About the role</h2>
+            <h2 className="text-2xl font-medium tracking-tight">About the job</h2>
             {role.about.map((p) => (
               <p key={p} className="mt-5 text-lg leading-relaxed text-ink/80">{p}</p>
             ))}
           </section>
           <List title="What you will do" items={role.do} />
-          <List title="What we are looking for" items={role.need} tick />
+          <List title="Requirements" items={role.need} tick />
           <List title="Good to have" items={role.plus} />
           <List title="What good looks like after 90 days" items={role.measure} />
           <section className="border-t border-line py-10">
-            <h2 className="text-2xl font-medium tracking-tight">How you are paid</h2>
-            {payDetail.map((p) => (
-              <p key={p} className="mt-5 text-[16px] leading-relaxed text-ink/80">{p}</p>
+            <h2 className="text-2xl font-medium tracking-tight">Compensation</h2>
+            <p className="mt-5 text-[16px] leading-relaxed text-ink/80">{role.commission.summary}</p>
+            {role.commission.tiers && (
+              <div className="mt-6 overflow-hidden rounded-2xl border border-line">
+                {role.commission.tiers.map(([k, v]) => (
+                  <div key={k} className="flex items-center justify-between border-b border-line bg-white px-5 py-4 last:border-b-0">
+                    <span className="text-[15px]">{k}</span>
+                    <span className="text-xl font-semibold tracking-tight text-signal">{v}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {payDetail.slice(1).map((p) => (
+              <p key={p} className="mt-5 text-[15px] leading-relaxed text-muted">{p}</p>
             ))}
+          </section>
+          <List title="Growth opportunities" items={role.growth} />
+          <section className="border-t border-line py-10">
+            <h2 className="text-2xl font-medium tracking-tight">Skills</h2>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {role.skills.map((k) => (
+                <li key={k} className="rounded-full border border-line px-3.5 py-1.5 text-[14px]">{k}</li>
+              ))}
+            </ul>
           </section>
           <section className="border-t border-line py-10">
             <h2 className="text-2xl font-medium tracking-tight">How hiring works</h2>
@@ -149,7 +178,8 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
         <div className="wrap grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <h2 className="text-h2 font-medium">Apply</h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-muted">Two minutes. A CV or a LinkedIn link is enough.</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted">Two minutes. A CV or a LinkedIn link is enough. Include a short introduction and your past results: meetings booked, conversion rates or revenue closed.</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted">Prefer email? Write to <a href={`mailto:${APPLY_EMAIL}?subject=${encodeURIComponent(role.title)}`} className="text-signal underline underline-offset-4">{APPLY_EMAIL}</a>.</p>
           </div>
           <div className="lg:col-span-8">
             <ApplyForm initialRole={role.title} />

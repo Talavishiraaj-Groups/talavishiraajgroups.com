@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.talavishiraajgroups.com'),
   title: { default: 'Talavishiraaj Groups | Engineering, AI and Research', template: '%s | Talavishiraaj Groups' },
   description:
-    'When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production.',
+    'Research, engineering and AI in one accountable team, for problems that stall between suppliers. From first analysis to a system running in production.',
   icons: { icon: '/logo.png' },
   openGraph: { siteName: 'Talavishiraaj Groups', type: 'website', locale: 'en_US', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Talavishiraaj Groups' }] },
   twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
