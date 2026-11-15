@@ -2,6 +2,8 @@
 
 Marketing website for Talavishiraaj Groups (engineering, AI and research firm). Goal: inbound enquiries and booked sales calls from Google, Bing and AI assistants.
 
+Target markets in priority order: United States, United Kingdom, United Arab Emirates, Europe, India. Content defaults to a US reader (US English, dollars) and measurement runs in that order.
+
 - Next.js 15 App Router, React 19, Tailwind, Framer Motion. Light theme only.
 - `main` deploys to production on Vercel automatically. The local working branch is `redesign-nextjs`; publish with `git push origin HEAD:main`.
 - Local build needs about 3 GB: stop the preview server, then `NODE_OPTIONS=--max-old-space-size=3072 npm run build`.

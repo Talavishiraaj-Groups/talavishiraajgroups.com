@@ -8,6 +8,9 @@ automation, product engineering and R&D, operating and business systems, growth
 systems, and hands on delivery under one accountable partner, rather than
 splitting them across separate suppliers.
 
+It works with companies in the United States, the United Kingdom, the United
+Arab Emirates, Europe and India.
+
 It works with organizations whose problems cross those boundaries at once: a
 build that spans software, data, hardware and the business around it; an AI
 prototype that works in a notebook and cannot be trusted in production; founder

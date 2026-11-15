@@ -8,13 +8,31 @@ To bring founders, operators and technology leaders to the site from search engi
 
 ## Who we are writing for
 
-Founders, COOs, CTOs and heads of operations at small and mid-sized companies in India, the US, the UK, the Gulf and Australia. They are smart and busy, not AI researchers. They want to know whether a development changes a decision they have to make about building, buying or automating something.
+Founders, COOs, CTOs and heads of operations at small and mid-sized companies. They are smart and busy, not AI researchers. They want to know whether a development changes a decision they have to make about building, buying or automating something.
+
+## Markets, in priority order
+
+We want reach and enquiries from these markets, in this order:
+
+1. **United States** (first priority)
+2. **United Kingdom**
+3. **United Arab Emirates**
+4. **Europe** (Germany, the Netherlands, France, Ireland and the Nordics first)
+5. **India**
+
+What that means for every post:
+
+- **Write for a US reader by default.** US English, US dollars, US companies, US examples and US regulators first. If a figure only exists in another currency, give it and add the rough dollar value.
+- **Then widen in order.** Where it changes the decision, add what is different for the UK, the UAE and Europe, in that order: for example UK GDPR and the ICO, the UAE PDPL and Dubai or Abu Dhabi programmes, the EU AI Act and GDPR. Mention India when it genuinely matters to the story, not by default.
+- **Pick news by market.** When choosing between stories, prefer the one that matters most to the highest market on the list. A US or UK story beats an India-only story unless the India story is clearly bigger for our readers.
+- **Check demand in that order.** Trend and keyword checks run for the US first, then the UK, the UAE, Europe and India.
+- About one post in six can be written mainly for one of the later markets (for example "AI regulation in the UAE for mid-size companies"), so each market builds its own search presence over time.
 
 ## Picking the topic
 
 1. Look at what happened in AI in the last 72 hours. Use primary sources first: official announcements from model labs and cloud providers, release notes, papers, regulator publications, earnings calls. Then reputable press (Reuters, The Verge, TechCrunch, Ars Technica, FT, Economic Times, Mint, Inc42).
 2. Pick the one development that changes a business decision for our readers. A model price cut, a new agent capability, a regulation taking effect, a big company's results showing where AI spend is going, a security incident in an AI tool. Skip pure research results with no business consequence, rumours and funding gossip.
-3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the India side, the risk side) or pick the next story.
+3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the UK or EU side, the risk side) or pick the next story.
 4. About one post in five can be evergreen instead of news, answering a question buyers search for ("how much does an AI chatbot cost to build", "RAG vs fine tuning for a small team"). These still need current sources.
 
 ## Trend radar: what people are reading right now
@@ -23,10 +41,10 @@ Before choosing a topic, spend a few minutes seeing what buyers are actually rea
 
 | Where | How | What it tells you |
 | --- | --- | --- |
-| Google Trends | SerpApi engine `google_trends_trending_now` with `geo=IN` and `geo=US`; `google_trends` for interest in a candidate phrase over 7 days | What is spiking in search, and whether a phrase is rising |
-| Google News | SerpApi engine `google_news`, query such as "AI agents", "OpenAI", "AI regulation India" | Which stories the press is running with |
+| Google Trends | SerpApi engine `google_trends_trending_now` in market order: `geo=US`, `GB`, `AE`, then `DE` and `IN`; `google_trends` for interest in a candidate phrase over 7 days in the US and UK | What is spiking in search, and whether a phrase is rising |
+| Google News | SerpApi engine `google_news`, query such as "AI agents", "OpenAI", "AI regulation", "EU AI Act", "UAE AI" | Which stories the press is running with |
 | Hacker News | `https://hn.algolia.com/api/v1/search?tags=front_page` (and `search_by_date?query=AI`) | What technical decision makers are reading and arguing about |
-| Reddit | `https://www.reddit.com/r/<sub>/top.json?t=week` for r/artificial, r/OpenAI, r/LocalLLaMA, r/smallbusiness, r/Entrepreneur, r/IndianStartups (skip if blocked) | The real questions and frustrations people have, in their words |
+| Reddit | `https://www.reddit.com/r/<sub>/top.json?t=week` for r/artificial, r/OpenAI, r/LocalLLaMA, r/smallbusiness, r/Entrepreneur, r/startups, r/UKBusiness, r/dubai, r/IndianStartups (skip if blocked) | The real questions and frustrations people have, in their words |
 | YouTube | SerpApi engine `youtube` with the candidate phrase | Whether people want this explained, and which angles get views |
 | Google results | SerpApi `google` search for the phrase: "People also ask", related searches, top 10 | How people phrase the question, and how hard it is to rank |
 
@@ -39,8 +57,8 @@ If nothing clears the bar today, do not publish a thin post. Instead, refresh th
 Every post targets one search phrase (`keyword` in the frontmatter) that a buyer would actually type. Pick it like this:
 
 1. **Read `content/blog/_performance.md` first** if it exists. The weekly SEO review writes it: which posts rank on Google and for what, which phrases are close to page one, and which topics to do next. Follow its "Next topics" and "Do not repeat" lists unless today's news is clearly bigger.
-2. **Check demand.** Use the SerpApi connector: the `google_trends` engine for interest over the last 7 days in India and worldwide, and a normal Google search for the candidate phrase. Prefer a phrase with rising interest and buyer intent ("cost", "vs", "how to", "for small business", "pricing", "best way to") over a broad head term you cannot win ("artificial intelligence").
-3. **Check the competition.** Look at the top 10 results. If they are all huge brands answering the exact phrase well, choose a more specific phrase (add the audience, the use case, India, or the year).
+2. **Check demand.** Use the SerpApi connector: the `google_trends` engine for interest over the last 7 days in the US first, then the UK, and a normal Google search (`gl=us`) for the candidate phrase. Prefer a phrase with rising interest and buyer intent ("cost", "vs", "how to", "for small business", "pricing", "best way to") over a broad head term you cannot win ("artificial intelligence").
+3. **Check the competition.** Look at the top 10 results. If they are all huge brands answering the exact phrase well, choose a more specific phrase (add the audience, the use case, a market such as "UK" or "UAE", or the year).
 4. **Use the questions people ask.** The Google results include "People also ask" questions. Use the best two or three as FAQ questions, and phrase one H2 the way people search.
 5. **Place it.** The keyword words must be in the title (near the start), the description, the first paragraph and ideally one H2 and the slug. The checker enforces the first three. Write naturally; never repeat the phrase just to repeat it.
 
