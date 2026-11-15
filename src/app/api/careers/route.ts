@@ -11,8 +11,8 @@ const TYPES: Record<string, string> = {
   'application/msword': 'doc',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
 };
-// Applications go to the HR inbox named in the Wellfound postings unless CAREERS_NOTIFY_TO overrides it.
-const CAREERS_INBOX = process.env.CAREERS_NOTIFY_TO || 'hr@talavishiraajgroups.com';
+// Applications arrive in the same inbox as enquiry forms, unless CAREERS_NOTIFY_TO overrides it.
+const CAREERS_INBOX = process.env.CAREERS_NOTIFY_TO || INBOX;
 
 /** Job applications from /careers, delivered to the inbox with the CV attached. */
 export async function POST(req: Request) {

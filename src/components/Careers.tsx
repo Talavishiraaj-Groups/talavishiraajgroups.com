@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowUpRight, Check, FileText, Loader2 } from 'lucide-react';
 import { EMAIL } from '@/content';
-import { roles } from '@/content/careers';
+import { APPLY_EMAIL, roles } from '@/content/careers';
 import { ease } from './motion';
 import { getSource } from './Attribution';
 
@@ -57,6 +57,9 @@ export function ApplyForm({ initialRole = '' }: { initialRole?: string }) {
         </span>
         <h3 className="mt-6 text-2xl font-medium tracking-tight">Thank you. Your application has reached us.</h3>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">We read every one and reply by email within a week. If there is a fit, we will suggest a short call.</p>
+        <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+          Questions about your application, or more to share? Write to <a href={`mailto:${APPLY_EMAIL}`} className="text-signal underline underline-offset-4">{APPLY_EMAIL}</a>.
+        </p>
       </motion.div>
     );
   }
