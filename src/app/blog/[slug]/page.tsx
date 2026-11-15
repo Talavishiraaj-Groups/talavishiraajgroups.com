@@ -20,7 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const p = getPost((await params).slug);
   if (!p) return {};
   return {
-    title: p.title,
+    // Search results cut titles at about 60 characters; drop the brand suffix when it would push past that.
+    title: `${p.title} | Talavishiraaj Groups`.length > 60 ? { absolute: p.title } : p.title,
     description: p.description,
     alternates: { canonical: `/blog/${p.slug}`, types: { 'text/markdown': `/blog/${p.slug}.md` } },
     authors: [{ name: p.author }],

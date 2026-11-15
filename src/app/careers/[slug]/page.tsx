@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const r = findRole((await params).slug);
   if (!r) return {};
   return {
-    title: `${r.title} (Remote, Commission)`,
+    // Kept under 60 characters so search results show it in full.
+    title: { absolute: `${r.title}: Remote, Commission Only` },
     description: `${r.summary} Commission only, fully remote, open in India and internationally.`,
     alternates: { canonical: `/careers/${r.slug}` },
   };

@@ -62,7 +62,7 @@ for (const file of files) {
   if (data.updated && !/^\d{4}-\d{2}-\d{2}$/.test(data.updated instanceof Date ? data.updated.toISOString().slice(0, 10) : String(data.updated))) errors.push('updated must be YYYY-MM-DD');
   const date = data.date instanceof Date ? data.date.toISOString().slice(0, 10) : String(data.date || '');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) errors.push('date must be YYYY-MM-DD');
-  if (data.title && String(data.title).length > 70) errors.push(`title is ${String(data.title).length} chars, keep it to 70`);
+  if (data.title && String(data.title).length > 60) errors.push(`title is ${String(data.title).length} chars; keep it to 60 so search results show it in full`);
   if (data.description && (String(data.description).length < 110 || String(data.description).length > 160)) errors.push(`description is ${String(data.description).length} chars, needs 110 to 160`);
   const aw = String(data.answer || '').split(/\s+/).filter(Boolean).length;
   if (aw < 35 || aw > 75) errors.push(`answer is ${aw} words, needs 35 to 75`);

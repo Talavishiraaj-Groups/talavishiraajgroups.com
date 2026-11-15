@@ -171,7 +171,7 @@ File: `content/blog/<slug>.md`. The slug is the main search phrase, lowercase wi
 
 ```markdown
 ---
-title: "Under 65 characters, main search phrase near the start"
+title: "60 characters or fewer, main search phrase near the start"
 description: "110 to 160 characters. What the reader will learn, in plain words. Used as the search snippet."
 date: 2026-11-14
 author: Talavishiraaj Groups
