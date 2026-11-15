@@ -5,6 +5,7 @@ import { PageHero } from '@/components/PageHero';
 import { CompareArt } from '@/components/illustrations';
 import { Reveal } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'In house, agency, or an independent read first',
@@ -33,6 +34,7 @@ const faqs = [
 export default function InHousePage() {
   return (
     <>
+      <JsonLd data={[articleLd({ path: '/in-house-vs-agency', headline: "In house, agency, or an independent read first", description: "How building in house, hiring a development agency, hiring a management consultancy and taking an independent read first compare across seven criteria." }), breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'In house vs agency', path: '/in-house-vs-agency' }])]} />
       <PageHero
         aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><CompareArt /></div>}
         eyebrow="Choosing a route"

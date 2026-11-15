@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
 import { Checklist } from '@/components/Checklist';
 import { CtaBand } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'AI production readiness checklist',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function ChecklistPage() {
   return (
     <>
+      <JsonLd data={[articleLd({ path: '/resources/ai-production-readiness-checklist', headline: "AI production readiness checklist", description: "Forty checks to walk before an AI system goes in front of users: contracts, failure behaviour, evaluation, observability, data, rollout and ownership.", datePublished: '2026-09-28' }), breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Resources', path: '/resources' }, { name: 'AI production readiness checklist', path: '/resources/ai-production-readiness-checklist' }])]} />
       <PageHero
         eyebrow="Resources · 40 checks"
         title="AI production readiness checklist"

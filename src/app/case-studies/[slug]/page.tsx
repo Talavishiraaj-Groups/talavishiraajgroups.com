@@ -8,6 +8,7 @@ import { sectorByName } from '@/content';
 import { Crumbs } from '@/components/PageHero';
 import { Reveal, SplitWords } from '@/components/motion';
 import { CtaBand, Eyebrow } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -32,6 +33,12 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   ];
   return (
     <>
+      <JsonLd
+        data={[
+          articleLd({ path: `/case-studies/${c.slug}`, headline: c.title, description: c.dek, section: 'Case study', about: c.category }),
+          breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Case studies', path: '/case-studies' }, { name: c.title, path: `/case-studies/${c.slug}` }]),
+        ]}
+      />
       <section className="pt-32 md:pt-40">
         <div className="wrap">
           <Crumbs items={[{ href: '/case-studies', label: 'Case studies' }, { label: c.category }]} />

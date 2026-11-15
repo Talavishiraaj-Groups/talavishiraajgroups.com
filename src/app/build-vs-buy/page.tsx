@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { PageHero } from '@/components/PageHero';
 import { BuildVsBuy } from '@/components/BuildVsBuy';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Build, buy, or partner? Seven questions that decide it',
@@ -19,6 +20,7 @@ const faqs = [
 export default function BuildVsBuyPage() {
   return (
     <>
+      <JsonLd data={[articleLd({ path: '/build-vs-buy', headline: "Build, buy, or partner? Seven questions that decide it", description: "A build vs buy decision framework, not a cost calculator. Seven questions, about two minutes, and nothing leaves your browser." }), breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Build vs buy', path: '/build-vs-buy' }])]} />
       <PageHero
         eyebrow="Free framework"
         title="Build it, buy it, or partner? Seven questions that decide it"

@@ -5,6 +5,7 @@ import { ArticlesArt } from '@/components/illustrations';
 import { InsightGrid } from '@/components/insights';
 import { CtaBand } from '@/components/ui';
 import { insights } from '@/content';
+import { BASE, JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Insights',
@@ -12,8 +13,26 @@ export const metadata: Metadata = {
 };
 
 export default function InsightsPage() {
+  // The index is a collection of articles: list each one so crawlers see the set, not one long page.
+  const collection = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Insights',
+    description: 'Answers to the questions that come up before a project starts, written from work we have actually done.',
+    url: `${BASE}/insights`,
+    publisher: { '@id': `${BASE}/#org` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: insights.map((i, n) => ({
+        '@type': 'ListItem',
+        position: n + 1,
+        item: articleLd({ path: `/insights/${i.slug}`, headline: i.title, description: i.summary.slice(0, 300), datePublished: i.published, section: i.category }),
+      })),
+    },
+  };
   return (
     <>
+      <JsonLd data={[collection, breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Insights', path: '/insights' }])]} />
       <PageHero
         aside={<div className="fade-up" style={{ animationDelay: '0.5s' }}><ArticlesArt /></div>}
         eyebrow="Insights"

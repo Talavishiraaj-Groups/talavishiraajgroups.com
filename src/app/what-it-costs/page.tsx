@@ -4,6 +4,7 @@ import { PageHero } from '@/components/PageHero';
 import { Donut, QuoteSpread, RangeBars } from '@/components/visuals';
 import { Reveal } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow, SectionHead } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'What custom software and AI work actually costs',
@@ -34,6 +35,7 @@ const timelines = [
 export default function CostsPage() {
   return (
     <>
+      <JsonLd data={[articleLd({ path: '/what-it-costs', headline: "What custom software and AI work actually costs", description: "Published market figures on build cost, total cost of ownership, integration, maintenance and overruns, with every source named." }), breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'What it costs', path: '/what-it-costs' }])]} />
       <PageHero
         eyebrow="What it costs"
         title="What custom software and AI work actually costs"

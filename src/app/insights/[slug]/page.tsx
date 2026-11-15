@@ -8,6 +8,7 @@ import { Crumbs } from '@/components/PageHero';
 import { Cover, ReadingProgress, Toc } from '@/components/insights';
 import { Reveal, SplitWords } from '@/components/motion';
 import { CtaBand, Eyebrow } from '@/components/ui';
+import { JsonLd, articleLd, breadcrumbLd, faqLd } from '@/lib/schema';
 
 export function generateStaticParams() {
   return insights.map((i) => ({ slug: i.slug }));
@@ -27,8 +28,20 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   const toc = a.sections.map((s) => ({ id: slugify(s.heading), label: s.heading }));
   const more = insights.filter((x) => x.slug !== a.slug && x.category === a.category).slice(0, 3);
 
+  // Most section headings are questions with the answer directly underneath; expose them as an FAQ for answer engines.
+  const qa = a.sections
+    .filter((s) => s.heading.trim().endsWith('?'))
+    .map((s) => ({ q: s.heading, a: s.blocks.filter((b) => b.t === 'p' && 'x' in b).slice(0, 2).map((b) => ('x' in b ? String(b.x) : '')).join(' ') }))
+    .filter((f) => f.a);
   return (
     <>
+      <JsonLd
+        data={[
+          articleLd({ path: `/insights/${a.slug}`, headline: a.title, description: a.summary.slice(0, 300), datePublished: a.published, section: a.category }),
+          breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Insights', path: '/insights' }, { name: a.title, path: `/insights/${a.slug}` }]),
+          faqLd(qa),
+        ]}
+      />
       <ReadingProgress />
       <article>
         <header className="pt-32 md:pt-40">
