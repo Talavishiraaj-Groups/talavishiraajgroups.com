@@ -8,6 +8,7 @@ import { ReadingProgress, Toc } from '@/components/insights';
 import { SplitWords } from '@/components/motion';
 import { CtaBand } from '@/components/ui';
 import { formatDate, getPost, getPosts } from '@/lib/blog';
+import { withLegacySeo } from '@/lib/seo';
 
 const BASE = 'https://www.talavishiraajgroups.com';
 
@@ -19,16 +20,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const p = getPost((await params).slug);
   if (!p) return {};
-  return {
+  return withLegacySeo(`/blog/${p.slug}`, {
     // Search results cut titles at about 60 characters; drop the brand suffix when it would push past that.
     title: `${p.title} | Talavishiraaj Groups`.length > 60 ? { absolute: p.title } : p.title,
     description: p.description,
     alternates: { canonical: `/blog/${p.slug}`, types: { 'text/markdown': `/blog/${p.slug}.md` } },
     authors: [{ name: p.author }],
     keywords: p.keyword ? [p.keyword, ...p.tags] : p.tags,
-    openGraph: { type: 'article', title: p.title, description: p.description, publishedTime: p.date, modifiedTime: p.updated || p.date, tags: p.tags, url: `${BASE}/blog/${p.slug}` },
-    twitter: { card: 'summary_large_image', title: p.title, description: p.description },
-  };
+    openGraph: { type: 'article', publishedTime: p.date, modifiedTime: p.updated || p.date, tags: p.tags, images: [{ url: `${BASE}/blog/${p.slug}/opengraph-image`, width: 1200, height: 630, alt: p.title }] },
+    twitter: { images: [`${BASE}/blog/${p.slug}/opengraph-image`] },
+  });
 }
 
 const ld = (o: object) => ({ __html: JSON.stringify(o).replace(/</g, '\\u003c') });

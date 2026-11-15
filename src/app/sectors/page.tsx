@@ -4,11 +4,12 @@ import { SectorMatrix } from '@/components/sectors';
 import { CtaBand } from '@/components/ui';
 import { capabilities } from '@/content/capabilities';
 import { sectors } from '@/content';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/sectors', {
   title: 'Sectors',
   description: 'Nineteen sectors where the same shapes of problem recur: systems that disagree, data nobody trusts, and decisions waiting on a technical answer.',
-};
+});
 
 export default function SectorsPage() {
   return (

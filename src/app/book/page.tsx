@@ -3,12 +3,13 @@ import { Check } from 'lucide-react';
 import { BookFlow } from '@/components/BookFlow';
 import { SplitWords } from '@/components/motion';
 import { CalendarArt } from '@/components/illustrations';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/book', {
   title: 'Book a call',
   description: 'Pick a time for a call. Tell us roughly what you are working on first, and we will come to the call having thought about it.',
   robots: { index: false, follow: true },
-};
+});
 
 export default function BookPage() {
   return (

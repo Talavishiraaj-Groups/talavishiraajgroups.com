@@ -8,6 +8,7 @@ import { RoleArt } from '@/components/illustrations';
 import { SplitWords } from '@/components/motion';
 import { APPLY_EMAIL, DATE_POSTED, EXPERIENCE, findRole, hiringSteps, payDetail, roles } from '@/content/careers';
 import descriptions from '@/content/seo-descriptions.json';
+import { withLegacySeo } from '@/lib/seo';
 
 const BASE = 'https://www.talavishiraajgroups.com';
 
@@ -19,12 +20,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const r = findRole((await params).slug);
   if (!r) return {};
-  return {
+  return withLegacySeo(`/careers/${r.slug}`, {
     // Kept under 60 characters so search results show it in full.
     title: { absolute: `${r.short}: Remote, Commission Only` },
     description: (descriptions as Record<string, string>)[`/careers/${r.slug}`] ?? r.summary,
     alternates: { canonical: `/careers/${r.slug}` },
-  };
+  });
 }
 
 function List({ title, items, tick }: { title: string; items: string[]; tick?: boolean }) {

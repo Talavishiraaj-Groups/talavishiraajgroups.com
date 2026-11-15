@@ -3,12 +3,13 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/ContactForm';
 import { SplitWords } from '@/components/motion';
 import { SignalArt } from '@/components/illustrations';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/community', {
   title: 'Keep in touch',
   description: 'Hear from us as we publish research and technical writing relevant to what you are working on.',
   robots: { index: false, follow: true },
-};
+});
 
 export default function CommunityPage() {
   return (
