@@ -5,11 +5,12 @@ import { PageHero } from '@/components/PageHero';
 import { ReadinessArt } from '@/components/illustrations';
 import { CtaBand } from '@/components/ui';
 import { checklist } from '@/content';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/resources', {
   title: 'Resources',
   description: 'Reference material our teams actually work from. Published in full, free to copy and adapt. No email required.',
-};
+});
 
 export default function ResourcesPage() {
   const total = checklist.reduce((n, g) => n + g.items.length, 0);

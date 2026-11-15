@@ -4,11 +4,12 @@ import { PageHero } from '@/components/PageHero';
 import { Checklist } from '@/components/Checklist';
 import { CtaBand } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/resources/ai-production-readiness-checklist', {
   title: 'AI production readiness checklist',
   description: 'Forty checks to walk before an AI system goes in front of users: contracts, failure behaviour, evaluation, observability, data, rollout and ownership.',
-};
+});
 
 export default function ChecklistPage() {
   return (

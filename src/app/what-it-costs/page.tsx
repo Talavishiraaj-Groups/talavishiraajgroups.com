@@ -5,11 +5,12 @@ import { Donut, QuoteSpread, RangeBars } from '@/components/visuals';
 import { Reveal } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow, SectionHead } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/what-it-costs', {
   title: 'What custom software and AI work actually costs',
   description: 'Published market figures on build cost, total cost of ownership, integration, maintenance and overruns, with every source named.',
-};
+});
 
 const questions = [
   { t: 'What is the three year total, split into build, running and change?', d: 'A quote that covers only the build is not a cost, it is a deposit. A firm that cannot produce the three year figure has scoped a demonstration rather than a project.' },

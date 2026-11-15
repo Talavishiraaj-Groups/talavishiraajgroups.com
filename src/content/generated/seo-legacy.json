@@ -1,0 +1,270 @@
+{
+  "/about": {
+    "title": "About Talavishiraaj Groups | Technology and Engineering",
+    "description": "Talavishiraaj Groups works across research, technology, AI, engineering, and product development. Learn how we work, what we build, and who leads our team."
+  },
+  "/build-vs-buy": {
+    "title": "Build vs Buy vs Partner Framework | Talavishiraaj Groups",
+    "description": "Seven questions that decide whether to build it, buy it, or do both. Covers differentiation, fit, who maintains it, and who is advising you. Free, nothing to fill in, nothing leaves your browser."
+  },
+  "/case-studies": {
+    "title": "AI and Operations Case Studies | Talavishiraaj Groups",
+    "description": "Anonymized accounts of real engagements: what the problem was, what we built, how it was implemented and what changed. Covering operations, AI and automation, growth systems and moving R&D into production."
+  },
+  "/case-studies/ai-led-outbound-growth-engine": {
+    "title": "AI-Led Outbound Growth Engine | Talavishiraaj Groups",
+    "description": "A founder-led services firm moved from ad-hoc outreach to a structured, AI-assisted outbound motion. Three times as many qualified conversations within eight weeks."
+  },
+  "/case-studies/ai-workflow-notebook-to-production": {
+    "title": "AI Workflow: Notebook to Production | Talavishiraaj Groups",
+    "description": "A promising AI experiment was hardened into a reliable internal capability with clear contracts and safeguards. A critical workflow stabilised, and far less time lost to firefighting."
+  },
+  "/case-studies/decision-heavy-workflow-automation": {
+    "title": "Automating Decision-Heavy Workflows | Talavishiraaj Groups",
+    "description": "Manual expert decisions were mapped, codified and selectively automated without losing human control. Shorter cycle times and less variability on routine decisions."
+  },
+  "/case-studies/founder-operations-cockpit": {
+    "title": "One Operations View for a Founder | Talavishiraaj Groups",
+    "description": "Operations scattered across spreadsheets and chat threads were consolidated into one view of work, risks and next actions. Clear daily priorities across hiring, delivery and sales."
+  },
+  "/case-studies/live-operations-visibility-layer": {
+    "title": "AI-Assisted Live Operations Layer | Talavishiraaj Groups",
+    "description": "Static reports were replaced with a live view of key events, anomalies and next-action cues. Faster response to issues and shared situational awareness across locations."
+  },
+  "/case-studies/structured-sales-hiring-engine": {
+    "title": "Structured Sales Hiring Engine | Talavishiraaj Groups",
+    "description": "High-volume, commission-based hiring was treated as a measurable funnel with explicit stages and rubrics. Higher-quality shortlists with less coordination overhead."
+  },
+  "/contact": {
+    "title": "Contact Talavishiraaj Groups | Talk to Our Team",
+    "description": "Talk to us about your technology, engineering, AI, or business challenges. Tell us what you are working on, and our team will provide a thoughtful response."
+  },
+  "/cookies": {
+    "title": "Cookie Notice | Talavishiraaj Groups",
+    "description": "Nothing is set in your browser until you answer the banner. What accepting actually permits, the two third parties involved, and what declining costs you, which is nothing that matters."
+  },
+  "/data-handling": {
+    "title": "Confidentiality and Data Handling | Talavishiraaj Groups",
+    "description": "How client information, documents and research data are handled: confidentiality commitments, access controls, third party platforms and retention practices."
+  },
+  "/delivery-policy": {
+    "title": "Delivery Policy | Talavishiraaj Groups",
+    "description": "Our delivery framework: engagement timelines, client responsibilities, scope boundaries between decision and implementation work, and how communication is structured."
+  },
+  "/": {
+    "title": "Talavishiraaj Groups | Engineering, AI and Research",
+    "description": "When a problem spans software, data, AI, hardware and the business around them, it stalls between suppliers. We combine research, engineering and implementation in one accountable team, from first analysis to production."
+  },
+  "/in-house-vs-agency": {
+    "title": "In-House vs Agency vs Independent | Talavishiraaj Groups",
+    "description": "Build it with your own team, hire an agency, bring in a consultancy, or get an independent read first. What each route is genuinely good at, what it costs you, and when each one is the wrong choice."
+  },
+  "/insights": {
+    "title": "Insights: Engineering, AI and Systems | Talavishiraaj Groups",
+    "description": "Practical answers to the questions that come up before a project starts: what production readiness actually requires, when automation is worth engineering, and how to judge technical work before committing to it."
+  },
+  "/insights/do-you-need-data-engineering": {
+    "title": "Do You Need Data Engineering? | Talavishiraaj Groups",
+    "description": "Reporting assembled by hand is a real cost, but not automatically a data engineering problem. A test for whether you need pipelines, a tool, or neither."
+  },
+  "/insights/document-processing-automation": {
+    "title": "Document Processing Automation | Talavishiraaj Groups",
+    "description": "Extraction accuracy is the wrong first question. What the error actually costs, why exception handling decides the economics, and the cheaper fix most businesses skip."
+  },
+  "/insights/erp-integration": {
+    "title": "ERP Integration | Talavishiraaj Groups",
+    "description": "The connector is rarely the hard part. Process mismatch, master data ownership and customisation are where ERP integration projects overrun, and all three are visible before you start."
+  },
+  "/insights/healthcare-interoperability": {
+    "title": "Healthcare Interoperability | Talavishiraaj Groups",
+    "description": "FHIR and HL7 describe how systems talk, not what the data means. Where integration projects actually stall, what to settle before writing an interface, and how to scope it honestly."
+  },
+  "/insights/how-to-choose-a-software-development-partner": {
+    "title": "How to Choose a Software Partner | Talavishiraaj Groups",
+    "description": "Portfolios and day rates tell you very little. What to ask instead, which answers actually predict how an engagement goes, and the questions that make a weak firm uncomfortable."
+  },
+  "/insights/how-to-evaluate-an-ai-consulting-firm": {
+    "title": "How to Evaluate an AI Consulting Firm | Talavishiraaj Groups",
+    "description": "Most AI consulting engagements end at a recommendation, not a running system. The four questions that reveal which kind of firm you are speaking to."
+  },
+  "/insights/iot-device-management": {
+    "title": "IoT Device Management | Talavishiraaj Groups",
+    "description": "A hundred devices forgive almost any design. Ten thousand do not. Provisioning, updates, observability and the failure modes that only appear at scale, plus when to buy rather than build."
+  },
+  "/insights/legacy-system-modernization": {
+    "title": "Legacy System Modernization | Talavishiraaj Groups",
+    "description": "Most modernization projects are larger than they needed to be. The four routes, how to tell which one your system needs, and why a full rebuild is usually the wrong first answer."
+  },
+  "/insights/supply-chain-visibility": {
+    "title": "Supply Chain Visibility | Talavishiraaj Groups",
+    "description": "Most visibility projects buy a dashboard and inherit the same disagreeing data. What has to be true underneath, how to tell a reporting problem from an integration one, and when not to build."
+  },
+  "/insights/what-ai-integration-costs": {
+    "title": "What AI Integration Costs | Talavishiraaj Groups",
+    "description": "AI integration quotes price the build. The cost that decides whether it was worth it arrives in year two. What drives it, what breaks, and when not to."
+  },
+  "/insights/what-is-ai-readiness": {
+    "title": "What Is AI Readiness? | Talavishiraaj Groups",
+    "description": "AI readiness measures whether an organisation could deploy AI. It does not measure whether it should. The pillars, how readiness is scored, and the question every readiness framework leaves out."
+  },
+  "/insights/what-is-vendor-lock-in": {
+    "title": "What Is Vendor Lock-In? | Talavishiraaj Groups",
+    "description": "Vendor lock-in is the cost of leaving a platform, not the fact of using one. What actually creates it, what exit really costs, and why accepting lock-in is often the correct commercial decision."
+  },
+  "/insights/when-workflow-automation-is-worth-engineering": {
+    "title": "When Workflow Automation Pays Off | Talavishiraaj Groups",
+    "description": "Not every manual process should be automated. A practical test based on volume, repeatability and error cost, plus how to separate decisions that are genuine judgement from decisions that were simply never written down."
+  },
+  "/insights/why-ai-projects-fail": {
+    "title": "Why Do AI Projects Fail? | Talavishiraaj Groups",
+    "description": "Most reported AI failure rates measure projects that were never going to work. The five ways they actually fail, how to tell which one you are heading for, and the check that costs nothing."
+  },
+  "/insights/why-ai-prototypes-stall-before-production": {
+    "title": "Why AI Prototypes Stall | Talavishiraaj Groups",
+    "description": "A working AI prototype and a production system are different artifacts. What actually has to be built between them: interface contracts, failure behavior, observability, evaluation you can rerun, and staged rollout."
+  },
+  "/ip-policy": {
+    "title": "Intellectual Property Policy | Talavishiraaj Groups",
+    "description": "How intellectual property is owned, licensed and protected across engagements, covering client materials, our proprietary methods and deliverables."
+  },
+  "/partnerships": {
+    "title": "Partnerships and Collaboration | Talavishiraaj Groups",
+    "description": "How Talavishiraaj Groups works with other organizations: technology partnerships, delivery and implementation collaboration, joint product development, research programmes and market expansion."
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy | Talavishiraaj Groups",
+    "description": "How Talavishiraaj Groups collects, uses, protects and shares personal information, the legal bases we rely on, and the rights you have under applicable data protection law including the DPDP Act."
+  },
+  "/products": {
+    "title": "Prism: Build vs Buy vs AI Decision | Talavishiraaj Groups",
+    "description": "Before you build it, buy it, or bet on AI, know what matters most. Prism is an independent two week go or no go on the technology decision you are about to make. Not your dev shop, not a gut check call."
+  },
+  "/refund-policy": {
+    "title": "Refund Policy | Talavishiraaj Groups",
+    "description": "How refunds are handled across consultation, service and implementation engagements, the stage based eligibility structure, how to raise a request, and how disputes are escalated."
+  },
+  "/resources": {
+    "title": "Engineering Reference Resources | Talavishiraaj Groups",
+    "description": "Checklists and reference material our teams use on real engagements, published in full and free to adapt. Written to be useful whether or not you ever work with us."
+  },
+  "/resources/ai-production-readiness-checklist": {
+    "title": "AI Production Readiness Checklist | Talavishiraaj Groups",
+    "description": "A working checklist for taking an AI system from prototype to production: interface contracts, failure behavior, evaluation, observability, rollout and ownership. Free to use and adapt."
+  },
+  "/risk-mitigation": {
+    "title": "Risk and Mitigation Framework | Talavishiraaj Groups",
+    "description": "The governance framework covering delivery quality, risk identification, escalation paths, quality review and the recovery actions available if an engagement falls below standard."
+  },
+  "/sectors/agetech-care": {
+    "title": "Agetech Product Development Company",
+    "description": "Monitoring that generates alerts nobody can triage, where the cost of a false alarm is measured in trust rather than money. We build and integrate the systems behind it."
+  },
+  "/sectors/agritech": {
+    "title": "Agritech Software Development Company",
+    "description": "Sensor and field data collected faithfully and used for very little, because nobody has defined the decision it should change. We build and integrate the systems behind it."
+  },
+  "/sectors/biotechnology-life-sciences": {
+    "title": "Biotech Software Development Company",
+    "description": "Research code that works in a notebook, in the hands of the person who wrote it, and cannot yet be relied on by anyone else. We build and integrate the systems behind it."
+  },
+  "/sectors/chemical-process-industries": {
+    "title": "Chemical Process Software Development Company",
+    "description": "Process data, compliance evidence and maintenance history held in separate places, assembled by hand whenever anyone asks a question. We build and integrate the systems behind it."
+  },
+  "/sectors/construction-infrastructure": {
+    "title": "Construction Software Development Company",
+    "description": "Site reality and the plan diverging quietly, reported upward in documents written after the fact rather than from what the systems hold. We build and integrate the systems behind it."
+  },
+  "/sectors/ecommerce": {
+    "title": "Ecommerce Development Company",
+    "description": "Catalogue, stock and fulfilment that each hold a different version of the truth, which customers discover before the business does. We build and integrate the systems behind it."
+  },
+  "/sectors/education-edtech": {
+    "title": "Edtech Software Development Company",
+    "description": "Learner data spread across enrolment, delivery and assessment tools, so nobody can see a cohort end to end while there is still time to act. We build and integrate the systems behind it."
+  },
+  "/sectors/electric-vehicles-charging": {
+    "title": "EV Charging Software Development Company",
+    "description": "A network of hardware in the field, reporting unevenly, where uptime is the product and visibility arrives after the complaint. We build and integrate the systems behind it."
+  },
+  "/sectors/financial-services": {
+    "title": "Fintech Software Development Company",
+    "description": "Decisions made by a handful of experienced people, under review requirements that make an unexplainable model useless however accurate it is. We build and integrate the systems behind it."
+  },
+  "/sectors/healthcare": {
+    "title": "Healthcare Software Development Company",
+    "description": "Clinical and administrative systems that were bought separately, where the integration work is the project and the interface is the easy part. We build and integrate the systems behind it."
+  },
+  "/sectors/insurance": {
+    "title": "Insurance Software Development Company",
+    "description": "Assessment decisions concentrated in a few experienced people, where consistency matters as much as speed and every call has to be explainable. We build and integrate the systems behind it."
+  },
+  "/sectors/iot-connected-devices": {
+    "title": "IoT Product Development Company",
+    "description": "Firmware, gateway and cloud built by teams that are not talking to each other, with the integration failures visible months before anyone acts. We build and integrate the systems behind it."
+  },
+  "/sectors/manufacturing": {
+    "title": "Manufacturing Automation Company",
+    "description": "Line and quality data that exists but never reaches the people deciding what to run next, or arrives a shift too late. We build and integrate the systems behind it."
+  },
+  "/sectors/real-estate-proptech": {
+    "title": "Proptech Software Development Company",
+    "description": "Portfolio, tenancy and building systems bought at different times, where a simple question takes a week because nothing reconciles. We build and integrate the systems behind it."
+  },
+  "/sectors/research-development": {
+    "title": "R&D Engineering Services Company",
+    "description": "An investment decision waiting on a technical answer that does not exist yet, with internal capacity already committed to the roadmap. We build and integrate the systems behind it."
+  },
+  "/sectors/saas": {
+    "title": "SaaS Product Engineering Company",
+    "description": "A product that works and an operation around it that does not, where onboarding, support and reporting are still held together by people. We build and integrate the systems behind it."
+  },
+  "/sectors/supply-chain-logistics": {
+    "title": "Logistics Software Development Company",
+    "description": "Movements tracked in three systems that disagree, and a planner reconciling them by hand before anyone can act. We build and integrate the systems behind it."
+  },
+  "/sectors/telecommunications": {
+    "title": "Telecom Software Development Company",
+    "description": "Network and customer systems at different speeds, where the operational picture is assembled nightly and the questions are asked hourly. We build and integrate the systems behind it."
+  },
+  "/sectors/water-utilities": {
+    "title": "Water Utility Software Development Company",
+    "description": "Long lived assets with telemetry added later, where detection has to work against a baseline nobody has validated. We build and integrate the systems behind it."
+  },
+  "/services": {
+    "title": "Engineering and AI Services | Talavishiraaj Groups",
+    "description": "What Talavishiraaj Groups builds and runs: software and systems engineering, artificial intelligence and automation, product engineering and R&D, business and operating systems, growth systems, and hands on implementation."
+  },
+  "/services/artificial-intelligence-and-automation": {
+    "title": "AI and Automation Services | Talavishiraaj Groups",
+    "description": "We design and deploy AI systems that hold up in production: machine learning, language and document systems, decision support and workflow automation, with monitoring, fallbacks and human review where judgement matters."
+  },
+  "/services/business-and-operating-systems": {
+    "title": "Business and Operating Systems | Talavishiraaj Groups",
+    "description": "We work out what is limiting an organization, then design the operating model, workflows, decision structures and governance that resolve it, with the systems engineering to make the design real."
+  },
+  "/services/growth-and-market-enablement": {
+    "title": "Growth Systems and Market Enablement | Talavishiraaj Groups",
+    "description": "We build the systems behind revenue: ideal customer definition, demand generation and outreach instrumented end to end, CRM and pipeline reporting, and the operating groundwork for entering a new market."
+  },
+  "/services/implementation-and-delivery": {
+    "title": "Implementation and Delivery | Talavishiraaj Groups",
+    "description": "We take responsibility for execution: running an agreed roadmap, embedding delivery capacity alongside your team, coordinating vendors under one point of accountability, and transitioning ownership back internally."
+  },
+  "/services/product-engineering-and-rd": {
+    "title": "Product Engineering and R&D | Talavishiraaj Groups",
+    "description": "Engineering, prototyping and validation for hardware and software products: mechanical design and simulation, embedded firmware, sensor integration, technical feasibility studies and structured research programmes."
+  },
+  "/services/technology-and-engineering": {
+    "title": "Software and Systems Engineering | Talavishiraaj Groups",
+    "description": "We design, build and integrate the production systems a business runs on: internal platforms, customer facing applications, APIs and integrations, data infrastructure, and the modernization of systems that have stopped scaling."
+  },
+  "/terms": {
+    "title": "Terms of Service | Talavishiraaj Groups",
+    "description": "The terms governing use of the Talavishiraaj Groups website, how service engagements are contracted separately, and how intellectual property and liability are handled."
+  },
+  "/what-it-costs": {
+    "title": "Custom Software Development Cost | Talavishiraaj Groups",
+    "description": "Published ranges run from about $25,000 to $400,000 or more, averaging about $132,000. Why one brief gets quoted ten times apart, and what a quote leaves out."
+  }
+}

@@ -4,11 +4,12 @@ import { PageHero } from '@/components/PageHero';
 import { PartnerShapes } from '@/components/Partnerships';
 import { Reveal } from '@/components/motion';
 import { CtaBand, Eyebrow, SectionHead } from '@/components/ui';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/partnerships', {
   title: 'Partnerships',
   description: 'Technology, delivery, product, research and market expansion collaborations, structured properly and governed from the start.',
-};
+});
 
 const expect = [
   'We engage selectively. Depth and accountability do not survive taking on everything that is offered.',

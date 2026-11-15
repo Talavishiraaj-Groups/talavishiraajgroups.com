@@ -47,6 +47,7 @@ The local branch is `redesign-nextjs`. Bring it up to date with `git pull --ff-o
 - A post that broke the build or does not load: fix the post, run `npm run blog:check`, build if needed (`NODE_OPTIONS=--max-old-space-size=3072 npm run build` with the preview server stopped), push with `git push origin HEAD:main`, and confirm it is live.
 - A routine that failed for a fixable reason in its prompt or connectors: update it with `RemoteTrigger` (keep connectors limited to Exa and SerpApi; never attach Zoho mail or Apollo).
 - Leftover `blog/*` or `seo-review/*` branches mean the cloud could not push to main. That needs the user: explain it plainly and ask.
+- After any fix to existing pages is live, submit the changed pages to IndexNow (`node scripts/indexnow.mjs /path ...` or `--sitemap` for site-wide changes).
 - Anything involving money, accounts, credentials, DNS, deleting things, or emailing anyone: ask the user first.
 
 ## 5. Report

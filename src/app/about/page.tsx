@@ -6,11 +6,12 @@ import { Reveal, ScrollText } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow, SectionHead } from '@/components/ui';
 import { TimezoneRibbon } from '@/components/visuals';
 import { LayersDiagram, ProcessTrack } from '@/components/about';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/about', {
   title: 'About',
   description: 'A multidisciplinary organization built around difficult problems: research, technology, AI and engineering under one accountable team.',
-};
+});
 
 const commitments = [
   { t: 'Research comes first', d: 'We understand the reality of the problem before deciding what to build. This ensures our solutions actually work in the real world.' },

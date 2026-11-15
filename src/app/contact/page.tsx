@@ -5,11 +5,12 @@ import { ContactForm } from '@/components/ContactForm';
 import { SplitWords, Reveal } from '@/components/motion';
 import { Eyebrow } from '@/components/ui';
 import { EMAIL } from '@/content';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/contact', {
   title: 'Contact',
   description: 'Describe your technical or commercial challenge in your own words. We review every message and reply with a considered view.',
-};
+});
 
 const steps = [
   { t: 'Review', d: 'Our team reads your message and reviews the surrounding context.' },

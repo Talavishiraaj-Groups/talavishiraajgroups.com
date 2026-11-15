@@ -6,11 +6,12 @@ import { CaseIndex } from '@/components/cases';
 import { Reveal } from '@/components/motion';
 import { CtaBand, SectionHead } from '@/components/ui';
 import { sectors } from '@/content';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/case-studies', {
   title: 'Case studies',
   description: 'Six engagements across AI and automation, operations, growth systems and moving research into production, each set out in full.',
-};
+});
 
 const principles = [
   { t: 'No logos, and no numbers we cannot stand behind', d: 'Clients in this category rarely permit attribution, so these are anonymized and the commercially sensitive figures are withheld. Where a result appears it was part of the record the client already approved.' },

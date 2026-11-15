@@ -9,6 +9,7 @@ import { Cover, ReadingProgress, Toc } from '@/components/insights';
 import { Reveal, SplitWords } from '@/components/motion';
 import { CtaBand, Eyebrow } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd, faqLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
 export function generateStaticParams() {
   return insights.map((i) => ({ slug: i.slug }));
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const i = insightBySlug((await params).slug);
-  return i ? { title: i.title, description: i.summary.slice(0, 160) } : {};
+  return i ? withLegacySeo(`/insights/${i.slug}`, { title: i.title, description: i.summary.slice(0, 160) }) : {};
 }
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

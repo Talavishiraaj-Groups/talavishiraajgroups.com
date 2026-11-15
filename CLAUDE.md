@@ -19,6 +19,9 @@ Target markets in priority order: United States, United Kingdom, United Arab Emi
 
 - Keep every URL that exists. No en or em dashes in copy. No uppercase eyebrow labels. Never invent facts, figures, clients or results.
 - Every enquiry email carries the visitor's first page and source (`src/components/Attribution.tsx`, `sourceInfo` in `src/lib/mail.ts`).
+- Search titles and descriptions for every URL the old site had come from `src/content/generated/seo-legacy.json` via `withLegacySeo` in `src/lib/seo.ts`. They are tuned to buyer searches; do not replace them without a reason backed by ranking data.
+- Article-style pages carry Article, BreadcrumbList and (where headings are questions) FAQPage data from `src/lib/schema.tsx`.
+- After any change to existing pages is live, submit it to IndexNow: `node scripts/indexnow.mjs /changed/path ...`, or `node scripts/indexnow.mjs --sitemap` for site-wide changes. In Git Bash prefix with `MSYS_NO_PATHCONV=1`.
 
 ## Coming back
 

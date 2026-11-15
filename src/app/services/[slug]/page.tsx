@@ -10,6 +10,7 @@ import { CapVisual } from '@/components/visuals';
 import { Reveal, SplitWords } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
 import { ApproachSteps } from '@/components/service-detail';
+import { withLegacySeo } from '@/lib/seo';
 
 export function generateStaticParams() {
   return capabilities.map((c) => ({ slug: c.slug }));
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = capabilityBySlug((await params).slug);
-  return c ? { title: c.title, description: c.summary } : {};
+  return c ? withLegacySeo(`/services/${c.slug}`, { title: c.title, description: c.summary }) : {};
 }
 
 export default async function CapabilityPage({ params }: { params: Promise<{ slug: string }> }) {

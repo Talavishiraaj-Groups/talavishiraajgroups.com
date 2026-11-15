@@ -6,11 +6,12 @@ import { CompareArt } from '@/components/illustrations';
 import { Reveal } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/in-house-vs-agency', {
   title: 'In house, agency, or an independent read first',
   description: 'How building in house, hiring a development agency, hiring a management consultancy and taking an independent read first compare across seven criteria.',
-};
+});
 
 const cols = ['Your own team', 'Development agency', 'Management consultancy', 'Independent read first'];
 // best: index of the column that is genuinely strongest on that row (-1 = none)

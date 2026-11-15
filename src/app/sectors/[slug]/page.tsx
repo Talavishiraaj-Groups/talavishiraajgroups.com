@@ -9,6 +9,7 @@ import { Crumbs } from '@/components/PageHero';
 import { Reveal, SplitWords } from '@/components/motion';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
 import { CapVisual } from '@/components/visuals';
+import { withLegacySeo } from '@/lib/seo';
 
 export function generateStaticParams() {
   return sectors.map((s) => ({ slug: s.slug }));
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const s = sectorBySlug((await params).slug);
-  return s ? { title: s.title, description: s.problem } : {};
+  return s ? withLegacySeo(`/sectors/${s.slug}`, { title: s.title, description: s.problem }) : {};
 }
 
 export default async function SectorPage({ params }: { params: Promise<{ slug: string }> }) {

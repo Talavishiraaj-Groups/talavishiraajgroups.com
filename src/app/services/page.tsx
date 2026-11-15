@@ -5,11 +5,12 @@ import { CtaBand, SectionHead } from '@/components/ui';
 import { Reveal } from '@/components/motion';
 import { sectors } from '@/content';
 import Link from 'next/link';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/services', {
   title: 'Engineering and AI services',
   description: 'Six core capabilities across research, engineering, AI, product development and commercial systems, kept under one roof.',
-};
+});
 
 const diffs = [
   { t: 'We will tell you not to build it', d: 'The usual problem with asking a build firm whether to build something is that they are paid either way to say yes. We assess volume, repeatability and error cost first, and where the work does not justify itself we say so before a proposal exists.' },

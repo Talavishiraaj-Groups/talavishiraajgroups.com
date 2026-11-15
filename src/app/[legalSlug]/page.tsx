@@ -6,6 +6,7 @@ import { legal, legalNav } from '@/content';
 import { Blocks } from '@/components/Blocks';
 import { Eyebrow } from '@/components/ui';
 import { PolicyArt } from '@/components/illustrations';
+import { withLegacySeo } from '@/lib/seo';
 
 export const dynamicParams = false;
 
@@ -14,8 +15,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ legalSlug: string }> }): Promise<Metadata> {
-  const d = legal[(await params).legalSlug];
-  return d ? { title: d.title } : {};
+  const slug = (await params).legalSlug;
+  const d = legal[slug];
+  return d ? withLegacySeo(`/${slug}`, { title: d.title }) : {};
 }
 
 export default async function LegalPage({ params }: { params: Promise<{ legalSlug: string }> }) {

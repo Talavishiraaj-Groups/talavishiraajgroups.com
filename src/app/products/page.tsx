@@ -5,11 +5,12 @@ import { PrismVisual, RangeBars } from '@/components/visuals';
 import { Reveal, SplitWords } from '@/components/motion';
 import { Accordion, Button, CtaBand, Eyebrow, SectionHead } from '@/components/ui';
 import { SelfCheck, TwoWeekPlan } from '@/components/prism';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/products', {
   title: 'Prism: decide before you build, buy or bet on AI',
   description: 'An independent two week go or no go on the technology call you are about to make. Build it, buy it, or not yet, and what to do first.',
-};
+});
 
 const notThis = [
   { t: 'Not your dev shop', d: 'They tell you whether they can build it. They are paid to build it. They will not tell you whether you should.' },

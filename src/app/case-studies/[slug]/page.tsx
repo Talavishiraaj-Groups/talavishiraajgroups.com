@@ -9,6 +9,7 @@ import { Crumbs } from '@/components/PageHero';
 import { Reveal, SplitWords } from '@/components/motion';
 import { CtaBand, Eyebrow } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
 export function generateStaticParams() {
   return cases.map((c) => ({ slug: c.slug }));
@@ -16,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = caseBySlug((await params).slug);
-  return c ? { title: c.title, description: c.dek } : {};
+  return c ? withLegacySeo(`/case-studies/${c.slug}`, { title: c.title, description: c.dek }) : {};
 }
 
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {

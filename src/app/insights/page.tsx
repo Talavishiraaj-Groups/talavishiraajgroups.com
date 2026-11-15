@@ -6,11 +6,12 @@ import { InsightGrid } from '@/components/insights';
 import { CtaBand } from '@/components/ui';
 import { insights } from '@/content';
 import { BASE, JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/insights', {
   title: 'Insights',
   description: 'Answers to the questions that come up before a project starts, written from work we have actually done.',
-};
+});
 
 export default function InsightsPage() {
   // The index is a collection of articles: list each one so crawlers see the set, not one long page.

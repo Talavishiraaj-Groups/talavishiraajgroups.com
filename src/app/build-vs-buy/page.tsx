@@ -4,11 +4,12 @@ import { PageHero } from '@/components/PageHero';
 import { BuildVsBuy } from '@/components/BuildVsBuy';
 import { Accordion, CtaBand, Eyebrow } from '@/components/ui';
 import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import { withLegacySeo } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withLegacySeo('/build-vs-buy', {
   title: 'Build, buy, or partner? Seven questions that decide it',
   description: 'A build vs buy decision framework, not a cost calculator. Seven questions, about two minutes, and nothing leaves your browser.',
-};
+});
 
 const faqs = [
   { q: 'Does this tell me what to do?', a: 'No, and anything that claims to from seven questions is selling you something. It gives you a leaning based on your own answers and names what the answers did not cover. The decision stays yours.' },
