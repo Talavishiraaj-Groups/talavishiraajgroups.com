@@ -1,5 +1,6 @@
 import { Audiences, CapabilityBento, Differentiators, HomeHero, HowWeWork, PrismTeaser, ProblemPicker, WhoWeAre, WorkRail } from '@/components/home';
 import { CtaBand } from '@/components/ui';
+import { LatestPosts } from '@/components/LatestPosts';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Audiences />
       <WorkRail />
       <Differentiators />
+      <LatestPosts />
       <CtaBand />
     </>
   );

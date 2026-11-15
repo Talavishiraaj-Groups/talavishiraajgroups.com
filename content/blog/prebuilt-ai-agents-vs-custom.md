@@ -20,7 +20,7 @@ sources:
   - title: "IBM Newsroom: IBM and Microsoft announce a new AI agent platform designed for industry specific transformation"
     url: "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation"
   - title: "Zendesk: The general availability of employee service AI agents"
-    url: "https://support.zendesk.com/hc/en-us/articles/11302848656922-Announcing-the-general-availability-of-employee-service-AI-agents"
+    url: "https://support.zendesk.com/hc/en-us/articles/11302848656922-Coming-soon-The-general-availability-of-employee-service-AI-agents"
   - title: "SecurityBrief Asia: Island launches enterprise browser to control AI agents"
     url: "https://securitybrief.asia/story/island-launches-enterprise-browser-to-control-ai-agents"
 ---

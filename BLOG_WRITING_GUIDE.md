@@ -209,7 +209,7 @@ Do not put an H1 in the body. Use `##` and `###` only.
 1. `git pull` on `main`, then `npm ci` if `node_modules` is missing.
 2. Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
 3. Write the post to `content/blog/<slug>.md` with today's date (India time).
-4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens.
+4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens, and use the final address: if a link redirects (`curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <url>` shows 301 or 302), replace it with the address it redirects to.
 5. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.
 6. Commit only that file with the message `Blog: <title>` and push to `main`. Vercel publishes it in about two minutes.
 7. Wait three minutes, check that `https://www.talavishiraajgroups.com/blog/<slug>` returns 200, then run `npm run blog:ping -- /blog/<slug>`.

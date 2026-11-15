@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { capabilities } from '@/content/capabilities';
 import { EMAIL, legalNav } from '@/content';
+import { getPosts } from '@/lib/blog';
 import { LocalTime } from './LocalTime';
 
 export function Footer() {
+  // The three newest posts, linked from every page so new writing is never one click from an orphan.
+  const latest = getPosts().slice(0, 3);
   return (
     <footer className="relative overflow-hidden border-t border-line bg-paper2/70">
       <div className="wrap pt-20 md:pt-28">
@@ -51,7 +54,27 @@ export function Footer() {
           />
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-[13px] text-muted">
+        {latest.length > 0 && (
+          <div className="mt-16 border-t border-line pt-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <div className="eyebrow text-muted">Latest from the blog</div>
+              <Link href="/blog" className="text-[13px] text-muted transition-colors hover:text-signal">
+                All posts
+              </Link>
+            </div>
+            <ul className="mt-5 grid gap-x-8 gap-y-4 md:grid-cols-3">
+              {latest.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/blog/${p.slug}`} className="block text-[15px] leading-snug text-ink/80 transition-colors hover:text-signal">
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-[13px] text-muted">
           {legalNav.map((l) => (
             <Link key={l.slug} href={`/${l.slug}`} className="hover:text-ink">
               {l.label}
