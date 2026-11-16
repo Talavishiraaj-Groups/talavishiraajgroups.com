@@ -52,7 +52,11 @@ The local branch is `redesign-nextjs`. Bring it up to date with `git pull --ff-o
 
 ## 5. Report
 
-Keep it short and plain, in this order:
+The owner wants every scheduled run's own report, not only a summary. Start with the run reports, then your notes.
+
+**Run reports.** For each run since the last comeback, oldest first, show a heading with the routine and its date and time in IST (for example "Daily post, Mon 16 Nov, 7:30 PM IST"), then that run's final message in full, exactly as the run wrote it (Health, NEEDS OWNER, the post or the review summary, by market, top topics, sources, searches used). Do not shorten or rewrite it. Mark anything you found to be wrong in it with a short note directly under it, and include a link to the run (its claude.ai URL from `list_runs`). If no run happened since the last comeback, say so in one line.
+
+Then your own notes, short and plain, in this order:
 
 1. **Since you were away:** posts published or improved (title and link), and anything fixed.
 2. **What is working:** from `_performance.md` and the runs: rankings, posts close to page one, AI visibility, and any leads you can see evidence of. Say clearly when there is not enough data yet.
