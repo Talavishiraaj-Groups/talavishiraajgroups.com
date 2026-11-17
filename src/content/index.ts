@@ -14,6 +14,7 @@ export type Insight = {
   title: string;
   summary: string;
   published: string;
+  updated?: string;
   inShort: string[];
   sections: { heading: string; blocks: Block[] }[];
 };

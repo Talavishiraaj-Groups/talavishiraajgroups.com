@@ -38,7 +38,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
     <>
       <JsonLd
         data={[
-          articleLd({ path: `/insights/${a.slug}`, headline: a.title, description: a.summary.slice(0, 300), datePublished: a.published, section: a.category }),
+          articleLd({ path: `/insights/${a.slug}`, headline: a.title, description: a.summary.slice(0, 300), datePublished: a.published, dateModified: a.updated, section: a.category }),
           breadcrumbLd([{ name: 'Home', path: '/' }, { name: 'Insights', path: '/insights' }, { name: a.title, path: `/insights/${a.slug}` }]),
           faqLd(qa),
         ]}
@@ -56,6 +56,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted">
               <span>{a.readTime}</span>
               {a.published && <span>Published {a.published}</span>}
+              {a.updated && <span>Updated {a.updated}</span>}
               <span>Talavishiraaj Groups</span>
             </div>
           </div>

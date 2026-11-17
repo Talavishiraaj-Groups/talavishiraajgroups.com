@@ -394,16 +394,63 @@
   "category": "Artificial Intelligence & Automation",
   "readTime": "9 min read",
   "title": "What AI integration actually costs, and the part that is missing from every quote",
-  "summary": "Almost every AI integration quote prices the build and stops there. The costs that decide whether the thing was worth doing arrive later: inference that scales with use rather than with headcount, integration work against systems that change without warning, and retraining nobody scheduled. Published figures put the 24 month total at 1.6 to 2.2 times the build cost. The gap is not padding, it is the part of the work that was never quoted.",
+  "summary": "Most AI integration projects reviewed on Clutch cost $10,000 to $49,999, and the average is about $120,000. But the quote is only the build. Inference that grows with use, integration work against systems that change, and retraining nobody scheduled usually take the three year total to two or three times the build price. Here is what drives the number, and how to get one you can trust.",
   "published": "October 12, 2026",
   "inShort": [
+   "Typical AI integration projects reviewed on Clutch cost $10,000 to $49,999; the average across its reviews is $120,594. Small, single workflow projects sit at the low end, multi system enterprise work far above it.",
    "AI integration costs scale with usage, not with team size. That is the structural difference from ordinary software and it is why build quotes mislead.",
+   "Over three years, running and upkeep commonly take the total to two or three times the build price. A $100,000 build can become $250,000 to $350,000.",
    "Published figures put AI deployments at 1.6 to 2.2 times the build cost over 24 months once inference and retraining are counted.",
    "Integration work commonly runs 35 to 50 percent of initial development cost and is the most frequent source of overrun. The model is rarely the hard part.",
    "Ask any vendor for the three year number. A quote that covers only the build is not a price, it is a deposit.",
    "The strongest reason not to integrate is that nobody can name the decision the output will change."
   ],
   "sections": [
+   {
+    "heading": "How much does AI integration cost?",
+    "blocks": [
+     {
+      "t": "p",
+      "x": "For most businesses, a first AI integration costs somewhere between $10,000 and $50,000 to build, and larger, multi system projects run into six figures. Clutch, which collects pricing from verified client reviews, reports that AI development projects typically cost $10,000 to $49,999, with an average project cost of $120,594 and a typical timeline of about 10 months (Clutch AI pricing guide, updated September 2026)."
+     },
+     {
+      "t": "p",
+      "x": "Published guides by company size are wider still. DesignRush (updated March 2026) gives these budgets:"
+     },
+     {
+      "t": "li",
+      "x": "Small business: $5,000 to $20,000, over one to three months."
+     },
+     {
+      "t": "li",
+      "x": "Mid-market: $100,000 to $250,000, over four to eleven months."
+     },
+     {
+      "t": "li",
+      "x": "Enterprise: $500,000 to $1,000,000, over twelve to twenty four months."
+     },
+     {
+      "t": "p",
+      "x": "Those numbers are for the build. The figure that decides whether the project was worth it is the three year total, which the rest of this page explains."
+     },
+     {
+      "t": "figure",
+      "title": "What a $100,000 build can cost over three years",
+      "caption": "In thousands of US dollars. The build is paid once; inference, monitoring, retraining and integration upkeep keep arriving.",
+      "rows": [
+       {
+        "label": "The build, as quoted",
+        "value": "$100k"
+       },
+       {
+        "label": "Three year total, with running and upkeep",
+        "value": "$250k to $350k"
+       }
+      ],
+      "source": "KrishaWeb, The Cost of Integrating AI in 2026 (July 2026)"
+     }
+    ]
+   },
    {
     "heading": "What does AI integration actually mean here?",
     "blocks": [
@@ -447,7 +494,7 @@
      },
      {
       "t": "p",
-      "x": "How wrong the output is allowed to be. A suggestion a human reviews is cheap. An output that acts without review needs evaluation, fallback behaviour and monitoring, and those are engineering line items rather than model tuning."
+      "x": "How wrong the output is allowed to be. A suggestion a human reviews is cheap. An output that acts without review needs evaluation, fallback behavior and monitoring, and those are engineering line items rather than model tuning."
      },
      {
       "t": "p",
@@ -518,7 +565,8 @@
      }
     ]
    }
-  ]
+  ],
+  "updated": "November 17, 2026"
  },
  {
   "slug": "what-is-ai-readiness",
@@ -1807,14 +1855,15 @@
   "category": "Artificial Intelligence & Automation",
   "readTime": "10 min read",
   "title": "How to evaluate an AI consulting firm, and the question most buyers never ask",
-  "summary": "The decisive question is not what a firm knows about AI. It is where the engagement ends. A great many AI consulting engagements conclude with a strategy, a roadmap and a prioritised list of use cases, all of which can be entirely correct and none of which runs on a Tuesday. Finding out which kind of firm you are speaking to takes about four questions, and they are not the ones usually asked.",
+  "summary": "The decisive question is not what a firm knows about AI. It is where the engagement ends. A great many AI consulting engagements conclude with a strategy, a roadmap and a prioritized list of use cases, all of which can be entirely correct and none of which runs on a Tuesday. Finding out which kind of firm you are speaking to takes about four questions, and they are not the ones usually asked.",
   "published": "November 8, 2026",
   "inShort": [
    "Ask where the engagement ends. A deliverable that is a document and a deliverable that is a running system are different purchases at similar prices.",
    "Ask to see something in production, not a demo. The gap between a prototype that works and a system that can be relied on is where most AI spending disappears.",
    "Ask how they would know the thing is working six months later. A firm without an answer is proposing something nobody will be able to tell has degraded.",
    "Ask what they would do with your data, where it goes, and what happens to it when the engagement ends.",
-   "Ask what would make them tell you not to build it. A firm paid for the next phase has no structural reason to say the work is unnecessary."
+   "Ask what would make them tell you not to build it. A firm paid for the next phase has no structural reason to say the work is unnecessary.",
+   "Compare firms with the same brief and a written scorecard, and only compare prices once every firm has quoted the same outcome."
   ],
   "sections": [
    {
@@ -1822,11 +1871,11 @@
     "blocks": [
      {
       "t": "p",
-      "x": "In practice the term covers two quite different purchases sold under one name. The first is advisory: an assessment of where AI could help, a prioritised list of use cases, a roadmap, sometimes a business case. The deliverable is a document and the engagement ends when it is handed over. The second is delivery: something is built, integrated and put in front of real users, and the engagement ends when it runs."
+      "x": "In practice the term covers two quite different purchases sold under one name. The first is advisory: an assessment of where AI could help, a prioritized list of use cases, a roadmap, sometimes a business case. The deliverable is a document and the engagement ends when it is handed over. The second is delivery: something is built, integrated and put in front of real users, and the engagement ends when it runs."
      },
      {
       "t": "p",
-      "x": "Both are legitimate and the first is not a lesser thing. An organisation that genuinely does not know where to start is well served by someone who can tell it, and that work is harder than it looks. The problem is that the two often cost about the same, are described in similar language, and are bought without the distinction ever being made explicit."
+      "x": "Both are legitimate and the first is not a lesser thing. An organization that genuinely does not know where to start is well served by someone who can tell it, and that work is harder than it looks. The problem is that the two often cost about the same, are described in similar language, and are bought without the distinction ever being made explicit."
      },
      {
       "t": "p",
@@ -1839,7 +1888,7 @@
     "blocks": [
      {
       "t": "p",
-      "x": "The one whose answer to \"where does this end\" matches what you actually need, which is more often delivery than the market assumes. Most organisations asking about AI are not short of ideas about where it could help. They are short of anything running."
+      "x": "The one whose answer to \"where does this end\" matches what you actually need, which is more often delivery than the market assumes. Most organizations asking about AI are not short of ideas about where it could help. They are short of anything running."
      },
      {
       "t": "p",
@@ -1852,15 +1901,85 @@
     ]
    },
    {
+    "heading": "How do you check an AI consulting firm's track record?",
+    "blocks": [
+     {
+      "t": "p",
+      "x": "Ask for one system that is in production today, and ask to speak to the person on the client side who uses it. A reference call with the sponsor who signed the contract tells you how the sale went. A call with the person who relies on the output tells you whether it works."
+     },
+     {
+      "t": "p",
+      "x": "Then ask the questions a portfolio cannot answer:"
+     },
+     {
+      "t": "li",
+      "x": "How long has it been running, and what has changed since launch?"
+     },
+     {
+      "t": "li",
+      "x": "What went wrong in the first three months, and who noticed first?"
+     },
+     {
+      "t": "li",
+      "x": "Who maintains it now: the firm, the client, or nobody?"
+     },
+     {
+      "t": "li",
+      "x": "What would the client do differently if they started again?"
+     },
+     {
+      "t": "p",
+      "x": "Case studies are useful for scope and sector fit, but they are written by the firm for selling. Treat a case study with no named outcome, no time in production and no mention of anything going wrong as marketing rather than evidence."
+     }
+    ]
+   },
+   {
+    "heading": "How do you compare AI consulting firms before making a decision?",
+    "blocks": [
+     {
+      "t": "p",
+      "x": "Give every shortlisted firm the same short brief, the same questions and the same deadline, then score the answers rather than the presentations. A simple scorecard, each line marked from one to five:"
+     },
+     {
+      "t": "li",
+      "x": "Where does the engagement end: a document, a pilot, or a system running with support?"
+     },
+     {
+      "t": "li",
+      "x": "Can they show something in production, with a reference who uses it?"
+     },
+     {
+      "t": "li",
+      "x": "What happens when the model is wrong: is there a fallback, a route to a person, a monitored error?"
+     },
+     {
+      "t": "li",
+      "x": "Where does your data go, is it used for training, and what happens to it at the end?"
+     },
+     {
+      "t": "li",
+      "x": "Is there a three year cost, split into build, running and change, with exclusions in writing?"
+     },
+     {
+      "t": "li",
+      "x": "Did they tell you any part of your brief was not worth doing?"
+     },
+     {
+      "t": "p",
+      "x": "Compare like with like. If one firm quoted an assessment and another quoted a working system, they are not competing bids for the same thing, and the cheaper one is not cheaper. Ask each to price the same outcome before you compare numbers."
+     }
+    ]
+   },
+   {
     "heading": "Why does a working demonstration tell you so little?",
     "blocks": [
      {
       "t": "p",
-      "x": "Because a demonstration and a production system are optimised for opposite things, and almost nothing that makes the first impressive survives into the second. A demo runs on chosen inputs, in one person’s hands, with no requirement to behave sensibly when a dependency fails."
+      "x": "Because a demonstration and a production system are optimized for opposite things, and almost nothing that makes the first impressive survives into the second. A demo runs on chosen inputs, in one person’s hands, with no requirement to behave sensibly when a dependency fails."
      },
      {
       "t": "p",
-      "x": "The work between those two states is unglamorous and substantial: an explicit interface contract, defined behaviour when the model is not confident or an upstream service times out, observability so somebody notices degradation before a user does, an evaluation set that can be rerun, and a rollout that can be reversed. None of it demonstrates well, and it is routinely scoped last or not at all."
+      "x": "The work between those two states is unglamorous and substantial: an explicit interface contract, defined behavior when the model is not confident or an upstream service times out, observability so somebody notices degradation before a user does, an evaluation set that can be rerun, and a rollout that can be reversed. None of it demonstrates well, and it is routinely scoped last or not at all."
      },
      {
       "t": "p",
@@ -1888,6 +2007,10 @@
    {
     "heading": "How much do AI consulting services cost, and why is the spread so wide?",
     "blocks": [
+     {
+      "t": "p",
+      "x": "As a reference point, AI development companies listed on Clutch mostly charge $25 to $49 an hour, projects reviewed there typically cost $10,000 to $49,999, and the average project comes to $120,594 (Clutch AI pricing guide, updated September 2026). Treat those as a market reference for comparing quotes, not as a price for your project."
+     },
      {
       "t": "p",
       "x": "The spread is wide because the same brief is being quoted as different projects. One firm is quoting for an assessment, another for a pilot, another for a system that runs with support. Those are not competing bids for one thing, and comparing them as though they were produces a decision based on an arithmetic error."
@@ -1924,11 +2047,11 @@
     "blocks": [
      {
       "t": "p",
-      "x": "Scope and deliverable. Management consulting addresses organisational questions that span functions, and it is genuinely good at them. The deliverable is a recommendation, the engagement is usually larger than the question, and execution is somebody else’s problem by design."
+      "x": "Scope and deliverable. Management consulting addresses organizational questions that span functions, and it is genuinely good at them. The deliverable is a recommendation, the engagement is usually larger than the question, and execution is somebody else’s problem by design."
      },
      {
       "t": "p",
-      "x": "That is a real service and this is not an argument against it. It is a different purchase, and the mismatch appears when an organisation buys a strategy for a problem that was actually a build."
+      "x": "That is a real service and this is not an argument against it. It is a different purchase, and the mismatch appears when an organization buys a strategy for a problem that was actually a build."
      },
      {
       "t": "p",
@@ -1936,6 +2059,7 @@
      }
     ]
    }
-  ]
+  ],
+  "updated": "November 17, 2026"
  }
 ]
