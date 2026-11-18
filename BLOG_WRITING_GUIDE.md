@@ -33,7 +33,29 @@ What that means for every post:
 1. Look at what happened in AI in the last 72 hours. Use primary sources first: official announcements from model labs and cloud providers, release notes, papers, regulator publications, earnings calls. Then reputable press (Reuters, The Verge, TechCrunch, Ars Technica, FT, Economic Times, Mint, Inc42).
 2. Pick the one development that changes a business decision for our readers. A model price cut, a new agent capability, a regulation taking effect, a big company's results showing where AI spend is going, a security incident in an AI tool. Skip pure research results with no business consequence, rumours and funding gossip.
 3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the UK or EU side, the risk side) or pick the next story.
-4. About one post in five can be evergreen instead of news, answering a question buyers search for ("how much does an AI chatbot cost to build", "RAG vs fine tuning for a small team"). These still need current sources.
+4. Follow the weekly rhythm below: some days are for evergreen posts, not news.
+
+## Weekly rhythm: evergreen and trending
+
+Google can take days or weeks to crawl and rank a new page, and by then a news story has often faded. So the blog runs two kinds of post:
+
+| Day (India time) | Post type | Why |
+| --- | --- | --- |
+| Tuesday and Friday | **Evergreen** | Answers a question buyers search for every month. Keeps earning traffic for years and builds the site's authority. |
+| Every other day | **Trending** | Catches a story while it is new, earns links and AI assistant citations, and shows the firm is current. |
+
+If a trending day has no story that clears the bar, write an evergreen post instead. Never skip an evergreen day for news unless the story is exceptional for US buyers (and then say so in the report).
+
+**Choosing an evergreen topic.**
+
+1. Start from the "Evergreen backlog" in `_performance.md`. Take the top item that is not yet covered.
+2. If the backlog is empty, find one: a buyer phrase with steady interest over 12 months (SerpApi `google_trends` with `date=today 12-m`, US first, then UK). The interest line should be flat or rising, not one spike.
+3. Prefer phrases that show buying intent: cost and pricing, "X vs Y", how to choose or evaluate, checklists and templates, "for small business" or "for <industry>", "in-house vs outsourced", "how long does it take".
+4. Check that the top 10 can be beaten: forum threads, thin listicles, out of date pages or vendor pages that dodge the actual question are good signs. Ten strong, current, direct answers from big brands mean you should pick a narrower phrase.
+5. Tie it to a service. Every evergreen post links to the service or tool page a reader would want next, and answers the question better than anything on page one: real numbers with sources, a table or chart, a clear recommendation and the trade offs.
+6. Do not hang it on a news hook. Use the year in the title only when people search with it ("in 2026"), and set `updated:` whenever you refresh it.
+
+**Give every trending post an evergreen core.** The news is the hook in the first paragraph. The H2 sections should answer questions that still matter after the story fades ("what to ask your AI vendors", "how to secure an AI agent"), so the page keeps ranking for those once the news traffic stops.
 
 ## Trend radar: what people are reading right now
 
@@ -207,7 +229,7 @@ Do not put an H1 in the body. Use `##` and `###` only.
 ## Publishing checklist (the daily routine follows this)
 
 1. `git pull` on `main`, then `npm ci` if `node_modules` is missing.
-2. Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
+2. Check the day in India time (`TZ=Asia/Kolkata date +%A`): Tuesday and Friday are evergreen days, every other day is trending (see the weekly rhythm). Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
 3. Write the post to `content/blog/<slug>.md` with today's date (India time).
 4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens, and use the final address: if a link redirects (`curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <url>` shows 301 or 302), replace it with the address it redirects to.
 5. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.

@@ -42,6 +42,10 @@ Then check the live site (use `MSYS_NO_PATHCONV=1` in Git Bash so paths are not 
 
 The local branch is `redesign-nextjs`. Bring it up to date with `git pull --ff-only origin main` if it has no local changes; never force anything.
 
+### Real traffic from Search Console
+
+Load the Claude in Chrome tools and select the Chrome signed in to Google as Talavishiraaj Groups (deviceId `8868367c-7867-4a15-8454-5590ed02713a`; its display name changes between sessions, so go by the ID). Open Search Console for `sc-domain:talavishiraajgroups.com` and read the last 28 days: totals, countries, queries, pages, and the page indexing report. Then rewrite `content/blog/_search-console.md` with the new numbers (same sections), commit it with the other comeback changes, and compare against the previous version for the report. Judge markets on non brand impressions in the order US, UK, UAE, Europe, India; searches for our own name come mostly from the team in India. If Chrome or Search Console is unavailable, say so and keep the old file.
+
 ## 4. Fix what you safely can
 
 - A post that broke the build or does not load: fix the post, run `npm run blog:check`, build if needed (`NODE_OPTIONS=--max-old-space-size=3072 npm run build` with the preview server stopped), push with `git push origin HEAD:main`, and confirm it is live.

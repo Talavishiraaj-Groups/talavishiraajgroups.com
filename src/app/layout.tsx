@@ -5,7 +5,7 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { BehaviourAnalytics, CookieConsent } from '@/components/consent';
-import { Analytics } from '@vercel/analytics/next';
+import { SiteAnalytics } from '@/components/SiteAnalytics';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Attribution } from '@/components/Attribution';
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en-US" className={`${sans.variable} ${serif.variable}`}>
       <head>
         <noscript>
           {/* Animated sections ship their starting state as inline styles; without JavaScript, show them finished. */}
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CookieConsent />
         <BehaviourAnalytics />
-        <Analytics />
+        <SiteAnalytics />
         <SpeedInsights />
         <Attribution />
       </body>
