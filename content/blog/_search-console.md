@@ -63,7 +63,7 @@ The Fireworks AI breach post is the first blog post to earn Google impressions (
 
 ## Indexing
 
-Not re-read on 19 November (the indexing report was not reachable). Last reading, 13 November: 48 pages indexed, 25 not (20 "discovered, currently not indexed", 3 redirects, 1 noindex on purpose, 1 crawled but not indexed). Sitemap last read 14 November, 76 URLs. Indexing requested on 17 November for the two newest posts, contact, case studies, insights, partnerships, risk mitigation, one case study, and a recrawl of the two insight pages above. Bing had none of the site indexed on 17 November.
+19 November: 52 pages indexed (up from 48 on 13 November), 32 not: 20 "discovered, currently not indexed", 8 "crawled, currently not indexed" (up from 1), 3 redirects, 1 noindex on purpose. The 8 crawled but not indexed are exactly the pages whose indexing was requested on 17 November: /risk-mitigation, /case-studies/decision-heavy-workflow-automation, /partnerships, /case-studies, /insights, /contact, /blog/qwen4-max-for-business and /blog/ai-agent-security-risks. Google has fetched them and is still deciding; check again next week, and if they stay out, strengthen their content and internal links rather than requesting again. Sitemap last read 14 November, 76 URLs. Indexing requested on 17 November for the two newest posts, contact, case studies, insights, partnerships, risk mitigation, one case study, and a recrawl of the two insight pages above. Bing had none of the site indexed on 17 November.
 
 ## What this means for topics
 
