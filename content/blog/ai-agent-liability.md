@@ -108,7 +108,7 @@ The same advisory recommends running a simulated incident with the vendor before
 
 The bank terms reported so far are all from US banks. UK and UAE companies should check their own online banking agreement for wording about sharing credentials, because that clause is what the US banks are now leaning on.
 
-For EU sales, the Product Liability Directive is the date to plan around: products placed on the market after 8 December 2026 fall under the new rules, which include software and AI. Teams building agents for EU customers should check that your vendor contracts pass that risk back to whoever controls the defective part. Our earlier post on [AI agent security risks](/blog/ai-agent-security-risks) covers the access controls that also cut this exposure.
+For EU sales, the Product Liability Directive is the date to plan around: products placed on the market after 8 December 2026 fall under the new rules, which include software and AI. Teams building agents for EU customers should check that their vendor contracts pass that risk back to whoever controls the defective part. Our earlier post on [AI agent security risks](/blog/ai-agent-security-risks) covers the access controls that also cut this exposure.
 
 ## Where to start this week
 
