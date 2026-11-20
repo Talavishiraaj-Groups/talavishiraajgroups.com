@@ -8,7 +8,7 @@ To bring founders, operators and technology leaders to the site from search engi
 
 ## Who we are writing for
 
-Founders, COOs, CTOs and heads of operations at small and mid-sized companies. They are smart and busy, not AI researchers. They want to know whether a development changes a decision they have to make about building, buying or automating something.
+Founders, COOs, CTOs, heads of operations, engineering and product leaders at small and mid-sized companies, across the industries we serve (logistics, manufacturing, healthcare, financial services, SaaS, energy and utilities, and the others under `/sectors/`). They are smart and busy, not researchers. They want to know whether a development changes a decision they have to make about building, buying, modernizing or automating something.
 
 ## Markets, in priority order
 
@@ -30,8 +30,15 @@ What that means for every post:
 
 ## Picking the topic
 
-1. Look at what happened in AI in the last 72 hours. Use primary sources first: official announcements from model labs and cloud providers, release notes, papers, regulator publications, earnings calls. Then reputable press (Reuters, The Verge, TechCrunch, Ars Technica, FT, Economic Times, Mint, Inc42).
-2. Pick the one development that changes a business decision for our readers. A model price cut, a new agent capability, a regulation taking effect, a big company's results showing where AI spend is going, a security incident in an AI tool. Skip pure research results with no business consequence, rumours and funding gossip.
+The firm works across many industries, not only AI, so topics come from all of what we do:
+
+- **Our services**: software and systems engineering, AI and automation, product engineering and R&D (hardware, embedded, prototyping, manufacturing), business and operating systems, growth and market systems, implementation and delivery.
+- **Our sectors** (each has a page under `/sectors/`): supply chain and logistics, manufacturing, healthcare, financial services, insurance, IoT and connected devices, SaaS, ecommerce, agritech, agetech and care, research and development, biotechnology and life sciences, electric vehicles and charging, water utilities, chemical and process industries, real estate and proptech, education and edtech, construction and infrastructure, telecommunications.
+
+Aim for a mix over each month: AI is one strand, not the whole blog. Roughly half the posts should be about software, engineering, operations or a sector, with or without AI in them.
+
+1. Look at what happened in the last 72 hours in technology and in our sectors. Use primary sources first: official announcements from companies, cloud and software vendors, release notes, regulator and government publications, standards bodies, industry associations, earnings calls. Then reputable press (Reuters, The Verge, TechCrunch, Ars Technica, FT, WSJ, Bloomberg, trade publications for the sector such as Supply Chain Dive, Manufacturing Dive, Healthcare Dive, Payments Dive, Utility Dive, Construction Dive, Finextra, and Economic Times, Mint, Inc42 for India).
+2. Pick the one development that changes a business decision for our readers. Examples: a regulation or compliance deadline in a sector (FDA, CMS, SEC, EU rules, UAE rules), a tariff or supply chain shift, a major outage or security incident, a vendor price or licensing change (cloud, ERP, CRM), a platform end of life, a new standard (for example in EV charging, healthcare data or payments), a big company's results showing where technology spend is going, a model price cut or new AI capability. Skip pure research results with no business consequence, rumours and funding gossip.
 3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the UK or EU side, the risk side) or pick the next story.
 4. Follow the weekly rhythm below: most days are for buyer posts, not news.
 
@@ -54,9 +61,9 @@ If a trending day has no story that clears the bar, write a buyer post instead. 
 3. Answer it with real numbers. For cost posts, put the dollar range in the title or description when sources support one ("$20,000 to $150,000"), show what drives the number in a table, and give a worked example. Cite where every range comes from.
 4. Write for someone about to spend money: a clear recommendation, the trade offs, red flags, and the questions to ask a vendor.
 5. Check the site first so we do not compete with ourselves: `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/insights/what-ai-integration-costs`, `/insights/how-to-choose-a-software-development-partner`, `/insights/how-to-evaluate-an-ai-consulting-firm` and earlier blog posts. Pick a narrower phrase than any of them and link to them.
-6. Link to the one service page a reader would want next, usually `/services/artificial-intelligence-and-automation`, and to `/products` (Prism) when the reader is still deciding whether to build at all.
+6. Link to the one service page a reader would want next (`/services/technology-and-engineering`, `/services/artificial-intelligence-and-automation`, `/services/product-engineering-and-rd`, `/services/business-and-operating-systems` and so on), the matching `/sectors/...` page when the post is about an industry, and `/products` (Prism) when the reader is still deciding whether to build at all.
 
-Seed buyer backlog (US first; skip anything already covered):
+Seed buyer backlog (US first; skip anything already covered; mix AI and non-AI):
 
 - cost to build an AI agent
 - AI chatbot cost for a business
@@ -67,6 +74,12 @@ Seed buyer backlog (US first; skip anything already covered):
 - AI proof of concept cost
 - AI development agency vs freelancer vs in-house team
 - AI development pricing models: fixed price vs time and materials
+- custom software development cost for a specific sector (for example logistics, manufacturing, healthcare, fintech)
+- ERP integration cost
+- legacy system modernization cost
+- hardware prototype cost / product development cost
+- IoT platform development cost
+- custom software vs off the shelf for a specific sector
 
 **Choosing an evergreen topic.**
 
@@ -86,7 +99,7 @@ Before choosing a topic, spend a few minutes seeing what buyers are actually rea
 | Where | How | What it tells you |
 | --- | --- | --- |
 | Google Trends | SerpApi engine `google_trends_trending_now` in market order: `geo=US`, `GB`, `AE`, then `DE` and `IN`; `google_trends` for interest in a candidate phrase over 7 days in the US and UK | What is spiking in search, and whether a phrase is rising |
-| Google News | SerpApi engine `google_news`, query such as "AI agents", "OpenAI", "AI regulation", "EU AI Act", "UAE AI" | Which stories the press is running with |
+| Google News | SerpApi engine `google_news`, queries across our services and sectors, rotating through them: "AI agents", "AI regulation", "supply chain technology", "manufacturing technology", "healthcare IT", "fintech regulation", "EV charging", "ERP", "cybersecurity breach", "cloud pricing", "SaaS", "proptech", "utilities technology" | Which stories the press is running with in each industry |
 | Hacker News | `https://hn.algolia.com/api/v1/search?tags=front_page` (and `search_by_date?query=AI`) | What technical decision makers are reading and arguing about |
 | Reddit | `https://www.reddit.com/r/<sub>/top.json?t=week` for r/artificial, r/OpenAI, r/LocalLLaMA, r/smallbusiness, r/Entrepreneur, r/startups, r/UKBusiness, r/dubai, r/IndianStartups (skip if blocked) | The real questions and frustrations people have, in their words |
 | YouTube | SerpApi engine `youtube` with the candidate phrase | Whether people want this explained, and which angles get views |
@@ -115,7 +128,7 @@ Good post titles promise a specific answer: "What an AI chatbot costs a 50 perso
 - **Opening paragraph**: the news and why the reader should care, in under 70 words. No scene setting.
 - **Sections**: 4 to 7 H2 headings. Phrase at least two as the question a reader would type into a search box ("What does this cost a 50 person company?"). Open each section with a one or two sentence direct answer, then the detail. That is what AI answer engines quote.
 - **Something concrete**: a worked example, a rough cost calculation, a short checklist, a comparison table, or a decision rule. Every post needs at least one.
-- **Internal links**: at least two, written into sentences, to pages that genuinely help: `/services/artificial-intelligence-and-automation`, `/services/technology-and-engineering`, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, relevant `/insights/...` and earlier `/blog/...` posts.
+- **Internal links**: at least two, written into sentences, to pages that genuinely help: the six `/services/...` pages (technology and engineering, AI and automation, product engineering and R&D, business and operating systems, growth and market enablement, implementation and delivery), the matching `/sectors/...` page for an industry post, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, relevant `/insights/...` and earlier `/blog/...` posts.
 - **Sources**: link at least one source inline where the fact is used, and list 3 to 6 in the frontmatter. Only cite pages you actually opened.
 - **Ending**: end on the practical next step for the reader. Do not add a summary section and do not write a sales pitch; the page template adds the enquiry box.
 
