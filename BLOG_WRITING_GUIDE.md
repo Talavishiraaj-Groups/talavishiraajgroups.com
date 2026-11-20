@@ -33,18 +33,40 @@ What that means for every post:
 1. Look at what happened in AI in the last 72 hours. Use primary sources first: official announcements from model labs and cloud providers, release notes, papers, regulator publications, earnings calls. Then reputable press (Reuters, The Verge, TechCrunch, Ars Technica, FT, Economic Times, Mint, Inc42).
 2. Pick the one development that changes a business decision for our readers. A model price cut, a new agent capability, a regulation taking effect, a big company's results showing where AI spend is going, a security incident in an AI tool. Skip pure research results with no business consequence, rumours and funding gossip.
 3. Check `content/blog` so you do not repeat a topic from the last 30 days. If the obvious news is already covered, find a different angle (for example, the cost side, the UK or EU side, the risk side) or pick the next story.
-4. Follow the weekly rhythm below: some days are for evergreen posts, not news.
+4. Follow the weekly rhythm below: most days are for buyer posts, not news.
 
-## Weekly rhythm: evergreen and trending
+## Weekly rhythm: buyer, evergreen and trending
 
-Google can take days or weeks to crawl and rank a new page, and by then a news story has often faded. So the blog runs two kinds of post:
+Research on firms whose blogs actually win clients (River Pools, Yalantis, Coding Sphere, Modeso and others, researched in November 2026) found the same thing every time: clients come from posts a buyer reads just before hiring, such as cost guides, comparisons and "how to choose" pages. News posts build freshness and authority but rarely bring clients on their own. So the week is weighted toward buyer posts:
 
 | Day (India time) | Post type | Why |
 | --- | --- | --- |
-| Tuesday and Friday | **Evergreen** | Answers a question buyers search for every month. Keeps earning traffic for years and builds the site's authority. |
-| Every other day | **Trending** | Catches a story while it is new, earns links and AI assistant citations, and shows the firm is current. |
+| Monday, Wednesday, Friday, Sunday | **Buyer** | Answers a question someone asks right before they hire: what it costs, which option to pick, how to choose a vendor, how long it takes. These are the posts that bring enquiries. |
+| Tuesday and Thursday | **Trending** | Catches a story while it is new, earns links and AI assistant citations, and shows the firm is current. |
+| Saturday | **Evergreen** | Answers a question people search for every month a step earlier in the journey (how something works for a business, common mistakes, what good looks like). Builds authority and feeds readers toward the buyer posts. |
 
-If a trending day has no story that clears the bar, write an evergreen post instead. Never skip an evergreen day for news unless the story is exceptional for US buyers (and then say so in the report).
+If a trending day has no story that clears the bar, write a buyer post instead. Never skip a buyer day for news unless the story is exceptional for US buyers (and then say so in the report).
+
+**Buyer posts.** Rules on top of everything else in this guide:
+
+1. Start from the "Buyer backlog" in `_performance.md`; if it is missing or used up, use the seed list below, then find new phrases the same way.
+2. The question is one a buyer asks at the point of choosing or budgeting: cost and pricing ("cost to build an AI agent"), "X vs Y", "how to choose" or "how to evaluate", "how long does it take", pricing models, build vs buy, in-house vs agency vs freelancer, proof of concept cost.
+3. Answer it with real numbers. For cost posts, put the dollar range in the title or description when sources support one ("$20,000 to $150,000"), show what drives the number in a table, and give a worked example. Cite where every range comes from.
+4. Write for someone about to spend money: a clear recommendation, the trade offs, red flags, and the questions to ask a vendor.
+5. Check the site first so we do not compete with ourselves: `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/insights/what-ai-integration-costs`, `/insights/how-to-choose-a-software-development-partner`, `/insights/how-to-evaluate-an-ai-consulting-firm` and earlier blog posts. Pick a narrower phrase than any of them and link to them.
+6. Link to the one service page a reader would want next, usually `/services/artificial-intelligence-and-automation`, and to `/products` (Prism) when the reader is still deciding whether to build at all.
+
+Seed buyer backlog (US first; skip anything already covered):
+
+- cost to build an AI agent
+- AI chatbot cost for a business
+- how to choose an AI development company
+- cost to build a RAG system (retrieval augmented generation)
+- AI automation cost for small business
+- how long does it take to build an AI agent
+- AI proof of concept cost
+- AI development agency vs freelancer vs in-house team
+- AI development pricing models: fixed price vs time and materials
 
 **Choosing an evergreen topic.**
 
@@ -229,7 +251,7 @@ Do not put an H1 in the body. Use `##` and `###` only.
 ## Publishing checklist (the daily routine follows this)
 
 1. `git pull` on `main`, then `npm ci` if `node_modules` is missing.
-2. Check the day in India time (`TZ=Asia/Kolkata date +%A`): Tuesday and Friday are evergreen days, every other day is trending (see the weekly rhythm). Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
+2. Check the day in India time (`TZ=Asia/Kolkata date +%A`): Monday, Wednesday, Friday and Sunday are buyer days, Tuesday and Thursday are trending, Saturday is evergreen (see the weekly rhythm). Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
 3. Write the post to `content/blog/<slug>.md` with today's date (India time).
 4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens, and use the final address: if a link redirects (`curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <url>` shows 301 or 302), replace it with the address it redirects to.
 5. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.
