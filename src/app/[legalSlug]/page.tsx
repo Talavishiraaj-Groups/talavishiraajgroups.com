@@ -7,6 +7,8 @@ import { Blocks } from '@/components/Blocks';
 import { Eyebrow } from '@/components/ui';
 import { PolicyArt } from '@/components/illustrations';
 import { withLegacySeo } from '@/lib/seo';
+import { JsonLd, articleLd, breadcrumbLd } from '@/lib/schema';
+import descriptions from '@/content/seo-descriptions.json';
 
 export const dynamicParams = false;
 
@@ -26,8 +28,17 @@ export default async function LegalPage({ params }: { params: Promise<{ legalSlu
   if (!d) notFound();
   const updated = d.blocks.find((b) => b.t === 'p' && b.x.startsWith('Last Updated'));
   const blocks = d.blocks.filter((b) => b !== updated);
+  const firstText = blocks.find((b) => b.t === 'p' && 'x' in b);
+  const description = (descriptions as Record<string, string>)[`/${slug}`] ?? (firstText && 'x' in firstText ? firstText.x.slice(0, 300) : d.title);
+  const updatedOn = updated && 'x' in updated ? updated.x.replace(/^Last Updated:?\s*/i, '') : undefined;
   return (
     <section className="pb-24 pt-32 md:pt-40">
+      <JsonLd
+        data={[
+          articleLd({ path: `/${slug}`, headline: d.title, description, datePublished: updatedOn, dateModified: updatedOn, section: 'Legal and governance' }),
+          breadcrumbLd([{ name: 'Home', path: '/' }, { name: d.title, path: `/${slug}` }]),
+        ]}
+      />
       <div className="wrap grid gap-12 lg:grid-cols-12">
         <aside className="lg:col-span-3">
           <div className="lg:sticky lg:top-32">

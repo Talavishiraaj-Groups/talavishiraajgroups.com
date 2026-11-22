@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { inSentence } from '@/lib/text';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
@@ -127,7 +128,7 @@ export default async function SectorPage({ params }: { params: Promise<{ slug: s
       <section className="wrap py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <h2 className="text-h2 font-medium">About {s.name.toLowerCase()}</h2>
+            <h2 className="text-h2 font-medium">About {inSentence(s.name)}</h2>
           </div>
           <div className="lg:col-span-8">
             <Accordion items={s.faqs} />
@@ -149,7 +150,7 @@ export default async function SectorPage({ params }: { params: Promise<{ slug: s
       </section>
 
       <CtaBand
-        title={`Working on something in ${s.name.toLowerCase()}?`}
+        title={`Working on something in ${inSentence(s.name)}?`}
         body="Describe the situation and we will tell you what the work would involve, what it would cost, and whether it is worth doing at all."
         note={<>For what work of this kind costs before anyone quotes you, see <Link href="/what-it-costs" className="underline underline-offset-4">the published market figures</Link>.</>}
       />

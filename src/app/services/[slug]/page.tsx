@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { aOrAn, inSentence } from '@/lib/text';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
@@ -177,7 +178,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       </section>
 
       <CtaBand
-        title={`Discuss a ${c.name.toLowerCase()} requirement`}
+        title={`Discuss ${aOrAn(inSentence(c.name))} ${inSentence(c.name)} requirement`}
         body="Describe what you are working on. We reply with a view on how we would approach it and whether we are the right people for the work."
         note={<>If you are not yet sure this is the work you need, that is a different question and worth answering first: <Link href="/products" className="underline underline-offset-4">Prism</Link> is the engagement for that.</>}
       />

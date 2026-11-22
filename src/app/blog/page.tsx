@@ -22,9 +22,9 @@ export default function BlogPage() {
     <>
       <PageHero
         eyebrow="Blog"
-        title="What is changing in AI, and what to do about it"
+        title="What is changing in technology and AI, and what to do about it"
         italic={['do', 'about', 'it']}
-        lead="Short, sourced reading on the AI developments that matter to people running a business: what happened, whether it changes anything for you, and what we would do next."
+        lead="Short, sourced reading on what matters to people running a business: costs and comparisons for software, AI and engineering work, and the news across our industries, with what we would do next."
       />
 
       <section className="wrap pb-24">
