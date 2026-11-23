@@ -104,8 +104,7 @@ export const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || '';
 /**
  * Cal.com calendar inside the page. It loads by itself: it only appears on the booking step,
  * after the visitor has asked to pick a time, so it is the service they came for and is not
- * gated behind the analytics banner (the cookie notice says so). A plain link stays underneath
- * in case Cal.com is blocked or slow.
+ * gated behind the analytics banner (the cookie notice says so).
  */
 export function CalEmbed({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -132,12 +131,6 @@ export function CalEmbed({ className }: { className?: string }) {
   return (
     <div className={className}>
       <div ref={ref} className="min-h-[600px] rounded-2xl bg-paper" />
-      <p className="mt-3 px-2 text-[13px] text-muted">
-        Calendar not showing?{' '}
-        <a href={`https://cal.com/${CAL_LINK}`} target="_blank" rel="noreferrer" className="font-medium text-ink underline underline-offset-4">
-          Open it on Cal.com
-        </a>
-      </p>
     </div>
   );
 }
