@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { ease } from './motion';
 
 const r2 = (n: number) => Math.round(n * 100) / 100;
@@ -17,8 +17,17 @@ export function Convergence({ labels = ['Software', 'Data', 'AI', 'Hardware', 'O
     const a = (-90 + (360 / labels.length) * i) * (Math.PI / 180);
     return { l, x: r2(cx + R * Math.cos(a)), y: r2(cy + R * Math.sin(a)) };
   });
+  const ref = useRef<SVGSVGElement>(null);
+  const live = useInView(ref);
+  const reduced = useReducedMotion();
+  useEffect(() => {
+    const svg = ref.current;
+    if (!svg) return;
+    if (live && !reduced) svg.unpauseAnimations();
+    else svg.pauseAnimations();
+  }, [live, reduced]);
   return (
-    <svg viewBox="0 0 600 600" className="h-full w-full" role="img" aria-label="Software, data, AI, hardware and operations converging into one team">
+    <svg ref={ref} viewBox="0 0 600 600" className="h-full w-full" role="img" aria-label="Software, data, AI, hardware and operations converging into one team">
       <defs>
         <radialGradient id="core" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#8FA6FF" />
@@ -60,11 +69,12 @@ export function Convergence({ labels = ['Software', 'Data', 'AI', 'Hardware', 'O
               transition={{ duration: 1.4, delay: 0.8 + i * 0.12, ease }}
             />
             {[0, 1, 2].map((k) => (
-              <circle key={k} r={2.6} fill="#2B55FF">
-                <animateMotion dur={`${2.6 + i * 0.3}s`} begin={`${1.6 + k * 0.9 + i * 0.2}s`} repeatCount="indefinite">
+              // Each dot runs twice and then stops (hidden). Looping SVG motion forever made the browser redo layout on every frame.
+              <circle key={k} r={2.6} fill="#2B55FF" opacity={0}>
+                <animateMotion dur={`${2.6 + i * 0.3}s`} begin={`${1.6 + k * 0.9 + i * 0.2}s`} repeatCount="2">
                   <mpath href={`#${id}`} />
                 </animateMotion>
-                <animate attributeName="opacity" values="0;1;1;0" dur={`${2.6 + i * 0.3}s`} begin={`${1.6 + k * 0.9 + i * 0.2}s`} repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0;1;1;0" dur={`${2.6 + i * 0.3}s`} begin={`${1.6 + k * 0.9 + i * 0.2}s`} repeatCount="2" />
               </circle>
             ))}
             <motion.g initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.6 + i * 0.1, ease }} style={{ transformOrigin: `${n.x}px ${n.y}px` }}>
@@ -78,7 +88,7 @@ export function Convergence({ labels = ['Software', 'Data', 'AI', 'Hardware', 'O
         );
       })}
       <circle cx={cx} cy={cy} r={90} fill="url(#core)" opacity={0.25}>
-        <animate attributeName="r" values="80;96;80" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="r" values="80;96;80" dur="4s" repeatCount="2" />
       </circle>
       <motion.circle cx={cx} cy={cy} r={34} fill="#2B55FF" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 1.4, ease }} style={{ transformOrigin: '300px 300px' }} />
       <motion.text x={cx} y={cy + 4} textAnchor="middle" fontSize="13" fontWeight={600} fontFamily="var(--font-sans)" fill="#FFFFFF" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>
@@ -93,7 +103,10 @@ export function Convergence({ labels = ['Software', 'Data', 'AI', 'Hardware', 'O
 /* ------------------------------------------------------------------ */
 export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: string; tint?: string; dark?: boolean }) {
   const ref = useRef<SVGSVGElement>(null);
+  const reduced = useReducedMotion();
   const inView = useInView(ref, { once: true, margin: '-40px' });
+  // Looping motion runs only while the visual is on screen, so visuals the visitor has scrolled past stop costing work.
+  const live = useInView(ref) && !reduced;
   const stroke = dark ? 'rgba(255,255,255,0.22)' : 'rgba(10,11,13,0.18)';
   const fill = dark ? 'rgba(255,255,255,0.06)' : 'rgba(10,11,13,0.04)';
   const go = inView ? 'show' : 'hidden';
@@ -107,9 +120,10 @@ export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: stri
             <path d={`M200 ${70 + i * 42} L320 ${120 + i * 42} L200 ${170 + i * 42} L80 ${120 + i * 42} Z`} fill={i === 0 ? tint : fill} fillOpacity={i === 0 ? 0.9 : 1} stroke={i === 0 ? tint : stroke} />
           </motion.g>
         ))}
-        {[0, 1, 2].map((i) => (
-          <motion.circle key={i} r={3} fill={tint} initial={{ cy: 250 }} animate={inView ? { cy: [250, 120], opacity: [0, 1, 0] } : {}} transition={{ duration: 2.2, delay: i * 0.7, repeat: Infinity, ease: 'easeInOut' }} cx={150 + i * 50} />
-        ))}
+        {live &&
+          [0, 1, 2].map((i) => (
+            <motion.circle key={i} r={3} fill={tint} initial={{ cy: 250, opacity: 0 }} animate={{ cy: [250, 120], opacity: [0, 1, 0] }} transition={{ duration: 2.2, delay: i * 0.7, repeat: Infinity, ease: 'easeInOut' }} cx={150 + i * 50} />
+          ))}
         <text x="330" y="124" fontSize="12" fontFamily="var(--font-sans)" fill={dark ? '#fff' : '#0A0B0D'} opacity={0.6}>App</text>
         <text x="330" y="166" fontSize="12" fontFamily="var(--font-sans)" fill={dark ? '#fff' : '#0A0B0D'} opacity={0.6}>API</text>
         <text x="330" y="208" fontSize="12" fontFamily="var(--font-sans)" fill={dark ? '#fff' : '#0A0B0D'} opacity={0.6}>Data</text>
@@ -132,9 +146,13 @@ export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: stri
         {pts.flat().map((p, i) => (
           <motion.circle key={i} cx={p.x} cy={p.y} r={9} fill={dark ? '#14161A' : '#fff'} stroke={tint} strokeWidth={1.5} initial={{ scale: 0 }} animate={inView ? { scale: 1 } : {}} transition={{ delay: 0.2 + i * 0.04, ease }} style={{ transformOrigin: `${p.x}px ${p.y}px` }} />
         ))}
-        {pts.flat().map((p, i) => (
-          <motion.circle key={'g' + i} cx={p.x} cy={p.y} r={4} fill={tint} animate={inView ? { opacity: [0.2, 1, 0.2] } : {}} transition={{ duration: 1.8, delay: (i % 5) * 0.3 + Math.floor(i / 5) * 0.2, repeat: Infinity }} />
-        ))}
+        {pts.flat().map((p, i) =>
+          live ? (
+            <motion.circle key={'g' + i} cx={p.x} cy={p.y} r={4} fill={tint} initial={{ opacity: 0.2 }} animate={{ opacity: [0.2, 1, 0.2] }} transition={{ duration: 1.8, delay: (i % 5) * 0.3 + Math.floor(i / 5) * 0.2, repeat: Infinity }} />
+          ) : (
+            <circle key={'g' + i} cx={p.x} cy={p.y} r={4} fill={tint} opacity={inView ? 0.6 : 0} />
+          ),
+        )}
         <text x="340" y="105" fontSize="12" fontFamily="var(--font-sans)" fill={dark ? '#fff' : '#0A0B0D'} opacity={0.55}>Automated</text>
         <text x="340" y="200" fontSize="12" fontFamily="var(--font-sans)" fill={dark ? '#fff' : '#0A0B0D'} opacity={0.55}>Human</text>
       </svg>
@@ -144,7 +162,11 @@ export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: stri
     return (
       <svg ref={ref} viewBox="0 0 400 300" className="h-full w-full">
         <motion.circle cx={200} cy={150} r={80} fill="none" stroke={tint} strokeWidth={1.5} initial={{ pathLength: 0 }} animate={inView ? { pathLength: 1 } : {}} transition={{ duration: 1.6, ease }} />
-        <motion.circle cx={200} cy={150} r={44} fill="none" stroke={tint} strokeWidth={1.5} strokeDasharray="4 4" initial={{ rotate: 0 }} animate={inView ? { rotate: 360 } : {}} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} style={{ transformOrigin: '200px 150px' }} />
+        {live ? (
+          <motion.circle cx={200} cy={150} r={44} fill="none" stroke={tint} strokeWidth={1.5} strokeDasharray="4 4" initial={{ rotate: 0 }} animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} style={{ transformOrigin: '200px 150px' }} />
+        ) : (
+          <circle cx={200} cy={150} r={44} fill="none" stroke={tint} strokeWidth={1.5} strokeDasharray="4 4" />
+        )}
         {Array.from({ length: 8 }).map((_, i) => {
           const a = (i / 8) * Math.PI * 2;
           return <motion.rect key={i} x={r2(200 + 80 * Math.cos(a) - 6)} y={r2(150 + 80 * Math.sin(a) - 6)} width={12} height={12} fill={dark ? '#0A0B0D' : '#F4F3EE'} stroke={tint} initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.8 + i * 0.08 }} />;
@@ -169,7 +191,7 @@ export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: stri
         {edges.map(([a, b], i) => (
           <g key={i}>
             <path id={`fe${i}${tint.slice(1)}`} d={`M${nodes[a].x} ${nodes[a].y} C ${(nodes[a].x + nodes[b].x) / 2} ${nodes[a].y}, ${(nodes[a].x + nodes[b].x) / 2} ${nodes[b].y}, ${nodes[b].x} ${nodes[b].y}`} fill="none" stroke={stroke} strokeWidth={1.5} />
-            {inView && (
+            {live && (
               <circle r={3.5} fill={tint}>
                 <animateMotion dur="2.4s" begin={`${i * 0.35}s`} repeatCount="indefinite">
                   <mpath href={`#fe${i}${tint.slice(1)}`} />
@@ -223,7 +245,7 @@ export function CapVisual({ kind, tint = '#2B55FF', dark = false }: { kind: stri
       {[[0, 1], [1, 2], [2, 3], [3, 4]].map(([a, b], i) => (
         <motion.path key={i} d={`M${40 + (bars[a][0] + bars[a][1]) * 320} ${59 + a * 44} h8 v44 h-4`} fill="none" stroke={dark ? '#fff' : '#0A0B0D'} strokeOpacity={0.4} initial={{ pathLength: 0 }} animate={inView ? { pathLength: 1 } : {}} transition={{ delay: 1 + i * 0.15 }} />
       ))}
-      <motion.line x1={40} x2={40} y1={30} y2={270} stroke={tint} strokeWidth={1.5} animate={inView ? { x1: [40, 360], x2: [40, 360] } : {}} transition={{ duration: 6, repeat: Infinity, ease: 'linear' }} />
+      {live && <motion.line x1={40} x2={40} y1={30} y2={270} stroke={tint} strokeWidth={1.5} animate={{ x1: [40, 360], x2: [40, 360] }} transition={{ duration: 6, repeat: Infinity, ease: 'linear' }} />}
     </svg>
   );
 }

@@ -8,6 +8,8 @@ export function SmoothScroll() {
   const pathname = usePathname();
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // Phones and tablets scroll natively (Lenis does not smooth touch by default), so skip its every-frame loop there.
+    if (window.matchMedia('(pointer: coarse)').matches) return;
     const lenis = new Lenis({ duration: 1.1, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
     let raf = 0;
     const loop = (time: number) => {

@@ -1,29 +1,32 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import clsx from 'clsx';
 import { capabilities } from '@/content/capabilities';
 import { cases } from '@/content/cases';
 import { Convergence, CapVisual, PrismVisual } from './visuals';
-import { Marquee, Reveal, ScrollText, SplitWords, Stagger, StaggerItem, ease } from './motion';
+import { Marquee, Reveal, ScrollText, Stagger, StaggerItem, ease } from './motion';
 import { Button, Eyebrow, SectionHead } from './ui';
 
 export function HomeHero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-paper">
-            <div className="absolute right-[-10%] top-1/2 h-[900px] w-[900px] -translate-y-1/2 rounded-full opacity-[0.14] blur-3xl" style={{ background: 'radial-gradient(circle, #2B55FF 0%, transparent 60%)' }} />
+      {/* Soft glow drawn as a plain gradient: a blur filter this large was one of the most expensive things on the page to paint, especially on phones. */}
+      <div className="pointer-events-none absolute right-[-10%] top-1/2 h-[900px] w-[900px] -translate-y-1/2 rounded-full opacity-[0.12]" style={{ background: 'radial-gradient(circle, #2B55FF 0%, rgba(43,85,255,0.35) 30%, transparent 68%)' }} />
       <div className="wrap relative grid min-h-[100svh] items-center gap-10 pb-28 pt-32 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <h1 className="text-mega font-medium">
-            <SplitWords text="Some problems need more than one kind of engineer." italic={['more', 'than', 'one']} delay={0.15} />
+            {/* Shown at once rather than risen in word by word: the headline is the first thing a visitor must read. */}
+            Some problems need <span className="font-serif font-normal italic tracking-normal">more than one</span> kind of engineer.
           </h1>
-          <p style={{ animationDelay: '0.6s' }} className="fade-up mt-8 max-w-xl text-lg leading-relaxed text-ink/70">
+          {/* Shown at once, not faded in: this paragraph is the page's largest text, and fading it in delayed when visitors (and Google) saw the page as loaded. */}
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink/70">
             When the answer spans software, data, AI, hardware and the business around them, work usually stalls in the gaps between suppliers. We combine research, engineering and implementation in one team, and stay accountable from the first analysis through to the system running in production.
           </p>
-          <div style={{ animationDelay: '0.8s' }} className="fade-up mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3">
             <Button href="/contact" variant="dark">Describe your situation</Button>
             <Button href="/services" variant="ghost">See what we build</Button>
           </div>
@@ -32,7 +35,7 @@ export function HomeHero() {
           <Convergence />
         </div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 border-t border-line bg-paper/80 py-5 backdrop-blur">
+      <div className="absolute inset-x-0 bottom-0 border-t border-line bg-paper/95 py-5">
         <Marquee>
           {['Software engineering', 'Data infrastructure', 'Applied AI', 'Embedded & hardware', 'Operating design', 'Growth systems', 'Delivery & handover', 'Applied research'].map((t) => (
             <span key={t} className="flex items-center gap-8 px-8 text-[12px] text-ink/50">
@@ -249,25 +252,41 @@ export function Audiences() {
   );
 }
 
+/** True on screens of 768px and wider, where the pinned horizontal rail is used. */
+function useWide() {
+  const [wide, setWide] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const on = () => setWide(mq.matches);
+    on();
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  return wide;
+}
+
 export function WorkRail() {
   const ref = useRef<HTMLDivElement>(null);
+  const wide = useWide();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-62%']);
+  // On phones the pinned rail meant scrolling through 2.6 screens while only the cards moved sideways,
+  // which reads as a stuck page. There the cards are a normal swipeable row instead.
   return (
-    <section ref={ref} className="relative h-[260vh] bg-paper2/60">
-      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+    <section ref={ref} className="relative bg-paper2/60 py-20 md:h-[260vh] md:py-0">
+      <div className="flex flex-col justify-center md:sticky md:top-0 md:h-screen md:overflow-hidden">
         <div className="wrap mb-10 flex items-end justify-between gap-6">
           <div>
             <h2 className="text-h2 max-w-2xl font-medium">Engagements, described in full</h2>
           </div>
-          <Link href="/case-studies" className="hidden items-center gap-2 text-[15px] font-medium md:inline-flex">
+          <Link href="/case-studies" className="inline-flex shrink-0 items-center gap-2 text-[15px] font-medium">
             <span className="link-u">All case studies</span> <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
-        <motion.div style={{ x }} className="flex gap-5 pl-5 md:pl-[max(2.5rem,calc((100vw-1360px)/2+2.5rem))]">
+        <motion.div style={wide ? { x } : undefined} className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-2 md:snap-none md:overflow-visible md:pb-0 md:pl-[max(2.5rem,calc((100vw-1360px)/2+2.5rem))] md:pr-0">
           {cases.map((c, i) => (
-            <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group relative flex h-[58vh] min-h-[420px] w-[78vw] shrink-0 flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white p-8 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgba(10,11,13,0.35)] sm:w-[460px]">
-                            <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full opacity-20 blur-2xl transition-opacity duration-700 group-hover:opacity-80" style={{ background: capabilities.find((k) => k.name === c.capabilities[0])?.tint }} />
+            <Link key={c.slug} href={`/case-studies/${c.slug}`} className="group relative flex min-h-[420px] w-[82vw] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white p-8 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgba(10,11,13,0.35)] sm:w-[460px] md:h-[58vh]">
+            <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full opacity-20 transition-opacity duration-700 group-hover:opacity-60" style={{ background: `radial-gradient(circle, ${capabilities.find((k) => k.name === c.capabilities[0])?.tint} 0%, transparent 70%)` }} />
               <div className="relative flex items-center justify-between">
                 <span className="eyebrow text-muted">
                   {c.category} · {c.context}
