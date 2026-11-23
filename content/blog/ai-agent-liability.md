@@ -1,7 +1,8 @@
 ---
 title: "AI agent liability: who pays when an agent gets it wrong?"
-description: "AI agent liability after US banks moved the risk to customers: who pays when an agent errs, what the law says, and the controls and contract terms to set first."
+description: "AI agent liability, answered: the company that deploys the agent usually pays. What US banks, courts and California law say, and the limits to set first."
 date: 2026-11-19
+updated: 2026-11-23
 author: Talavishiraaj Groups
 keyword: ai agent liability
 tags: [Risk, AI agents, Payments]
@@ -14,6 +15,8 @@ faq:
     a: "A named person in your company should be. Saviynt's chief product officer told TechTarget that audit trails often end at a service token rather than an accountable employee. Record who delegated each task to the agent, what limits it had and who approved anything above them."
   - q: "Who takes the blame if the AI makes a mistake with my bank account?"
     a: "If you gave the agent your login, most likely you do. Citi's updated terms make customers responsible for activity through third party agents, even if the tool is hacked. Regulation E, which caps consumer losses on unauthorized transfers, does not count transfers by someone you gave your access device to as unauthorized."
+  - q: "Could an AI agent itself be held liable, even criminally?"
+    a: "No. An AI agent has no legal identity of its own that could absorb the blame, and no US court has held that an AI system is itself an agent. Courts and regulators reach the people and companies that built, deployed or supervised it, which is why the controls you set and can prove matter so much."
   - q: "Can an AI vendor be held liable for a defective agent?"
     a: "In the EU, more often from 8 December 2026. The new Product Liability Directive covers software and AI systems and applies to products placed on the market after 8 December 2026. In the US it depends mostly on your contract, so negotiate liability caps, indemnities and audit rights before rollout."
 sources:
@@ -31,6 +34,10 @@ sources:
     url: "https://www.consumerfinance.gov/rules-policy/regulations/1005/2/"
   - title: "European Commission: Liability for defective products"
     url: "https://single-market-economy.ec.europa.eu/single-market/goods/free-movement-sectors/liability-defective-products_en"
+  - title: "Montague Law: AI agent law, authority and liability"
+    url: "https://montague.law/ai-agent-law/"
+  - title: "Mayflower Specialty: Agentic AI liability explained"
+    url: "https://mayflowerspecialty.com/guides/agentic-ai-liability"
 ---
 
 AI agent liability now has a clear answer from the biggest US banks: it is yours. On 18 November, [TechCrunch reported](https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/) that Citi and PNC changed their terms so customers carry the loss when a third party AI agent misuses account access, even after a hack. JPMorgan and Bank of America took the same line in October. If your team lets agents pay, buy or book, read on.
@@ -58,6 +65,12 @@ Usually the business that gave the agent its access and its instructions. Think 
 US consumer law points the same way. Regulation E caps a consumer's loss from an unauthorized transfer at $50 or $500, depending on how fast it is reported. But the [definition from the Consumer Financial Protection Bureau (CFPB)](https://www.consumerfinance.gov/rules-policy/regulations/1005/2/) of an unauthorized transfer excludes one made by a person "furnished the access device" by the consumer. Hand an agent your login and those caps may not protect you. Regulation E is written for consumer accounts, so for a company account your bank agreement is the document to read.
 
 Lawyers at Mayer Brown, in an advisory [summarized by PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/when-ai-agents-break-rules-who-pays/), expect regulators to look first at the company that deployed the agent. Their example is a sales agent that pushes New York shoppers toward scooters over an applicable speed limit. The retailer could face enforcement, and the fight with the AI vendor comes later.
+
+### Can a company blame the AI itself?
+
+No, and a tribunal has already said so. In Moffatt v. Air Canada in February 2024, a British Columbia tribunal held the airline liable for its chatbot's wrong advice on bereavement fares. It rejected the idea that the chatbot was a separate entity, saying "it makes no difference whether the information comes from a static page or a chatbot," as [Mayflower Specialty summarizes](https://mayflowerspecialty.com/guides/agentic-ai-liability).
+
+California has written the same rule into law. According to [Montague Law](https://montague.law/ai-agent-law/), California Civil Code 1714.46, in force since 1 January 2026, says a defendant who developed, modified or used an AI "may not assert" that the AI "autonomously caused the harm." Contracts work the same way: under the federal Electronic Signatures in Global and National Commerce Act (E-SIGN), a deal formed by an electronic agent binds the business it is attributable to.
 
 | What went wrong | Who most likely carries it first | What decides the rest |
 | --- | --- | --- |
@@ -112,4 +125,4 @@ For EU sales, the Product Liability Directive is the date to plan around: produc
 
 ## Where to start this week
 
-Find out which agents in your company can move money today, and whether any of them use a person's login. Then decide whether to tighten those agents or build ones that pay and buy within limits you set. Our [AI and automation team](/services/artificial-intelligence-and-automation) can help you put the limits and approvals in place before the first dispute does it for you.
+Find out which agents in your company can move money today, and whether any of them use a person's login. Then decide whether to tighten those agents or build ones that pay and buy within limits you set; our guide to [building versus buying](/build-vs-buy) walks through that choice. Our [AI and automation team](/services/artificial-intelligence-and-automation) can help you put the limits and approvals in place before the first dispute does it for you.
