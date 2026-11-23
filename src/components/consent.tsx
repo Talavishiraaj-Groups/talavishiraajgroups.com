@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CalendarClock } from 'lucide-react';
 
 /**
  * Consent, ported from the previous site so a visitor's existing choice carries
@@ -59,7 +58,7 @@ export function CookieConsent() {
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center">
             <p className="flex-1 text-[13px] leading-relaxed text-ink/75">
-              May we measure how this site is used, which pages hold attention and where people give up? That uses Microsoft Clarity and sets cookies. The Cal.com booking calendar needs the same permission. Decline and neither loads; the contact form still reaches us.{' '}
+              May we measure how this site is used, which pages hold attention and where people give up? That uses Microsoft Clarity and sets cookies. Decline and it never loads; booking a call and the contact form work either way.{' '}
               <Link href="/cookies" className="font-medium text-ink underline underline-offset-4">What this site stores</Link>
             </p>
             <div className="flex shrink-0 gap-2">
@@ -102,23 +101,26 @@ export function BehaviourAnalytics() {
 
 export const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || '';
 
-/** Cal.com calendar inside the page, loaded only with consent. Without it, a plain link opens Cal.com in a new tab. */
+/**
+ * Cal.com calendar inside the page. It loads by itself: it only appears on the booking step,
+ * after the visitor has asked to pick a time, so it is the service they came for and is not
+ * gated behind the analytics banner (the cookie notice says so). A plain link stays underneath
+ * in case Cal.com is blocked or slow.
+ */
 export function CalEmbed({ className }: { className?: string }) {
-  const c = useConsent();
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (!CAL_LINK || c !== 'granted' || !ref.current) return;
+    if (!CAL_LINK || !ref.current) return;
     const el = ref.current;
     const f = document.createElement('iframe');
     f.src = `https://cal.com/${CAL_LINK}?theme=light`;
     f.title = 'Choose a time';
-    f.loading = 'lazy';
     f.className = 'h-[760px] w-full rounded-2xl md:h-[600px]';
     el.appendChild(f);
     return () => {
       el.innerHTML = '';
     };
-  }, [c]);
+  }, []);
 
   if (!CAL_LINK) {
     return (
@@ -127,21 +129,15 @@ export function CalEmbed({ className }: { className?: string }) {
       </div>
     );
   }
-  if (c === 'granted') return <div ref={ref} className={className} />;
   return (
-    <div className={`rounded-2xl border border-line bg-paper p-6 md:p-8 ${className ?? ''}`}>
-      <CalendarClock className="h-6 w-6 text-signal" />
-      <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink/75">
-        The calendar is provided by Cal.com, which sets its own cookies. Allow it to load here, or open it on Cal.com instead.
-      </p>
-      <div className="mt-5 flex flex-wrap gap-2">
-        <button type="button" onClick={() => writeConsent('granted')} className="min-h-[40px] rounded-full border border-ink/20 px-5 text-sm font-medium hover:border-ink">
-          Load the calendar here
-        </button>
-        <a href={`https://cal.com/${CAL_LINK}`} target="_blank" rel="noreferrer" className="inline-flex min-h-[40px] items-center rounded-full border border-ink/20 px-5 text-sm font-medium hover:border-ink">
-          Open Cal.com
+    <div className={className}>
+      <div ref={ref} className="min-h-[600px] rounded-2xl bg-paper" />
+      <p className="mt-3 px-2 text-[13px] text-muted">
+        Calendar not showing?{' '}
+        <a href={`https://cal.com/${CAL_LINK}`} target="_blank" rel="noreferrer" className="font-medium text-ink underline underline-offset-4">
+          Open it on Cal.com
         </a>
-      </div>
+      </p>
     </div>
   );
 }

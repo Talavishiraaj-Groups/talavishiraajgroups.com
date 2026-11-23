@@ -272,7 +272,7 @@
    },
    {
     "t": "p",
-    "x": "Nothing is set while you read the site. Two things can change that, and both require you to accept the notice shown on your first visit. Neither is loaded, and no request is made to either provider, unless you do."
+    "x": "Nothing is set while you read the site. Two things can change that. The first requires you to accept the notice shown on your first visit, and is not loaded, with no request made to its provider, unless you do. The second loads only when you go to book a call."
    },
    {
     "t": "p",
@@ -280,7 +280,7 @@
    },
    {
     "t": "p",
-    "x": "The second is Cal.com, which provides the booking calendar inside our page if you choose to book a call. It may set its own cookies under its own terms to run the booking."
+    "x": "The second is Cal.com, which provides the booking calendar inside our page when you open the booking page to choose a time. It loads there without asking, because picking a time is the service you came for, and it may set its own cookies under its own terms to run the booking."
    },
    {
     "t": "p",
@@ -1667,7 +1667,7 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Nothing is set in your browser until you answer the banner, and declining keeps it that way. Accepting permits two things and no more: measuring how the site is used, and loading a booking calendar if you go to book a call."
+    "x": "Nothing is set in your browser while you read the site, and declining the banner keeps it that way. Accepting permits one thing: measuring how the site is used. The booking calendar is separate: it loads only on the booking pages, when you go to book a call."
    },
    {
     "t": "p",
@@ -1739,7 +1739,7 @@
    },
    {
     "t": "p",
-    "x": "Two, and both wait for your answer. Microsoft Clarity measures how the site is used, and loads only if you accept. Cal.com provides the booking calendar inside our page, and loads only if you accept and then go to book. Decline and no request reaches either of them, ever: the scripts are not inserted rather than inserted and idle."
+    "x": "Two. Microsoft Clarity measures how the site is used, and loads only if you accept; decline and no request reaches it, ever: the script is not inserted rather than inserted and idle. Cal.com provides the booking calendar, and loads only on the booking pages, because there you have asked to pick a time and the calendar is the service you came for. It never loads anywhere else."
    },
    {
     "t": "p",
@@ -1751,7 +1751,7 @@
    },
    {
     "t": "p",
-    "x": "Two things, and they are worth separating. The first is measurement: whether we may see which pages held your attention, how far you read and where you gave up, so the site can be made less annoying than it is. The second is the booking calendar, which runs inside our page and belongs to Cal.com. Decline and neither loads. You can read every page, and the contact form reaches us just as well."
+    "x": "One thing: measurement, whether we may see which pages held your attention, how far you read and where you gave up, so the site can be made less annoying than it is. Decline and it never loads. You can read every page, book a call, and the contact form reaches us just as well. The booking calendar is not part of the question: it belongs to Cal.com and loads only on the booking pages, when you have come to pick a time."
    },
    {
     "t": "p",
