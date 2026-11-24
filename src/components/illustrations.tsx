@@ -148,6 +148,33 @@ export function RoleArt({ slug }: { slug: string }) {
       </Frame>
     );
   }
+  if (slug === 'cold-caller') {
+    const rows = [
+      { y: 70, ok: false },
+      { y: 130, ok: true },
+      { y: 190, ok: false },
+      { y: 250, ok: true },
+    ];
+    return (
+      <Frame label="A call list where some calls turn into booked meetings">
+        {rows.map((r, i) => (
+          <g key={r.y}>
+            <rect x={50} y={r.y - 24} width={300} height={48} rx={16} fill={r.ok ? '#fff' : 'none'} stroke={L} strokeWidth={1.5} />
+            <circle cx={82} cy={r.y} r={14} fill={r.ok ? S : L} className={r.ok ? 'cv-pulse' : undefined} style={r.ok ? d(i * 0.4) : undefined} />
+            <path d={`M76 ${r.y - 5} q0 10 10 10`} fill="none" stroke="#fff" strokeWidth={3} strokeLinecap="round" />
+            <rect x={110} y={r.y - 8} width={r.ok ? 130 : 100} height={8} rx={4} fill={I} opacity={0.45} />
+            <rect x={110} y={r.y + 6} width={70} height={6} rx={3} fill={I} opacity={0.2} />
+            {r.ok && (
+              <>
+                <circle cx={322} cy={r.y} r={14} fill={M} />
+                <path d={`M315 ${r.y} l5 5 l9 -10`} fill="none" stroke={I} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+              </>
+            )}
+          </g>
+        ))}
+      </Frame>
+    );
+  }
   // referral-partner
   const kids = [80, 160, 240, 320];
   return (

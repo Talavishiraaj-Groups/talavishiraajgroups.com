@@ -50,7 +50,7 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
 
   // The same facts a Wellfound listing puts in its header.
   const facts: [string, string][] = [
-    ['Compensation', role.commission.tiers ? 'Commission only, up to 15%' : 'Commission only, uncapped'],
+    ['Compensation', role.commission.tiers ? `Commission only, up to ${role.commission.tiers[0][1]}` : 'Commission only, uncapped'],
     ['Experience', EXPERIENCE],
     ['Job type', role.contract],
     ['Location', 'Remote, hiring everywhere'],
@@ -65,7 +65,7 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
     title: role.title,
-    description: [...role.about, 'What you will do: ' + role.do.join(' '), 'Requirements: ' + role.need.join(' '), 'Compensation: ' + role.commission.summary + (role.commission.tiers ? ' ' + role.commission.tiers.map(([k, v]) => k + ': ' + v + '.').join(' ') : ''), ...payDetail].map((p) => `<p>${p}</p>`).join(''),
+    description: [...role.about, 'What you will do: ' + role.do.join(' '), 'Requirements: ' + role.need.join(' '), 'Compensation: ' + role.commission.summary + (role.commission.tiers ? ' ' + role.commission.tiers.map(([k, v]) => k + ': ' + v + '.').join(' ') : '') + (role.commission.note ? ' ' + role.commission.note : ''), ...payDetail].map((p) => `<p>${p}</p>`).join(''),
     experienceRequirements: { '@type': 'OccupationalExperienceRequirements', monthsOfExperience: 24 },
     skills: role.skills.join(', '),
     industry: 'Engineering, AI and consulting services',
@@ -135,6 +135,7 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
                 ))}
               </div>
             )}
+            {role.commission.note && <p className="mt-3 text-[14px] text-muted">{role.commission.note}</p>}
             {payDetail.slice(1).map((p) => (
               <p key={p} className="mt-5 text-[15px] leading-relaxed text-muted">{p}</p>
             ))}

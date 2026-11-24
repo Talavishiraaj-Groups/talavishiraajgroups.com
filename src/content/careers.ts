@@ -15,7 +15,8 @@ export type Role = {
   need: string[];
   plus: string[];
   measure: string[];
-  commission: { summary: string; tiers?: [string, string][] };
+  /** tiers are the commission slabs by deal size; note is the small print under them. */
+  commission: { summary: string; tiers?: [string, string][]; note?: string };
   contract: string;
   timezones: string;
   hours: string;
@@ -34,6 +35,15 @@ const DEAL_TIERS: [string, string][] = [
   ['Deals from $100,000 to $999,999', '10%'],
   ['Deals of $1,000,000 or more', '5%'],
 ];
+const DEAL_NOTE = 'Any deal that starts in the $10,000 range qualifies for the 15% slab.';
+
+/** Cold caller slabs: the same deal sizes as the SDR and closer slabs, at the rates the owner set. */
+const CALLER_TIERS: [string, string][] = [
+  ['Deals from $10,000 up to $99,999', '6%'],
+  ['Deals from $100,000 to $999,999', '5%'],
+  ['Deals of $1,000,000 or more', '3%'],
+];
+const CALLER_NOTE = 'Any deal that starts in the $10,000 range qualifies for the 6% slab.';
 
 export const roles: Role[] = [
   {
@@ -104,7 +114,7 @@ export const roles: Role[] = [
       'Qualified meetings that our team accepts as genuine opportunities.',
       'Your first sourced deal signed within roughly 90 days.',
     ],
-    commission: { summary: 'Commission only, no base salary. You earn a share of every deal you source, paid by deal size:', tiers: DEAL_TIERS },
+    commission: { summary: 'Commission only, no base salary. You earn a share of every deal you source, paid by deal size:', tiers: DEAL_TIERS, note: DEAL_NOTE },
     contract: 'Independent contractor, 6 month contract',
     timezones: 'US Pacific, Mountain, Central and Eastern; Dubai; Indochina',
     hours: 'Flexible, with calls in your prospects’ working hours',
@@ -179,13 +189,51 @@ export const roles: Role[] = [
       'Opportunities that move forward or close, rather than sit.',
       'Your first closed engagement within roughly 90 days.',
     ],
-    commission: { summary: 'Commission only, no base salary. You earn a share of every deal you close, paid by deal size:', tiers: DEAL_TIERS },
+    commission: { summary: 'Commission only, no base salary. You earn a share of every deal you close, paid by deal size:', tiers: DEAL_TIERS, note: DEAL_NOTE },
     contract: 'Independent contractor',
     timezones: 'US Pacific, Central and Eastern; Dubai; Indochina',
     hours: 'Collaboration window 2:00 PM to 11:00 PM India time',
     skills: ['Sales closing and negotiation', 'Deal closure', 'Sales strategy', 'Cold calling', 'B2B sales', 'B2C sales', 'Prospecting'],
     growth: ['High value international deals with a delivery team behind you.', 'Long term engagement potential.'],
     suits: 'Experienced closers who want bigger deals and a delivery team they can rely on.',
+  },
+  {
+    slug: 'cold-caller',
+    title: 'Cold Caller',
+    short: 'Cold Caller',
+    summary: 'Call decision makers, open real conversations by phone and book qualified meetings for our sales team.',
+    about: [
+      'Talavishiraaj Groups is building its outbound team and needs experienced cold callers to open conversations with companies in the US, UK, UAE and Europe for our consulting, engineering and AI services.',
+      'The phone is the job. You work from a researched list, get past the gatekeeper, find out in a few minutes whether there is a real problem, and book a meeting when there is one.',
+    ],
+    do: [
+      'Make outbound calls to founders, operators and technology leaders from researched target lists.',
+      'Open the conversation, find out whether there is a real problem and who owns it.',
+      'Handle objections and gatekeepers without pushing people who are not a fit.',
+      'Book qualified meetings and discovery calls into our sales team’s calendar.',
+      'Follow up by phone and email until there is a clear yes or no.',
+      'Log every call, outcome and next step in the CRM the same day.',
+    ],
+    need: [
+      'At least 2 to 3 years of B2B cold calling, telesales or outbound SDR work.',
+      'Clear, confident spoken English and the ability to hold a business conversation.',
+      'Comfortable making calls every day and hearing no without losing your rhythm.',
+      'Able to work on your own in a remote, performance driven setup.',
+    ],
+    plus: ['Experience calling into IT services, software, AI or consulting buyers.', 'Availability in US, UK or Gulf working hours.'],
+    measure: [
+      'A call list and script agreed with us in your first two weeks.',
+      'A steady daily rhythm of calls, visible in the CRM.',
+      'Meetings booked that our sales team rates as qualified.',
+      'Your first deal from a meeting you booked within roughly 90 days.',
+    ],
+    commission: { summary: 'Commission only, no base salary. You earn a share of every deal that comes from a meeting you booked, paid by deal size:', tiers: CALLER_TIERS, note: CALLER_NOTE },
+    contract: 'Independent contractor',
+    timezones: 'US Pacific, Central and Eastern; UK; Dubai; Central European',
+    hours: 'Flexible, with calls in your prospects’ working hours',
+    skills: ['Cold calling', 'Telesales', 'Objection handling', 'Appointment setting', 'B2B sales', 'CRM'],
+    growth: ['A path to SDR and closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
+    suits: 'Confident phone professionals who like talking to decision makers and want uncapped, deal based earnings.',
   },
   {
     slug: 'appointment-setter',
