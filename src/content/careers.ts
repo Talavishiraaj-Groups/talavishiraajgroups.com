@@ -216,11 +216,12 @@ export const roles: Role[] = [
     ],
     need: [
       'At least 2 to 3 years of B2B cold calling, telesales or outbound SDR work.',
+      'Experience cold calling for IT services, software, AI or technology companies. This is required, not a nice to have.',
       'Clear, confident spoken English and the ability to hold a business conversation.',
       'Comfortable making calls every day and hearing no without losing your rhythm.',
       'Able to work on your own in a remote, performance driven setup.',
     ],
-    plus: ['Experience calling into IT services, software, AI or consulting buyers.', 'Availability in US, UK or Gulf working hours.'],
+    plus: ['Experience calling founders, CTOs or IT leaders in the US, UK, UAE or Europe.', 'Availability in US, UK or Gulf working hours.'],
     measure: [
       'A call list and script agreed with us in your first two weeks.',
       'A steady daily rhythm of calls, visible in the CRM.',
@@ -229,7 +230,7 @@ export const roles: Role[] = [
     ],
     commission: { summary: 'Commission only, no base salary. You earn a share of every deal that comes from a meeting you booked, paid by deal size:', tiers: CALLER_TIERS, note: CALLER_NOTE },
     contract: 'Independent contractor',
-    timezones: 'US Pacific, Central and Eastern; UK; Dubai; Central European',
+    timezones: 'Any. You call in your prospects’ working hours (mainly US, UK, Dubai and Central European)',
     hours: 'Flexible, with calls in your prospects’ working hours',
     skills: ['Cold calling', 'Telesales', 'Objection handling', 'Appointment setting', 'B2B sales', 'CRM'],
     growth: ['A path to SDR and closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
