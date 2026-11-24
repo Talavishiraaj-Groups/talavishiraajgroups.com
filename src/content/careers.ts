@@ -60,7 +60,7 @@ export const roles: Role[] = [
       'Research each account well enough to say something specific: a recent hire, a product launch, a system that is clearly straining.',
       'Write and send outreach by email and LinkedIn, and follow up without being a nuisance.',
       'Qualify replies against a short written checklist: a real problem, a person who owns it, and a reason to act this quarter.',
-      'Hand qualified leads to our SDRs and closers with notes good enough that nobody asks the prospect the same question twice.',
+      'Hand qualified leads to our SDRs and full-cycle closers with notes good enough that nobody asks the prospect the same question twice.',
       'Log every touchpoint in the CRM the same day.',
     ],
     need: [
@@ -81,7 +81,7 @@ export const roles: Role[] = [
     timezones: 'US Eastern and Pacific, UK, Dubai, Central European',
     hours: 'Flexible. Most people put in 15 to 30 hours a week',
     skills: ['Lead generation', 'B2B prospecting', 'Account research', 'LinkedIn outreach', 'Email outreach', 'CRM'],
-    growth: ['A path to SDR and closer roles.', 'Long term engagement potential.'],
+    growth: ['A path to SDR and full-cycle closer roles.', 'Long term engagement potential.'],
     suits: 'Researchers and outbound specialists who would rather send fewer, better messages.',
   },
   {
@@ -119,7 +119,7 @@ export const roles: Role[] = [
     timezones: 'US Pacific, Mountain, Central and Eastern; Dubai; Indochina',
     hours: 'Flexible, with calls in your prospects’ working hours',
     skills: ['Lead generation', 'Cold calling', 'B2B sales', 'B2C sales', 'Prospecting', 'Inbound and outbound sales'],
-    growth: ['A path to Account Executive or Closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
+    growth: ['A path to Account Executive or full-cycle closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
     suits: 'Outbound professionals who are confident on the phone and want uncapped, deal based earnings.',
   },
   {
@@ -161,11 +161,11 @@ export const roles: Role[] = [
   },
   {
     slug: 'sales-closer',
-    title: 'High-Ticket Sales Closer',
-    short: 'High-Ticket Sales Closer',
+    title: 'Full-Cycle High-Ticket Sales Closer',
+    short: 'Full-Cycle Sales Closer',
     summary: 'Run high value sales cycles from first outreach to signed deal and client onboarding.',
     about: [
-      'Talavishiraaj Groups is expanding its international sales operations and needs experienced high-ticket closers to drive client acquisition worldwide.',
+      'Talavishiraaj Groups is expanding its international sales operations and needs experienced full-cycle, high-ticket closers to drive client acquisition worldwide.',
       'This is a contract, commission based role for people confident managing long, high value sales cycles, including the outbound work that starts them.',
     ],
     do: [
@@ -195,7 +195,7 @@ export const roles: Role[] = [
     hours: 'Collaboration window 2:00 PM to 11:00 PM India time',
     skills: ['Sales closing and negotiation', 'Deal closure', 'Sales strategy', 'Cold calling', 'B2B sales', 'B2C sales', 'Prospecting'],
     growth: ['High value international deals with a delivery team behind you.', 'Long term engagement potential.'],
-    suits: 'Experienced closers who want bigger deals and a delivery team they can rely on.',
+    suits: 'Experienced full-cycle closers who want to own deals from first outreach to signature, with a delivery team they can rely on.',
   },
   {
     slug: 'cold-caller',
@@ -233,7 +233,7 @@ export const roles: Role[] = [
     timezones: 'Any. You call in your prospects’ working hours (mainly US, UK, Dubai and Central European)',
     hours: 'Flexible, with calls in your prospects’ working hours',
     skills: ['Cold calling', 'Telesales', 'Objection handling', 'Appointment setting', 'B2B sales', 'CRM'],
-    growth: ['A path to SDR and closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
+    growth: ['A path to SDR and full-cycle closer roles.', 'Long term engagement potential.', 'Work on international consulting and AI projects.'],
     suits: 'Confident phone professionals who like talking to decision makers and want uncapped, deal based earnings.',
   },
   {
