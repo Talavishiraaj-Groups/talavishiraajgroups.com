@@ -2,6 +2,7 @@
 title: "How to measure AI ROI before and after you build"
 description: "How to measure AI ROI with one business number, a baseline and the full cost, plus a worked example showing why time saved is not money saved."
 date: 2026-11-20
+updated: 2026-11-24
 author: Talavishiraaj Groups
 keyword: how to measure ai roi
 tags: [Cost, AI strategy, ROI]
@@ -92,5 +93,9 @@ There is no universal benchmark, so be wary of anyone who quotes one. The useful
 Published surveys show how wide the spread is. Among technology companies, [EY found](https://www.ey.com/en_us/insights/tech-sector/how-can-you-break-out-of-the-ai-roi-trap) that about 16% report zero ROI from generative AI copilot projects, while 43% see returns above 50%. In [BCG's 2025 study](https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf) of more than 1,250 firms, 60% reported no material value at all.
 
 Our rule of thumb: set a payback period your finance team would accept for any other investment, often 12 to 24 months, and a kill threshold before launch. If the pilot has not moved the business number by the first review, stop or change course. [Gartner found](https://www.gartner.com/en/articles/genai-project-failure) that at least 50% of generative AI projects were abandoned after proof of concept by the end of 2025. Dropping a weak pilot early is cheaper than funding it for another year.
+
+## How we would approach this
+
+We would start with the baseline, not the model: the one business number the project should move, measured as it is today. Then we would check whether AI is the right tool for that number at all, and say so when a simpler fix would pay back faster. Before a larger build, [Prism](/products) gives a fixed scope, two week independent read on whether to build, buy, partner or not yet. Whatever gets built is documented and handed over, so your team can run and measure it without us.
 
 Before scaling a pilot, our [AI production readiness checklist](/resources/ai-production-readiness-checklist) covers the operational questions that sink returns later. If you want a second pair of eyes on the numbers, our [AI and automation team](/services/artificial-intelligence-and-automation) can review a business case before you commit. The next step costs nothing: pick the one number your AI project should move, and start recording its baseline this week.

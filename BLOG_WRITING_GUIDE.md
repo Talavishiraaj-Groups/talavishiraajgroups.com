@@ -52,6 +52,24 @@ Research on firms whose blogs actually win clients (River Pools, Yalantis, Codin
 | Tuesday and Thursday | **Trending** | Catches a story while it is new, earns links and AI assistant citations, and shows the firm is current. |
 | Saturday | **Evergreen** | Answers a question people search for every month a step earlier in the journey (how something works for a business, common mistakes, what good looks like). Builds authority and feeds readers toward the buyer posts. |
 
+### What each post is for, and how it is judged
+
+Every post has one job, set by its type. Write toward that job, and the weekly review judges it against the same measure.
+
+| Post type | Its job | How the weekly review judges it |
+| --- | --- | --- |
+| **Buyer** | Enquiries and booked calls from people about to hire or budget | Google position and clicks for its keyword; clicks onward to its service page, /contact or /book; enquiries whose first page (shown in every enquiry email) is the post |
+| **Trending** | Reach: new searches we appear for, AI assistant citations, links from other sites, and a pitch idea for a trade outlet | Impressions and new queries in Search Console, Exa and Bing citations, new referring domains |
+| **Evergreen** | Steady rankings over months, and readers passed on to buyer posts | Position over 3 to 6 months, and links from it to buyer posts |
+
+While traffic is small (13 Google clicks in the 28 days to 23 November 2026), judge posts on the early signals: impressions, positions reaching page one, and click rate. Enquiries become the main measure once clicks grow.
+
+### Naming the firm in posts
+
+Keep Talavishiraaj Groups out of the body of trending and evergreen posts. The byline and the page's closing box already say who wrote it, and readers, Google and AI assistants all trust a post that answers the question without selling. Writing as "we" (see Voice) is fine; "at Talavishiraaj Groups we..." is not.
+
+Buyer posts are the one exception: they end with a short "How we would approach this" section (rule 7 below).
+
 If a trending day has no story that clears the bar, write a buyer post instead. Never skip a buyer day for news unless the story is exceptional for US buyers (and then say so in the report).
 
 **Buyer posts.** Rules on top of everything else in this guide:
@@ -62,6 +80,7 @@ If a trending day has no story that clears the bar, write a buyer post instead. 
 4. Write for someone about to spend money: a clear recommendation, the trade offs, red flags, and the questions to ask a vendor.
 5. Check the site first so we do not compete with ourselves: `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/insights/what-ai-integration-costs`, `/insights/how-to-choose-a-software-development-partner`, `/insights/how-to-evaluate-an-ai-consulting-firm` and earlier blog posts. Pick a narrower phrase than any of them and link to them.
 6. Link to the one service page a reader would want next (`/services/technology-and-engineering`, `/services/artificial-intelligence-and-automation`, `/services/product-engineering-and-rd`, `/services/business-and-operating-systems` and so on), the matching `/sectors/...` page when the post is about an industry, and `/products` (Prism) when the reader is still deciding whether to build at all.
+7. End with a section headed "How we would approach this": 3 to 5 plain sentences on what we would do first for this exact decision, put as steps, not praise. Use only these facts about how we work (from the site): research comes before engineering, so we establish what is true before deciding what to build; we only recommend what we can deliver ourselves, and say so when the answer is not to build anything; we are vendor neutral, with no reseller relationships; one team covers software, data, AI, hardware and the business side; documentation, training and handover are part of every project, so the client can run the result without us; and Prism (/products) is a fixed scope, two week independent read on whether to build, buy, partner or not yet. Pick the two or three that matter for the post. No "best", "leading" or "trusted", no client names, no results we cannot point to, and link the service page once in this section.
 
 Seed buyer backlog (US first; skip anything already covered; mix AI and non-AI):
 
@@ -130,7 +149,7 @@ Good post titles promise a specific answer: "What an AI chatbot costs a 50 perso
 - **Something concrete**: a worked example, a rough cost calculation, a short checklist, a comparison table, or a decision rule. Every post needs at least one.
 - **Internal links**: at least two, written into sentences, to pages that genuinely help: the six `/services/...` pages (technology and engineering, AI and automation, product engineering and R&D, business and operating systems, growth and market enablement, implementation and delivery), the matching `/sectors/...` page for an industry post, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, relevant `/insights/...` and earlier `/blog/...` posts.
 - **Sources**: link at least one source inline where the fact is used, and list 3 to 6 in the frontmatter. Only cite pages you actually opened.
-- **Ending**: end on the practical next step for the reader. Do not add a summary section and do not write a sales pitch; the page template adds the enquiry box.
+- **Ending**: end on the practical next step for the reader. Do not add a summary section and do not write a sales pitch; the page template adds an enquiry box matched to the first `/services/...` page the post links to, so make that first service link the one the reader needs. Buyer posts put their "How we would approach this" section just before the end (buyer rule 7).
 
 ## Easy to read, easy to act on
 

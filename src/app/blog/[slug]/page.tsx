@@ -32,12 +32,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
+/** Closing box by the service a post leads to (its first /services/ link), so an ERP or hardware post does not end on an AI question. */
+const CLOSERS: Record<string, { title: string; body: string; label: string }> = {
+  'technology-and-engineering': { title: 'Planning a software or systems build?', body: 'Describe what you need built or connected and we will tell you how we would approach it, including when the answer is to buy instead.', label: 'Technology and engineering' },
+  'artificial-intelligence-and-automation': { title: 'Have an AI decision on the table?', body: 'Describe the situation and we will tell you how we would approach it, including when AI is not the answer.', label: 'AI and automation' },
+  'product-engineering-and-rd': { title: 'Taking a product from idea to prototype?', body: 'Describe the device or product and where it stands, and we will tell you how we would take it to a working, testable prototype.', label: 'Product engineering and R&D' },
+  'business-and-operating-systems': { title: 'Changing how your operation runs?', body: 'Describe the systems and the bottleneck, and we will tell you where we would start, before anyone commits to new software.', label: 'Business and operating systems' },
+  'growth-and-market-enablement': { title: 'Want revenue that repeats?', body: 'Describe how you win work today and we will tell you which part of the system we would fix first.', label: 'Growth and market enablement' },
+  'implementation-and-delivery': { title: 'Have a plan that is not moving?', body: 'Describe the plan and where it is stuck, and we will tell you how we would get it delivered.', label: 'Implementation and delivery' },
+};
+const closerFor = (html: string) => {
+  const slug = html.match(/href="\/services\/([a-z-]+)"/)?.[1];
+  const c = slug ? CLOSERS[slug] : undefined;
+  return c ? { ...c, href: `/services/${slug}` } : null;
+};
+
 const ld = (o: object) => ({ __html: JSON.stringify(o).replace(/</g, '\\u003c') });
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = getPost((await params).slug);
   if (!p) notFound();
   const url = `${BASE}/blog/${p.slug}`;
+  const closer = closerFor(p.html);
   const all = getPosts();
   const related = all
     .filter((x) => x.slug !== p.slug)
@@ -191,7 +207,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </section>
       )}
 
-      <CtaBand title="Have an AI decision on the table?" body="Describe the situation and we will tell you how we would approach it." />
+      {closer ? (
+        <CtaBand
+          title={closer.title}
+          body={closer.body}
+          note={
+            <>
+              Or read how we work: <Link href={closer.href} className="underline underline-offset-4">{closer.label}</Link>
+            </>
+          }
+        />
+      ) : (
+        <CtaBand title="Have a decision like this on the table?" body="Describe the situation and we will tell you how we would approach it." />
+      )}
     </>
   );
 }

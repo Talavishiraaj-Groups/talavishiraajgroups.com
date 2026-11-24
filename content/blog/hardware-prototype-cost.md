@@ -2,6 +2,7 @@
 title: "Hardware prototype cost in 2026: what a working device costs"
 description: "Hardware prototype cost by stage, from $30,000 for a simple sensor to $250,000 for a connected product, with a worked example and vendor questions."
 date: 2026-11-22
+updated: 2026-11-24
 author: Talavishiraaj Groups
 keyword: hardware prototype cost
 tags: [Cost, Hardware, Product development]
@@ -109,5 +110,9 @@ Ask for an itemized quote and then ask these. The answers tell you more than the
 Cad Crowd suggests paying by the hour during early design, then switching to a fixed price once the scope is defined. We agree. A fixed price on a vague spec tends to come back as change orders.
 
 Our recommendation for a first product is to fund the works-like prototype on its own, with modules and development kits wherever they do the job, and decide on tooling and full certification only once it works. RMBG adds a fifth to its own budgets for contingency, which is a sensible habit.
+
+## How we would approach this
+
+We would start by pinning down what the first prototype has to prove, before anyone draws a board: which question it answers, for whom, and what result would stop the project. Then we would price only that stage, using modules and development kits wherever they do the job, and leave tooling and full certification until the device works. One team covers the electronics, firmware and the software behind it, so nothing stalls between suppliers. You keep the schematics, board files, CAD and firmware source, documented so another team could pick them up.
 
 If you want a second opinion on a quote or a plan, our [product engineering and R&D service](/services/product-engineering-and-rd) covers hardware, embedded work and prototyping, and our [connected devices page](/sectors/iot-connected-devices) covers the firmware and cloud side. For the software that runs a fleet once it ships, see [IoT device management](/insights/iot-device-management), and for software budgets in general, [what it costs](/what-it-costs).

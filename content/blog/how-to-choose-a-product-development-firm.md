@@ -2,6 +2,7 @@
 title: "How to choose a product development firm: a 2026 scorecard"
 description: "How to choose a product development firm: a weighted scorecard, US rates of $100 to $200 an hour, red flags, IP terms and the questions to ask before you sign."
 date: 2026-11-23
+updated: 2026-11-24
 author: Talavishiraaj Groups
 keyword: how to choose a product development firm
 tags: [Product development, Hardware, Vendor choice]
@@ -107,5 +108,9 @@ Send every shortlisted firm the same brief and ask the same questions:
 ```
 
 On pricing, Cad Crowd suggests paying hourly during early design and switching to a fixed price once the scope is defined. Sprout makes the related point that the billing model matters less than what the estimate assumes.
+
+## How we would approach this
+
+If you asked us to quote, we would first check what is true about the idea: what the first prototype has to prove, what can be bought off the shelf, and what has to be designed. We only quote for work we can deliver ourselves, and we will say so when a module or an existing product makes a custom design unnecessary. The same team handles hardware, firmware and the software around them. Every stage ends with editable source files and documentation in your hands, so you could take the next stage elsewhere.
 
 Comparing firms for a device, an instrument or a research prototype? Our [product engineering and R&D service](/services/product-engineering-and-rd) covers hardware, embedded and prototyping work. Our [research and development sector page](/sectors/research-development) explains how we work with R&D teams. If the product is mostly software, our guide on [how to choose a software development partner](/insights/how-to-choose-a-software-development-partner) uses a similar approach, and [in-house vs agency](/in-house-vs-agency) helps if you are still deciding whether to hire your own team.
