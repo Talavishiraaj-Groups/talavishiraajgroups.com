@@ -70,6 +70,12 @@ export default async function RolePage({ params }: { params: Promise<{ slug: str
     skills: role.skills.join(', '),
     industry: 'Engineering, AI and consulting services',
     datePosted: DATE_POSTED,
+    // Roles stay open, so the closing date rolls forward 60 days from each build. The site rebuilds with
+    // every daily blog post, so this never lapses while the role is listed; remove a role to close it.
+    validThrough: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+    // Commission only: there is no base salary, so baseSalary is left out on purpose rather than shown
+    // as $0 in Google's job listings. The commission terms go in incentiveCompensation instead.
+    incentiveCompensation: role.commission.summary + (role.commission.tiers ? ' ' + role.commission.tiers.map(([k, v]) => `${k}: ${v}.`).join(' ') : ''),
     employmentType: 'CONTRACTOR',
     jobLocationType: 'TELECOMMUTE',
     applicantLocationRequirements: ['United States', 'United Kingdom', 'United Arab Emirates', 'Germany', 'India'].map((name) => ({ '@type': 'Country', name })),
