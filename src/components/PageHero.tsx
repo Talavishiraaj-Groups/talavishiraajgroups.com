@@ -54,8 +54,8 @@ export function PageHero({
           </h1>
           {aside && <div className="lg:col-span-4">{aside}</div>}
         </div>
+        {/* The intro is shown at once: it is usually the page's largest text, and fading it in left a blank gap on phones. */}
         {lead && (
-          {/* Shown at once: the intro is usually the page's largest text, and fading it in left a blank gap on phones. */}
           <div className="mt-10 grid gap-8 md:grid-cols-12">
             <div className={clsx('text-lg leading-relaxed md:col-span-7 md:col-start-6', dark ? 'text-white/65' : 'text-ink/70')}>{lead}</div>
           </div>
