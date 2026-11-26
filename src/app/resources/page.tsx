@@ -48,6 +48,8 @@ export default function ResourcesPage() {
           </Link>
           <div className="grid gap-6">
             {[
+              { h: '/resources/software-development-cost-calculator', t: 'Software development cost calculator', d: '2026 ranges by complexity, maintenance and three year total.' },
+              { h: '/resources/roi-payback-calculator', t: 'ROI and payback calculator', d: 'Payback months and 1 and 3 year ROI from your own numbers.' },
               { h: '/resources/ai-integration-cost-calculator', t: 'AI integration cost calculator', d: 'Three questions: build range, integration share, three year total.' },
               { h: '/build-vs-buy', t: 'Build vs buy framework', d: 'Seven questions, about two minutes.' },
               { h: '/what-it-costs', t: 'What it costs', d: 'Published market figures, every source named.' },

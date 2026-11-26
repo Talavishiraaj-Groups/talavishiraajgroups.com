@@ -9,7 +9,7 @@ const BASE = 'https://www.talavishiraajgroups.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const top = ['', '/about', '/services', '/products', '/build-vs-buy', '/what-it-costs', '/in-house-vs-agency', '/case-studies', '/insights', '/sectors', '/resources', '/resources/ai-production-readiness-checklist', '/resources/ai-integration-cost-calculator', '/partnerships', '/careers', '/contact'];
+  const top = ['', '/about', '/services', '/products', '/build-vs-buy', '/what-it-costs', '/in-house-vs-agency', '/case-studies', '/insights', '/sectors', '/resources', '/resources/ai-production-readiness-checklist', '/resources/ai-integration-cost-calculator', '/resources/software-development-cost-calculator', '/resources/roi-payback-calculator', '/partnerships', '/careers', '/contact'];
   const urls = [
     ...top,
     ...capabilities.map((c) => `/services/${c.slug}`),

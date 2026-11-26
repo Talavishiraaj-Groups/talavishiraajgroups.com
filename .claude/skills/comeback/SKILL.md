@@ -59,6 +59,15 @@ The owner wants links, newsjacking and inbound tracked at every comeback. The tr
 
 Report the changes in a short "Inbound and authority" note: new backlinks or listings, pitch statuses, the best newsjack idea of the week, and anything waiting on the owner.
 
+### Monthly calculator
+
+The owner wants one new free calculator a month under `/resources/` (pattern: `src/components/CalculatorPage.tsx` plus a calculator component). Two kinds, alternating:
+
+- **Cost calculators that win clients** (no ads ever): next in line are hardware prototype cost, ERP implementation cost and timeline, MVP cost, healthcare software cost. Every figure comes from a source we opened (prefer figures already published on the site), the page says they are market figures not our price, and the result prefills `ContactForm` with `service` set to the calculator's name.
+- **Business calculators** (AdSense allowed once approved): break-even, SaaS metrics (churn, lifetime value, acquisition cost), contractor versus employee cost. Pure arithmetic on the visitor's numbers.
+
+If no calculator was added this calendar month, build the next one, add it to the sitemap, `/resources`, `seo-descriptions.json` and the guide's internal link list, check it on phone and desktop, publish and submit it to IndexNow. Live so far: AI integration cost (Nov 2026), software development cost (Nov 2026), ROI and payback (Nov 2026).
+
 ## 4. Fix what you safely can
 
 - A post that broke the build or does not load: fix the post, run `npm run blog:check`, build if needed (`NODE_OPTIONS=--max-old-space-size=3072 npm run build` with the preview server stopped), push with `git push origin HEAD:main`, and confirm it is live.
