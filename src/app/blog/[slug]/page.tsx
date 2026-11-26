@@ -5,7 +5,6 @@ import { ArrowUpRight } from 'lucide-react';
 import { BlogCover } from '@/components/BlogCover';
 import { Crumbs } from '@/components/PageHero';
 import { ReadingProgress, Toc } from '@/components/insights';
-import { SplitWords } from '@/components/motion';
 import { CtaBand } from '@/components/ui';
 import { formatDate, getPost, getPosts } from '@/lib/blog';
 import { withLegacySeo } from '@/lib/seo';
@@ -98,21 +97,26 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <script type="application/ld+json" dangerouslySetInnerHTML={ld(crumbs)} />
       <ReadingProgress />
       <article>
-        <header className="pt-32 md:pt-40">
+        {/* Built so a visitor from search sees the title and the answer on the first screen, with nothing animating in. */}
+        <header className="pt-28 md:pt-40">
           <div className="wrap">
             <Crumbs items={[{ href: '/blog', label: 'Blog' }, { label: p.tags[0] || 'Post' }]} />
-            <h1 className="mt-10 max-w-5xl text-h1 font-medium">
-              <SplitWords text={p.title} />
-            </h1>
+            <h1 className="mt-8 max-w-5xl text-h1 font-medium md:mt-10">{p.title}</h1>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-muted">
               <span>{p.author}</span>
               <time dateTime={p.date}>{formatDate(p.date)}</time>
               {p.updated && <span>Updated {formatDate(p.updated)}</span>}
               <span>{p.readTime}</span>
             </div>
+            {p.answer && (
+              <div className="mt-8 max-w-3xl rounded-3xl border border-line bg-white p-6 md:mt-10 md:p-8">
+                <p className="text-[13px] text-signal">The short answer</p>
+                <p className="mt-3 text-[clamp(1.05rem,1.6vw,1.35rem)] leading-relaxed tracking-tight">{p.answer}</p>
+              </div>
+            )}
           </div>
-          <div className="wrap mt-12">
-            <div className="fade-up overflow-hidden rounded-[28px] border border-line" style={{ animationDelay: '0.3s' }}>
+          <div className="wrap mt-10 md:mt-12">
+            <div className="overflow-hidden rounded-[28px] border border-line">
               <BlogCover post={p} />
             </div>
           </div>
@@ -127,12 +131,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               </div>
             </aside>
             <div className="min-w-0 lg:col-span-7">
-              {p.answer && (
-                <div className="mb-12 rounded-3xl border border-line bg-white p-7 md:p-8">
-                  <p className="text-[13px] text-signal">The short answer</p>
-                  <p className="mt-3 text-[clamp(1.15rem,1.6vw,1.35rem)] leading-relaxed tracking-tight">{p.answer}</p>
-                </div>
-              )}
               <div className="prose-tj" dangerouslySetInnerHTML={{ __html: p.html }} />
 
               <div className="my-14 rounded-3xl bg-ink p-8 text-paper md:p-10">
@@ -147,6 +145,22 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   </Link>
                 </div>
               </div>
+
+              {related.length > 0 && (
+                <nav aria-label="Read next" className="mb-14">
+                  <p className="text-[13px] text-muted">Read next</p>
+                  <ul className="mt-3 divide-y divide-line border-y border-line">
+                    {related.map((m) => (
+                      <li key={m.slug}>
+                        <Link href={`/blog/${m.slug}`} className="group flex items-start justify-between gap-4 py-4">
+                          <span className="text-[17px] font-medium leading-snug tracking-tight group-hover:text-signal">{m.title}</span>
+                          <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-ink/40 group-hover:text-signal" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              )}
 
               {p.faq.length > 0 && (
                 <section className="prose-tj" id="questions">
@@ -188,24 +202,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
       </article>
 
-      {related.length > 0 && (
-        <section className="border-t border-line py-20">
-          <div className="wrap">
-            <h2 className="text-2xl font-medium tracking-tight">Keep reading</h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              {related.map((m) => (
-                <Link key={m.slug} href={`/blog/${m.slug}`} className="group block">
-                  <div className="overflow-hidden rounded-2xl border border-line">
-                    <BlogCover post={m} className="transition-transform duration-700 group-hover:scale-[1.03]" />
-                  </div>
-                  <p className="mt-4 text-[13px] text-muted">{formatDate(m.date)}</p>
-                  <h3 className="mt-2 text-lg font-medium leading-snug tracking-tight group-hover:text-signal">{m.title}</h3>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {closer ? (
         <CtaBand

@@ -64,11 +64,13 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
   );
 }
 
-/** Headline that rises word by word, masked. */
+/**
+ * Page headline, shown at once. It used to rise in word by word, which left the most important
+ * line on the page blank for a second or more on slower phones. The name stays so pages keep working.
+ */
 export function SplitWords({
   text,
   className,
-  delay = 0,
   italic = [],
 }: {
   text: string;
@@ -78,16 +80,11 @@ export function SplitWords({
 }) {
   const words = text.split(' ');
   return (
-    <span className={clsx('inline', className)} aria-label={text}>
+    <span className={clsx('inline', className)}>
       {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-bottom" aria-hidden>
-          <span
-            className={clsx('rise', italic.includes(w.replace(/[.,]/g, '')) && 'font-serif italic font-normal tracking-normal')}
-            style={{ animationDelay: `${delay + i * 0.045}s` }}
-          >
-            {w}
-            {i < words.length - 1 ? ' ' : ''}
-          </span>
+        <span key={i} className={clsx(italic.includes(w.replace(/[.,]/g, '')) && 'font-serif italic font-normal tracking-normal')}>
+          {w}
+          {i < words.length - 1 ? ' ' : ''}
         </span>
       ))}
     </span>

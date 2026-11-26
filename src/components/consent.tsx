@@ -54,18 +54,19 @@ export function CookieConsent() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white p-4 shadow-[0_20px_60px_-20px_rgba(10,11,13,0.35)] md:p-5"
+          className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-3xl rounded-2xl border border-line bg-white px-4 py-3 shadow-[0_20px_60px_-20px_rgba(10,11,13,0.35)] md:p-5"
         >
-          <div className="flex flex-col gap-4 md:flex-row md:items-center">
-            <p className="flex-1 text-[13px] leading-relaxed text-ink/75">
-              May we measure how this site is used, which pages hold attention and where people give up? That uses Microsoft Clarity and sets cookies. Decline and it never loads; booking a call and the contact form work either way.{' '}
-              <Link href="/cookies" className="font-medium text-ink underline underline-offset-4">What this site stores</Link>
+          {/* Kept short so it covers little of the page on a phone. */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <p className="flex-1 text-[12.5px] leading-snug text-ink/75 md:text-[13px] md:leading-relaxed">
+              May we measure how the site is used (Microsoft Clarity, sets cookies)? Everything works either way.{' '}
+              <Link href="/cookies" className="font-medium text-ink underline underline-offset-4">Details</Link>
             </p>
-            <div className="flex shrink-0 gap-2">
-              <button type="button" onClick={() => writeConsent('declined')} className="min-h-[40px] rounded-full border border-ink/20 px-5 text-sm font-medium hover:border-ink">
+            <div className="flex shrink-0 flex-col gap-1.5 sm:flex-row sm:gap-2">
+              <button type="button" onClick={() => writeConsent('declined')} className="min-h-[36px] rounded-full border border-ink/20 px-4 text-sm font-medium hover:border-ink md:min-h-[40px] md:px-5">
                 Decline
               </button>
-              <button type="button" onClick={() => writeConsent('granted')} className="min-h-[40px] rounded-full border border-ink/20 px-5 text-sm font-medium hover:border-ink">
+              <button type="button" onClick={() => writeConsent('granted')} className="min-h-[36px] rounded-full border border-ink/20 px-4 text-sm font-medium hover:border-ink md:min-h-[40px] md:px-5">
                 Allow
               </button>
             </div>
