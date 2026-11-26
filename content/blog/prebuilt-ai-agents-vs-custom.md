@@ -3,7 +3,7 @@ title: "Prebuilt AI agents or a custom build: how to choose in 2026"
 description: "Prebuilt AI agents from IBM, Microsoft and Zendesk are now easy to start with. When they beat a custom build, and how to tell for your team."
 keyword: prebuilt ai agents vs custom
 date: 2026-11-14
-author: Talavishiraaj Groups
+author: Dhiraj T H
 tags: [AI agents, Build vs buy, Cost]
 cover: { motif: network, palette: signal }
 answer: "Buy a prebuilt agent when the work is common across companies, lives inside one tool you already pay for, and is priced per outcome you can predict. Build when the work depends on your own data, crosses several systems, or is the thing customers choose you for. Most mid-size teams end up doing both, and the useful decision is where to draw the line."

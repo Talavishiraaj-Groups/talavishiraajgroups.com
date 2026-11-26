@@ -3,7 +3,7 @@ title: "How to choose a product development firm: a 2026 scorecard"
 description: "How to choose a product development firm: a weighted scorecard, US rates of $100 to $200 an hour, red flags, IP terms and the questions to ask before you sign."
 date: 2026-11-23
 updated: 2026-11-24
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: how to choose a product development firm
 tags: [Product development, Hardware, Vendor choice]
 cover: { motif: orbit, palette: mint }

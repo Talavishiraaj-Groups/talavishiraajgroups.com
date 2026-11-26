@@ -3,7 +3,7 @@ title: "Hardware prototype cost in 2026: what a working device costs"
 description: "Hardware prototype cost by stage, from $30,000 for a simple sensor to $250,000 for a connected product, with a worked example and vendor questions."
 date: 2026-11-22
 updated: 2026-11-24
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: hardware prototype cost
 tags: [Cost, Hardware, Product development]
 cover: { motif: bars, palette: ember }

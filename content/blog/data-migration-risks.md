@@ -2,7 +2,7 @@
 title: "Data migration risks: lessons from Capita's pension failure"
 description: "The data migration risks that sink a switch to a new vendor or system, what the Capita pensions failure shows, and the go-live checks to run before cutover."
 date: 2026-11-24
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: data migration risks
 tags: [Migration, Operations, Vendor risk]
 cover: { motif: layers, palette: night }

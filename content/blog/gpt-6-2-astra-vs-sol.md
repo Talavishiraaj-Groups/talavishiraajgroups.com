@@ -2,7 +2,7 @@
 title: "GPT-6.2 Astra vs Sol: which one should your business use?"
 description: "GPT-6.2 Astra vs Sol compared on price, quality and risk: what each costs per task, where Astra earns its 4x price, and what to test before you switch."
 date: 2026-11-18
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: gpt 6.2 astra vs sol
 tags: [AI models, Cost, OpenAI]
 cover: { motif: wave, palette: ink }

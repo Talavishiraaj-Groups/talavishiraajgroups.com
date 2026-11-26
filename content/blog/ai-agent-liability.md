@@ -3,7 +3,7 @@ title: "AI agent liability: who pays when an agent gets it wrong?"
 description: "AI agent liability, answered: the company that deploys the agent usually pays. What US banks, courts and California law say, and the limits to set first."
 date: 2026-11-19
 updated: 2026-11-23
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: ai agent liability
 tags: [Risk, AI agents, Payments]
 cover: { motif: grid, palette: sand }

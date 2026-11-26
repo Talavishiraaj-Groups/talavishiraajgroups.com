@@ -60,7 +60,7 @@ function load(file: string): Post {
     description: String(data.description),
     date,
     updated,
-    author: String(data.author || 'Talavishiraaj Groups'),
+    author: String(data.author || 'Dhiraj T H'),
     tags: (data.tags as string[]) || [],
     keyword: data.keyword ? String(data.keyword) : undefined,
     answer: String(data.answer || ''),

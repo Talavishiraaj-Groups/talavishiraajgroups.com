@@ -2,7 +2,7 @@
 title: "AI agent security risks: lessons from California v. OpenAI"
 description: "California says OpenAI lost control of its AI agents at least 80 times. The AI agent security risks this exposes, and five controls to check in your own agents."
 date: 2026-11-17
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: ai agent security risks
 tags: [Security, AI agents, Risk]
 cover: { motif: shield, palette: night }

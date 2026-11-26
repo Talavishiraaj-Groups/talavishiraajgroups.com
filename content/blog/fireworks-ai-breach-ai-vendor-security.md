@@ -2,7 +2,7 @@
 title: "Fireworks AI breach: what to ask your AI vendors now"
 description: "The Fireworks AI breach reached Notion, Uber and Cursor customers through one AI vendor. What happened, and the questions to ask your own AI vendors this week."
 date: 2026-11-15
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: fireworks ai breach
 tags: [Security, AI vendors, Risk]
 cover: { motif: shield, palette: ember }

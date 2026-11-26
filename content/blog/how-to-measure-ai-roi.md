@@ -3,7 +3,7 @@ title: "How to measure AI ROI before and after you build"
 description: "How to measure AI ROI with one business number, a baseline and the full cost, plus a worked example showing why time saved is not money saved."
 date: 2026-11-20
 updated: 2026-11-24
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: how to measure ai roi
 tags: [Cost, AI strategy, ROI]
 cover: { motif: bars, palette: mint }

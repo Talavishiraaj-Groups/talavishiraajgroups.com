@@ -2,7 +2,7 @@
 title: "ERP implementation mistakes and how to avoid them"
 description: "The ERP implementation mistakes that cause overruns and low adoption, what the 2026 Panorama survey found, and a checklist to run before you sign."
 date: 2026-11-21
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: erp implementation mistakes
 tags: [ERP, Operations, Implementation]
 cover: { motif: flow, palette: paper }

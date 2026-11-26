@@ -2,7 +2,7 @@
 title: "Qwen4-Max for business: cheaper, but is it the right pick?"
 description: "Alibaba's Qwen4-Max is cheap per token, but is it right for business? Real cost per task, independent scores and the data questions to ask before you use it."
 date: 2026-11-16
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: qwen4 max for business
 tags: [AI models, Cost, Security]
 cover: { motif: wave, palette: sky }

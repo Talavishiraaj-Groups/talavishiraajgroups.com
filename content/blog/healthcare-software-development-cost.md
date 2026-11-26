@@ -2,7 +2,7 @@
 title: "Healthcare software development cost in 2026: real ranges"
 description: "Healthcare software development cost runs $60,000 to $250,000+ by system type. See what drives it, a worked budget, HIPAA work and vendor questions."
 date: 2026-11-25
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: healthcare software development cost
 tags: [Cost, Healthcare, Software]
 cover: { motif: bars, palette: sky }

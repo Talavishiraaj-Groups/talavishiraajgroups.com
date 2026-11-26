@@ -48,6 +48,7 @@ export default function ResourcesPage() {
           </Link>
           <div className="grid gap-6">
             {[
+              { h: '/resources/ai-integration-cost-calculator', t: 'AI integration cost calculator', d: 'Three questions: build range, integration share, three year total.' },
               { h: '/build-vs-buy', t: 'Build vs buy framework', d: 'Seven questions, about two minutes.' },
               { h: '/what-it-costs', t: 'What it costs', d: 'Published market figures, every source named.' },
               { h: '/in-house-vs-agency', t: 'In house vs agency', d: 'Four routes across seven criteria.' },

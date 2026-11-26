@@ -68,7 +68,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     description: p.description,
     datePublished: p.date,
     dateModified: p.updated || p.date,
-    author: { '@type': 'Organization', name: p.author, url: BASE, '@id': `${BASE}/#org` },
+    author:
+      p.author === 'Dhiraj T H'
+        ? { '@type': 'Person', name: 'Dhiraj T H', jobTitle: 'Founder and Strategy', url: `${BASE}/about`, image: `${BASE}/dhiraj-th-founder.jpg`, worksFor: { '@id': `${BASE}/#org` } }
+        : { '@type': 'Organization', name: p.author, url: BASE, '@id': `${BASE}/#org` },
     publisher: { '@type': 'Organization', '@id': `${BASE}/#org`, name: 'Talavishiraaj Groups', logo: { '@type': 'ImageObject', url: `${BASE}/logo.png` } },
     about: p.keyword,
     mainEntityOfPage: url,
@@ -103,7 +106,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             <Crumbs items={[{ href: '/blog', label: 'Blog' }, { label: p.tags[0] || 'Post' }]} />
             <h1 className="mt-8 max-w-5xl text-h1 font-medium md:mt-10">{p.title}</h1>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-muted">
-              <span>{p.author}</span>
+              {p.author === 'Dhiraj T H' ? (
+                <Link href="/about" className="inline-flex items-center gap-2 text-ink hover:text-signal">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/dhiraj-th-founder.jpg" alt="" width={24} height={24} className="h-6 w-6 rounded-full object-cover" />
+                  Dhiraj T H, Founder
+                </Link>
+              ) : (
+                <span>{p.author}</span>
+              )}
               <time dateTime={p.date}>{formatDate(p.date)}</time>
               {p.updated && <span>Updated {formatDate(p.updated)}</span>}
               <span>{p.readTime}</span>

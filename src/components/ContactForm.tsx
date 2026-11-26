@@ -30,7 +30,19 @@ const label = 'pointer-events-none absolute left-4 top-2 text-[11px] text-muted'
  * One form, three uses, matching the previous site's endpoints and payloads:
  * contact and book post to /api/send-contact-email, community posts to /api/send-email.
  */
-export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?: () => void }) {
+export function ContactForm({
+  mode = 'contact',
+  onSent,
+  service,
+  defaultMessage,
+}: {
+  mode?: Mode;
+  onSent?: () => void;
+  /** Fixed subject for the enquiry email (hides the topic picker), for example a calculator's name. */
+  service?: string;
+  /** Text placed in the message box so the visitor can edit it, for example a calculator's result. */
+  defaultMessage?: string;
+}) {
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState<Status>('idle');
   const [error, setError] = useState('');
@@ -51,7 +63,7 @@ export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?
             email: get('email'),
             company: get('org'),
             phone: get('phone'),
-            service: mode === 'book' ? 'Call booking' : topic,
+            service: mode === 'book' ? 'Call booking' : service || topic,
             message: mode === 'book' ? `Booking a call. What they would like to talk about: ${get('message')}` : get('message'),
             website: get('website'),
             ...src,
@@ -119,7 +131,7 @@ export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?
           <span className={label}>{mode === 'community' ? 'Phone *' : 'Phone'}</span>
         </label>
       </div>
-      {mode === 'contact' && (
+      {mode === 'contact' && !service && (
         <fieldset className="mt-6">
           <legend className="mb-3 text-[13px] text-muted">What is this about? It helps us route your message.</legend>
           <div className="flex flex-wrap gap-2">
@@ -138,7 +150,7 @@ export function ContactForm({ mode = 'contact', onSent }: { mode?: Mode; onSent?
         </fieldset>
       )}
       <label className="relative mt-6 block">
-        <textarea name="message" required maxLength={5000} rows={mode === 'contact' ? 6 : 4} className={field + ' resize-none'} placeholder={placeholder} />
+        <textarea name="message" required maxLength={5000} rows={mode === 'contact' ? 6 : 4} className={field + ' resize-none'} placeholder={placeholder} defaultValue={defaultMessage} key={defaultMessage} />
         <span className={label}>{messageLabel}</span>
       </label>
       <AnimatePresence>

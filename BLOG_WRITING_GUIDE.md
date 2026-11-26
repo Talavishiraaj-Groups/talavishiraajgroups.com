@@ -48,8 +48,9 @@ Research on firms whose blogs actually win clients (River Pools, Yalantis, Codin
 
 | Day (India time) | Post type | Why |
 | --- | --- | --- |
-| Monday, Wednesday, Friday, Sunday | **Buyer** | Answers a question someone asks right before they hire: what it costs, which option to pick, how to choose a vendor, how long it takes. These are the posts that bring enquiries. |
+| Monday, Wednesday, Friday | **Buyer** | Answers a question someone asks right before they hire: what it costs, which option to pick, how to choose a vendor, how long it takes. These are the posts that bring enquiries. |
 | Tuesday and Thursday | **Trending** | Catches a story while it is new, earns links and AI assistant citations, and shows the firm is current. |
+| Sunday | **Signature** | The week's flagship: a deep teardown or cost model with numbers nobody else has published, built from public sources we open and our own calculation. It earns links, gets shared and is the piece Dhiraj pitches to trade outlets. Every trending post that week links to it. |
 | Saturday | **Evergreen** | Answers a question people search for every month a step earlier in the journey (how something works for a business, common mistakes, what good looks like). Builds authority and feeds readers toward the buyer posts. |
 
 ### What each post is for, and how it is judged
@@ -61,6 +62,7 @@ Every post has one job, set by its type. Write toward that job, and the weekly r
 | **Buyer** | Enquiries and booked calls from people about to hire or budget | Google position and clicks for its keyword; clicks onward to its service page, /contact or /book; enquiries whose first page (shown in every enquiry email) is the post |
 | **Trending** | Reach: new searches we appear for, AI assistant citations, links from other sites, and a pitch idea for a trade outlet | Impressions and new queries in Search Console, Exa and Bing citations, new referring domains |
 | **Evergreen** | Steady rankings over months, and readers passed on to buyer posts | Position over 3 to 6 months, and links from it to buyer posts |
+| **Signature** | Links from other sites, shares, trade outlet pitches, and enquiries from readers who see the depth of the work | New referring domains, impressions, time on page, and enquiries whose first page is the post |
 
 While traffic is small (13 Google clicks in the 28 days to 23 November 2026), judge posts on the early signals: impressions, positions reaching page one, and click rate. Enquiries become the main measure once clicks grow.
 
@@ -109,6 +111,15 @@ Seed buyer backlog (US first; skip anything already covered; mix AI and non-AI):
 5. Tie it to a service. Every evergreen post links to the service or tool page a reader would want next, and answers the question better than anything on page one: real numbers with sources, a table or chart, a clear recommendation and the trade offs.
 6. Do not hang it on a news hook. Use the year in the title only when people search with it ("in 2026"), and set `updated:` whenever you refresh it.
 
+**Signature posts (Sunday).** Rules on top of everything else in this guide:
+
+1. Pick a subject with real stakes for our buyers: a public failure worth taking apart (a botched migration, an outage, a project that ran years late, with official reports to read), a full cost model for a decision in the buyer backlog, or a benchmark built from public price lists and published data.
+2. Do original work and show it: a cost model, a timeline reconstruction from official documents, or a comparison table we built ourselves. Label our own calculations as ours and show the inputs, each traced to a source we opened. Never invent figures and never use client information.
+3. 1,800 to 2,600 words, at least two visuals with real numbers, and at least five sources.
+4. Say what the reader should do differently, then end with the "How we would approach this" section (buyer rule 7).
+5. Link to the week's other posts where they genuinely help, and make the week's two trending posts link back to it.
+6. In the report, add one line suggesting which trade outlet the piece fits, for the tracker.
+
 **Give every trending post an evergreen core.** The news is the hook in the first paragraph. The H2 sections should answer questions that still matter after the story fades ("what to ask your AI vendors", "how to secure an AI agent"), so the page keeps ranking for those once the news traffic stops.
 
 ## Trend radar: what people are reading right now
@@ -147,7 +158,7 @@ Good post titles promise a specific answer: "What an AI chatbot costs a 50 perso
 - **Opening paragraph**: the news and why the reader should care, in under 70 words. No scene setting.
 - **Sections**: 4 to 7 H2 headings. Phrase at least two as the question a reader would type into a search box ("What does this cost a 50 person company?"). Open each section with a one or two sentence direct answer, then the detail. That is what AI answer engines quote.
 - **Something concrete**: a worked example, a rough cost calculation, a short checklist, a comparison table, or a decision rule. Every post needs at least one.
-- **Internal links**: at least two, written into sentences, to pages that genuinely help: the six `/services/...` pages (technology and engineering, AI and automation, product engineering and R&D, business and operating systems, growth and market enablement, implementation and delivery), the matching `/sectors/...` page for an industry post, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, relevant `/insights/...` and earlier `/blog/...` posts.
+- **Internal links**: at least two, written into sentences, to pages that genuinely help: the six `/services/...` pages (technology and engineering, AI and automation, product engineering and R&D, business and operating systems, growth and market enablement, implementation and delivery), the matching `/sectors/...` page for an industry post, `/what-it-costs`, `/build-vs-buy`, `/in-house-vs-agency`, `/products` (Prism, an independent read on a build or buy decision), `/resources/ai-production-readiness-checklist`, `/resources/ai-integration-cost-calculator` (link it from any post about AI cost or budgets), relevant `/insights/...` and earlier `/blog/...` posts.
 - **Sources**: link at least one source inline where the fact is used, and list 3 to 6 in the frontmatter. Only cite pages you actually opened.
 - **Ending**: end on the practical next step for the reader. Do not add a summary section and do not write a sales pitch; the page template adds an enquiry box matched to the first `/services/...` page the post links to, so make that first service link the one the reader needs. Buyer posts put their "How we would approach this" section just before the end (buyer rule 7).
 
@@ -250,7 +261,7 @@ File: `content/blog/<slug>.md`. The slug is the main search phrase, lowercase wi
 title: "60 characters or fewer, main search phrase near the start"
 description: "110 to 160 characters. What the reader will learn, in plain words. Used as the search snippet."
 date: 2026-11-14
-author: Talavishiraaj Groups
+author: Dhiraj T H
 keyword: prebuilt ai agents vs custom
 tags: [AI agents, Cost, Build vs buy]
 cover: { motif: network, palette: signal }
@@ -283,7 +294,7 @@ Do not put an H1 in the body. Use `##` and `###` only.
 ## Publishing checklist (the daily routine follows this)
 
 1. `git pull` on `main`, then `npm ci` if `node_modules` is missing.
-2. Check the day in India time (`TZ=Asia/Kolkata date +%A`): Monday, Wednesday, Friday and Sunday are buyer days, Tuesday and Thursday are trending, Saturday is evergreen (see the weekly rhythm). Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
+2. Check the day in India time (`TZ=Asia/Kolkata date +%A`): Monday, Wednesday and Friday are buyer days, Tuesday and Thursday are trending, Saturday is evergreen and Sunday is the signature post (see the weekly rhythm). Read `content/blog/_performance.md` if it exists, then pick the topic and keyword and read the sources, following the rules above.
 3. Write the post to `content/blog/<slug>.md` with today's date (India time).
 4. Fact check before anything else. Go through the post line by line, including the title, description, short answer, FAQ answers, chart and stats numbers. For every fact, number, date and name, confirm it against the source page you opened. Remove anything you cannot confirm. Check that every link opens, and use the final address: if a link redirects (`curl -s -o /dev/null -w "%{http_code} %{redirect_url}" <url>` shows 301 or 302), replace it with the address it redirects to.
 5. Run `npm run blog:check -- content/blog/<slug>.md`. Fix every ERROR and look at every warning. Repeat until it passes. Then reread the whole post once more against the voice rules; the checker cannot catch everything.
